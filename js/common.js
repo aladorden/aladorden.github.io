@@ -14,7 +14,9 @@ if ($(window).width() > 991) {
   $('.top-line').removeClass('sticky');
 	$('.main-head .top-line .logo a img').attr("src", "img/logo.png");
 }
-
+$(document).ready(function() {
+$('.block-video .vid-cont').css("display", "none");
+});
 
 $(function(){ // this replaces document.ready
 	setTimeout(function(){
