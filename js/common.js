@@ -39,6 +39,7 @@ $(".owl-fade").owlCarousel({
 	dots: true,
 	navText: false,
 	navContainer: '#customNav',
+	lazyload: false,
 });
 
 $(".logos").owlCarousel({
