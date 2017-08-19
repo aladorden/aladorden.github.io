@@ -25,129 +25,129 @@ $(function(){ // this replaces document.ready
 });
 
 //sliders
-$(".owl-fade").owlCarousel({
-	items: 1,
-	loop: true,
-	animateOut: 'fadeOut',
-	animateIn: 'fadeIn',
-	nav: true,
-	mouseDrag: false,
-	touchDrag: false,
-	dots: true,
-	navText: false,
-	navContainer: '#customNav',
-});
+// $(".owl-fade").owlCarousel({
+// 	items: 1,
+// 	loop: true,
+// 	animateOut: 'fadeOut',
+// 	animateIn: 'fadeIn',
+// 	nav: true,
+// 	mouseDrag: false,
+// 	touchDrag: false,
+// 	dots: true,
+// 	navText: false,
+// 	navContainer: '#customNav',
+// });
 
-$(".logos").owlCarousel({
- 	loop: true,
- 	smartSpeed: 700,
- 	responsiveClass: true,
- 	items: 4,
- 	responsive: {
- 		0: {
- 			items: 1
- 		},
- 		768: {
- 			items: 2
- 		},
- 		992: {
- 			items: 3
- 		},
- 		1200: {
- 			items: 4
- 		},
- 	}
- });
+// $(".logos").owlCarousel({
+//  	loop: true,
+//  	smartSpeed: 700,
+//  	responsiveClass: true,
+//  	items: 4,
+//  	responsive: {
+//  		0: {
+//  			items: 1
+//  		},
+//  		768: {
+//  			items: 2
+//  		},
+//  		992: {
+//  			items: 3
+//  		},
+//  		1200: {
+//  			items: 4
+//  		},
+//  	}
+//  });
 
- $(".carousel-news").owlCarousel({
- 	loop: true,
- 	autoplay: true,
- 	items: 3,
- 	nav: true,
- 	navText: false,
- 	smartSpeed: 700,
- 	margin: 30,
- 	smartSpeed: 700,
- 	responsiveClass: true,
- 	responsive: {
- 		0: {
- 			items: 1
- 		},
- 		768: {
- 			items: 2
- 		},
- 		1200: {
- 			items: 3
- 		},
- 	}
- });
+//  $(".carousel-news").owlCarousel({
+//  	loop: true,
+//  	autoplay: true,
+//  	items: 3,
+//  	nav: true,
+//  	navText: false,
+//  	smartSpeed: 700,
+//  	margin: 30,
+//  	smartSpeed: 700,
+//  	responsiveClass: true,
+//  	responsive: {
+//  		0: {
+//  			items: 1
+//  		},
+//  		768: {
+//  			items: 2
+//  		},
+//  		1200: {
+//  			items: 3
+//  		},
+//  	}
+//  });
 
- $('.carousel-news .carousel-news-item').on('mouseenter',function(e){
- 	$(this).closest('.carousel-news').trigger('stop.owl.autoplay');
- })
- $('.carousel-news .carousel-news-item').on('mouseleave',function(e){
- 	$(this).closest('.carousel-news').trigger('play.owl.autoplay',[500]);
- })
-
-
- owl = $('.carousel-news').owlCarousel();
- $(".nav-prev").click(function () {
- 	owl.trigger('prev.owl.carousel');
- });
-
- $(".nav-next").click(function () {
- 	owl.trigger('next.owl.carousel');
- });
-
-	$(this).find(".owl-item.active .anim-1").addClass("fadeInLeftBig animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-2").addClass("fadeInRightBig animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-3").addClass("fadeInUp animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-4").addClass("fadeInUp animated").css("opacity","1");
+//  $('.carousel-news .carousel-news-item').on('mouseenter',function(e){
+//  	$(this).closest('.carousel-news').trigger('stop.owl.autoplay');
+//  })
+//  $('.carousel-news .carousel-news-item').on('mouseleave',function(e){
+//  	$(this).closest('.carousel-news').trigger('play.owl.autoplay',[500]);
+//  })
 
 
+//  owl = $('.carousel-news').owlCarousel();
+//  $(".nav-prev").click(function () {
+//  	owl.trigger('prev.owl.carousel');
+//  });
 
-//block-1
-$(".owl-fade").on("translate.owl.carousel", function () {
-	$(this).find(".owl-item .anim-1").removeClass("fadeInLeftBig animated").css("opacity","0");
-	$(this).find(".owl-item .anim-2").removeClass("fadeInRightBig animated").css("opacity","0");
-	$(this).find(".owl-item .anim-3").removeClass("fadeInUp animated").css("opacity","0");
-	$(this).find(".owl-item .anim-4").removeClass("fadeInUp animated").css("opacity","0");
-});          
-$(".owl-fade").on("translated.owl.carousel", function () {
-	$(this).find(".owl-item.active .anim-1").addClass("fadeInLeftBig animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-2").addClass("fadeInRightBig animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-3").addClass("fadeInUp animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-4").addClass("fadeInUp animated").css("opacity","1");
-});
+//  $(".nav-next").click(function () {
+//  	owl.trigger('next.owl.carousel');
+//  });
+
+// 	$(this).find(".owl-item.active .anim-1").addClass("fadeInLeftBig animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-2").addClass("fadeInRightBig animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-3").addClass("fadeInUp animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-4").addClass("fadeInUp animated").css("opacity","1");
 
 
-//block-2
-$(".owl-fade").on("translate.owl.carousel", function () {
-	$(this).find(".owl-item .anim-5").removeClass("fadeInUp animated").css("opacity","0");
-	$(this).find(".owl-item .anim-6").removeClass("fadeInUp animated").css("opacity","0");
-	$(this).find(".owl-item .anim-7").removeClass("fadeInUp animated").css("opacity","0");
-	$(this).find(".owl-item .anim-8").removeClass("fadeInUp animated").css("opacity","0");
-});          
-$(".owl-fade").on("translated.owl.carousel", function () {
-	$(this).find(".owl-item.active .anim-5").addClass("fadeInUp animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-6").addClass("fadeInUp animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-7").addClass("fadeInUp animated").css("opacity","1");
-	$(this).find(".owl-item.active .anim-8").addClass("fadeInUp animated").css("opacity","1");
-});
 
- //block-3
- $(".owl-fade").on("translate.owl.carousel", function () {
- 	$(this).find(".owl-item .anim-9").removeClass("zoomInLeft animated").css("opacity","0");
- 	$(this).find(".owl-item .anim-10").removeClass("zoomInRight animated").css("opacity","0");
- 	$(this).find(".owl-item .anim-11").removeClass("bounceInUp animated").css("opacity","0");
- 	$(this).find(".owl-item .anim-12").removeClass("bounceInUp animated").css("opacity","0");
- });          
- $(".owl-fade").on("translated.owl.carousel", function () {
- 	$(this).find(".owl-item.active .anim-9").addClass("zoomInLeft animated").css("opacity","1");
- 	$(this).find(".owl-item.active .anim-10").addClass("zoomInRight animated").css("opacity","1");
- 	$(this).find(".owl-item.active .anim-11").addClass("bounceInUp animated").css("opacity","1");
- 	$(this).find(".owl-item.active .anim-12").addClass("bounceInUp animated").css("opacity","1");
- });
+// //block-1
+// $(".owl-fade").on("translate.owl.carousel", function () {
+// 	$(this).find(".owl-item .anim-1").removeClass("fadeInLeftBig animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-2").removeClass("fadeInRightBig animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-3").removeClass("fadeInUp animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-4").removeClass("fadeInUp animated").css("opacity","0");
+// });          
+// $(".owl-fade").on("translated.owl.carousel", function () {
+// 	$(this).find(".owl-item.active .anim-1").addClass("fadeInLeftBig animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-2").addClass("fadeInRightBig animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-3").addClass("fadeInUp animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-4").addClass("fadeInUp animated").css("opacity","1");
+// });
+
+
+// //block-2
+// $(".owl-fade").on("translate.owl.carousel", function () {
+// 	$(this).find(".owl-item .anim-5").removeClass("fadeInUp animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-6").removeClass("fadeInUp animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-7").removeClass("fadeInUp animated").css("opacity","0");
+// 	$(this).find(".owl-item .anim-8").removeClass("fadeInUp animated").css("opacity","0");
+// });          
+// $(".owl-fade").on("translated.owl.carousel", function () {
+// 	$(this).find(".owl-item.active .anim-5").addClass("fadeInUp animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-6").addClass("fadeInUp animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-7").addClass("fadeInUp animated").css("opacity","1");
+// 	$(this).find(".owl-item.active .anim-8").addClass("fadeInUp animated").css("opacity","1");
+// });
+
+//  //block-3
+//  $(".owl-fade").on("translate.owl.carousel", function () {
+//  	$(this).find(".owl-item .anim-9").removeClass("zoomInLeft animated").css("opacity","0");
+//  	$(this).find(".owl-item .anim-10").removeClass("zoomInRight animated").css("opacity","0");
+//  	$(this).find(".owl-item .anim-11").removeClass("bounceInUp animated").css("opacity","0");
+//  	$(this).find(".owl-item .anim-12").removeClass("bounceInUp animated").css("opacity","0");
+//  });          
+//  $(".owl-fade").on("translated.owl.carousel", function () {
+//  	$(this).find(".owl-item.active .anim-9").addClass("zoomInLeft animated").css("opacity","1");
+//  	$(this).find(".owl-item.active .anim-10").addClass("zoomInRight animated").css("opacity","1");
+//  	$(this).find(".owl-item.active .anim-11").addClass("bounceInUp animated").css("opacity","1");
+//  	$(this).find(".owl-item.active .anim-12").addClass("bounceInUp animated").css("opacity","1");
+//  });
 
 //sliders-end
 
