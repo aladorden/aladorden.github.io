@@ -1,0 +1,32 @@
+{
+  "name": "gulp-project",
+  "version": "1.0.0",
+  "description": "First Gulp Project",
+  "devDependencies": {
+    "connect-livereload": "^0.6.0",
+    "convert-source-map": "^1.5.0",
+    "dargs": "^5.1.0",
+    "each-async": "^1.1.1",
+    "express": "^4.15.3",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-express": "^0.3.5",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "mkdirp": "^0.5.1",
+    "node-bourbon": "^4.2.8",
+    "node-sass": "^4.5.3",
+    "object-assign": "^4.1.1",
+    "rimraf": "^2.6.1",
+    "slash": "^1.0.0",
+    "tiny-lr": "^1.0.5",
+    "vinyl": "^2.1.0",
+    "win-spawn": "^2.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,1 @@
+{"D:\\HTML\\start_html-master\\verstka\\gulpfile.js":{"sha1":"d3fd56cb7d4d9c29c0ebc85ef4c3e752a8123e40","tasks":{"express":{"name":"express","dependencies":""},"livereload":{"name":"livereload","dependencies":""},"styles":{"name":"styles","dependencies":""},"watch":{"name":"watch","dependencies":""},"default":{"name":"default","dependencies":"styles express livereload watch"}}}}
