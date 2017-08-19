@@ -18,13 +18,13 @@ $(document).ready(function() {
 $('.block-video .vid-cont').css("display", "none");
 });
 
-// $(function(){ // this replaces document.ready
-// 	setTimeout(function(){
-// 		$('#preloader').fadeOut('slow', function() {
-// 			$(this).remove();
-// 		});
-// 	}, 300);
-// });
+$(function(){ // this replaces document.ready
+	setTimeout(function(){
+		$('#preloader').fadeOut('slow', function() {
+			$(this).remove();
+		});
+	}, 300);
+});
 
 //sliders
 
