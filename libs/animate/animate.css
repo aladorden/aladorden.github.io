@@ -1125,7 +1125,7 @@ Copyright (c) 2015 Daniel Eden
 
 @-webkit-keyframes fadeIn {
 	0% {
-		opacity: 1;
+		opacity: 0;
 	}
 
 	100% {
@@ -1135,7 +1135,7 @@ Copyright (c) 2015 Daniel Eden
 
 @keyframes fadeIn {
 	0% {
-		opacity: 1;
+		opacity: 0;
 	}
 
 	100% {
@@ -1147,59 +1147,6 @@ Copyright (c) 2015 Daniel Eden
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
-
-/* owl-anim*/
-@-webkit-keyframes fadeInOwl {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeInOwl {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.fadeInOwl {
-	-webkit-animation-name: fadeInOwl;
-	animation-name: fadeInOwl;
-}
-
-@-webkit-keyframes fadeOutOwl {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeOutOwl {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.fadeOutOwl {
-	-webkit-animation-name: fadeOutOwl;
-	animation-name: fadeOutOwl;
-}
-/* owl-anim*/
-
 
 @-webkit-keyframes fadeInDown {
 	0% {
@@ -1487,7 +1434,7 @@ Copyright (c) 2015 Daniel Eden
 	}
 
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 
@@ -1497,7 +1444,7 @@ Copyright (c) 2015 Daniel Eden
 	}
 
 	100% {
-		opacity: 1;
+		opacity: 0;
 	}
 }
 
