@@ -1,18 +1,16 @@
 <?php
 
 $frm_name  = "Youname";
-$recepient = "agragregra@ya.ru";
-$sitename  = "Учебный: Armata Financical Group";
+$recepient = "youmail@ya.ru";
+$sitename  = "Название Сайта";
 $subject   = "Новая заявка с сайта \"$sitename\"";
 
 $name = trim($_POST["name"]);
-$phone = trim($_POST["phone"]);
-$formname = trim($_POST["formname"]);
+$email = trim($_POST["email"]);
 
 $message = "
-Форма: $formname <br>
-Имя: $name <br>
-Телефон: $phone
+E-mail: $email <br>
+Имя: $name
 ";
 
 mail($recepient, $subject, $message, "From: $frm_name <$email>" . "\r\n" . "Reply-To: $email" . "\r\n" . "X-Mailer: PHP/" . phpversion() . "\r\n" . "Content-type: text/html; charset=\"utf-8\"");
