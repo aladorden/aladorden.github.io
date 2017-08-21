@@ -171,7 +171,7 @@ $("#my-menu").find("ul").removeClass("sf-menu");
 
 $("#my-menu").mmenu({
 	extensions: {
-		all: ["theme-dark", "fx-menu-slide", "pagedim-black","fx-menu-zoom","fx-panels-zoom","fx-listitems-slide"]
+		all: ["theme-dark", "fx-menu-slide", "pagedim-black"]
 	},
 	offCanvas: {
 		position: "right",
@@ -246,15 +246,17 @@ $('.hand').waypoint(function(){
 //waypoints-end
 
 //animation.css
+if ($(window).width() > 991) {
+	$('.img-left').animated('fadeInLeft');
+	$('.img-center').animated('fadeInDown');
+	$('.img-right').animated('fadeInRight');
+	$('h4').animated('fadeInRight');
+	$('.section7 p, .button-right').animated('fadeInRight');
+	$('.section2 p, .section4 p, .section10 p, .gradient h3, .gradient .p').animated('fadeInLeft');
+	$('.carousel-news-items, .p-i, .news-navigation').animated('fadeInUp');
+	$('.play, .video-info, .top-line, footer .col-md-3, .hand, .owl-dots, .fade-nav').animated('fadeInOwl')
+}
 
-$('.img-left').animated('fadeInLeft');
-$('.img-center').animated('fadeInDown');
-$('.img-right').animated('fadeInRight');
-$('h4').animated('fadeInRight');
-$('.section7 p, .button-right').animated('fadeInRight');
-$('.section2 p, .section4 p, .section10 p, .gradient h3, .gradient .p').animated('fadeInLeft');
-$('.carousel-news-items, .p-i, .news-navigation').animated('fadeInUp');
-$('.play, .video-info, .top-line, footer .col-md-3, .hand, .owl-dots, .fade-nav').animated('fadeInOwl');
 //animation.css-end
 
 // youtube
