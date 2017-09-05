@@ -38,18 +38,15 @@ $(function() {
 		$('#menu').toggleClass('active');
 	});
 
-	$('#vd1').click(function(e) {
-		e.preventDefault()
+	$('#vd1').click(function() {
 		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/wTcNtgA6gHs?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
-	$('#vd2').click(function(e) {
-		e.preventDefault()
+	$('#vd2').click(function() {
 		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/oxB8hFDE6GU?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
-	$('#vd3').click(function(e) {
-		e.preventDefault()
+	$('#vd3').click(function() {
 		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/5lWkZ-JaEOc?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
