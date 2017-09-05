@@ -40,17 +40,17 @@ $(function() {
 
 	$('#vd1').click(function(e) {
 		e.preventDefault()
-		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/AoBv8iTna9c?enablejsapi=1&version=3&playerapiid=ytplayer')
+		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/wTcNtgA6gHs?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
 	$('#vd2').click(function(e) {
 		e.preventDefault()
-		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/mxuQ9O_heks?enablejsapi=1&version=3&playerapiid=ytplayer')
+		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/oxB8hFDE6GU?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
 	$('#vd3').click(function(e) {
 		e.preventDefault()
-		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/JsAd5ZzfTYU?enablejsapi=1&version=3&playerapiid=ytplayer')
+		$('#iframe_main').attr('src', 'http://www.youtube.com/embed/5lWkZ-JaEOc?enablejsapi=1&version=3&playerapiid=ytplayer')
 	});
 
 
@@ -75,25 +75,30 @@ $(function() {
 	try {$.browserSelector(); if($("html").hasClass("chrome")) {$.smoothScroll(); }} catch(err){};
 
 //bg-video start
-$(function(){ $("#P1").YTPlayer(); }); 
+	$(function(){ $("#P1").YTPlayer(); }); 
 
-$('#togglePlay').click(function() {	
-	setTimeout(function() { $(".mbYTP_wrapper").addClass('special');}, 550);
-	$("#P1").YTPChangeMovie({startAt:0, stopAt:0, mute:false, showControls: true});
-	$(".video-border, .video-content, .big-ov-play").fadeOut(500);
-});
+	$('#togglePlay').click(function() {	
+		setTimeout(function() { $(".mbYTP_wrapper").addClass('special');}, 550);
+		$("#P1").YTPChangeMovie({startAt:0, stopAt:0, mute:false, showControls: true});
+		$(".video-border, .video-content, .big-ov-play").fadeOut(500);
+	});
 
-$('#togglePlay').click(function() {	setTimeout(function() {
-	$('#P1').YTPFullscreen(); }, 550); });
+	$('#togglePlay').click(function() {	setTimeout(function() {
+		$('#P1').YTPFullscreen(); }, 550); });
 
-$('#P1').on("YTPFullScreenEnd",function(e){
-	var currentTime = e.time;
-	$(".mbYTP_wrapper").removeClass('special');
-	$("#P1").YTPChangeMovie({startAt:10, stopAt:27, mute:true, showControls: false});
-	$(".video-border, .video-content, .big-ov-play").fadeIn(500);
-});
-function changeLabel(state){
-	$("#togglePlay").html(); }
+	$('#P1').on("YTPFullScreenEnd",function(e){
+		var currentTime = e.time;
+		$(".mbYTP_wrapper").removeClass('special');
+		$("#P1").YTPChangeMovie({startAt:10, stopAt:27, mute:true, showControls: false});
+		$(".video-border, .video-content, .big-ov-play").fadeIn(500);
+	});
+	function changeLabel(state){
+		$("#togglePlay").html(); }
 //bg-video end
+
+	$(".scroll-button").click(function() {
+		$("html, body").animate({ scrollTop: $(".section-1").height()-150 }, "slow");
+		return false;
+	});
 });
 
