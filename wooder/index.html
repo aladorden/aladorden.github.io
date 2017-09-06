@@ -8,7 +8,7 @@
 	<title>Wooder</title>
 	<meta name="description" content="">
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta https-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<meta property="og:image" content="path/to/image.jpg">
@@ -90,7 +90,7 @@
 			</nav>
 		</div>
 
-		<div id="counter"><div class="line"></div></div>
+		<div class="left-count"><div id="counter"><div class="line"></div></div></div>
 		<div class="r-verical-text">Furniture & decor</div>
 		<div class="head-content">
 			<h1>Wooder</h1>
@@ -110,12 +110,14 @@
 		
 		<div class="bottom-line hidden-xs"></div>
 
-		<div class="scroll-button">
+		<div class="scrl-btn">
+			<div class="scroll-button">
 			<img src="img/mouse.svg" alt="#">
 			<div class="arrow">
 				<i class="fa fa-angle-down" aria-hidden="true"></i>
 				<div class="scrl hidden-sm hidden-xs">scroll</div>
 			</div>
+		</div>
 		</div>
 
 	</header>
@@ -136,7 +138,7 @@
 
 					<div class="col-md-6">
 						<div class="products-item">
-							<div class="products-image" style="background-image: url(img/furniture.jpg)"></div>
+							<div class="products-image pr-top" style="background-image: url(img/furniture.jpg)"></div>
 						</div>
 						<div class="overlay-text">
 							<div class="furn">Furniture</div>
@@ -270,7 +272,6 @@
 				showControls:false,
 				autoPlay:true,
 				loop:true,
-				opacity:1
 				}">
 			</div>
 
@@ -306,6 +307,7 @@
 
 				</div>
 			</div>
+			<div class="scroll-page-button"></div>
 		</div>
 
 	<footer>
@@ -327,6 +329,8 @@
 			</div>
 		</div>
 	</footer>
+	<div class="block"></div>
+	
 
 
 <link rel="stylesheet" href="css/main.min.css">
