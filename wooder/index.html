@@ -237,7 +237,7 @@
 
 <!-- youtibe-video-link -->
 	<div id="idiv">
-		<iframe id="iframe_main" allowfullscreen></iframe>
+		<iframe id="iframe_main" allowfullscreen ></iframe>
 		<i class="fa fa-close" aria-hidden="true"></i>
 	</div>
 	<div class="page-overlay"></div>
@@ -264,7 +264,8 @@
 			</div>
 
 			<div id="P1" class="player" 
-				data-property="{videoURL:'https://www.youtube.com/watch?v=cDzG_jyvci0',
+				data-property="{
+				videoURL:'https://www.youtube.com/watch?v=cDzG_jyvci0',
 				containment:'#bg-video',
 				startAt:11,
 				stopAt: 27,
@@ -272,12 +273,12 @@
 				showControls:false,
 				autoPlay:true,
 				loop:true,
-				quality: 'hd1080',
+				mobileFallbackImage: '../img/woods.jpg'
 				}">
-			</div>
+				</div>
 
 			<div class="video-border"></div>
-			<img src="img/play.svg" alt="" class="big-ov-play hidden-xs">
+			<img src="img/play.svg" alt="" class="big-ov-play">
 
 		</div>
 	</div>
