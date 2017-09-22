@@ -1,0 +1,197 @@
+
+/*	General CSS resets;
+ *		The target itself is not affected, allowing
+ *		the remainder of the document to use an
+ *		alternate box-sizing model;
+ *		Support for box-sizing is wide spread:
+ *		http://caniuse.com/#search=box-sizing
+ */
+	.noUi-target * {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+		box-sizing: border-box;
+-webkit-touch-callout: none;
+    -ms-touch-action: none;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+		cursor: default;
+	}
+
+/*	Main slider bar;
+ *		Standard styles no longer incorrectly force a
+ *		width or height on the slider.
+ */
+	.noUi-base {
+		width: 100%;
+		height: 12px;
+		position: relative;
+		max-width: 100%;
+		max-height: 100%;
+		border: 1px solid #bfbfbf;
+		z-index: 1;
+		background: #e64c3c;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#bell .noUi-base  {
+	background: #d4d4d4;
+	}
+
+/*	Handles + active state;
+ *		The :after pseudo-element wont inherit
+ *		box-sizing, so it needs to applied manually.
+ */
+	.noUi-handle {
+		background: url(/img/images/slider-icon.png);
+		height: 42px;
+		width: 37px;
+		margin: -11px 0 0 -23px;
+		position:relative;
+		z-index:10000;
+	}
+	.noUi-active {
+		opacity: 0.8;
+	}
+	
+	.noUi-signature {
+		position: relative;
+		top: -10px;
+		left: -36px;
+		height: 22px;
+		text-align: center;
+		width: 60px;
+		color: #000;
+		font: 16px 'Systopie';
+		font-weight: bold;
+		font-style: italic;
+		background: #ffcd00;
+		-webkit-transform: skew(-10deg);
+		-moz-transform: skew(-10deg);
+		-o-transform: skew(-10deg);
+		transform: skew(-10deg);
+		-moz-box-shadow: inset 0px 3px 8px 1px #c86d03;
+		-webkit-box-shadow: inset 0px 3px 8px 1px #c86d03;
+		box-shadow: inset 0px 3px 8px 1px #c86d03;
+	}
+	#bell .noUi-signature {
+	top: 33px;
+left: -5px;
+	}
+	.noUi-signature span {
+		
+		line-height: 22px;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 11px;
+	}
+	
+	.noUi-arrow-block {
+		margin-top: 10px;
+	}
+	
+	.noUi-arrow {
+		height: 10px;
+		float: left;
+		width: 10px;
+		position: relative;
+	}
+	
+	.noUi-arrow:before {
+		content: "";
+		width: 0px;
+		height: 0px;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-top: 4px solid #d4d4d4;
+		position: absolute;
+	}
+	#bell .noUi-arrow:before {
+		border-top: 4px solid #e64c3c;
+	}
+	.noUi-arrow-active:before {
+		border-top: 4px solid #e64c3c; !important;
+	}
+	#bell .noUi-arrow-active:before {
+		border-top: 4px solid #d4d4d4 !important;
+	}
+	/*
+	.noUi-active {
+		background: #E9E9E9;
+	}
+	.noUi-active:after {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+		box-sizing: border-box;
+		content: "";
+		display: block;
+		height: 100%;
+		border: 1px solid #DDD;
+	}*/
+
+/*	Styling-only classes;
+ *		Structured to prevent double declarations
+ *		for various states of the slider.
+ */
+	.noUi-connect {
+		background: Teal;
+	}
+/*	Functional styles for handle positioning;
+ *		Note that the origins have z-index 0, the base has
+ *		z-index 1; This fixes a bug where borders become invisible.
+ */
+	.noUi-origin {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 0;
+		border-radius: 8px;
+		background: #d4d4d4;
+		z-index: 10;
+	}
+	#bell .noUi-origin:first-child {
+		background: #e64c3c;
+	}
+	.noUi-origin-upper {
+		background: inherit !important;
+		border-radius: inherit;
+	}
+	.noUi-z-index {
+		z-index: 10;
+	}
+
+/*	Adaptations for the vertical slider;
+ *		Some standard styles have been extended to keep
+ *		exceptions for the vertical slider as minimal as possible.
+ */
+	.noUi-vertical {
+		width: 40px;
+		height: 100%;
+	}
+	.noUi-vertical .noUi-origin {
+		bottom: 0;
+		left: 0;
+	}
+	.noUi-vertical .noUi-handle  {
+		margin: -23px 0 0 -3px;
+	}
+
+/*	Various alternate slider states;
+ *		Support for transition is widely available,
+ *		Only IE7, IE8 and IE9 will ignore these rules.
+ *		Since this is merely a progressive enhancement,
+ *		this is no problem at all.
+ *		http://caniuse.com/#search=transition
+ */
+	.noUi-target[disabled] .noUi-base {
+		background: #999;
+	}
+	.noUi-target[disabled] .noUi-connect {
+		background: #BBB;
+	}
+	.noUi-state-tap .noUi-origin {
+		-webkit-transition: left 0.3s, top 0.3s;
+		transition: left 0.3s, top 0.3s;
+	}

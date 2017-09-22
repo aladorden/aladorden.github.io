@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="patd/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="tdeme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 1; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+
+	<link href="css/calculator/reset.css" type="text/css"  rel="stylesheet" />
+	<link href="css/calculator/jquery.nouislider.css" type="text/css"  rel="stylesheet" />
+	<link href="css/calculator/jquery.arcticmodal-0.3.css" type="text/css"  rel="stylesheet" />
+	<link href="css/calculator/template_styles.css" type="text/css"  rel="stylesheet" />
+
+	<script src="js/scripts.min.js"></script>
+
+
+	<script type="text/javascript" src="js/calculator/jquery.nouislider.min.js"></script>
+	<script type="text/javascript" src="js/calculator/jquery.arcticmodal-0.3.min.js"></script>
+	<script type="text/javascript" src="js/calculator/jquery.maskedinput.min.js"></script>
+	<script type="text/javascript" src="js/calculator/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/calculator/jquery.simple-dtpicker.js"></script>
+	<script type="text/javascript" src="js/calculator/main.js"></script>
+	<script type="text/javascript" src="js/calculator/redial.js"></script>
+	<script type="text/javascript" src="js/calculator/jquery.reject.js"></script>
+	<script type="text/javascript" src="js/calculator/suggestions-jquery-4.2.2.min.js"></script>
+	<script type="text/javascript" src="js/calculator/dadata.js"></script>
+	<script type="text/javascript" src="js/calculator/suggest.js"></script>
+	<script type="text/javascript" src="js/calculator/main_adr.js"></script>
+	<script type="text/javascript" src="js/calculator/calculator_auto.js"></script>
+</head>
+
+<body>
+
+	<header>
+		<div class="main-head">
+			<div class="top-stock">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="stock-capt">Только на этой неделе! Заказав 4-х грузчиков-пятый бесплатно!!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8">
+							<nav>
+								<ul>
+									<li><a href="#" class="active">Главная</a></li>
+									<li><a href="#">Цены</a></li>
+									<li><a href="#">О Компании</a></li>
+									<li><a href="#">Новости и статьи</a></li>
+									<li><a href="#">Контакты</a></li>
+									<li><a href="#">Организациям</a></li>
+									<li><a href="#">Вакансии</a></li>
+								</ul>
+							</nav>
+						</div>
+						
+						<div class="col-md-4">
+							<div class="top-links">
+
+								<div class="skype">
+									<a href="skype:vse-pereezdi.ru" class="skype">
+										<img src="img/images/skype-icon.png" alt="#">vse-pereezdi.ru</a>
+									</div>
+
+									<div class="mail">
+										<a href="mailto:zakaz@vse-pereezdi.ru" class="mail">
+											<img src="img/images/mail-icon.png" alt="#">zakaz@vse-pereezdi.ru</a>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="head">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-md-4">
+								<div class="logo"><img src="img/logo-2.png" alt="#"></div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="stock-box">
+									<img src="img/box.png" alt="#">
+									<div class="stock-capture">
+										<a href="#">Бесплатная упаковка</a>
+										<p>при заказе от 10000 руб.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-md-offset-1">
+								<a href="#" class="phone">+7 (495) <span>725-55-29</span>
+									<div class="callback"><span>Заказать обратный звонок</span></div>
+								</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="nav">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10">
+								<nav class="primary-menu">
+									<ul>
+										<li><a href="#" id="general" class="active">Грузоперевозски по Москве</a></li>
+										<li><a href="#" id="removals">Переезды<i class="rem-fa fa fa-angle-down" aria-hidden="true"></i></a></li>
+										<li><a href="#">Грузчики</a></li>
+										<li><a href="#" id="trucking">Грузоперевозки по России<i class="truck-fa fa fa-angle-down" aria-hidden="true"></i></a></li>
+										<li><a href="">Цены</a></li>
+									</ul>
+								</nav>
+							</div>
+
+							<div class="col-md-2">
+								<div class="pay-online">
+									<a href="#"><img src="img/pay-online.png" alt="#"><span>Оплатить онлайн</span>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<ul class="submenu sub-1">
+					<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+				</ul>
+
+				<ul class="submenu sub-2">
+					<li class="sb-li"><a class="sb-a" href="">Квартирный переезд</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Офисный переезд</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Дачный переезд</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Перевозка мебели</a></li>
+					<li class="sb-li"><a class="sb-a" href="">Такелажные работы</a></li>
+				</ul>
+			</header>
+
+
+			<div class="section-1">
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-12">
+							<div class="main-section">
+								<div class="video">
+									<video loop autoplay>
+										<source src="https://ak9.picdn.net/shutterstock/videos/3422519/preview/stock-footage-truck-driving-along-a-bridge-high-quality-d-animation.mp4" type="video/mp4">
+										</video>
+									</div>
+								</div>
+
+								<div class="wrapp-order">
+									<div class="container">
+										<div class="col-md-7"></div>
+										<div class="col-md-5">
+											<div class="callback-sect">
+												<form class="form">
+													<h1>Заказать <br>перевозку груза в Москве дешево и быстро</h1>
+													<div class="brd-input">
+														<input data-inputmask-mask="+7 (999)-999-99-99" data-val="true" data-val-required="Required" class="phone-inp" id="phone" name="phone" placeholder="Ваш телефон" type="text"/>
+													</div>
+												</form>
+
+												<div class="boxes">
+													<input type="checkbox" id="box-1">
+													<label for="box-1">Я согласен на обработку персольнах данных</label>
+													<label class="lb lb-1" for="box-1">Я согласен на обработку персольнах данных</label>
+												</div>
+
+											</div>
+
+											<div class="button">
+												<a class="btn-wrap">Заказать обратный звонок</a>
+											</div>
+											<div class="advantages">
+												<div class="adv adv-1"><div class="adv-text">24 часа <br>без выходных <br> 365 дней</div></div>
+												<div class="adv adv-2"><div class="adv-text">Цена у всех: <span>3500р.</span> <br>Цена у нас: 2800р.</div></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="our-company">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-10 col-md-offset-1">
+												<p>Наша компания на протяжении более 10 лет успешно осуществляет профессиональную, узконаправленную деятельность в сфере офисных и квартирных переездов, перевозки грузов по Москве и Московской области, а также  в другие регионы России.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="section-2">
+					<div class="titul">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-12">
+									<h2>Мы стараемся угодить Вам во всем</h2>
+									<p>При выполнении своих обязанностей мы придерживаемся нескольких основополагающих принципов, которые не могут быть оспорены:</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="items-blocks">
+						<div class="container">
+							<div class="row">
+
+
+								<div class="col-md-3">
+									<div class="item-bg" style="background-image:url('img/security.jpg')"></div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="item-capture">
+										<h3>Безопасность Ваших грузов</h3>
+										<p>Мы не рискуем своей репутацией, поэтому принимаем все усилия для сохранности перевозимых грузов.</p>
+									</div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="item-bg" style="background-image:url('img/cars.jpg')"></div>
+								</div>
+
+								<div class="col-md-3">
+									<div class="item-capture">
+										<h3>Профессиональная техника</h3>
+										<p>Которая позволяет транспортировать даже хрупкие вещи - в нашем автопарке каждый клиент сможет подобрать транспорт в соответствии со своими желаниями.</p>
+									</div>
+								</div>
+
+								<div class="counter-block clearfix">
+									<div class="col-md-6">
+										<div class="counter">
+											<span id="fun-level">0 %</span>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="counter-advantages">
+											<ul>
+												<li>гарантия качества</li>
+												<li>низкие цены</li>
+												<li>опрятные рабочие в фирменной спец.одежде</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="items-block-down">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-3">
+												<div class="item-bg" style="background-image:url('img/stevedors.jpg')"></div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="item-capture">
+													<h3>Услуги грузчиков</h3>
+													<p>Нащи сотрудники обладают всем необходимым набором навыков и умений, что позволяет осуществить грузоперевозки в самые сжатые сроки.</p>
+												</div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="item-bg" style="background-image:url('img/stevedors-2.jpg')"></div>
+											</div>
+
+											<div class="col-md-3">
+												<div class="item-capture">
+													<h3>Сбор и демонтаж мебели</h3>
+													<p>Производим при использовании профессионального инструмента, что позволяет избежать повреждений.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="section-3">
+					<div class="titul">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-12">
+									<h2>Фоторепортаж грузоперевозки</h2>
+									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Знаках рот предупреждал выйти ведущими переписали предупредила предложения текстами вопроса журчит взгляд образ всемогущая жаренные залетают, живет, вершину пояс, жизни?</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="photos-block">
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="owl-carousel carousel-photos">
+
+										<div class="photos-item" style="background-image:url('img/reportage-0.jpg')">
+											<div class="text-overlay"></div>
+											<div class="text-capture">
+												<h4>Переезд рыба рыба</h4>
+												<p>3000 руб.</p></div>
+											</div>
+
+											<div class="photos-item" style="background-image:url('img/reportage-1.jpg')">
+												<div class="text-overlay"></div>
+												<div class="text-capture">
+													<h4>Переезд рыба рыба</h4>
+													<p>500 руб.</p></div>
+												</div>
+
+												<div class="photos-item" style="background-image:url('img/reportage-3.jpg')">
+													<div class="text-overlay"></div>
+													<div class="text-capture">
+														<h4>Переезд рыба рыба</h4>
+														<p>1000 руб.</p></div>
+													</div>
+
+													<div class="photos-item" style="background-image:url('img/reportage-0.jpg')">
+														<div class="text-overlay"></div>
+														<div class="text-capture">
+															<h4>Переезд рыба рыба</h4>
+															<p>1200 руб.</p></div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="titul titul-dbl">
+										<div class="container">
+											<div class="row">
+
+												<div class="col-md-12">
+													<h2>Осуществляем грузоперевозки <br> в Москве по низким ценам</h2>
+													<p>Наша компания на протяжении более 10 лет успешно осуществляет профессиональную, узконаправленную деятельность в сфере офисных и квартирных переездов, перевозки грузов по Москве и Московской области, а также  в другие регионы России.</p>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="section-4">
+									<div class="titul titul-dbl">
+										<div class="container">
+											<div class="row">
+
+												<div class="col-md-12">
+													<h2>Калькулятор грузоперевозки <br>по Москве</h2>
+													<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Текста но назад которой заманивший по всей, даль инициал проектах несколько заглавных обеспечивает силуэт маленькая собрал осталось от всех грустный. Лучше, переписывается.</p>
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+
+									<!-- Cars Calculator -->
+
+									<div class="container main_block"> 		<aside> 			 				
+										<ul class="car_menu">
+											<li>
+												<a href="#" data-id="6" data-name="Хёндай Портер" data-img="img/calculator/iblock/5e6/5e6e4e74f464b5e4cd552b11629e7f43.jpg" data-short_name="Портер" data-comment_short_name="до 1 тонны" data-cost="500" data-rental_time="2" data-volume="8" data-tonnage="1" data-length="2.8" data-width="1.6" data-height="1.7" data-margin_ttk="500" data-margin_sadovoe="500" data-margin_mkad="15" data-cost_dop="500">
+													<div class="img_car"><img src="img/calculator/iblock/f76/f76c626841bbbd07e88f3c83da56c2d9.png" alt="Хёндай Портер" /></div>
+													<div class="text_car"><span class="name">Портер</span>
+														<span class="descripton">до 1 тонны</span></div>
+													</a>
+												</li>
+												<li>
+													<a class="active" href="#" data-id="7" data-name="Газель бортовая с тентом" data-img="img/calculator/iblock/105/105b46b99956a7f1736331607c813aa4.jpg" data-short_name="Газель Тент" data-comment_short_name="до 1.5 тонн" data-cost="500" data-rental_time="3" data-volume="9" data-tonnage="1.5" data-length="3" data-width="1.6" data-height="1.8" data-tde_default="Y" data-margin_ttk="500" data-margin_sadovoe="500" data-margin_mkad="13" data-cost_dop="500">
+														<div class="img_car"><img src="img/calculator/iblock/fae/fae853d9bbb88e875a49141a0698b0cf.png" alt="Газель бортовая с тентом" /></div>
+														<div class="text_car"><span class="name">Газель Тент</span>
+															<span class="descripton">до 1.5 тонн</span></div>
+														</a>
+													</li>
+													<li>
+														<a href="#" data-id="8" data-name="Газель Фургон" data-img="img/calculator/iblock/f66/f66ddea1c9a74e6674f9ef65725575fb.jpg" data-short_name="Газель Фургон" data-comment_short_name="до 1.5 тонн" data-cost="500" data-rental_time="3" data-volume="10" data-tonnage="1.5" data-length="3" data-width="1.6" data-height="1.8" data-margin_ttk="500" data-margin_sadovoe="500" data-margin_mkad="13" data-cost_dop="500">
+															<div class="img_car"><img src="img/calculator/iblock/835/83549693351408810fb505750c430546.png" alt="Газель Фургон" /></div>
+															<div class="text_car"><span class="name">Газель Фургон</span>
+																<span class="descripton">до 1.5 тонн</span></div>
+															</a>
+														</li>
+														<li>
+															<a href="#" data-id="9" data-name="Газель удлинённая с высокой будкой" data-img="img/calculator/iblock/112/112ce98a7cd26d0ef962d9221b703188.jpg" data-short_name="Газель удлинённая" data-comment_short_name="до 2.2 тонн" data-cost="600" data-rental_time="4" data-volume="18.5" data-tonnage="2.2" data-length="4.1" data-width="2" data-height="2.2" data-margin_ttk="600" data-margin_sadovoe="600" data-margin_mkad="16" data-cost_dop="600">
+																<div class="img_car"><img src="img/calculator/iblock/663/663ad6017e20ab1b19cdec49d99b6dd8.png" alt="Газель удлинённая с высокой будкой" /></div>
+																<div class="text_car"><span class="name">Газель удлинённая</span>
+																	<span class="descripton">до 2.2 тонн</span></div>
+																</a>
+															</li>
+															<li>
+																<a href="#" data-id="10" data-name="Газель &quot;Фермер&quot; удлиненная" data-img="img/calculator/iblock/37f/37f1558ae878eb48fd473f89686fe50f.jpg" data-short_name="Газель &quot;Фермер&quot;" data-comment_short_name="до 4 тонн" data-cost="700" data-rental_time="4" data-volume="18.5" data-tonnage="2.2" data-length="4.1" data-width="2" data-height="2.2" data-margin_ttk="700" data-margin_sadovoe="700" data-margin_mkad="17" data-cost_dop="700">
+																	<div class="img_car"><img src="img/calculator/iblock/b24/b24ff7b6ea4df1d3df17776d28fb0dee.png" alt="Газель &quot;Фермер&quot; удлиненная" /></div>
+																	<div class="text_car"><span class="name">Газель &quot;Фермер&quot;</span>
+																		<span class="descripton">до 4 тонн</span></div>
+																	</a>
+																</li>
+																<li>
+																	<a href="#" data-id="11" data-name="ЗиЛ &quot;Бычок&quot;" data-img="img/calculator/iblock/3d0/3d0cd259692559c30332167712011c3b.jpg" data-short_name="ЗиЛ &quot;Бычок&quot;" data-comment_short_name="до 3 тонн" data-cost="650" data-rental_time="5" data-volume="18" data-tonnage="3" data-length="4" data-width="2" data-height="2.1" data-margin_ttk="650" data-margin_sadovoe="650" data-margin_mkad="18" data-cost_dop="650">
+																		<div class="img_car"><img src="img/calculator/iblock/f8a/f8a1e3289342d1b00c4a7eaa008d1cf6.png" alt="ЗиЛ &quot;Бычок&quot;" /></div>
+																		<div class="text_car"><span class="name">ЗиЛ &quot;Бычок&quot;</span>
+																			<span class="descripton">до 3 тонн</span></div>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="#" data-id="13" data-name="Пятитонник" data-img="img/calculator/iblock/8ba/8bad928df15ed9a6f325c57bed15c487.jpg" data-short_name="Пятитонник" data-comment_short_name="до 5 тонн" data-cost="800" data-rental_time="7" data-volume="25-30" data-tonnage="5" data-length="6" data-width="2.4" data-height="2.4" data-margin_ttk="800" data-margin_sadovoe="800" data-margin_mkad="25" data-cost_dop="800">
+																			<div class="img_car"><img src="img/calculator/iblock/cd9/cd97c0eae3d83ba29431f006b7906419.png" alt="Пятитонник" /></div>
+																			<div class="text_car"><span class="name">Пятитонник</span>
+																				<span class="descripton">до 5 тонн</span></div>
+																			</a>
+																		</li>
+																		<li>
+																			<a href="#" data-id="14" data-name="Фура" data-img="img/calculator/iblock/4ad/4ad291f69e979bf6c5516665fc3ae769.jpg" data-short_name="Еврофура" data-comment_short_name="до 20 тонн" data-cost="1200" data-rental_time="8" data-volume="80" data-tonnage="20" data-margin_ttk="1200" data-margin_sadovoe="1200" data-margin_mkad="35" data-cost_dop="1200">
+																				<div class="img_car"><img src="img/calculator/iblock/580/5808d71a467936539fc2e79cf4c6a332.png" alt="Фура" /></div>
+																				<div class="text_car"><span class="name">Еврофура</span>
+																					<span class="descripton">до 20 тонн</span></div>
+																				</a>
+																			</li>
+																		</ul>
+
+
+																		<div class="left_menu">
+																		</div>
+
+																		<div id="katalog-left_menu">
+																		</div>     
+
+
+																		<div class="sidebar_block"> 				 
+																			<h3>Отзывы компаний</h3>
+
+																			<div class="block review"> 
+																				<div class="photo-items-list photo-photo-list" id="photo_list_bxph_list_0">
+																					<div id="photo_cont_33" class="photo-item-cont " title="МСТ">
+																						<a class="photo-item-inner" style="width: 100px; height: 100px;" href="detail.php?SECTION_ID=7&amp;ELEMENT_ID=33" id="photo_33">
+																							<img src="img/calculator/iblock/1c9/1c9db7aa09dbf3dd9a08e8025b60694a.JPG" style="width: 100px; height: 121px;  top: -10px;;" alt="МСТ"/>
+																						</a>
+																					</div>
+																					<div id="photo_cont_93" class="photo-item-cont " title="Скартел">
+																						<a class="photo-item-inner" style="width: 100px; height: 100px;" href="detail.php?SECTION_ID=7&amp;ELEMENT_ID=93" id="photo_93">
+																							<img src="img/calculator/iblock/09e/09ecd6765ff374dd5dc245a990ca2911.jpg" style="width: 100px; height: 118px;  top: -9px;;" alt="Скартел"/>
+																						</a>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="empty-clear"></div>
+
+
+																		</div>
+																	</aside> 		<section>  
+
+																		<script type="text/javascript">
+																			$(document).ready(function(){
+																				$('.input_whence input').focus(function(){
+																					$(tdis).hide();
+																					var txt_adr = $(tdis).val();
+																					$('.adr_input').removeClass("where_act");
+																					$('.adr_input').addClass("whence_act");
+																					$('.input_where input').show();	
+																					$('#address').val(txt_adr);
+																					$('#address').show();	
+																					$('#address').focus();
+																				});
+
+																				$('.input_where input').focus(function(){
+
+
+																					$(tdis).hide();
+																					var txt_adr = $(tdis).val();
+																					$('.adr_input').removeClass("whence_act");
+																					$('.adr_input').addClass("where_act");
+																					$('.input_whence input').show();
+																					$('#address').val(txt_adr);
+																					$('#address').show();	
+																					$('#address').focus();
+																				});	
+
+
+																				$('#address').blur(function(){
+																					$('#address').hide();
+																					var txt_inp = $(tdis).val();
+																					if( $(tdis).hasClass('whence_act')){
+																						$('.input_whence input').val(txt_inp);
+																						$('.adr_input').removeClass("whence_act");
+																						$('.input_whence input').show();
+
+																					}
+																					else if($(tdis).hasClass('where_act')) {		
+																						$('.input_where input').val(txt_inp);
+																						$('.adr_input').removeClass("where_act");
+																						$('.input_where input').show();
+																					} 	
+
+																				});
+																				$('.arcticmodal-close').click(function(){
+																					$('#orderModal  #route_block').detach().prependTo('.parallelogram_group');
+																				});
+																			});
+																		</script>
+
+																		<div id="calculator_auto"> 	 	
+																			<div class="main-slider"> 		 		
+																				<div class="left-block"> 			<img class="main_img" src="#" alt="#"> 		</div>
+
+																				<div class="right-block"> 			
+																					<div> 				
+																						<h2><span class="cost"></span> руб./час</h2>
+
+																						<h3>#</h3>
+																						<span class="hide"> 		<span id="margin_mkad"></span> 		<span id="margin_sad"></span> 		<span id="margin_ttk"></span> 		</span>		 			 				
+																						<div class="span-group volume_tonnage_size"> 					<span class="volume"></span> 					<span class="tonnage"></span> 					<span class="size"></span> 		<div class="bg-worp"><img src="img/images/bg_wopr.png" alt="#"></div> <div class="worp-answ">Ш x Д x В</div>
+																							<div class="clear"></div>
+																						</div>
+
+																						<div class="clear"></div>
+																					</div>
+																				</div>
+																			</div>
+
+																			<div class="parallelogram_group"> 	
+																				<div id="route_block"> 		<input type="text" class="adr_input" id="address" placeholder="Улица или станция метро..." autocomplete="off" value="" /> 		
+																					<div id="address-suggestion" class="suggestion"> 		</div>
+																				</div>
+
+																				<div class="adr_block"> 		<label>Откуда:</label> 		
+																					<div class="input_parallelogram input_whence"> 			<input type="text" placeholder="Улица или станция метро..." value="" /> </div>
+																					<label class="where">Куда:</label> 		
+																					<div class="input_parallelogram input_where"> 			<input type="text" placeholder="Улица или станция метро..." value="" /> 		</div>
+																				</div>
+
+																				<div class="lease_time_block"> 			<span>Время аренды</span> 			
+																					<div class="lease_time_slider"></div>
+
+																					<div class="clear"></div>
+																				</div>
+
+																				<div class="radio_box_title">Количество грузчиков</div>
+
+																				<div class="radio_box_parallelogram js_radio"> 			<label class="active"><b>БЕЗ</b><input value="0" type="radio" name="number_movers" checked="" hidden="" /></label> 			<label><b>1</b><input value="1" type="radio" name="number_movers" hidden="" /></label> 			<label><b>2</b><input value="2" type="radio" name="number_movers" hidden="" /></label> 			<label><b>3</b><input value="3" type="radio" name="number_movers" hidden="" /></label> 			<label><b>4</b><input value="4" type="radio" name="number_movers" hidden="" /></label> 			<label><b>5</b><input value="5" type="radio" name="number_movers" hidden="" /></label> 			<label><b>6</b><input value="6" type="radio" name="number_movers" hidden="" /></label> 			<label><b>7</b><input value="7" type="radio" name="number_movers" hidden="" /></label> 		 		</div>
+
+																				<div class="radio_box_parallelogram js_radio radio_box_right"> 	
+																					<label>
+																						<i class="name">Эконом</i>
+																						<span>250 руб/час</span>
+																						<input class="type250" data-minimum_time="4" value="250" type="radio" name="cost_porter"  hidden />
+																					</label>
+																					<label class="active">
+																						<i class="name">Стандарт</i>
+																						<span>300 руб/час</span>
+																						<input class="type300" data-minimum_time="4" value="300" type="radio" name="cost_porter"  checked hidden />
+																					</label>
+																					<label>
+																						<i class="name">Профи</i>
+																						<span>450 руб/час</span>
+																						<input class="type450" data-minimum_time="4" value="450" type="radio" name="cost_porter"  hidden />
+																					</label>
+																				</div>
+
+																				<div class="clear"></div>
+
+																				<div class="porter_time_block"> 			<span>Время занятости грузчиков</span> 			
+																					<div class="porter_time_slider"></div>
+
+																					<div class="clear"></div>
+																				</div>
+
+																				<div class="left_block"> 			 			
+																					<div class="submit-button"><input class="orderModal" type="submit" value="Заказать онлайн" /></div>
+
+																					<div class="title or"><span>или позвоните</span></div>
+
+																					<p class="phone">+7 (495) <span>725-55-29</span></p>
+
+																					<p class="phone_time">с 8-00 до 22-00</p>
+																				</div>
+
+																				<div class="right_block"> 		 
+																					<div class="chek_home">	 			
+																						<p class="item price all_price"><span class="total-txt">Итого:</span><span><span class="price_val">4 400</span> <sub>руб.</sub></span></p>
+
+																						<p class="desc all_price">Мы позвоним для уточнения заказа и цены</p>
+
+																						<div id="auto_data"> 				
+																							<p class="item lease_time">Аренда авто<span><span class="price_val">2 400</span> <sub>руб.</sub></span></p>
+
+																							<p class=" item desc lease_time_desc">3 часа x 800 руб.</p>
+
+																							<p class="desc item ">Подача <i class="cost"></i> руб.</p>
+
+																							<div id="dopoln"> 					
+																								<p class="item lease_ttk desc">Въезд в ТТК <i class="price_ttk">0</i> руб.</p>
+
+																								<p class="item lease_sad desc">Въезд в Садовое кольцо <i class="price_sad">0</i>руб.</p>
+
+																								<p class="item lease_mkad">Выезд за МКАД <span><span class="price_mkad">0</span> <sub>руб.</sub></span></p>
+
+																								<p class="item mkad_km_desc desc"><i class="km_mkad"></i> км x <i class="mkad_cost">18</i> руб.</p>
+																							</div>
+
+																							<div class="porter">	 						 				
+																								<p class="item porter_time"><i>2 грузчика (эконом)</i><span><span class="price_val">2 000</span> <sub>руб.</sub></span></p>
+
+																								<p class="desc porter_time_desc">2 x 2 часа x 500 руб.</p>
+																							</div>
+																						</div>
+																					</div>
+
+																					<div class="bottom_line"></div>
+
+																					<div style="display: none;"> 				<span class="total_dop"></span> 				<span class="time_ttk"></span> 				<span class="ttk_cost"></span> 				<span class="time_sad"></span> 				<span class="sad_cost"></span> 			</div>
+																				</div>
+
+																				<div class="clear"></div>
+																			</div>
+
+																			<div style="display: none;"> 	 		
+ 												<!-- <div class="box-modal" id="orderModal"> 		 			
+ 													<div class="box-modal_close arcticmodal-close">x <span>Отмена</span></div>
+
+ 													<div class="modal-title"> 			 				
+
+ 														<div class="modal-title-block"> 					
+ 															<h4>заказ грузоперевозки:</h4>
+
+ 															<div> 						<input type="checkbox" name="rigging" id="rigging" class="css-checkbox" /> 						<label for="rigging" class="css-label">Требуется такелаж (Работа с тяжелым грузом &gt; 100кг)</label> 					</div> -->
+ 														</div>
+ 													</div>
+
+ 													<div class="clear"></div>
+
+ 													<!-- <div class="modal-group"> 	<form name="SIMPLE_FORM_1" action="/" metdod="POST" enctype="multipart/form-data"><input type="hidden" name="sessid" id="sessid" value="929b0aecb226b5971ee097e513bd88bd" /><input type="hidden" name="WEB_FORM_ID" value="1" /><input type="hidden" name="lang" value="ru" /><label class="input-large"> 	<span>Адрес подачи:</span> 	 
+ 														<div class="input_parallelogram input_whence"><div id="modal_whence_alert">Выберите улицу из списка!</div> 		<input type="text"  class="inputtext"  name="form_text_1" value="" size="0" /> 	</div>
+
+ 														<div class="clear"></div>
+ 													</label> <label class="input-large"> 	<span>Конечный адрес:</span> 	 
+ 														<div class="input_parallelogram input_where"><div id="modal_where_alert">Выберите улицу из списка!</div> 		<input type="text"  class="inputtext"  name="form_text_2" value="" size="0" /> 	</div>
+
+ 														<div class="clear"></div>
+ 													</label> <hr> <label> 	<span>Дата и время подачи</span> 	 
+ 														<div class="input_parallelogram date"> 		<input type="text" name="datepicker" /> 	</div>
+
+ 														<div class="clear"></div>
+ 													</label> <label> 	<span>Телефон<i class="red">*</i></span> 	 
+ 														<div class="input_parallelogram phone"> 		<input type="text"  class="inputtext"  name="form_text_4" value="" size="0" /> 	</div>
+
+ 														<div class="clear"></div>
+
+ 													</label> <label> 	<span>Электронная почта</span> 	 
+ 														<div class="input_parallelogram email"> <input type="text"  class="inputtext"  name="form_text_5" value="" size="0" /> </div>
+ 														<span class="coment">На эту почту пришлем информацию о заказе</span> 
+ 														<div class="clear"></div>
+ 													</label> 
+ 													<div class="submit-button"> <input type="hidden" name="web_form_apply" value="Y" /><input  type="submit" name="web_form_apply" value="Подать заявку" /> </div>
+ 													<span class="coment">Наш оператор перезвонит вам для уточнения и подтверждения условий заказа</span> 
+ 													<div class="clear"></div>
+
+ 													<div class="hide"> 	 
+ 														<div id="input_car_type"> 		<input type="hidden"  name="form_hidden_6" value="" /> 	</div>
+
+ 														<div id="input_car_time"> 		<input type="hidden"  name="form_hidden_7" value="" /> 	</div>
+
+ 														<div id="input_mover_type"> 		<input type="hidden"  name="form_hidden_8" value="" /> 	</div>
+
+ 														<div id="input_mover_time">	 		<input type="hidden"  name="form_hidden_9" value="" /> 	</div>
+
+ 														<div id="input_mover_number">	 		<input type="hidden"  name="form_hidden_10" value="" /> 	</div>
+
+ 														<div id="input_date">	 		<input type="hidden"  name="form_hidden_11" value="" /> 	</div>
+
+ 														<div id="input_time"> 		<input type="hidden"  name="form_hidden_12" value="" /> 	</div>
+
+ 														<div id="input_rigging"> 		<input type="checkbox"  id="form_checkbox_rigging_13" name="form_checkbox_rigging[]" id="form_checkbox_rigging[]" value="13"><label for="form_checkbox_rigging_13"><span class="">&nbsp; </span></label> 	</div>
+
+ 														<div id="input_summa">	 		<input type="text"  class="inputtext"  name="form_text_31" value="" size="0" /> 	</div>
+ 													</div>
+ 												</form> 		</div> -->
+ 											</section>  
+ 										</div>
+ 										<!-- Cars Calculator END -->
+
+ 									</div>
+
+
+ 									<div class="section-5">
+ 										
+ 										<div class="container">
+
+ 											<div class="row">
+ 												<div class="stock-general">
+
+ 													<div class="col-md-3">
+ 														<div class="date">
+ 															<h3>Сегодня <span id="doc_time"></span> <span id="month"></span> ,<br>а это значит,<br> что стартовала новая </h3>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-4">
+ 														<h3 class="stock-title">Акция</h3>
+ 													</div>
+
+ 													<div class="col-md-5">
+ 														<div class="phone">+7 (495) <span>725-55-29</span>
+ 														</div>
+ 													</div>
+ 													
+ 													<div class="col-md-8 col-md-offset-2">
+ 														<div class="tdis-week clearfix">
+ 															<h4>Только на этой неделе!</h4>
+ 															<h3>Заказав 4-х грузчиков - <span>Пятый бесплатно!</span></h3>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-6 col-md-offset-3">
+ 														<div class="mens">
+
+ 															<img src="img/mens.png" alt="Грузчики">
+ 															<span class="plus">+</span>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-8 col-md-offset-2">
+ 														<h3 class="hurry">Спешите заказать грузовую перевозку по Москве и области!</h3>
+ 													</div>
+
+ 													<div class="timer clearfix">
+ 														<div class="col-md-4 col-md-offset-1">
+
+ 															<div class="counter-title">До конца акции осталось:</div>	
+ 														</div>
+
+ 														<div class="col-md-7">
+ 															<div id="countdown">
+ 																<div class="count"><span class="days number"></span> <span class="text">дней</span>	</div>
+ 																<div class="count"><span class="hours number"></span><span class="text">часов</span></div>
+ 																<div class="count"><span class="mins number"></span> <span class="text">минут</span></div>
+ 																<div class="count"><span class="secs number"></span><span class="text">секунд</span> </div>
+
+ 															</div>
+ 														</div>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+
+ 										<div class="bg-line-cont">
+ 											<div class="container">
+ 												<div class="row">
+ 													<div class="bg-line">
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+
+ 									</div>
+
+ 									<div class="section-6">
+
+ 										<div class="container">
+ 											<div class="row">
+ 												<div class="callback-stock">
+
+ 													<div class="col-md-5">
+ 														<div class="left-block">
+ 															<h3>Перезвоним вам через</h3>
+ 															<img src="img/timer-1.png" alt="">
+ 															<h3 class="time">20 секунд</h3>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-4">
+ 														<div class="right-block">
+ 															<form class="form">
+
+ 																<div class="brd-input">
+ 																	<input data-inputmask-mask="+7 (999)-999-99-99" data-val="true" data-val-required="Required" class="phone-inp" id="phone-1" name="phone" placeholder="Ваш телефон" type="text"/>
+ 																</div>
+
+ 															</form>
+ 														</div>
+
+ 														<div class="boxes boxes-1">
+ 															<input type="checkbox" id="box-2">
+ 															<label for="box-2">Я согласен на обработку персольнах данных</label>
+ 															<label class="lb lb-2" for="box-2">Я согласен на обработку персольнах данных</label>
+ 														</div>
+
+ 													</div>
+
+ 													<div class="col-md-3">
+ 														<div class="right-button">
+ 															<div class="button">
+ 																<a class="btn-wrap">Отправить</a>
+ 															</div>
+ 														</div>
+ 													</div>
+
+ 												</div>
+ 											</div>
+ 										</div>
+ 									</div>
+
+ 									<div class="section-7">
+ 										<div class="titul titul-dbl">
+ 											<div class="container">
+ 												<div class="row">
+
+ 													<div class="col-md-12">
+ 														<h2>Перевозки осуществляются <br> с помощью профессионального оборудования</h2>
+ 														<p>Все имеющееся в арсенале компании оборудование используется только квалифицированным персоналом, имеющим многолетний опыт выполнения подобных работ различной степени объема и сложности.</p>
+ 													</div>
+
+ 												</div>
+ 											</div>
+ 										</div>
+
+
+ 										<div class="container">
+ 											<div class="row">
+ 												<div class="equipment">
+ 													<div class="col-md-2 col-md-offset-1 col-sm-4 col-xs-12">
+ 														<div class="equip-item">
+ 															<img src="img/oborudovanie/0.png" alt="#">
+ 															<h4>Домкраты</h4>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-2 col-sm-4 col-xs-12">
+ 														<div class="equip-item">
+ 															<img src="img/oborudovanie/1.png" alt="#">
+ 															<h4>СТЯЖНЫЕ <br>РЕМНИ</h4>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-2 col-sm-4 col-xs-12">
+ 														<div class="equip-item">
+ 															<img src="img/oborudovanie/2.png" alt="#">
+ 															<h4>ПОЛИПАСТЫ</h4>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-2 col-sm-4 col-xs-12">
+ 														<div class="equip-item">
+ 															<img src="img/oborudovanie/3.png" alt="#">
+ 															<h4>СТРОПЫ</h4>
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-2 col-sm-4 col-xs-12">
+
+ 														<div class="equip-item">
+ 															<img src="img/oborudovanie/4.png" alt="#">
+ 															<h4>ЛЕБЕДКИ</h4>
+ 														</div>
+ 													</div>
+
+ 												</div>
+
+
+ 											</div>
+ 										</div>
+ 									</div>
+
+ 									<div class="section-8">
+ 										<div class="titul titul-dbl">
+ 											<div class="container">
+ 												<div class="row">
+
+ 													<div class="col-md-12">
+ 														<h2>Что говорят компании,<br>которые заказывали перевозку груза в Москве</h2>
+ 														<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Имеет выйти проектах это, рукопись страна на берегу города, себя оксмокс страну предупредила ты его однажды букв переписывается строчка дал реторический.</p>
+ 													</div>
+
+ 													<div class="col-md-12">
+ 														<div id="carousel">
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-1" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-2" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-3" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-4" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-5" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-6" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-7" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-8" alt="#" /></a>
+ 															<a href="#"><img src="img/carousel/1.jpg" id="item-9" alt="#" /></a>
+ 														</div>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+
+ 										<div class="girl-section">
+ 											<div class="container">
+ 												<div class="row">
+ 													<div class="col-md-6">
+ 														<div class="grl-img">
+ 															<h3 class="callout">Здравствуйте! <br>Меня зовут Светлана Меньшекова. <br> Я главный  менеджер <br>компании "Все переезды"</h3>
+ 															<img src="img/girl.png" alt="">
+ 														</div>
+ 													</div>
+
+ 													<div class="col-md-6">
+ 														<div class="callout-text" id="example">“За счет собственного автопарка нашей компании, Ваша грузоперевозка выйдет на 15% дешевле, чем у конкурентов.”</div>
+ 														<div class="callout-right"></div>
+ 														<div class="brd-input">
+ 															<h4>Ваш телефон</h4>
+ 															<input data-inputmask-mask="+7 (999)-999-99-99" data-val="true" data-val-required="Required" class="phone-girl" id="phone-2" name="phone" placeholder="+7 (___)-___-__-__" type="text"/>
+ 														</div>
+
+ 														<div class="button-grl"><a class="btn-primary" href="#">Перезвоните мне</a></div>
+ 													</div>
+ 												</div>
+ 											</div>
+ 											
+ 										</div>
+ 									</div>
+
+ 									<div class="section-9">
+ 										<div class="container">
+ 											<div class="row">
+ 												<div class="col-md-12">
+ 													<div class="ttl">
+ 														<h2>Распространенные вопросы наших клиентов <br>при перевозке грузов в Москве</h2>
+ 													</div>
+ 												</div>
+ 											</div>
+ 										</div>
+ 										<div class="questions">
+ 											<div class="container">
+ 												<div class="row">
+
+ 													<div class="col-md-6">
+
+ 														<div class="block-left">
+ 															<div class="quest qu-1">Возможен ли безналичный способ оплаты?</div>
+ 															<div class="answer ans-1">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																<ul>
+ 																	<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																	<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																	<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 															</div>
+
+ 															<div class="block-que">
+ 																<div class="quest qu-2">Возможен ли безналичный способ оплаты?</div>
+ 																<div class="answer ans-2">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																	<ul>
+ 																		<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																		<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																		<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																	</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 																</div>
+
+ 																<div class="block-que">
+ 																	<div class="quest qu-3">Возможен ли безналичный способ оплаты?</div>
+ 																	<div class="answer ans-3">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																		<ul>
+ 																			<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																			<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																			<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																		</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 																	</div>
+
+ 																</div>
+
+ 																<div class="col-md-6">
+
+ 																	<div class="block-right">
+ 																		<div class="quest qu-4">Возможен ли безналичный способ оплаты?</div>
+ 																		<div class="answer ans-4">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																			<ul>
+ 																				<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																				<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																				<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																			</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 																		</div>
+
+ 																		<div class="block-que">
+ 																			<div class="quest qu-5">Возможен ли безналичный способ оплаты?</div>
+ 																			<div class="answer ans-5">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																				<ul>
+ 																					<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																					<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																					<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																				</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 																			</div>
+
+ 																			<div class="block-que">
+ 																				<div class="quest qu-6">Возможен ли безналичный способ оплаты?</div>
+ 																				<div class="answer ans-6">Да. Мы предлагаем следующие варианты предварительного расчёта:
+ 																					<ul>
+ 																						<li class="liquest"><span>•</span> Пластиковые карты</li>
+ 																						<li class="liquest"><span>•</span> Электронные деньги</li>
+ 																						<li class="liquest"><span>•</span> Сотовые операторы</li>
+ 																					</ul>Подробная информация о безналичном способе оплаты предоставляется оператором по телефону.</div>
+ 																				</div>
+
+ 																			</div>
+
+ 																		</div>
+
+ 																	</div>
+ 																</div>
+
+ 																<div class="garantyi">
+ 																	<div class="container">
+ 																		<div class="row">
+
+ 																			<div class="col-md-4">
+ 																				<div class="left-block">Если Вам удалось найти перевозку в пределах Москвы дешевле, чем у нас и Вы сможете предоставить нам смету другой компании. <p> То мы вернем Вам 120% от разницы в цене.</p></div>
+
+ 																			</div>
+
+ 																			<div class="col-md-4">
+ 																				<div class="center-block"><img src="img/garantyi.png" alt="#"></div>
+
+ 																			</div>
+
+ 																			<div class="col-md-4">
+ 																				<div class="right-block">
+ 																					<div class="manager">Обратитесь к менеджеру отдела продаж и Вам будет предложена индивидуальная скидка.</div>
+ 																					<div class="manager-contacts">
+ 																						+7 (495) 725-55-29
+ 																						<div class="name">Менеджер продаж <br> Кристина</div>
+ 																					</div>
+ 																				</div>
+
+ 																			</div>
+ 																		</div>
+ 																	</div>
+
+ 																	<div class="dop-block">
+ 																		<div class="container">
+ 																			<div class="row">
+ 																				<div class="col-md-8 col-md-offset-2"><img src="img/garantyi-2.png" alt=""></div>
+ 																			</div>
+ 																		</div>
+ 																	</div>
+ 																</div>
+ 															</div>
+
+ 															<div class="section-10">
+
+ 																<div class="section-2">
+ 																	<div class="titul">
+ 																		<div class="container">
+ 																			<div class="row">
+
+ 																				<div class="col-md-12">
+ 																					<h2>Цены на перевозки</h2>
+ 																					<p>При выполнении своих обязанностей мы придерживаемся нескольких основополагающих принципов, которые не могут быть оспорены:</p>
+ 																				</div>
+
+ 																			</div>
+ 																		</div>
+ 																	</div>
+
+ 																	<div class="table-price">
+ 																		<div class="container">
+ 																			<div class="row">
+ 																				<div class="col-md-8 col-md-offset-2">
+ 																					<table>
+ 																						<tbody>
+ 																							<tr>
+ 																								<td width="280" class="first-td" ></td>
+ 																								<td width="140">Цена, <br>час/руб</td>
+ 																								<td width="140">Кол-во <br>часов</td>
+ 																								<td width="140">Сумма, руб.</td>
+ 																							</tr>
+
+ 																							<tr>
+ 																								<td width="280" class="first-td" >Грузчики на склад <br><span>(на постоянной основе)</span></td>
+ 																								<td width="140">200 руб.</td>
+ 																								<td width="140">8</td>
+ 																								<td width="140">1600 руб.</td>
+ 																							</tr>
+
+ 																							<tr>
+ 																								<td width="280" class="first-td" >Услуги 1-го грузчика <br><span>(погрузка-разгрузка)</span></td>
+ 																								<td width="140">300 руб.</td>
+ 																								<td width="140">4</td>
+ 																								<td width="140">1200 руб.</td>
+ 																							</tr>
+
+ 																							<tr>
+ 																								<td width="280" class="first-td" >Услуги 1-ого специалиста  <br><span>(сборка-разборка мебели, упакова, погрузка-разгрузка)</span></td>
+ 																								<td width="140">380 руб.</td>
+ 																								<td width="140">4</td>
+ 																								<td width="140">1520 руб.</td>
+ 																							</tr>
+
+ 																							<tr class="last-tr">
+ 																								<td width="280" class="first-td" >Услуги 1-го такелажника <br><span>(перенос тяжелых вещей, предметов  свыше 101 кг)</span></td>
+ 																								<td width="140">400 руб.</td>
+ 																								<td width="140">4</td>
+ 																								<td width="140">1600 руб.</td>
+ 																							</tr>
+
+ 																						</tbody>
+
+ 																					</table>
+ 																					<div class="table-line"></div>
+ 																					<div class="bottom-line">Заказы с 22 до 8 считаются ночными и идет доп.наценка в размере 25%; при выезде за МКАД дополнительно оплачивается проезд и +1 час; при безналичном расчете к сумме + НДС 18%.</div>
+
+ 																				</div>
+ 																			</div>
+ 																		</div>
+ 																	</div>
+ 																</div>
+ 															</div>
+ 															<div class="section-11">
+ 																<div class="titul titul-dbl">
+ 																	<div class="container">
+ 																		<div class="row">
+
+ 																			<div class="col-md-12">
+ 																				<h2>Самые популярные машины <br>для грузоперевозок по Москве</h2>
+ 																				<p>Текст с коротким описанием. Очень коротким. Буквально пара строчек - и хватит. Ато повадидись писать простынями. Краткость - сестра таланта! У Твитера учитесь, а то страниц на всех не хватит.</p>
+ 																			</div>
+
+ 																		</div>
+ 																	</div>
+ 																</div>
+
+ 																<div class="popular-cars">
+ 																	<div class="container">
+ 																		<div class="row">
+
+ 																			<div class="col-md-3">
+ 																				<div class="popular-car-item">
+ 																					<div class="car-photo"><img src="img/popular-cars/1.png" alt="#"></div>
+ 																					<div class="car-name">Газель тент</div>
+ 																					<div class="car-size">3м/1.5 т</div>
+ 																					<div class="car-price">2500 руб./час</div>
+ 																					<a class="pop-car-btn">Заказать</a>
+ 																				</div>
+ 																			</div>
+
+ 																			<div class="col-md-3">
+ 																				<div class="popular-car-item">
+ 																					<div class="car-photo"><img src="img/popular-cars/1.png" alt="#"></div>
+ 																					<div class="car-name">Газель тент</div>
+ 																					<div class="car-size">3м/1.5 т</div>
+ 																					<div class="car-price">2500 руб./час</div>
+ 																					<a class="pop-car-btn">Заказать</a>
+ 																				</div>
+ 																			</div>
+
+ 																			<div class="col-md-3">
+ 																				<div class="popular-car-item">
+ 																					<div class="car-photo"><img src="img/popular-cars/1.png" alt="#"></div>
+ 																					<div class="car-name">Газель тент</div>
+ 																					<div class="car-size">3м/1.5 т</div>
+ 																					<div class="car-price">2500 руб./час</div>
+ 																					<a class="pop-car-btn">Заказать</a>
+ 																				</div>
+ 																			</div>
+
+ 																			<div class="col-md-3">
+ 																				<div class="popular-car-item">
+ 																					<div class="car-photo"><img src="img/popular-cars/1.png" alt="#"></div>
+ 																					<div class="car-name">Газель тент</div>
+ 																					<div class="car-size">3м/1.5 т</div>
+ 																					<div class="car-price">2500 руб./час</div>
+ 																					<a class="pop-car-btn">Заказать</a>
+ 																				</div>
+ 																			</div>
+
+ 																		</div>
+ 																	</div>
+ 																	
+ 																</div>
+
+ 															</div>
+ 															<div class="cont_reviews">
+ 																<div class="container">
+ 																	<div class="row">
+ 																		<div class="col-md-12">
+ 																			<div class="cont_reviews">
+ 																				<h4><span>Отзывы клиентов</span></h4>
+ 																				<div id="reviews_fl">
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center"> Мы почитали на сайте. Что вещи может запаковать сама фирма. И если есть разборная мебель, то её и разберут и соберут. Очень удобно что можно заказать еще и грузчиков, ведь мебели много, а лифт у нас маленький и часть мебели всё равно придётся выносить по лестницам с четвёртого этажа. Очень вам благодарны. Рассказали про вас нашим будущим соседям они тоже закончили ремонт и переезжают в этом месяце. Думаю, сейчас много наших новосёлов воспользуются вашими услугами.</div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor">Константин и Ольга</p> 
+ 																					</div>
+
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center">Заказывал здесь грузчиков 4 раза, т.е. все устроило. Надо было выносить много мусора и часто (ремонт в сталинском доме). Что меня больше всего обрадовало, что если надо было 2 человека - пожалуйста, три - пожалуйста и четыре и т.д, и все оперативно к тому же. А когда уставали и уходили первые, а работа не была еще закончена - им на смену приезжали другие, уставшие сдавали вахту и с новыми силами продолжалась работа. Т.е. вынести с пятого этажа без лифта эдак тонны 3-4 за 4 часа у нас вполне успешно получалось. Доволен и рекомендую.</div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor">Борис</p> 
+ 																					</div>
+
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center">Сегодня привезли мне холодильник и диван в лучшем виде! Я не видела ни продавцов холодильника в лицо, ни продавцов дивана, ни водителя. </div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor"> Нана Андреева</p> 
+ 																					</div>
+
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center">Большое спасибо Андрею! Четко,профессионально!Самые положительные впечатления!!! </div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor"> Сергей Иванович</p> 
+ 																					</div>
+
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center">У меня не было возможности приехать к месту погрузки. А потом не смог приехать к месту выгрузки. Пришлось организовывать всё дистанционно, по телефону.</div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor">  Александр </p> 
+ 																					</div>
+
+
+ 																					<div class="desc">
+ 																						<div class="desc_left"></div>
+ 																						<div class="desc_center">Водитель очень корректный и отзывчивый, цены уместные! Будем пользоваться его услугами и в дальнейшем!</div> 
+ 																						<div class="desc_right"></div>
+
+ 																						<p class="autor"> Алексей</p> 
+ 																					</div>
+
+ 																					<a class="next_rew" href="#rew">Показать следующий отзыв</a> 
+ 																				</div>
+ 																			</div>
+ 																		</div>
+ 																	</div>
+ 																</div>
+ 															</div>
+ 															<ul class="submenu sub-1">
+ 																<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Москва</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Воронеж</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="">Ростов-на-Дону</a></li>
+ 															</ul>
+
+ 															<ul class="submenu sub-2">
+ 																<li class="sb-li"><a class="sb-a" href="#">Квартирный переезд</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="#">Офисный переезд</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="#">Дачный переезд</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="#">Перевозка мебели</a></li>
+ 																<li class="sb-li"><a class="sb-a" href="#">Такелажные работы</a></li>
+ 															</ul>
+ 															<div class="nav">
+
+ 																<div class="container">
+ 																	<div class="row">
+ 																		<div class="col-md-10">
+ 																			<nav class="primary-menu">
+ 																				<ul>
+ 																					<li><a href="javascript: void 0" class="active">Грузоперевозски по Москве</a></li>
+ 																					<li><a href="javascript: void 0" class="removals-footer">Переезды<i class="rem-fa fa fa-angle-up" aria-hidden="true"></i></a></li>
+ 																					<li><a href="javascript: void 0">Грузчики</a></li>
+ 																					<li><a href="javascript: void 0" class="trucking-footer">Грузоперевозки по России<i class="truck-fa fa fa-angle-up" aria-hidden="true"></i></a></li>
+ 																					<li><a href="javascript: void 0">Цены</a></li>
+ 																				</ul>
+ 																			</nav>
+ 																		</div>
+
+ 																		<div class="col-md-2">
+ 																			<div class="pay-online">
+ 																				<a href="#"><img src="img/pay-online.png" alt="#"><span>Оплатить онлайн</span>
+ 																				</a>
+ 																			</div>
+ 																		</div>
+
+ 																	</div>
+ 																</div>
+ 															</div>
+
+ 															<footer>
+ 																<div class="container">
+ 																	<div class="row">
+
+ 																		<div class="col-md-6">
+ 																			<div class="payment">
+ 																				<h4>Способы оплаты<div class="bd"></div></h4>
+ 																				<ul>
+ 																					<li><a href="#"><img src="img/images/payment/webmoney.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/yandex_money.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/visa.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/rbk.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/sberbank.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/vtb.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/robokassa.png" alt="#"></a></li>
+ 																					<li><a href="#"><img src="img/images/payment/others.png" alt="#"></a></li>
+ 																				</ul>
+ 																			</div>
+ 																		</div>
+
+ 																		<div class="col-md-2">
+ 																			<div class="payment footer-doc">
+ 																				<h4>Наши реквизиты<div class="bd"></div></h4>
+ 																				<ul>
+ 																					<li>
+ 																						<a href="#" class="word-pdf"><img src="img/images/footer_doc.png" alt="#">
+ 																							<div class="blank">
+ 																								<p class="name word">Скачать бланк</p>
+ 																								<p class="format">в формате MS Word</p>
+ 																							</div>
+ 																						</a>
+ 																					</li>
+
+ 																					<li class="pdf">
+ 																						<a href="#" class="word-pdf"><img src="img/images/footer_pdf.png" alt="#">
+ 																							<div class="blank">
+ 																								<p class="name pdf">Скачать бланк</p>
+ 																								<p class="format">в формате PDF</p>
+ 																							</div>
+ 																						</a>
+ 																					</li>
+ 																				</ul>
+
+ 																			</div>
+ 																		</div>
+
+ 																		<div class="col-md-3 col-md-offset-1">
+ 																			<a href="#" class="phone">+7 (495) <span>725-55-29</span>
+ 																				<div class="callback"><span>Заказать обратный звонок</span></div>
+ 																			</a>
+ 																			<a href="#" class="vacansion">
+ 																				<div class="img"><img src="img/vacansion.png" alt=""></div><span>Вакансии</span></a>
+ 																			</div>
+
+ 																			<div class="col-md-8">
+ 																				<div class="second-menu">
+
+ 																					<a href="skype:vse-pereezdi.ru" class="icon"><img src="img/images/skype-icon.png" alt="#"><span>vse-pereezdi.ru</span></a>
+ 																					<a href="http://twitter.com" class="icon"><img src="img/images/twitter-icon.png" alt="#"><span>Twitter</span></a>
+ 																					<a href="http://vk.com" class="icon"><img src="img/images/vkontakte-icon.png" alt="#"><span>Vkontakte</span></a>
+ 																					<a href="javascript: void 0" class="icon"><img src="img/images/isq-icon.png" alt="#">204005655</a>
+ 																					<a href="mailto:zakaz@vse-pereezdi.ru" class="icon"><img src="img/images/mail-icon.png" alt="#"><span>zakaz@vse-pereezdi.ru</span></a>
+
+ 																				</div>
+ 																			</div>
+
+ 																			<div class="col-md-2">
+ 																				<div class="live-internet">
+ 																					<!--LiveInternet counter--><script type="text/javascript"><!--
+ 																					document.write("<a href='//www.liveinternet.ru/click' "+
+ 																						"target=_blank><img src='//counter.yadro.ru/hit?t15.6;r"+
+ 																						escape(document.referrer)+((typeof(screen)=="undefined")?"":
+ 																							";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+ 																								screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+ 																						";"+Math.random()+
+ 																						"' alt='' title='LiveInternet: показано число просмотров за 24"+
+ 																						" часа, посетителей за 24 часа и за сегодня' "+
+ 																						"border='0' width='88' height='31'><\/a>")
+ 																						//--></script><!--/LiveInternet-->
+ 																					</div>
+ 																				</div>
+
+ 																				<div class="col-md-2">
+ 																					<div class="author-box">
+ 																						<img src="img/images/author.png" class="author"/>
+ 																					</div>
+ 																				</div>
+
+ 																			</div>
+ 																		</div>
+ 																	</footer>
+
+
+ 																	<link rel="stylesheet" href="css/calculator.min.css">
+ 																	<link rel="stylesheet" href="css/main.min.css">
+ 																	<script src='https://use.fontawesome.com/abbf515f37.js'></script>
+
+
+ 																</body>
+ 																</html>
