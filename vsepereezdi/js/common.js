@@ -190,12 +190,22 @@ $('.girl-section').waypoint(function(){
 $(document).ready(function(){
 
 
-	$("#carousel").waterwheelCarousel({
-      // include options like this:
-      // (use quotes only for string values, and no trailing comma after last option)
-      // option: value,
-      // option: value
-    });
+      $(document).ready(function () {
+        var carousel = $("#carousel").waterwheelCarousel({
+          flankingItems: 2,
+        });
+
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+      });
+
 
 	$("#phone").inputmask({ showMaskOnHover: false });
 	$("#phone-2").inputmask({ showMaskOnHover: false });
