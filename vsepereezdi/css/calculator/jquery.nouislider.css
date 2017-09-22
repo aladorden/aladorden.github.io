@@ -44,7 +44,7 @@
  *		box-sizing, so it needs to applied manually.
  */
 	.noUi-handle {
-		background: url(/img/images/slider-icon.png);
+		background: url('../../img/images/slider-icon.png');
 		height: 42px;
 		width: 37px;
 		margin: -11px 0 0 -23px;
