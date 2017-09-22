@@ -141,7 +141,7 @@ $( ".bg-worp img" ).hover(function() {
 });
 //waypoint
 $('.section-1').waypoint(function(){
-	var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+	var percent_number_step = $.animateNumber.numberStepFactories.append('%')
 $('#fun-level').animateNumber(
   {
     number: 100,
