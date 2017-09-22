@@ -502,8 +502,8 @@
 																		<script type="text/javascript">
 																			$(document).ready(function(){
 																				$('.input_whence input').focus(function(){
-																					$(tdis).hide();
-																					var txt_adr = $(tdis).val();
+																					$(this).hide();
+																					var txt_adr = $(this).val();
 																					$('.adr_input').removeClass("where_act");
 																					$('.adr_input').addClass("whence_act");
 																					$('.input_where input').show();	
@@ -515,8 +515,8 @@
 																				$('.input_where input').focus(function(){
 
 
-																					$(tdis).hide();
-																					var txt_adr = $(tdis).val();
+																					$(this).hide();
+																					var txt_adr = $(this).val();
 																					$('.adr_input').removeClass("whence_act");
 																					$('.adr_input').addClass("where_act");
 																					$('.input_whence input').show();
@@ -528,14 +528,14 @@
 
 																				$('#address').blur(function(){
 																					$('#address').hide();
-																					var txt_inp = $(tdis).val();
-																					if( $(tdis).hasClass('whence_act')){
+																					var txt_inp = $(this).val();
+																					if( $(this).hasClass('whence_act')){
 																						$('.input_whence input').val(txt_inp);
 																						$('.adr_input').removeClass("whence_act");
 																						$('.input_whence input').show();
 
 																					}
-																					else if($(tdis).hasClass('where_act')) {		
+																					else if($(this).hasClass('where_act')) {		
 																						$('.input_where input').val(txt_inp);
 																						$('.adr_input').removeClass("where_act");
 																						$('.input_where input').show();
@@ -754,7 +754,7 @@
  													</div>
  													
  													<div class="col-md-8 col-md-offset-2">
- 														<div class="tdis-week clearfix">
+ 														<div class="this-week clearfix">
  															<h4>Только на этой неделе!</h4>
  															<h3>Заказав 4-х грузчиков - <span>Пятый бесплатно!</span></h3>
  														</div>
