@@ -31,47 +31,37 @@
 	<link href="css/calculator/jquery.nouislider.css" type="text/css"  rel="stylesheet" />
 	<link href="css/calculator/jquery.arcticmodal-0.3.css" type="text/css"  rel="stylesheet" />
 
-	<script src="js/scripts.min.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.nouislider.min.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.arcticmodal-0.3.min.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.maskedinput.min.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.simple-dtpicker.js"></script>
-	<script type="text/javascript" src="js/calculator/main.js"></script>
-	<script type="text/javascript" src="js/calculator/redial.js"></script>
-	<script type="text/javascript" src="js/calculator/jquery.reject.js"></script>
-	<script type="text/javascript" src="js/calculator/suggestions-jquery-4.2.2.min.js"></script>
-	<script type="text/javascript" src="js/calculator/dadata.js"></script>
-	<script type="text/javascript" src="js/calculator/suggest.js"></script>
-	<script type="text/javascript" src="js/calculator/main_adr.js"></script>
-	<script type="text/javascript" src="js/calculator/calculator_auto.js"></script>
 </head>
 
 <body>
 
 	<header>
 
-		<div class="head">
+		<div class="header">
 			<div class="container">
 				<div class="row">
+					<div class="main-head clearfix">
+						<div class="col-md-4">
+							<a href="#" class="logo"><img src="img/logo-2.png" alt="#"></a>
+						</div>
 
-					<div class="col-md-4">
-						<div class="logo"><img src="img/logo-2.png" alt="#"></div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="stock-box">
-							<img src="img/box.png" alt="#">
-							<div class="stock-capture">
-								<a href="#">Бесплатная упаковка</a>
-								<p>при заказе от 10000 руб.</p>
+						<div class="col-md-4">
+							<div class="stock-box">
+								<img src="img/box.png" alt="#">
+								<div class="stock-capture">
+									<a href="#">Бесплатная упаковка</a>
+									<p>при заказе от 10000 руб.</p>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col-md-3 col-md-offset-1">
-						<a href="#" class="phone">+7 (495) <span>725-55-29</span></a>
-						<div class="cb-wrapp"><a href="#" class="callback">Заказать обратный звонок</a></div>
+						<div class="col-md-3 col-md-offset-1">
+							<div class="phone-container">
+								<a href="#" class="phone">+7 (495) <span>725-55-29</span></a>
+								<a href="#" class="callback">Заказать обратный звонок</a>
+							</div>
+						</div>
+
 					</div>
 
 				</div>
@@ -82,20 +72,20 @@
 
 			<div class="container">
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-md-10 col-sm-9 col-xs-9">
 						<nav class="primary-menu">
 							<ul>
-								<li><a href="#" id="general" class="active">Грузоперевозски по Москве</a></li>
-								<li><a href="#" id="removals">Переезды<i class="rem-fa fa fa-angle-down" aria-hidden="true"></i></a></li>
-								<li><a href="#">Грузчики</a></li>
-								<li><a href="#" id="trucking">Грузоперевозки по России<i class="truck-fa fa fa-angle-down" aria-hidden="true"></i></a></li>
-								<li><a href="">Цены</a></li>
+								<li><a href="#" id="general" class="active"><span>Грузоперевозски по Москве</span></a></li>
+								<li><a href="#" id="removals"><span>Переезды<i class="rem-fa fa fa-angle-down" aria-hidden="true"></i></span></a></li>
+								<li><a href="#"><span>Грузчики</span></a></li>
+								<li><a href="#" id="trucking"><span>Грузоперевозки по России<i class="truck-fa fa fa-angle-down" aria-hidden="true"></i></span></a></li>
+								<li><a href=""><span>Цены</span></a></li>
 							</ul>
 						</nav>
 					</div>
+					<div class="pay-online">
+						<div class="col-md-2 col-sm-3 col-xs-3">
 
-					<div class="col-md-2">
-						<div class="pay-online">
 							<a href="#"><img src="img/pay-online.png" alt="#"><span>Оплатить онлайн</span>
 							</a>
 						</div>
@@ -731,16 +721,10 @@
 																</div>
 
 																<div class="col-md-7">
-																<!-- 	<div id="countdown">
-																		<div class="count"><span class="days number"></span> <span class="text">дней</span>	</div>
-																		<div class="count"><span class="hours number"></span><span class="text">часа</span></div>
-																		<div class="count"><span class="mins number"></span> <span class="text">минуты</span></div>
-																		<div class="count"><span class="secs number" id="sc"></span><span class="text" id="txc">секунды</span> </div>
-																	</div> -->
-																		<div class="syotimer"></div>
+																	<div class="syotimer"></div>
 																</div>
 															</div>
-														
+
 														</div>
 													</div>
 												</div>
@@ -1283,24 +1267,24 @@
 																		<li class="sb-li"><a class="sb-a" href="#">Перевозка мебели</a></li>
 																		<li class="sb-li"><a class="sb-a" href="#">Такелажные работы</a></li>
 																	</ul>
-
 																	<div class="nav">
+
 																		<div class="container">
 																			<div class="row">
-																				<div class="col-md-10">
+																				<div class="col-md-10 col-sm-9 col-xs-9">
 																					<nav class="primary-menu">
 																						<ul>
-																							<li><a href="javascript: void 0" class="active">Грузоперевозски по Москве</a></li>
-																							<li><a href="javascript: void 0" class="removals-footer">Переезды<i class="rem-fa fa fa-angle-up" aria-hidden="true"></i></a></li>
-																							<li><a href="javascript: void 0">Грузчики</a></li>
-																							<li><a href="javascript: void 0" class="trucking-footer">Грузоперевозки по России<i class="truck-fa fa fa-angle-up" aria-hidden="true"></i></a></li>
-																							<li><a href="javascript: void 0">Цены</a></li>
+																							<li><a href="javascript: void 0" class="active"><span>Грузоперевозски по Москве</span></a></li>
+																							<li><a href="javascript: void 0" class="removals-footer"><span>Переезды<i class="rem-fa fa fa-angle-down" aria-hidden="true"></i></span></a></li>
+																							<li><a href="javascript: void 0"><span>Грузчики</span></a></li>
+																							<li><a href="javascript: void 0" class="trucking-footer"><span>Грузоперевозки по России<i class="truck-fa fa fa-angle-down" aria-hidden="true"></i></span></a></li>
+																							<li><a href="javascript: void 0"><span>Цены</span></a></li>
 																						</ul>
 																					</nav>
 																				</div>
+																				<div class="pay-online">
+																					<div class="col-md-2 col-sm-3 col-xs-3">
 
-																				<div class="col-md-2">
-																					<div class="pay-online">
 																						<a href="#"><img src="img/pay-online.png" alt="#"><span>Оплатить онлайн</span>
 																						</a>
 																					</div>
@@ -1310,7 +1294,6 @@
 																		</div>
 																	</div>
 																	<!-- dublicate-top-slide-mnu- end -->
-
 
 																	<footer>
 																		<div class="container">
@@ -1360,8 +1343,10 @@
 
 																				<div class="col-md-3 col-md-offset-1">
 
-																					<a href="#" class="phone">+7 (495) <span>725-55-29</span></a>
-																					<div class="cb-wrapp"><a href="#" class="callback">Заказать обратный звонок</a></div>
+																					<div class="phone-container">
+																						<a href="#" class="phone">+7 (495) <span>725-55-29</span></a>
+																						<a href="#" class="callback">Заказать обратный звонок</a>
+																					</div>
 
 																					<a href="#" class="vacansion">
 																						<div class="img"><img src="img/vacansion.png" alt="#"></div><span>Вакансии</span></a>
@@ -1396,6 +1381,7 @@
 
 
 																		<link rel="stylesheet" href="css/main.min.css">
+																		<script src="js/scripts.min.js"></script>
 																		<script src='https://use.fontawesome.com/abbf515f37.js'></script>
 
 																	</body>
