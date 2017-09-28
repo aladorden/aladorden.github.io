@@ -1,51 +1,61 @@
 $(function() {
+$(".submenu").clone().appendTo('.footer-nav');
+$(".nav").clone().appendTo(".footer-nav");
+$(".footer-nav .fa").removeClass("fa-angle-down").addClass("fa-angle-up");
+
+$(".header-nav .primary-menu ul").clone().appendTo("#my-menu")
+$(".header-nav .pay-online li").clone().appendTo("#my-menu ul")
+$(".toggle-mnu .sub-2").clone().appendTo("#my-menu .mymenu-removals");
+$(".toggle-mnu .sub-1").clone().appendTo("#my-menu .mymenu-trucking");
+$("#my-menu i").remove();
+$("#my-menu .mymenu-removals ul").removeClass("submenu sub-2");
+$("#my-menu .mymenu-trucking ul").removeClass("submenu sub-1");
+
 
 //header-nav
-$("#trucking, #trucking-kv, #trucking-of, #trucking-dch").click(function(){
-	$(".sub-2").slideUp(200);
-	$(".truck-fa").toggleClass('fa-angle-down')
-	$(".truck-fa").toggleClass('fa-angle-up')
-	$(".sub-1").slideToggle(400);
-	$(".rem-fa").removeClass('fa-angle-up')
-	$(".rem-fa").addClass('fa-angle-down')
+$(".header-nav .trucking").click(function(){
+	$(".header-nav .sub-2").slideUp(200);
+	$(".header-nav .truck-fa").toggleClass('fa-angle-down')
+	$(".header-nav .truck-fa").toggleClass('fa-angle-up')
+	$(".header-nav .sub-1").slideToggle(400);
+	$(".header-nav .rem-fa").removeClass('fa-angle-up')
+	$(".header-nav .rem-fa").addClass('fa-angle-down')
 })
 
-$("#removals, #removals-kv, #removals-of,  #removals-dch").click(function(){
-	$(".sub-1").slideUp(200);
-	$(".sub-2").slideToggle(400);
-	$(".rem-fa").toggleClass('fa-angle-down')
-	$(".rem-fa").toggleClass('fa-angle-up')
-	$(".truck-fa").removeClass('fa-angle-up')
-	$(".truck-fa").addClass('fa-angle-down')
+$(".header-nav .removals").click(function(){
+	$(".header-nav .sub-1").slideUp(200);
+	$(".header-nav .sub-2").slideToggle(400);
+	$(".header-nav .rem-fa").toggleClass('fa-angle-down')
+	$(".header-nav .rem-fa").toggleClass('fa-angle-up')
+	$(".header-nav .truck-fa").removeClass('fa-angle-up')
+	$(".header-nav .truck-fa").addClass('fa-angle-down')
 })
-// $(".kv-pereezd").click(function(){
-// 	$('.kv-pereezd').addClass("active");
-// 	$("#trucking").removeClass("active");
-// })
-
 //header-nav-end
 
-//footer-nav
-$(".trucking-footer").click(function(){
+$(".footer-nav .trucking").click(function(){
 
-	$(".sub-2").slideUp(200);
-	$(".truck-fa").toggleClass('fa-angle-up')
-	$(".truck-fa").toggleClass('fa-angle-down')
-	$(".sub-1").slideToggle(400);
-	$(".rem-fa").removeClass('fa-angle-down')
-	$(".rem-fa").addClass('fa-angle-up')
+	$(".footer-nav .sub-2").slideUp(200);
+	$(".footer-nav .truck-fa").toggleClass('fa-angle-up')
+	$(".footer-nav .truck-fa").toggleClass('fa-angle-down')
+	$(".footer-nav .sub-1").slideToggle(400);
+	$(".footer-nav .rem-fa").removeClass('fa-angle-down')
+	$(".footer-nav .rem-fa").addClass('fa-angle-up')
 })
 
-$(".removals-footer").click(function(){
-	$(".sub-1").slideUp(200);
-	$(".sub-2").slideToggle(400);
-	$(".rem-fa").toggleClass('fa-angle-up')
-	$(".rem-fa").toggleClass('fa-angle-down')
-	$(".truck-fa").removeClass('fa-angle-down')
-	$(".truck-fa").addClass('fa-angle-up')
+$(".footer-nav .removals").click(function(){
+	$(".footer-nav .sub-1").slideUp(200);
+	$(".footer-nav .sub-2").slideToggle(400);
+	$(".footer-nav .rem-fa").toggleClass('fa-angle-up')
+	$(".footer-nav .rem-fa").toggleClass('fa-angle-down')
+	$(".footer-nav .truck-fa").removeClass('fa-angle-down')
+	$(".footer-nav .truck-fa").addClass('fa-angle-up')
 })
-//footer-nav-end
 
+
+if ($('body').hasClass('trucking')) { 
+	$(".sub-2").css("display", "none");
+	$(".sub-1").css("display", "block");
+}
 //checkbox
 $("#box-1").click(function(){
 	$(".lb-1").toggleClass("lb-active");
@@ -357,7 +367,6 @@ $(function() {
 		}
 
 	});
-
 
 	$('video').get(0).play();
 
