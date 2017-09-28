@@ -1,0 +1,290 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "main.sass"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $reg-i
+	overflow-x: hidden
+	opacity: 1
+	color: #000
+
+ul
+	padding: 0
+	margin: 0
+
+li
+	list-style-type: none
+	display: inline-block
+	color: #000
+
+a
+	color: $grey
+	transition: color .5s ease
+	&:hover
+		text-decoration: none
+		color: #fff
+	&:focus
+		outline: none
+		text-decoration: none
+		color: #fff
+
+.sub-2
+	display: block
+
+.special-offer
+	.title-s
+		h2
+			line-height: 1.2
+.offer-image
+	img
+		width: 100%
+.offer-content
+	margin-top: 80px
+	.counter
+		line-height: .6
+		text-align: left
+		position: relative
+		right: 20px
+h3
+	margin-top: 40px
+	font-size: 30px
+	margin-bottom: 20px
+.special-offer-wrapp
+	.brd-input
+		transform: skew(-10deg)
+		padding-top: 40px
+		padding-left: 80px
+		.offer-phone
+			padding: 22px 85px
+			outline: none
+			height: 45px
+			line-height: 40px
+			font-size: 18px
+			border: 2px solid transparent
+			font-weight: 100
+			text-align: center
+			font-family: $reg-i
+			border: 1px solid #000
+.button-gradient .btn-primary
+	padding: 10px 80px
+.cupon
+	position: relative
+	bottom: 36px
+	text-align: left
+	.button-gradient
+		text-align: left
+		padding-left: 0
+		margin-top: 0
+		.btn-primary
+			padding: 10px 70px
+
+.section-relocation
+	background: $brown url(../img/images/bg-tabl.png) repeat-x 0 100%
+	padding-bottom: 10px
+#bell2
+	color: #ffcd00
+	font-size: 20px
+	margin: 0 0 12px
+	padding: 20px 25px 25px
+	border-collapse: separate
+	.modal-title-block h4
+		margin-left: 20px
+		font-weight: normal
+		text-transform: uppercase
+		margin-bottom: 14px
+
+.pad_left_20
+	float: left
+	width: 160px
+	padding-left: 20px
+	color: #FFF
+	overflow: hidden
+	font-size: 14px
+	padding-top: 15px
+
+#bell2
+	.input_parallelogram
+		margin-bottom: 20px
+		float: left
+		width: 56%
+		border: 2px solid #2C2A20
+		color: #000
+		line-height: 100%
+	.js_radio label
+		padding: 10px 5px
+		width: 18.5%
+		height: 50px
+		margin-left: 0
+		i
+			line-height: 14px
+			font-size: 14px
+			display: block
+#bell2 .noUi-base
+	width: 90%
+.bell_time_slider2
+	float: left
+	width: 450px
+	padding-top: 15px
+
+#bell2
+	.noUi-base
+		background: #d4d4d4
+		border: 1px solid #000000
+	.noUi-signature
+		top: 33px
+		left: -5px
+	.noUi-arrow:before
+		border-top: 4px solid #e64c3c
+	.noUi-arrow-active:before
+		border-top: 4px solid #d4d4d4 !important
+	.noUi-origin:first-child
+		background: #e64c3c
+	.bell_time_block > span
+		width: 130px
+		padding-left: 20px
+	.input_parallelogram.message
+		width: 387px
+		height: 75px
+		border: none
+		outline: none
+		background: transparent
+		textarea
+			width: 100%
+			height: 100%
+			resize: none
+			font-size: 15px
+			padding-left: 7px
+	.porter_time_block
+		margin: 20px 0px 41px 0
+
+.bell_time_block
+	margin: 20px 0px 41px 0
+
+#bell2 .submit-button
+	width: 386px
+	margin-left: 161px
+	margin-top: 0
+	text-align: center
+.error-border
+	border: 2px solid #ff0000 !important
+#bell2 .bell_time_block>span
+	width: 150px
+.clear
+	clear: both
+.red
+	color: #ff0000
+.none
+	display: none
+.hide
+	opacity: 0
+	position: absolute
+
+.work-items-wrapper
+	display: flex
+	flex-wrap: wrap
+.work-item
+	width: 33.33%
+	border: 2px solid #666
+	padding: 20px 0px 20px 20px
+	background-color: #fff
+	&:nth-child(1), &:nth-child(2), &:nth-child(3)
+		border-left: none
+		border-top: none
+		border-bottom: none
+	&:nth-child(3)
+		border-right: none
+	&:nth-child(4), &:nth-child(5), &:nth-child(6)
+		border-left: none
+		border-bottom: none
+	&:nth-child(6)
+		border-right: none
+	&-number
+		font-size: 63px
+		line-height: .8
+		color: red
+		float: left
+	&-content
+		float: left
+		width: 68%
+		margin-left: 15px
+		line-height: 1
+		font-size: 23px
+
+.why-us
+	ul
+		display: inline-block
+		li 
+			display: block
+			font-size: 18px
+			padding-left: 35px
+			background: url("../img/images/bg-li.png") no-repeat 10px 8px
+			font-family: Arial
+			line-height: 30px
+	ul:last-child
+		margin-left: 140px
+.discounts
+	text-align: center
+	margin-top: 40px
+	margin-bottom: 20px
+
+.section-motto
+	background-color: $brown
+	text-align: center
+	color: #fff
+	line-height: 1.3
+	h3
+		margin-top: 0
+		font-size: 45px
+		margin-bottom: 0
+		color: $accent
+	p
+		font-size: 40px
+	.phone-container .phone
+		text-align: center
+		color: $accent
+		font-size: 30px
+		span
+			font-size: 45px
+		&:hover
+			color: $red
+@import "media" // Всегда в конце

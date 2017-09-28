@@ -1,7 +1,7 @@
 $(function() {
 
 //header-nav
-$("#trucking").click(function(){
+$("#trucking, #trucking-kv, #trucking-of, #trucking-dch").click(function(){
 	$(".sub-2").slideUp(200);
 	$(".truck-fa").toggleClass('fa-angle-down')
 	$(".truck-fa").toggleClass('fa-angle-up')
@@ -10,7 +10,7 @@ $("#trucking").click(function(){
 	$(".rem-fa").addClass('fa-angle-down')
 })
 
-$("#removals").click(function(){
+$("#removals, #removals-kv, #removals-of,  #removals-dch").click(function(){
 	$(".sub-1").slideUp(200);
 	$(".sub-2").slideToggle(400);
 	$(".rem-fa").toggleClass('fa-angle-down')
@@ -18,10 +18,10 @@ $("#removals").click(function(){
 	$(".truck-fa").removeClass('fa-angle-up')
 	$(".truck-fa").addClass('fa-angle-down')
 })
-$(".kv-pereezd").click(function(){
-	$('.kv-pereezd').addClass("active");
-	$("#trucking").removeClass("active");
-})
+// $(".kv-pereezd").click(function(){
+// 	$('.kv-pereezd').addClass("active");
+// 	$("#trucking").removeClass("active");
+// })
 
 //header-nav-end
 
@@ -336,7 +336,7 @@ if ($('body').hasClass('home')) {
 $(function() {
 
 	var percent_number_step = $.animateNumber.numberStepFactories.append('%')
-	$('#fun-level-kv').animateNumber(
+	$('.fun-level-pereezd').animateNumber(
 	{
 		number: 10,
 		easing: 'easeOutBack',
