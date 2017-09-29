@@ -1,15 +1,15 @@
 $(function() {
-$(".submenu").clone().appendTo('.footer-nav');
-$(".nav").clone().appendTo(".footer-nav");
-$(".footer-nav .fa").removeClass("fa-angle-down").addClass("fa-angle-up");
+	$(".submenu").clone().appendTo('.footer-nav');
+	$(".nav").clone().appendTo(".footer-nav");
+	$(".footer-nav .fa").removeClass("fa-angle-down").addClass("fa-angle-up");
 
-$(".header-nav .primary-menu ul").clone().appendTo("#my-menu")
-$(".header-nav .pay-online li").clone().appendTo("#my-menu ul")
-$(".toggle-mnu .sub-2").clone().appendTo("#my-menu .mymenu-removals");
-$(".toggle-mnu .sub-1").clone().appendTo("#my-menu .mymenu-trucking");
-$("#my-menu i").remove();
-$("#my-menu .mymenu-removals ul").removeClass("submenu sub-2");
-$("#my-menu .mymenu-trucking ul").removeClass("submenu sub-1");
+	$(".header-nav .primary-menu ul").clone().appendTo("#my-menu")
+	$(".header-nav .pay-online li").clone().appendTo("#my-menu ul")
+	$(".toggle-mnu .sub-2").clone().appendTo("#my-menu .mymenu-removals");
+	$(".toggle-mnu .sub-1").clone().appendTo("#my-menu .mymenu-trucking");
+	$("#my-menu i").remove();
+	$("#my-menu .mymenu-removals ul").removeClass("submenu sub-2");
+	$("#my-menu .mymenu-trucking ul").removeClass("submenu sub-1");
 
 
 //header-nav
@@ -63,10 +63,13 @@ $("#box-1").click(function(){
 $("#box-2").click(function(){
 	$(".lb-2").toggleClass("lb-active");
 })
+$("#box-3").click(function(){
+	$(".lb-2").toggleClass("lb-active");
+})
 //checkbox-end
 
 
-if ($('body').hasClass('home')) { //codes only for home-page
+// if ($('body').hasClass('home')) { //codes only for home-page
 //carousel
 $(".carousel-photos").owlCarousel({
 	loop: true,
@@ -204,7 +207,7 @@ $('.girl-section').waypoint(function(){
 }, {	
 	offset : "71%"
 });
-} //codes only for home-page-end
+// } //codes only for home-page-end
 
 $(document).ready(function () {
 
@@ -261,30 +264,29 @@ if ($('body').hasClass('home')) {
 //month-picker-end
 
 //reviews-block
-if ($('body').hasClass('home')) {
-	$("#reviews_fl .desc").hide();
+$("#reviews_fl .desc").hide();
+$("#reviews_fl .desc:first").addClass('rew_act');
+$("#reviews_fl .rew_act").show();
+
+$("#reviews_fl .next_rew").click(function() {
+	if ($("#reviews_fl .desc:last").hasClass('rew_act'))
+		{$("#reviews_fl .desc").removeClass('rew_act').removeClass('rew_act_next');
 	$("#reviews_fl .desc:first").addClass('rew_act');
-	$("#reviews_fl .rew_act").show();
+	$("#reviews_fl .desc").hide();
+	$("#reviews_fl .rew_act").fadeIn(1000);
 
-	$("#reviews_fl .next_rew").click(function() {
-		if ($("#reviews_fl .desc:last").hasClass('rew_act'))
-			{$("#reviews_fl .desc").removeClass('rew_act').removeClass('rew_act_next');
-		$("#reviews_fl .desc:first").addClass('rew_act');
-		$("#reviews_fl .desc").hide();
-		$("#reviews_fl .rew_act").fadeIn(1000);
-
-	}
-	else
-	{
-		$("#reviews_fl .rew_act").next().addClass('rew_act_next');
-		$("#reviews_fl .desc").removeClass('rew_act');
-		$("#reviews_fl .rew_act_next").addClass('rew_act');
-		$("#reviews_fl .desc").removeClass('rew_act_next');
-		$("#reviews_fl .desc").hide();
-		$("#reviews_fl .rew_act").fadeIn(1000);
-	}
-});
 }
+else
+{
+	$("#reviews_fl .rew_act").next().addClass('rew_act_next');
+	$("#reviews_fl .desc").removeClass('rew_act');
+	$("#reviews_fl .rew_act_next").addClass('rew_act');
+	$("#reviews_fl .desc").removeClass('rew_act_next');
+	$("#reviews_fl .desc").hide();
+	$("#reviews_fl .rew_act").fadeIn(1000);
+}
+});
+
 // //reviews-block-end
 
 // //adr-input
@@ -480,3 +482,17 @@ jQuery(document).ready(function(){
 
 
 });//end_ready
+
+$(document).ready(function() {
+
+	if ($(window).width() < 960) {
+		$('.wrapp-order').css('height', "100%");
+ }
+	else {
+		 setTimeout(function() { 
+			 $(".wrapp-order").css({'height':($(".video").height()+'px')});
+		}, 50);
+		
+	  }
+
+});
