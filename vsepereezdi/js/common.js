@@ -482,17 +482,12 @@ jQuery(document).ready(function(){
 
 
 });//end_ready
-
-$(document).ready(function() {
-
-	if ($(window).width() < 960) {
+setInterval(function() { 
+if ($(window).width() < 960) {
 		$('.wrapp-order').css('height', "100%");
  }
 	else {
-		 setTimeout(function() { 
 			 $(".wrapp-order").css({'height':($(".video").height()+'px')});
-		}, 50);
-		
 	  }
 
-});
+ }, 50);
