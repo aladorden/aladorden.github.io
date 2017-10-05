@@ -96,7 +96,7 @@ $(document).ready(function() {
     });
 
 
-$(".image1").hover(function(){
+$(".image1").click(function(){
   $('.show-1, section.pluses .items .title-1').slideDown();
 })
 $(".image2").hover(function(){
