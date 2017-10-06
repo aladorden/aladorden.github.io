@@ -40,12 +40,12 @@ $(document).ready(function() {
         pagination : false,
         autoHeight : false,
         itemsCustom : [
-            [0, 1],
-            [400, 2],
-            [700, 3],
-            [1100, 4],
-            [1200, 3],
-            [1600, 3]
+        [0, 1],
+        [400, 2],
+        [700, 3],
+        [1100, 4],
+        [1200, 3],
+        [1600, 3]
         ],
         afterInit : function() {
             var reviewsSlider = this;
@@ -97,108 +97,116 @@ $(document).ready(function() {
         top_bar_pos();
     });
 
-$(".image1").click(function(){
-    $('.answ-2, .answ-3, .answ-4, .answ-5').slideUp("slow");
-  $('.answ-1').slideToggle("slow");
-  
- })
+    $(".image1").click(function(){
+        $('.image1').toggleClass("shadow");
+        $('.image2, .image3, .image4').removeClass("shadow");
+        $('.answ-2, .answ-3, .answ-4').slideUp("slow");
+        $('.answ-1').slideToggle("slow");
 
-$(".image2").click(function(){
-   $('.answ-1, .answ-3, .answ-4, .answ-5').slideUp("slow");
-  $('.answ-2').slideToggle("slow");
-  
-})
-$(".image3").click(function(){
-  $('.answ-2, .answ-1, .answ-4, .answ-5').slideUp("slow");
-  $('.answ-3').slideToggle("slow");
+    })
 
-})
-$(".image4").click(function(){
-    $('.answ-2, .answ-3, .answ-1, .answ-5').slideUp("slow");
-  $('.answ-4').slideToggle("slow");
-  
-})
-// $(".image5").click(function(){
+    $(".image2").click(function(){
+        $('.image2').toggleClass("shadow");
+        $('.image1, .image3, .image4').removeClass("shadow");
+        $('.answ-1, .answ-3, .answ-4').slideUp("slow");
+        $('.answ-2').slideToggle("slow");
 
-//  $('.answ-2, .answ-3, .answ-4, .answ-1').slideUp("slow");
-//   $('.answ-5').slideToggle("slow");
-// })
-// $(".image1").click(function(){
-//   $('.show-1, section.pluses .items .title-1').slideToggle();
-// })
+    })
+    $(".image3").click(function(){
+        $('.image3').toggleClass("shadow");
+        $('.image1, .image2, .image4').removeClass("shadow");
+        $('.answ-2, .answ-1, .answ-4').slideUp("slow");
+        $('.answ-3').slideToggle("slow");
+
+    })
+    $(".image4").click(function(){
+        $('.image1, .image2, .image3').removeClass("shadow");
+        $('.image4').toggleClass("shadow");
+        $('.answ-2, .answ-3, .answ-1').slideUp("slow");
+        $('.answ-4').slideToggle("slow");
+
+
+    })
+    // $(".image5").click(function(){
+    //     $('.image5').toggleClass("shadow");
+    //     $('.image1, .image2, .image3, .image4').removeClass("shadow");
+    //     $('.answ-2, .answ-3, .answ-4, .answ-1').slideUp("slow");
+    //     $('.answ-5').slideToggle("slow");
+    // })
+
 
 
 
 });
 
 //mail
-// $(document).ready(function(){
+$(document).ready(function(){
 
-//   $('form').submit(function() {
-//     var cur = jQuery(this);
-//     var data = jQuery(this).find("input, textarea").serialize();
-//     cur.find(".error").removeClass("error");
-//     jQuery.post("/templates/landing/send.php", data, function(out){
-//       if(out.status == "ok") {
-//                 $('.popup-btn').magnificPopup('close');
-//                 setTimeout(function() {
-//                     $.magnificPopup.open({
-//                       items: { src: '#form-send-success', type: 'inline'},
-//                       removalDelay: 300, mainClass: 'my-mfp-slide-bottom'
-//                     });
-//                 }, 300);
-//       }
-//       else cur.find("input[name="+out.errname+"]").addClass("error");
-//     }, "json");
+  $('form').submit(function() {
+    var cur = jQuery(this);
+    var data = jQuery(this).find("input, textarea").serialize();
+    cur.find(".error").removeClass("error");
+    jQuery.post("/templates/landing/send.php", data, function(out){
+      if(out.status == "ok") {
+        $('.popup-btn').magnificPopup('close');
+        setTimeout(function() {
+            $.magnificPopup.open({
+              items: { src: '#form-send-success', type: 'inline'},
+              removalDelay: 300, mainClass: 'my-mfp-slide-bottom'
+          });
+        }, 300);
+    }
+    else cur.find("input[name="+out.errname+"]").addClass("error");
+}, "json");
 
-//     return false;
-//   });
-// });
+    return false;
+});
+});
 
-// //counter
+//counter
 
-//  function in_array(needle, haystack) {
-//         var found = 0;
-//         for (var i = 0, len = haystack.length; i < len; i++) {
-//             if (haystack[i] == needle) return true;
-//             found++;
-//         }
-//         return false;
-//     }
+function in_array(needle, haystack) {
+    var found = 0;
+    for (var i = 0, len = haystack.length; i < len; i++) {
+        if (haystack[i] == needle) return true;
+        found++;
+    }
+    return false;
+}
 
-//     $(document).ready(function() {
-
-
-//       // setInterval(function() { 
-//       //        $("section.complects .items").css({'height':($(".owl-carousel .owl-wrapper-outer").height()+'px')});
-//       //  }, 50);
+$(document).ready(function() {
 
 
-//         $('.special .timer').countdown('2017/11/04', function(event) {
+      // setInterval(function() { 
+      //        $("section.complects .items").css({'height':($(".owl-carousel .owl-wrapper-outer").height()+'px')});
+      //  }, 50);
 
-//             var dayName = 'дней';
-//             var hoursName = 'часов';
-//             var minutesName = 'минут';
-//             var secondsName = 'секунд';
 
-//             if (in_array(event.offset.seconds, [1, 21, 31, 41, 51])) secondsName = 'секунда';
-//             if (in_array(event.offset.seconds, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) secondsName = 'секунды';
+      $('.special .timer').countdown('2017/11/04', function(event) {
 
-//             if (in_array(event.offset.minutes, [1, 21, 31, 41, 51])) minutesName = 'минута';
-//             if (in_array(event.offset.minutes, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) minutesName = 'минуты';
+        var dayName = 'дней';
+        var hoursName = 'часов';
+        var minutesName = 'минут';
+        var secondsName = 'секунд';
 
-//             if (in_array(event.offset.hours, [1, 21])) hoursName = 'час';
-//             if (in_array(event.offset.hours, [2, 3, 4, 22, 23, 24])) hoursName = 'часа';
+        if (in_array(event.offset.seconds, [1, 21, 31, 41, 51])) secondsName = 'секунда';
+        if (in_array(event.offset.seconds, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) secondsName = 'секунды';
 
-//             if (in_array(event.offset.daysToMonth, [1, 21, 31])) dayName = 'день';
-//             if (in_array(event.offset.daysToMonth, [2, 3, 4, 22, 23, 24])) dayName = 'дня';
+        if (in_array(event.offset.minutes, [1, 21, 31, 41, 51])) minutesName = 'минута';
+        if (in_array(event.offset.minutes, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) minutesName = 'минуты';
 
-//             var $this = $(this).html(event.strftime(''
-//             + '<p class="days"><span>%D</span> ' + dayName + '</p>'
-//             + '<p class="hours"><span>%H</span> ' + hoursName + '</p>'
-//             + '<p class="mins"><span>%M</span> ' + minutesName + '</p>'
-//             + '<p class="seconds"><span>%S</span> ' + secondsName + '</p>'));
+        if (in_array(event.offset.hours, [1, 21])) hoursName = 'час';
+        if (in_array(event.offset.hours, [2, 3, 4, 22, 23, 24])) hoursName = 'часа';
 
-//         });
-//     });
+        if (in_array(event.offset.daysToMonth, [1, 21, 31])) dayName = 'день';
+        if (in_array(event.offset.daysToMonth, [2, 3, 4, 22, 23, 24])) dayName = 'дня';
+
+        var $this = $(this).html(event.strftime(''
+            + '<p class="days"><span>%D</span> ' + dayName + '</p>'
+            + '<p class="hours"><span>%H</span> ' + hoursName + '</p>'
+            + '<p class="mins"><span>%M</span> ' + minutesName + '</p>'
+            + '<p class="seconds"><span>%S</span> ' + secondsName + '</p>'));
+
+    });
+  });
 
