@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
 
     $('.phone-mask').mask("+7 (999) 999-9999");
@@ -95,23 +97,32 @@ $(document).ready(function() {
         top_bar_pos();
     });
 
-
 $(".image1").click(function(){
-  $('.show-1, section.pluses .items .title-1').slideDown();
-})
-$(".image2").hover(function(){
-  $('.show-2, section.pluses .items .title-2').slideDown();
-})
-$(".image3").hover(function(){
-  $('.show-3, section.pluses .items .title-3').slideDown();
-})
-$(".image4").hover(function(){
-  $('.show-4, section.pluses .items .title-4').slideDown();
-})
-$(".image5").hover(function(){
-  $('.show-5').slideDown();
-})
+    $('.answ-2, .answ-3, .answ-4, .answ-5').slideUp("slow");
+  $('.answ-1').slideToggle("slow");
+  
+ })
 
+$(".image2").click(function(){
+   $('.answ-1, .answ-3, .answ-4, .answ-5').slideUp("slow");
+  $('.answ-2').slideToggle("slow");
+  
+})
+$(".image3").click(function(){
+  $('.answ-2, .answ-1, .answ-4, .answ-5').slideUp("slow");
+  $('.answ-3').slideToggle("slow");
+
+})
+$(".image4").click(function(){
+    $('.answ-2, .answ-3, .answ-1, .answ-5').slideUp("slow");
+  $('.answ-4').slideToggle("slow");
+  
+})
+// $(".image5").click(function(){
+
+//  $('.answ-2, .answ-3, .answ-4, .answ-1').slideUp("slow");
+//   $('.answ-5').slideToggle("slow");
+// })
 // $(".image1").click(function(){
 //   $('.show-1, section.pluses .items .title-1').slideToggle();
 // })
@@ -121,72 +132,73 @@ $(".image5").hover(function(){
 });
 
 //mail
-$(document).ready(function(){
-  $('form').submit(function() {
-    var cur = jQuery(this);
-    var data = jQuery(this).find("input, textarea").serialize();
-    cur.find(".error").removeClass("error");
-    jQuery.post("/templates/landing/send.php", data, function(out){
-      if(out.status == "ok") {
-                $('.popup-btn').magnificPopup('close');
-                setTimeout(function() {
-                    $.magnificPopup.open({
-                      items: { src: '#form-send-success', type: 'inline'},
-                      removalDelay: 300, mainClass: 'my-mfp-slide-bottom'
-                    });
-                }, 300);
-      }
-      else cur.find("input[name="+out.errname+"]").addClass("error");
-    }, "json");
+// $(document).ready(function(){
 
-    return false;
-  });
-});
+//   $('form').submit(function() {
+//     var cur = jQuery(this);
+//     var data = jQuery(this).find("input, textarea").serialize();
+//     cur.find(".error").removeClass("error");
+//     jQuery.post("/templates/landing/send.php", data, function(out){
+//       if(out.status == "ok") {
+//                 $('.popup-btn').magnificPopup('close');
+//                 setTimeout(function() {
+//                     $.magnificPopup.open({
+//                       items: { src: '#form-send-success', type: 'inline'},
+//                       removalDelay: 300, mainClass: 'my-mfp-slide-bottom'
+//                     });
+//                 }, 300);
+//       }
+//       else cur.find("input[name="+out.errname+"]").addClass("error");
+//     }, "json");
 
-//counter
+//     return false;
+//   });
+// });
 
- function in_array(needle, haystack) {
-        var found = 0;
-        for (var i = 0, len = haystack.length; i < len; i++) {
-            if (haystack[i] == needle) return true;
-            found++;
-        }
-        return false;
-    }
+// //counter
 
-    $(document).ready(function() {
+//  function in_array(needle, haystack) {
+//         var found = 0;
+//         for (var i = 0, len = haystack.length; i < len; i++) {
+//             if (haystack[i] == needle) return true;
+//             found++;
+//         }
+//         return false;
+//     }
 
-
-      // setInterval(function() { 
-      //        $("section.complects .items").css({'height':($(".owl-carousel .owl-wrapper-outer").height()+'px')});
-      //  }, 50);
+//     $(document).ready(function() {
 
 
-        $('.special .timer').countdown('2017/11/04', function(event) {
+//       // setInterval(function() { 
+//       //        $("section.complects .items").css({'height':($(".owl-carousel .owl-wrapper-outer").height()+'px')});
+//       //  }, 50);
 
-            var dayName = 'дней';
-            var hoursName = 'часов';
-            var minutesName = 'минут';
-            var secondsName = 'секунд';
 
-            if (in_array(event.offset.seconds, [1, 21, 31, 41, 51])) secondsName = 'секунда';
-            if (in_array(event.offset.seconds, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) secondsName = 'секунды';
+//         $('.special .timer').countdown('2017/11/04', function(event) {
 
-            if (in_array(event.offset.minutes, [1, 21, 31, 41, 51])) minutesName = 'минута';
-            if (in_array(event.offset.minutes, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) minutesName = 'минуты';
+//             var dayName = 'дней';
+//             var hoursName = 'часов';
+//             var minutesName = 'минут';
+//             var secondsName = 'секунд';
 
-            if (in_array(event.offset.hours, [1, 21])) hoursName = 'час';
-            if (in_array(event.offset.hours, [2, 3, 4, 22, 23, 24])) hoursName = 'часа';
+//             if (in_array(event.offset.seconds, [1, 21, 31, 41, 51])) secondsName = 'секунда';
+//             if (in_array(event.offset.seconds, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) secondsName = 'секунды';
 
-            if (in_array(event.offset.daysToMonth, [1, 21, 31])) dayName = 'день';
-            if (in_array(event.offset.daysToMonth, [2, 3, 4, 22, 23, 24])) dayName = 'дня';
+//             if (in_array(event.offset.minutes, [1, 21, 31, 41, 51])) minutesName = 'минута';
+//             if (in_array(event.offset.minutes, [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54])) minutesName = 'минуты';
 
-            var $this = $(this).html(event.strftime(''
-            + '<p class="days"><span>%D</span> ' + dayName + '</p>'
-            + '<p class="hours"><span>%H</span> ' + hoursName + '</p>'
-            + '<p class="mins"><span>%M</span> ' + minutesName + '</p>'
-            + '<p class="seconds"><span>%S</span> ' + secondsName + '</p>'));
+//             if (in_array(event.offset.hours, [1, 21])) hoursName = 'час';
+//             if (in_array(event.offset.hours, [2, 3, 4, 22, 23, 24])) hoursName = 'часа';
 
-        });
-    });
+//             if (in_array(event.offset.daysToMonth, [1, 21, 31])) dayName = 'день';
+//             if (in_array(event.offset.daysToMonth, [2, 3, 4, 22, 23, 24])) dayName = 'дня';
+
+//             var $this = $(this).html(event.strftime(''
+//             + '<p class="days"><span>%D</span> ' + dayName + '</p>'
+//             + '<p class="hours"><span>%H</span> ' + hoursName + '</p>'
+//             + '<p class="mins"><span>%M</span> ' + minutesName + '</p>'
+//             + '<p class="seconds"><span>%S</span> ' + secondsName + '</p>'));
+
+//         });
+//     });
 
