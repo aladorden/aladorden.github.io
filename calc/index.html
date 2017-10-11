@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+</head>
+
+<body>
+	
+	<div class="container-wr">
+		<div class="container-calc">
+			<h3 class="h3">Онлайн калькулятор</h3>
+
+			<div class="calculator part-map">
+				<div class="adr_block">
+
+					<div class="adr-internal">
+						<label>Откуда:</label> 
+						<div class="input input_whence">
+							<input type="text" placeholder="" value="" />
+						</div>
+					</div>
+
+					<div class="adr-internal">
+						<label class="where">Куда:</label>
+						<div class="input input_where">
+							<input type="text" placeholder="" value="" />
+						</div>
+					</div>
+					<button class="btn-check">Принять</button>
+				</div>
+				<div id="map"></div>
+
+			</div>
+
+			<div class="calculator part-car">
+				<h4>Выберите тип автомобиля</h4>
+
+				<div class="cars-carousel owl-carousel">
+
+					<div class="car-item gazel" data-car="Газель">
+						<div class="top-sect">
+							<div class="left">
+								<div class="car-img"><img src="img/car1.jpg" alt="#"></div>
+								<div class="car-title"><span>Газель</span> <br>грузопассажирская <br>(фермер)</div>
+							</div>
+
+							<div class="right">
+								<div class="param">
+									<ul>
+										<li>Обьем:<p>25 м&sup3</p></li>
+										<li>Грузоподъемность:<p>2 т</p></li>
+										<li>Высота:<p>2 м</p></li>
+										<li>Длина кузова:<p>6 м</p></li>
+										<li>Ширина кузова:<p>2,1 м</p></li>
+									</ul>
+								</div>
+
+								<div class="dignity"><h4>Достоинства</h4>
+									<p>Длинномерный автомобиль средней грузоподъемности. Позволяет целиком перевезти двухкомнатную квартиру при наличии просторного подъездного пути. Также применяются для доставки негабаритного груза: трубы, доски, брус и т.п.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="car-price">
+							<div class="price">
+								<h5>Стоимость за 5 часов работы</h5>
+								<p>4500 <span>₽</span></p>
+							</div>
+
+							<div class="price">
+								<h5>Дополнительный час</h5>
+								<p>600 <span>₽</span></p>
+							</div>
+
+							<div class="price">
+								<h5>Стоимость 1км за мкад</h5>
+								<p>20 <span>₽</span></p>
+							</div>
+
+							<button class="btn-check btn-car">Заказать</button>
+
+						</div>
+					</div>
+
+					<div class="car-item gazel" data-car="Портер">
+						<div class="top-sect">
+							<div class="left">
+								<div class="car-img"><img src="img/car2.jpg" alt="#"></div>
+								<div class="car-title"><span>Портер</span> <br>(фермер)</div>
+							</div>
+
+							<div class="right">
+								<div class="param">
+									<ul>
+										<li>Обьем:<p>25 м&sup3</p></li>
+										<li>Грузоподъемность:<p>2 т</p></li>
+										<li>Высота:<p>2 м</p></li>
+										<li>Длина кузова:<p>6 м</p></li>
+										<li>Ширина кузова:<p>2,1 м</p></li>
+									</ul>
+								</div>
+
+								<div class="dignity"><h4>Достоинства</h4>
+									<p>Длинномерный автомобиль средней грузоподъемности. Позволяет целиком перевезти двухкомнатную квартиру при наличии просторного подъездного пути. Также применяются для доставки негабаритного груза: трубы, доски, брус и т.п.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="car-price">
+							<div class="price">
+								<h5>Стоимость за 5 часов работы</h5>
+								<p>4500 <span>₽</span></p>
+							</div>
+
+							<div class="price">
+								<h5>Дополнительный час</h5>
+								<p>600 <span>₽</span></p>
+							</div>
+
+							<div class="price">
+								<h5>Стоимость 1км за мкад</h5>
+								<p>20 <span>₽</span></p>
+							</div>
+
+							<button class="btn-check">Заказать</button>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="dop-param-part">
+				<h4>Выберите дополнительные параметры</h4>
+				<div class="param-container">
+					<div class="left">
+						<h5 class="title">Грузчики</h5>
+						<p class="title-p">Количество грузчиков</p>
+						<div class="loaders__count">
+							<input type="radio" data-ld="300" id="loaders_08" name="loaders-count" value="8">
+							<label for="loaders_08"></label>
+							<input type="radio" data-ld="300" id="loaders_07" name="loaders-count" value="7">
+							<label for="loaders_07"></label>
+							<input type="radio" data-ld="300" id="loaders_06" name="loaders-count" value="6">
+							<label for="loaders_06"></label>
+							<input type="radio" data-ld="300" id="loaders_05" name="loaders-count" value="5">
+							<label for="loaders_05"></label>
+							<input type="radio" data-ld="300" id="loaders_04" name="loaders-count" value="4">
+							<label for="loaders_04"></label>
+							<input type="radio" data-ld="300" id="loaders_03" name="loaders-count" value="3">
+							<label for="loaders_03"></label>
+							<input type="radio" data-ld="300" id="loaders_02" name="loaders-count" value="2">
+							<label for="loaders_02"></label>
+							<input type="radio" data-ld="300" id="loaders_01" name="loaders-count" value="1" checked>
+							<label for="loaders_01"></label>
+						</div>
+
+						<h6>В стоимость включены все работы</h6>
+						<p>сборка/разборка мебели, упаковка вещей и мебели, проносы по этажам без лифта</p>
+
+						<div class="calculate__col">
+							<div class="calculate__parameter">Время работы грузчиков, час</div>
+							<input type="number" data-loads_time="650" id="time-loaders" readonly class="loaders__time" min="0" max="12" name="loaders-time" value="0" placeholder="">
+						</div>
+
+						<div class="back"><button class="btn-check btn-back btn-acc">Подтвердить заказ</button></div>
+
+					</div>
+
+					<div class="right">
+						<h5 class="title">Упаковочные материалы</h5>
+
+						<div class="right-wrapp">
+							<div class="column-left">
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Коробка большая, шт</div>
+									<input id="box-big" type="number" data-box_bg="200" readonly class="box_big" min="0" max="12" name="box-big" value="0" placeholder="">
+								</div>
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Коробка маленькая, шт</div>
+									<input id="box-small" type="number" data-box_sm="100" readonly class="box__small" min="0" max="12" name="box-small" value="0" placeholder="">
+								</div>
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Пузырчатая пленка, шт</div>
+									<input id="membrane" type="number" data-membr="500" readonly class="membrane" min="0" max="12" name="membrane" value="0" placeholder="">
+								</div>
+
+							</div>
+
+							<div class="column-right">
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Cтрейтч-пленка, рулон</div>
+									<input id="membrane-str" type="number" data-membr-str="700" readonly class="membrane-str" min="0" max="12" name="membrane-str" value="0" placeholder="">
+								</div>
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Картонный лист</div>
+									<input id="cardboard" type="number" data-cardb="350" readonly class="cardboard" min="0" max="12" name="cardboard" value="0" placeholder="">
+								</div>
+
+								<div class="calculate__col">
+									<div class="calculate__parameter">Скотч</div>
+									<input id="scotch" type="number" data-scotch="50" readonly class="scotch" min="0" max="12" name="scotch" value="0" placeholder="">
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="accept-part">
+				<div class="accept-container">
+					<div class="left">
+						<h4>Подтвердите данные</h4>
+						<div class="accept-list">
+							<h5>Вы выбрали</h5>
+							<ul class="final">
+								<li class="moving-final">Переезд: <span class="value">по Москве</span></li>
+								<li class="route-final">Маршрут: <span class="value">Новинский бульвар - Озерный лесопарк</span></li>
+								<li class="auto-final">Тип Авто: <span class="value"></span></li>
+								<li class="loaders-final">Грузчики: <span class="value"> </span><span> человек</span></li>
+								<li class="box-sm-final">Коробка маленькая: <span class="value">0 </span><span> шт.</span></li>
+								<li class="box-bg-final">Коробка большая: <span class="value">0 </span><span> шт.</span></li>
+								<li class="ld-time-final">Время работы грузчиков: <span class="value">0 </span><span> часа</span></li>
+								<li class="membrane-final">Пузырчатая пленка: <span class="value">0 </span><span> шт.</span></li>
+								<li class="membrane-str-final">Стрейтч-пленка: <span class="value">0 </span><span> рулон</span></li>
+								<li class="cardboard-final">Картонный лист: <span class="value">0 </span><span> шт.</span></li>
+								<li class="scotch-final">Cкотч: <span class="value">0 </span><span> шт.</span></li>
+							</ul>
+							<div class="final-price">Итого: <span class="value"></span><span> руб.</span></div>
+						</div>
+					</div>
+
+					<div class="right">
+						<div class="brd-input input-name">
+							<h5>Ваше имя</h5>
+							<input data-inputmask-mask="" data-val="true" data-val-required="Required" class="phone-inp" id="name" name="name" placeholder="" type="text"/>
+						</div>
+						
+						<div class="brd-input">
+							<h5>Ваш телефон</h5>
+							<input data-inputmask-mask="+7 (999)-999-99-99" data-val="true" data-val-required="Required" class="phone-inp" id="phone" name="phone" placeholder="+7 (___)-__-__-__" type="text"/>
+						</div>
+
+						<!-- <div class="brd-input data">
+							<div class="cal"><h5>Дата</h5>
+								<input data-toggle="datepicker"></div>
+								<div class="time"><h5>Время</h5>
+									<input id="basicExample" class="time ui-timepicker-input" autocomplete="off" type="text"></div>
+								</div> -->
+								<button class="btn-check btn-orange">Заказать переезд</button>
+								<div class="agreement">
+									<p>нажимая на кнопку, я принимаю <a href="#">соглашение на обработку персональных</a></p>
+								</div>
+								<div class="back"><button class="btn-check btn-back">Заказать будущий переезд</button></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="accept-part accept-later">
+						<div class="accept-container">
+							<div class="left">
+								<h4>Подтвердите данные</h4>
+								<div class="accept-list">
+									<h5>Вы выбрали</h5>
+									<ul class="final">
+										<li class="moving-final">Переезд: <span class="value">по Москве</span></li>
+										<li class="route-final">Маршрут: <span class="value">Новинский бульвар - Озерный лесопарк</span></li>
+										<li class="auto-final">Тип Авто: <span class="value"></span></li>
+										<li class="loaders-final">Грузчики: <span clas="value"> человека</span></li>
+										<li class="box-sm-final">Коробка маленькая: <span class="value">0 </span><span> шт.</span></li>
+										<li class="box-bg-final">Коробка большая: <span class="value">0 </span><span> шт.</span></li>
+										<li class="ld-time-final">Время работы грузчиков: <span class="value">0 </span><span> часа</span></li>
+										<li class="membrane-final">Пузырчатая пленка: <span class="value">0 </span><span> шт.</span></li>
+										<li class="membrane-str-final">Стрейтч-пленка: <span class="value">0 </span><span> рулон</span></li>
+										<li class="cardboard-final">Картонный лист: <span class="value">0 </span><span> шт.</span></li>
+										<li class="scotch-final">Cкотч: <span class="value">0 </span><span> шт.</span></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="right">
+								<div class="brd-input input-name">
+									<h5>Ваше имя</h5>
+									<input data-inputmask-mask="" data-val="true" data-val-required="Required" class="phone-inp" id="name" name="name" placeholder="" type="text"/>
+								</div>
+								
+								<div class="brd-input">
+									<h5>Ваш телефон</h5>
+									<input data-inputmask-mask="+7 (999)-999-99-99" data-val="true" data-val-required="Required" class="phone-inp" id="phone" name="phone" placeholder="+7 (___)-__-__-__" type="text"/>
+								</div>
+
+								<div class="brd-input data">
+									<div class="cal"><h5>Дата</h5>
+										<input data-toggle="datepicker"></div>
+										<div class="time"><h5>Время</h5>
+											<input id="basicExample" class="time ui-timepicker-input" autocomplete="off" type="text"></div>
+										</div>
+										<button class="btn-check btn-orange">Принять</button>
+										<div class="agreement">
+											<p>нажимая на кнопку, я принимаю <a href="#">соглашение на обработку персональных</a></p>
+										</div>
+										<div class="back"><button class="btn-check btn-back">Назад</button></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="steps">
+								<div class="step st-1">шаг 1</div><div class="arr arr-1"></div>
+								<div class="step st-2">шаг 2</div><div class="arr arr-2"></div>
+								<div class="step st-3">шаг 3</div>
+							</div>
+						</div>
+					</div>
+
+					<link rel="stylesheet" href="css/main.min.css">
+					<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+					<script src="js/scripts.min.js"></script>
+
+				</body>
+				</html>
