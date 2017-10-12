@@ -329,9 +329,13 @@ $membrane_pr = $('#membrane').attr('data-membr') * $membrane;
 $membrane_str_pr = $('#membrane-str').attr('data-membr-str') * $membrane_str;
 $cardboard_pr = $('#cardboard').attr('data-cardb') * $cardboard;
 $scotch_pr = $('#scotch').attr('data-scotch') * $scotch;
+$ld_pr = $('.loaders-final .value').text();
+$total_ld = parseInt($ld_pr) * parseInt($time_ld_pr);
 // $count_pr = $('.loaders__count').attr('data-count_pr') * $('.loaders-final .value');
 //рассчет итоговой цены
-$final_price = parseInt($price_rout) + parseInt($time_ld_pr) + parseInt($box_bg_pr) + parseInt($box_sm_pr) + parseInt($membrane_pr) + parseInt($membrane_str_pr) + parseInt($cardboard_pr) + parseInt($scotch_pr)
+$final_price = parseInt($price_rout) + parseInt($total_ld) + parseInt($box_bg_pr) + parseInt($box_sm_pr) + parseInt($membrane_pr) + parseInt($membrane_str_pr) + parseInt($cardboard_pr) + parseInt($scotch_pr);
+
+// $final_price = 
 
 //вывод итоговых параметров
 $('.ld-time-final .value').text($time_loaders);
@@ -395,5 +399,7 @@ $('.btn-check').on('click',function() {
 	$('.auto-final .value').text(text);
 });
 
+// $('.loaders-final .value').text();
+// alert(text)
 
 });
