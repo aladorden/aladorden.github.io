@@ -5,9 +5,11 @@ $(function() {
 		loop:true,
 		nav:true,
 		items: 1,
-	//  	animateOut: 'fadeOut',
-		// animateIn: 'fadeIn',
+	 	animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
 		navText: false,
+		touchDrag: false,
+		mouseDrag: false,
 	})
 
 
