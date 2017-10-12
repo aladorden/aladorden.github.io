@@ -483,7 +483,7 @@ jQuery(document).ready(function(){
 
 });//end_ready
 setInterval(function() { 
-if ($(window).width() < 960) {
+if ($(window).width() < 768) {
 		$('.wrapp-order').css('height', "100%");
  }
 	else {
