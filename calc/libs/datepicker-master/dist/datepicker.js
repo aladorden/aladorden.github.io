@@ -20,7 +20,7 @@ var DEFAULTS = {
   autoShow: false,
 
   // Hide the datepicker automatically when picked
-  autoHide: false,
+  autoHide: true,
 
   // Pick the initial date automatically when initialized
   autoPick: false,
@@ -35,7 +35,7 @@ var DEFAULTS = {
   trigger: null,
 
   // The ISO language code (built-in: en-US)
-  language: '',
+  language: 'ru-RU',
 
   // The date string format
   format: 'mm/dd/yyyy',
