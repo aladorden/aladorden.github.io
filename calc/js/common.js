@@ -142,7 +142,7 @@ $(function() {
 			.then(function (router) {
 				var distance = Math.round(router.getLength() / 1000),
 				message = '<span>Расстояние: ' + distance + 'км.</span><br/>' +
-				'<span style="font-weight: bold; font-style: italic">Стоимость доставки: <span class="pricedost">%s</span>р.</span>';
+				'<span class="pricerout" style="font-weight: bold; font-style: italic">Стоимость доставки: <span class="pricedost">%s</span>р.</span>';
 
 				self._route = router.getPaths();
 
@@ -150,9 +150,9 @@ $(function() {
 				self._map.geoObjects.add(self._route);
 				self._start.properties.set('balloonContentBody', startBalloon + message.replace('%s', self.calculate(distance)));
 				self._finish.properties.set('balloonContentBody', finishBalloon + message.replace('%s', self.calculate(distance)));
-			// self._start.balloon.open();
-			// self._finish.balloon.open();
-		});
+
+				self._finish.balloon.open();
+			});
 
 			self._map.setBounds(self._map.geoObjects.getBounds())
 		}
@@ -220,7 +220,7 @@ $(function() {
   		$('.st-2, .arr-1, .arr-2').addClass("active");
   	});
 
- 	$( ".btn-car" ).click(function() {
+  	$( ".btn-car" ).click(function() {
   		$('.part-car').hide();
   		$('.dop-param-part').show();
   		$('.start p').remove();
@@ -229,7 +229,7 @@ $(function() {
   		$('.arr-2').addClass("active-1");
   	});
 
- 		$( ".st-1" ).click(function() {
+  	$( ".st-1" ).click(function() {
   		$('.dop-param-part, .accept-part, .accept-later, .part-car').hide();
   		$('.part-map').show();
   		$('.start p').remove();
@@ -238,7 +238,7 @@ $(function() {
   		$('.arr-2').removeClass("active-1");
   		$('.st-3').removeClass("active");
   	});
- 	$( ".st-2" ).click(function() {
+  	$( ".st-2" ).click(function() {
   		$('.dop-param-part, .accept-part, .accept-later, .part-map').hide();
   		$('.part-car').show();
   		$('.start p').remove();
@@ -248,7 +248,7 @@ $(function() {
   		$('.st-3').removeClass("active");
   	});
 
- 	$( ".st-3" ).click(function() {
+  	$( ".st-3" ).click(function() {
   		$('.part-car, .accept-part, .accept-later, .part-map').hide();
   		$('.dop-param-part').show();
   		$('.start p').remove();
@@ -265,24 +265,24 @@ $(function() {
   	});
 
 
-  $( ".btn-later" ).click(function() {
-  	$('.accept-part-1').hide();
-  	$('.accept-later').show();
-  });
+  	$( ".btn-later" ).click(function() {
+  		$('.accept-part-1').hide();
+  		$('.accept-later').show();
+  	});
 
-  $( ".btn-before" ).click(function() {
-  	$('.accept-later').hide();
-  	$('.accept-part-1').show();
-  });
+  	$( ".btn-before" ).click(function() {
+  		$('.accept-later').hide();
+  		$('.accept-part-1').show();
+  	});
 
  // $('.btn-map').on('click',function() {
  //   $('.route-final .value').text($start);
  //  });
 
- // $('.btn-map').on('click',function() {
- // 	$price_rout = $(".pricedost").text();
- // 	$('.final-price .value').text($price_rout);
- // });
+ $('.btn-map').on('click',function() {
+ 	$price_rout = $(".pricedost").text();
+ 	$('.final-price .value').text($price_rout);
+ });
 
 
 
@@ -331,7 +331,7 @@ $cardboard_pr = $('#cardboard').attr('data-cardb') * $cardboard;
 $scotch_pr = $('#scotch').attr('data-scotch') * $scotch;
 // $count_pr = $('.loaders__count').attr('data-count_pr') * $('.loaders-final .value');
 //рассчет итоговой цены
-$final_price = parseInt($time_ld_pr) + parseInt($box_bg_pr) + parseInt($box_sm_pr) + parseInt($membrane_pr) + parseInt($membrane_str_pr) + parseInt($cardboard_pr) + parseInt($scotch_pr)
+$final_price = parseInt($price_rout) + parseInt($time_ld_pr) + parseInt($box_bg_pr) + parseInt($box_sm_pr) + parseInt($membrane_pr) + parseInt($membrane_str_pr) + parseInt($cardboard_pr) + parseInt($scotch_pr)
 
 //вывод итоговых параметров
 $('.ld-time-final .value').text($time_loaders);
