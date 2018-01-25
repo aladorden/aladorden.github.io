@@ -1,30 +1,30 @@
 @font-face {
 	font-family: MuseoSansCyrl;
-	src: url(fonts/MuseoSansCyrl.otf);
+	src: url(/fonts/MuseoSansCyrl.otf);
 	font-weight: normal;
 }
 
 @font-face {
 	font-family: MuseoSansCyrl;
-	src: url(fonts/MuseoSansCyrl_0.otf);
+	src: url(/fonts/MuseoSansCyrl_0.otf);
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: MuseoSansCyrl;
-	src: url(fonts/MuseoSansCyrl_1.otf);
+	src: url(/fonts/MuseoSansCyrl_1.otf);
 	font-weight: 500;
 }
 
 @font-face {
 	font-family: MuseoSansCyrl;
-	src: url(fonts/MuseoSansCyrl_2.otf);
+	src: url(/fonts/MuseoSansCyrl_2.otf);
 	font-weight: 700;
 }
 
 @font-face {
 	font-family: MuseoSansCyrl;
-	src: url(fonts/MuseoSansCyrl_3.otf);
+	src: url(/fonts/MuseoSansCyrl_3.otf);
 	font-weight: 900;
 }
 
@@ -237,7 +237,7 @@ input {
 	-moz-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.13);
 	box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.13);
 	height: 594px;
-	background: url(img/bc-1.png);
+	background: url(/img/bc-1.png);
 	background-position: center bottom;
 	animation: bg 120s linear infinite;
 	-webkit-animation: bg 120s linear infinite;
@@ -403,14 +403,14 @@ button {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px 0px no-repeat;
+	background: url(/img/icons.png) 0px 0px no-repeat;
 }
 
 #block-1 .rightside .send-form .right-icon .icon {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px -32px no-repeat;
+	background: url(/img/icons.png) 0px -32px no-repeat;
 }
 
 #block-1 .rightside .send-form .right-icon span {
@@ -435,14 +435,14 @@ button {
 .tel-top .icon {
 	width: 23px;
 	height: 23px;
-	background: url(img/telphone.png) center no-repeat;
+	background: url(/img/telphone.png) center no-repeat;
 	position: absolute;
 	left: -30px;
 }
 
 #block-1 {
 	height: 594px;
-	background: url(img/bc-1.png);
+	background: url(/img/bc-1.png);
 	background-position: center bottom;
 	-webkit-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.13);
 	-moz-box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.13);
@@ -581,7 +581,7 @@ button {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px 0px no-repeat;
+	background: url(/img/icons.png) 0px 0px no-repeat;
 	position: relative;
 }
 
@@ -589,7 +589,7 @@ button {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px -32px no-repeat;
+	background: url(/img/icons.png) 0px -32px no-repeat;
 	position: relative;
 }
 
@@ -639,7 +639,7 @@ button {
 
 #block-inner1 {
 	min-height: 590px;
-	background: url(img/bcinner-1.png) center bottom repeat-x;
+	background: url(/img/bcinner-1.png) center bottom repeat-x;
 	animation: bg 120s linear infinite;
 	-webkit-animation: bg 120s linear infinite;
 }
@@ -776,7 +776,7 @@ button {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px 0px no-repeat;
+	background: url(/img/icons.png) 0px 0px no-repeat;
 	position: relative;
 }
 
@@ -784,7 +784,7 @@ button {
 	float: left;
 	width: 40px;
 	height: 32px;
-	background: url(img/icons.png) 0px -32px no-repeat;
+	background: url(/img/icons.png) 0px -32px no-repeat;
 	position: relative;
 }
 
@@ -885,7 +885,7 @@ button {
 #block-2 .benefits .ben-icon {
 	width: 60px;
 	height: 60px;
-	background: url(img/icons-2.png) 10px -26px;
+	background: url(/img/icons-2.png) 10px -26px;
 }
 
 #block-2 .benefits .ben-2 .ben-icon {
@@ -976,7 +976,7 @@ button {
 }
 
 #block-3 {
-	background: url(img/bg3.png) center;
+	background: url(/img/bg3.png) center;
 	position: relative;
 	z-index: 5;
 	-ms-background-position-y: -102px;
@@ -991,7 +991,7 @@ button {
 	top: 0px;
 	left: 0px;
 	z-index: 4;
-	background: url(img/border.png) center bottom;
+	background: url(/img/border.png) center bottom;
 }
 
 #block-3 .border-bottom {
@@ -1001,11 +1001,11 @@ button {
 	bottom: 0px;
 	left: 0px;
 	z-index: 4;
-	background: url(img/border.png) center top;
+	background: url(/img/border.png) center top;
 }
 
 .button-to-left {
-	background: url(img/left.png) right no-repeat;
+	background: url(/img/left.png) right no-repeat;
 	width: 66px;
 	height: 100%;
 	top: 0;
@@ -1016,7 +1016,7 @@ button {
 }
 
 .button-to-right {
-	background: url(img/right.png) left no-repeat;
+	background: url(/img/right.png) left no-repeat;
 	width: 66px;
 	height: 100%;
 	display: block;
@@ -1139,7 +1139,7 @@ height: 115px;*/
 	display: table-cell;
 	width: 20px;
 	height: 30px;
-	background: url(img/doubldot.png) center no-repeat;
+	background: url(/img/doubldot.png) center no-repeat;
 }
 #block-3 .timer-counter .counter:last-child .doubldot {
 	display: none;
@@ -1147,7 +1147,7 @@ height: 115px;*/
 
 #block-inner3 {
 	margin: 40px 0;
-	background: url(img/right-fl.png) center top no-repeat;
+	background: url(/img/right-fl.png) center top no-repeat;
 }
 
 #block-inner3 .cards-header p.topheader {
@@ -1217,7 +1217,7 @@ height: 115px;*/
 }
 
 #block-4 {
-	background: url(img/imgb4.png) center bottom no-repeat;
+	background: url(/img/imgb4.png) center bottom no-repeat;
 	margin: -13px 0 -13px 0;
 	position: relative;
 	z-index: 2;
@@ -1245,7 +1245,7 @@ height: 115px;*/
 }
 
 #block-4 .rightside .tel {
-	background: url(img/tel.png) no-repeat left;
+	background: url(/img/tel.png) no-repeat left;
 	min-height: 42px;
 	padding-left: 50px;
 }
@@ -1261,7 +1261,7 @@ height: 115px;*/
 }
 
 #block-inner4 {
-	background: url(img/bg3.png) center;
+	background: url(/img/bg3.png) center;
 	position: relative;
 	z-index: 5;
 	text-align: center;
@@ -1292,7 +1292,7 @@ height: 115px;*/
 	top: 0px;
 	left: 0px;
 	z-index: 4;
-	background: url(img/border.png) center bottom;
+	background: url(/img/border.png) center bottom;
 }
 
 #block-inner4 .border-bottom {
@@ -1302,7 +1302,7 @@ height: 115px;*/
 	bottom: 0px;
 	left: 0px;
 	z-index: 4;
-	background: url(img/border.png) center top;
+	background: url(/img/border.png) center top;
 }
 
 #block-inner4 .h2.w900:last-child {
@@ -1316,7 +1316,7 @@ height: 115px;*/
 }
 
 #block-inner4 .icon {
-	background: url(img/tel.png) center no-repeat;
+	background: url(/img/tel.png) center no-repeat;
 	width: 42px;
 	height: 42px;
 	display: block;
@@ -1330,7 +1330,7 @@ height: 115px;*/
 }
 
 #block-5 .top-border {
-	background: url(img/bg8.png) top center;
+	background: url(/img/bg8.png) top center;
 	height: 20px;
 	width: 100%;
 	position: absolute;
@@ -1338,7 +1338,7 @@ height: 115px;*/
 }
 
 #block-5 .bottom-border {
-	background: url(img/bg8.png) bottom center;
+	background: url(/img/bg8.png) bottom center;
 	height: 20px;
 	width: 100%;
 	position: absolute;
@@ -1417,35 +1417,35 @@ height: 115px;*/
 }
 
 /*.inners .inner.inner1 {
-	background: url(img/cards/1.png) center;
+	background: url(/img/cards/1.png) center;
 }
 
 .inners .inner.inner2 {
-	background: url(img/cards/2.png) center;
+	background: url(/img/cards/2.png) center;
 }
 
 .inners .inner.inner3 {
-	background: url(img/cards/3.png) center;
+	background: url(/img/cards/3.png) center;
 }
 
 .inners .inner.inner4 {
-	background: url(img/cards/4.png) center;
+	background: url(/img/cards/4.png) center;
 }
 
 .inners .inner.inner5 {
-	background: url(img/cards/5.png) center;
+	background: url(/img/cards/5.png) center;
 }
 
 .inners .inner.inner6 {
-	background: url(img/cards/6.png) center;
+	background: url(/img/cards/6.png) center;
 }
 
 .inners .inner.inner7 {
-	background: url(img/cards/7.png) center;
+	background: url(/img/cards/7.png) center;
 }
 
 .inners .inner.inner8 {
-	background: url(img/cards/8.png) center;
+	background: url(/img/cards/8.png) center;
 }
 */
 .inners .inner-text {
@@ -1656,7 +1656,7 @@ height: 115px;*/
 }
 
 #block-6 .button-to-left {
-	background: url(img/left.png) right no-repeat;
+	background: url(/img/left.png) right no-repeat;
 	width: 66px;
 	height: 100%;
 	border-radius: 0 100% 100% 0 / 0 50% 50% 0;
@@ -1672,7 +1672,7 @@ height: 115px;*/
 }
 
 #block-6 .button-to-right {
-	background: url(img/right.png) left no-repeat;
+	background: url(/img/right.png) left no-repeat;
 	width: 66px;
 	height: 100%;
 	border-radius: 50 0 50% 50% / 0 0 100% 100%;
@@ -1773,7 +1773,7 @@ height: 115px;*/
 }
 
 #block-inner6 {
-	background: url(img/bg3.png) center;
+	background: url(/img/bg3.png) center;
 	position: relative;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -1786,7 +1786,7 @@ height: 115px;*/
 }
 
 #block-inner6 .border-top {
-	background: url(img/border.png) center bottom;
+	background: url(/img/border.png) center bottom;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -1794,7 +1794,7 @@ height: 115px;*/
 }
 
 #block-inner6 .border-bottom {
-	background: url(img/border.png) center top;
+	background: url(/img/border.png) center top;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -1822,7 +1822,7 @@ height: 115px;*/
 }
 
 #block-inner6 .button-to-left {
-	background: url(img/left.png) right no-repeat;
+	background: url(/img/left.png) right no-repeat;
 	width: 66px;
 	display: table-cell;
 	border-radius: 0 100% 100% 0 / 0 50% 50% 0;
@@ -1836,7 +1836,7 @@ height: 115px;*/
 }
 
 #block-inner6 .button-to-right {
-	background: url(img/right.png) left no-repeat;
+	background: url(/img/right.png) left no-repeat;
 	width: 66px;
 	display: table-cell;
 	border-radius: 50 0 50% 50% / 0 0 100% 100%;
@@ -1967,7 +1967,7 @@ height: 115px;*/
 	width: 90px;
 	height: 90px;
 	margin: 0 auto;
-	background: url(img/icons-7.png);
+	background: url(/img/icons-7.png);
 }
 
 #block-7 .icon1 {
@@ -2000,7 +2000,7 @@ height: 115px;*/
 }
 
 #block-7 {
-	background: url(img/bg7.png) center;
+	background: url(/img/bg7.png) center;
 	background-color: #fff;
 }
 
@@ -2031,7 +2031,7 @@ height: 115px;*/
 	display: table;
 	width: 100%;
 	height: 230px;
-	background: url(img/arrow-to-r.png) center right no-repeat;
+	background: url(/img/arrow-to-r.png) center right no-repeat;
 }
 
 #block-inner7 .arposr {
@@ -2063,7 +2063,7 @@ height: 115px;*/
 }
 
 #block-inner7 .arrow-r .arrow-text-hover {
-	background: url(img/arrow-to-r-hover.png) center left no-repeat;
+	background: url(/img/arrow-to-r-hover.png) center left no-repeat;
 	display: block;
 }
 
@@ -2126,11 +2126,11 @@ height: 115px;*/
 	display: table;
 	width: 100%;
 	height: 230px;
-	background: url(img/arrow-to-l.png) center left no-repeat;
+	background: url(/img/arrow-to-l.png) center left no-repeat;
 }
 
 #block-inner7 .arrow-l .arrow-text-hover {
-	background: url(img/arrow-to-l-hover.png) center right no-repeat;
+	background: url(/img/arrow-to-l-hover.png) center right no-repeat;
 	display: block;
 	width: 0px;
 	position: absolute;
@@ -2195,13 +2195,13 @@ height: 115px;*/
 }
 
 #block-8 .top-border {
-	background: url(img/bg8.png) 0px 0px;
+	background: url(/img/bg8.png) 0px 0px;
 	height: 20px;
 	width: 100%;
 }
 
 #block-8 .bottom-border {
-	background: url(img/bg8.png) bottom;
+	background: url(/img/bg8.png) bottom;
 	height: 20px;
 	width: 100%;
 }
@@ -2353,7 +2353,7 @@ height: 115px;*/
 #block-inner8 .acsiya .gruz {
 	width: 70px;
 	height: 100%;
-	background: url(img/gruz.png) center no-repeat;
+	background: url(/img/gruz.png) center no-repeat;
 	position: absolute;
 	right: 10px;
 	top: 0px;
@@ -2369,7 +2369,7 @@ height: 115px;*/
 }
 
 #block-inner8 .border-top {
-	background: url(img/bg8.png) center top;
+	background: url(/img/bg8.png) center top;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -2377,7 +2377,7 @@ height: 115px;*/
 }
 
 #block-inner8 .border-bottom {
-	background: url(img/bg8.png) center bottom;
+	background: url(/img/bg8.png) center bottom;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -2543,14 +2543,14 @@ height: 115px;*/
 	width: 40px;
 	height: 26px;
 	display: inline-block;
-	background: url(img/hear.png) center no-repeat;
+	background: url(/img/hear.png) center no-repeat;
 }
 
 #block-inner9 .icons-m {
 	width: 40px;
 	height: 26px;
 	display: inline-block;
-	background: url(img/mess.png) center no-repeat;
+	background: url(/img/mess.png) center no-repeat;
 }
 
 #block-inner9 .text-l {
@@ -2564,13 +2564,13 @@ height: 115px;*/
 }
 
 #block-inner10 {
-	background: url(img/right-fl.png) center top no-repeat;
+	background: url(/img/right-fl.png) center top no-repeat;
 	min-height: 100px;
 }
 
 #block-inner10 .content-wrapper {
 	display: table;
-	background: url(img/ochki.png) bottom left no-repeat;
+	background: url(/img/ochki.png) bottom left no-repeat;
 	min-height: 700px;
 	position: relative;
 }
@@ -2712,7 +2712,7 @@ height: 115px;*/
 }
 
 #block-inner11 .border-top {
-	background: url(img/bg8.png) center top;
+	background: url(/img/bg8.png) center top;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -2720,7 +2720,7 @@ height: 115px;*/
 }
 
 #block-inner11 .border-bottom {
-	background: url(img/bg8.png) center bottom;
+	background: url(/img/bg8.png) center bottom;
 	width: 100%;
 	height: 15px;
 	position: absolute;
@@ -2823,13 +2823,13 @@ height: 115px;*/
 }
 
 #block-inner13 .top-border {
-	background: url(img/bg8.png) 0px 0px;
+	background: url(/img/bg8.png) 0px 0px;
 	height: 20px;
 	width: 100%;
 }
 
 #block-inner13 .bottom-border {
-	background: url(img/bg8.png) bottom;
+	background: url(/img/bg8.png) bottom;
 	height: 11px;
 	width: 100%;
 }
@@ -2952,12 +2952,12 @@ input.error::placeholder {
     }
 
     #block-map {
-    	background: url(img/b_map.png) no-repeat center;
+    	background: url(/img/b_map.png) no-repeat center;
     	position: relative;
     }
 
     #block-map .bottom-border {
-    	background: url(img/border.png) center bottom;
+    	background: url(/img/border.png) center bottom;
     	position: absolute;
     	width: 100%;
     	height: 15px;
@@ -3125,21 +3125,21 @@ input.error::placeholder {
     }
 
     #block-footer p.e-mail {
-    	background: url(img/e-mail.png) center left no-repeat;
+    	background: url(/img/e-mail.png) center left no-repeat;
     	font-size: 18px;
     	padding-left: 30px;
     	line-height: 24px;
     }
 
     #block-footer p.telphone {
-    	background: url(img/telphone.png) center left no-repeat;
+    	background: url(/img/telphone.png) center left no-repeat;
     	padding-left: 30px;
     	font-size: 24px;
     	margin-bottom: 10px;
     }
 
     #block-footer .top-border {
-    	background: url(img/bottom.png) center top;
+    	background: url(/img/bottom.png) center top;
     	width: 100%;
     	height: 15px;
     	position: absolute;
@@ -5299,7 +5299,7 @@ input.error::placeholder {
     	}
 
     	#block-inner7 .arrow-r .arrow-text-hover {
-    		background: url(img/arrow-to-r-hover.png) center left no-repeat;
+    		background: url(/img/arrow-to-r-hover.png) center left no-repeat;
     		right: 67px;
     		position: relative;
     		right: 15px;
