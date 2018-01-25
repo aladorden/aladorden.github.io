@@ -2977,6 +2977,9 @@ input.error::placeholder {
     }
     #block-map.block_map_vnutr .content-wrapper {
     	margin-top: 0;
+    }
+    #block-map.block_map_vnutr .content-wrapper {
+    	margin-top: 0;
     	display: -webkit-flex;
     	display: -moz-flex;
     	display: -ms-flex;
