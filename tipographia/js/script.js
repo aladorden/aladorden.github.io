@@ -109,7 +109,7 @@ var owl_rows = function(item,rows){
 
 
   $(document).ready(function() {
-    if ( $( "section" ).hasClass( "prices_section" ) ) {
+    if ( $( "div" ).hasClass( "prices_section" ) ) {
 
       $('.table').footable();
 
