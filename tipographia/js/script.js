@@ -70,14 +70,16 @@ var owl_rows = function(item,rows){
   	// 	$ (this) .closest ('.owl-carousel'). trigger ('play.owl.autoplay'); 
   	// })
 
-    var mh = 0;
-    $("#block-6 .slide").each(function () {
-     var h_block = parseInt($(this).height());
-     if(h_block > mh) {
-      mh = h_block;
-    };
-  });
-    $("#block-6 .slide").height(mh);
+
+  //    var mh = 0;
+  //   $("#block-6 .slide").each(function () {
+  //    var h_block = parseInt($(this).height());
+  //    if(h_block > mh) {
+  //     mh = h_block;
+  //   };
+  // });
+
+    // $("#block-6 .slide").height(mh);
 
     $(".carousel_1").owlCarousel({
       autoplay: true,
@@ -107,8 +109,12 @@ var owl_rows = function(item,rows){
 
 
   $(document).ready(function() {
+    if ( $( "section" ).hasClass( "prices_section" ) ) {
 
-  $('.table').footable();
+      $('.table').footable();
+
+    }
+
 // setTimeout(function(){
 //   $('.prices_wrapper tr').click(function(){
 // // $('.footable-detail-row').hide();
@@ -117,129 +123,129 @@ var owl_rows = function(item,rows){
 // console.log(a);
 // });
 // },1500)
-  	$("#my-menu").mmenu({
-  		"extensions": [
-  		"fx-menu-slide",
-  		"fx-panels-slide-100",
-  		"fx-listitems-slide",
-  		"border-none",
-  		"listview-huge",
-  		"pagedim-black",
-  		],
-  		"iconPanels": true,
-  		"navbar": {
-  			"title": 'Полиграфия Москва',
-  		}
-  	});
+$("#my-menu").mmenu({
+  "extensions": [
+  "fx-menu-slide",
+  "fx-panels-slide-100",
+  "fx-listitems-slide",
+  "border-none",
+  "listview-huge",
+  "pagedim-black",
+  ],
+  "iconPanels": true,
+  "navbar": {
+   "title": 'Полиграфия Москва',
+ }
+});
 
 
-  	var API = $("#my-menu").data( "mmenu" );
-  	API.bind( "open:finish", function() {
-  		setTimeout(function() {
-  			$('.hamburger').addClass( "is-active" );
-  		}, 100);
-  	});
-  	API.bind( "close:finish", function() {
-  		setTimeout(function() {
-  			$('.hamburger').removeClass( "is-active" );
-  		}, 100);
-  	});
-  	$('ul.mm-listview li a, .mm-panel_has-navbar .mm-navbar').each(function(){
-  		$(this).append("<div class='border'/>")
-  	});
-  	$('ul.mm-listview > li > a[href^="#"]').each(function(){
-  		var href = $(this).attr("href");
-  		$(this).parents('li').attr('data-href',href)
-  	});
+var API = $("#my-menu").data( "mmenu" );
+API.bind( "open:finish", function() {
+  setTimeout(function() {
+   $('.hamburger').addClass( "is-active" );
+ }, 100);
+});
+API.bind( "close:finish", function() {
+  setTimeout(function() {
+   $('.hamburger').removeClass( "is-active" );
+ }, 100);
+});
+$('ul.mm-listview li a, .mm-panel_has-navbar .mm-navbar').each(function(){
+  $(this).append("<div class='border'/>")
+});
+$('ul.mm-listview > li > a[href^="#"]').each(function(){
+  var href = $(this).attr("href");
+  $(this).parents('li').attr('data-href',href)
+});
 
-  	$( ".r_click" ).contextmenu(function() {
-  		console.log('right')
-  		var link = $(this).data('link');
-  		$(this).find('a.mm-btn_next').attr('href',link);
-  		$(this).click(function() {
-  			console.log('left')
-  			var aria = $(this).data('href');
-  			$(this).find('a.mm-btn_next').attr('href',aria);
-  		});
-  	});
-  	$('.checkbox').attr('checked','checked');
-  	$("input[name='tel']").mask("+7 (999)-999-99-99", {placeholder: ""});
-  	if ($(window).width() < 500) {
+$( ".r_click" ).contextmenu(function() {
+  console.log('right')
+  var link = $(this).data('link');
+  $(this).find('a.mm-btn_next').attr('href',link);
+  $(this).click(function() {
+   console.log('left')
+   var aria = $(this).data('href');
+   $(this).find('a.mm-btn_next').attr('href',aria);
+ });
+});
+$('.checkbox').attr('checked','checked');
+$("input[name='tel']").mask("+7 (999)-999-99-99", {placeholder: ""});
+if ($(window).width() < 500) {
 
-  		owl_rows($('.carousel_2 .slide'),1);
-  		carousel_funct();
-  	}
-  	else {
-  		owl_rows($('.carousel_2 .slide'),2);
-  		carousel_funct();
-  	}
+  owl_rows($('.carousel_2 .slide'),1);
+  carousel_funct();
+}
+else {
+  owl_rows($('.carousel_2 .slide'),2);
+  carousel_funct();
+}
 
-  	$(".carousel_vnutr").owlCarousel({
-  		autoplay: false,
-  		autoplayTimeout: 10000,
-  		smartSpeed: 500,
-  		items: 1,
-  		mouseDrag: false,
-  		rewind: true,
-  	});
+$(".carousel_vnutr").owlCarousel({
+  autoplay: false,
+  autoplayTimeout: 10000,
+  smartSpeed: 500,
+  items: 1,
+  mouseDrag: false,
+  rewind: true,
+});
 
-  	owl_rows($('.inners.owl-carousel .inner'),3);
-  	$("#block-inner11 .inners.owl-carousel").owlCarousel({
-  		smartSpeed: 500,
-  		items: 4,
-  		rewind: true,
-  		margin: 10,
-  		navText: false,
-  		mouseDrag: false,
-  		touchDrag: false,
-  		responsiveClass:true,
-  		responsive:{
-  			0:{
-  				items:1,
-  				touchDrag: true,
-  				nav: true
-  			},
-  			580:{
-  				items:2,
-  				touchDrag: true,
-  				nav: true
-  			},
-  			900:{
-  				items:3,
-  				touchDrag: true,
-  				nav: true
-  			},
-  			1100:{
-  				items:3,
-  				touchDrag: true,
-  				nav: true
-  			},
-  			1151:{
-  				items:4,
-  				touchDrag: false
+owl_rows($('.inners.owl-carousel .inner'),3);
+$("#block-inner11 .inners.owl-carousel").owlCarousel({
+  smartSpeed: 500,
+  items: 4,
+  rewind: true,
+  margin: 10,
+  navText: false,
+  mouseDrag: false,
+  touchDrag: false,
+  responsiveClass:true,
+  responsive:{
+   0:{
+    items:1,
+    touchDrag: true,
+    nav: true
+  },
+  580:{
+    items:2,
+    touchDrag: true,
+    nav: true
+  },
+  900:{
+    items:3,
+    touchDrag: true,
+    nav: true
+  },
+  1100:{
+    items:3,
+    touchDrag: true,
+    nav: true
+  },
+  1151:{
+    items:4,
+    touchDrag: false
 
-  			}
+  }
 
-  		}
-  	});
+}
+});
 
-  	$(".gallery_card_carousel").owlCarousel({
-  		autoplay: false,
-  		autoplayTimeout: 10000,
-  		smartSpeed: 500,
-  		items: 1,
-  		rewind: false,
-  		loop: false,
-  		mouseDrag: true,
-  	});
+$(".gallery_card_carousel").owlCarousel({
+  autoplay: false,
+  autoplayTimeout: 10000,
+  smartSpeed: 500,
+  items: 1,
+  rewind: false,
+  loop: false,
+  mouseDrag: true,
+});
 
-  	$("#otvet2").click(function () {
-  		$(".gallery_card_carousel").owlCarousel().trigger('prev.owl.carousel');
-  	});
+$("#otvet2").click(function () {
+  $(".gallery_card_carousel").owlCarousel().trigger('prev.owl.carousel');
+});
 
-  	$("#otvet").click(function () {
-  		$(".gallery_card_carousel").owlCarousel().trigger('next.owl.carousel');
-  	});
+$("#otvet").click(function () {
+  $(".gallery_card_carousel").owlCarousel().trigger('next.owl.carousel');
+});
 
 
 
