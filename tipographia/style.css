@@ -4306,6 +4306,9 @@ input.error::placeholder {
     	#block-map {
     		margin-top: 262px;
     	}
+    	.block_map_vnutr {
+    		margin-top: 0 !important;
+    	}
     	.item {
     		margin: 0 50px;
     	}
