@@ -6,6 +6,7 @@
 	<title>Типография</title>
 	<link rel="stylesheet" href="hamburgers.css">
 	<link rel="stylesheet" type="text/css" href="plugins/owl_carousel/dist/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="plugins/mmenu/jquery.mmenu.all.css">
 	<link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 <body>
@@ -19,12 +20,59 @@
 							<span class="hamburger-box"><span class="hamburger-inner"></span></span>
 						</a>
 					</div>
-					<div id="logo"><a href="/"><img src="img/logo1.png" alt="logo"></a></div>
+					<div id="logo"><a href="#"><img src="img/logo1.png" alt="logo"></a></div>
 					<div class="tel-top w900"><div class="icon"></div><a href="tel:+74955079190">+7 (495) 507-91-90</a></div>
 					<div class="clearfix"></div>
 				</div>
 			</div> 
 			<!-- END OF top-menu -->
+
+			<nav id="my-menu">
+				<ul>
+					<li><a href="/">Главная</a></li>
+					<li><a href="/цены/">Цены</a></li>
+					<li><a href="/спецпредложения/">Спецпредложения</a></li>
+					<li class="r_click" data-link="/услуги/">
+						<span>Услуги</span>
+						<ul>
+							<li class="r_click" data-link="/цифровая-печать/"><span>Цифровая печать</span>
+								<ul>
+									<li><a href="">Цифровая печать А1</a></li>
+									<li><a href="">Цифровая печать А2</a></li>
+									<li><a href="">Цифровая печать А3</a></li>
+									<li><a href="">Цифровая печать А4</a></li>
+									<li><a href="">Цифровая печать А5</a></li>
+								</ul>
+							</li>
+							<li><a href="печать-календарей">Печать календарей домиков</a></li>
+							<li><a href="печать-календарей">Печать календарей</a></li>
+							<li><a href="печать-календарей">Печать карманных календарей</a></li>
+							<li><a href="печать-календарей">Печать квартальных календарей</a></li>
+							<li><a href="печать-календарей">Печать буклетов</a></li>
+							<li><a href="печать-календарей">Печать открыток</a></li>
+							<li><a href="печать-календарей">Печать визиток</a></li>
+							<li><a href="печать-календарей">Печать флаеров</a></li>
+							<li class="r_click" data-link="/печать-листовок/"><span>Печать листовок</span>
+								<ul>
+									<li><a href="">Печать листовок А3</a></li>
+									<li><a href="">Печать листовок А4</a></li>
+									<li><a href="">Печать листовок А5</a></li>
+									<li><a href="">Печать листовок А6</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="печать-календарей">Печать брошюр</a></li>
+							<li><a href="печать-календарей">Печать бланков</a></li>
+							
+							<li><a href="печать-календарей">Широкоформатная печать</a></li>
+							<li><a href="интерьерная-календарей">Интерьерная печать</a></li>
+
+						</ul>
+					</li>
+					<li><a href="/о-компании/">Требования</a></li>
+					<li><a href="/спецпредложения/">Спецпредложения</a></li>
+				</ul>
+			</nav>
 
 			<div id="block-1">
 				<div class="content-wrapper">
@@ -41,13 +89,15 @@
 						<div class="send-form">
 							<div class="header"><p class="w900">Быстрый заказ полиграфических услуг</p></div>
 							<div class="body">
-								<form action="/">
+								<form method="POST" name="map_form">
 									<div class="accept">
-										<input type="text" placeholder="Ваше имя" class="inputs">
-										<input type="text" placeholder="Ваш номер телефона" class="inputs">
-										<button id="form1" class="input-button inputs redb">Перезвоните мне</button>
-										<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span><br>
-										<a href="#" class="w700 accept-text red"> условия пользовательского соглашения</a></div>
+										<input type="text"  name="name" placeholder="Ваше имя" class="inputs">
+										<input type="text"  data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="inputs required">
+										<button id="form1"  type="submit" class="input-button inputs redb">Перезвоните мне</button>
+										<label class="agree">
+											<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span>
+											<a href="#" class="w700 accept-text red"> условия пользовательского соглашения</a></div>
+										</label>
 									</form>
 									<div class="inform-icons">
 										<div class="left-icon"><div class="icon"></div><span>Самые низкие <br>цены в Москве</span></div>
@@ -89,567 +139,600 @@
 
 						</div>
 						<div class="under-text">
-							<p>Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое, морщинистое лицо, нависшие желтыеброви, беспокойные глаза, худые члены... Девочка улеглась на полу у самыхего ног и опять заснула. Бирюк сидел возле стола, опершись головою на руки.Кузнечик кричал в углу... дождик стучал по крыше и скользил по окнам; мы всемолчали.</p>
+							<p>
+								Цифровая типография полного цикла «Gold Print» предлагает своим клиентам весь спектр полиграфических услуг. Недорогая круглосуточная типография «Gold Print» готова выполнять срочные заказы различной сложности, гарантируя при этом их качество и срок выполнения! Благодаря современному оборудованию и опыту наших специалистов, мы готовы выполнить Ваш заказ в самые короткие сроки. Наша типография работает круглосуточно и без выходных.
+							</p>
+							<p>Типография в Москве занимается цифровой печатью и широкоформатной печатью, выполняет срочное тиражирование на ризографе, производит допечатные работы и послепечатную обработку, разрабатывает дизайн. Наша типография производит рекламную продукцию, которая по прежнему является наиболее востребованной.</p>
+							<p>Услуги типографии от компании «Gold Print» — это быстрая и качественная цветная или черно-белая печать по доступным ценам! Широкоформатная типография работает ежедневно и 24 часа в сутки.</p>
 						</div>
 					</div>
 				</div>
 				<!-- END OF block-2 -->
-		
-			<div id="block-3" class="paralacs">
-				<div class="border-top"></div>
 
-				
-				<div class="button-to-left" id="nextslide"></div>
+				<div id="block-3" class="paralacs">
+					<div class="border-top"></div>
 
-				<div class="owl-carousel owl-theme carousel_1">
-					<div class="adv-1" id="adv">
-						<div class="text">
-							<p class="h2 w900"><span class="red">Акция</span> выходного дня на услуги типографии!</p>
-							<div class="redborder"></div>
-							<p class="h2 w700">Спешите, только сегдня!</p>
-							<p class="h3 w700">На услуги нашей компании мы даем Вам скидку 10%</p>
+
+					<div class="button-to-left" id="nextslide"></div>
+
+					<div class="owl-carousel owl-theme carousel_1">
+						<div class="adv-1" id="adv">
+							<div class="text">
+								<p class="h2 w900"><span class="red">Акция</span> выходного дня на услуги типографии!</p>
+								<div class="redborder"></div>
+								<p class="h2 w700">Спешите, только сегдня!</p>
+								<p class="h3 w700">На услуги нашей компании мы даем Вам скидку 10%</p>
+							</div>
+
+							<div class="timer-counter">
+
+								<p class="red w700">До конца акции осталось:</p>
+
+								<div class="timer-counter-digits red">
+
+									<div class="counter count-days">
+										<div class="count_wrap">
+											<span class="numbers" id="dayscount">0</span>
+											<div class="doubldot"></div>
+										</div>
+										<span class="texts">Дней</span>
+
+									</div>
+
+
+									<div class="counter count-hours">
+										<div class="count_wrap">
+											<span class="numbers" id="hourscount">0</span>
+											<div class="doubldot"></div>
+										</div>
+										<span class="texts">Часов</span>
+
+									</div>
+
+
+									<div class="counter count-minuts">
+										<div class="count_wrap">
+											<span class="numbers" id="minutescount">0</span>
+											<div class="doubldot"></div>
+										</div>
+										<span class="texts">Минут</span>
+
+									</div>
+
+
+									<div class="counter count-seconds">
+										<div class="count_wrap">
+											<span class="numbers" id="secondscount">0</span>
+											<div class="doubldot"></div>
+										</div>
+										<span class="texts">Секунд</span>
+									</div>
+
+								</div>
+
+							</div>
 						</div>
 
-						<div class="timer-counter">
-
-							<p class="red w700">До конца акции осталось:</p>
-
-							<div class="timer-counter-digits red">
-
-								<div class="counter count-days">
-									<div class="count_wrap">
-										<span class="numbers" id="dayscount">0</span>
-										<div class="doubldot"></div>
-									</div>
-									<span class="texts">Дней</span>
-									
-								</div>
-
-								
-								<div class="counter count-hours">
-									<div class="count_wrap">
-										<span class="numbers" id="hourscount">0</span>
-										<div class="doubldot"></div>
-									</div>
-									<span class="texts">Часов</span>
-									
-								</div>
-
-								
-								<div class="counter count-minuts">
-									<div class="count_wrap">
-										<span class="numbers" id="minutescount">0</span>
-										<div class="doubldot"></div>
-									</div>
-									<span class="texts">Минут</span>
-									
-								</div>
-
-								
-								<div class="counter count-seconds">
-									<div class="count_wrap">
-										<span class="numbers" id="secondscount">0</span>
-										<div class="doubldot"></div>
-									</div>
-									<span class="texts">Секунд</span>
-								</div>
-
+						<div class="adv-1">
+							<div class="text">
+								<p class="h2 w900"><span class="red">Акция</span> выходного дня на услуги типографии!</p>
+								<div class="redborder"></div>
+								<p class="h2 w700">Спешите, только сегдня!</p>
+								<p class="h3 w700">На услуги нашей компании мы даем Вам скидку 10%</p>
 							</div>
 
 						</div>
 					</div>
 
-					<div class="adv-1">
-						<div class="text">
-							<p class="h2 w900"><span class="red">Акция</span> выходного дня на услуги типографии!</p>
-							<div class="redborder"></div>
-							<p class="h2 w700">Спешите, только сегдня!</p>
-							<p class="h3 w700">На услуги нашей компании мы даем Вам скидку 10%</p>
-						</div>
+					<div class="button-to-right" id="prevslide"></div>
 
-					</div>
+
+					<div class="border-bottom"></div>
 				</div>
-
-				<div class="button-to-right" id="prevslide"></div>
-				
-
-				<div class="border-bottom"></div>
-			</div>
-			<!-- END OF block-3 -->
+				<!-- END OF block-3 -->
 
 
-			<div id="block-4">
-				<div class="content-wrapper">
-					<div class="table-parrent">
-						<div class="leftside"></div>
-						<div class="rightside">
-							<p class="h2 w900">Нашли <span class="red">типографию</span> дешевле?</p>
-							<p class="h2 w900 red">НЕ МОЖЕТ БЫТЬ!</p>
-							<p class="h2 w900">Сообщите нам и мы снизим цену!</p>
-							<p class="h2 w900 red">ДАЕМ ГАРАНТИЮ НИЗКОЙ ЦЕНЫ</p>
-							<p class="h4 w700">Если Вы нашли услуги типографии в Москве дешевле, то мы предложим такие же типографические услуги по самой низкой цене!
-								<br>Звоните! И мы предложим Вам индивидуальную
-							скидку.</p>
-							<div class="tel"><p class="h2 w900">+7 (495) 507-91-90</p></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END OF block-4 -->
-			<div id="block-5">
-				<div class="top-border"></div>
-				<div class="content-wrapper">
-					<div class="table-parrent">
-						<div class="table-child">
-							<div class="button-list">
-								<div class="but but1 active"><span class="w700">Визитки</span></div>
-								<div class="but but2 "><span class="w700">Календари</span></div>
-								<div class="but but3 "><span class="w700">Листовки</span></div>
-								<div class="but but4 "><span class="w700">Бланки</span></div>
-								<div class="but but5 "><span class="w700">Брощюры</span></div>
-								<div class="but but6 "><span class="w700">Флаеры</span></div>
-							</div>
-							<div class="banners banner1">
-								<div class="inners">
-									<div class="inner inner1"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner2"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner3"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner4"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner5"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner6"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner7"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-									<div class="inner inner8"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="bottom-border"></div>
-			</div>
-			<!-- END OF block-5 -->
-
-
-			<div id="block-6">
-				
-				
-							<p class="header w900 h2">Отзывы наших <span class="red">клиентов</span> о типографии</p>
-							<div class="redborder"></div>
-							<div class="otziv-wrap"  id="viewport_2" >
-
-<div class="button-to-left" id="nextslide2"></div>
-								<div class="owl-carousel owl-theme carousel_2">
-
-
-								<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-									
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-								<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-									<div class="slide">
-										<div class="table-parrent">
-										<!-- 	<div class="table-child img"> -->
-												<img src="img/user/1.png" width="137px" height="137px" alt="">
-											<!-- </div> -->
-											<!-- <div class="table-child text"> -->
-												<p class="name w700">Сергей Иванов</p>
-												<p class="date w300">12.25.2017</p>
-												<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
-										<!-- 	</div> -->
-										</div>
-									</div>
-
-								</div>
-<div class="button-to-right" id="prevslide2"></div>
-							</div>
-							<div class="input-button inputs redb" id="formotziv">Оставить отзыв &rarr;</div>
-						
-					
-
-				
-				
-			</div>
-			<!-- END OF block-6 -->
-
-			<div id="block-7">
-				<div class="content-wrapper">
-
-					<p class="h2 w900">Нас выбирают <span class="red"><span id="counter1">312</span> клиентов</span> в месяц,<br>
-					потому что у нас:</p>
-					<div class="redborder"></div>
-					<div class="table-parrent">
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon1"></div><div class="text w300">Самые низкие<br>цены в Москве</div></div>
-									<div class="back"><div class="text w300">Самые низкие<br>цены в Москве</div></div>
-								</div>
-							</div>
-						</div>
-
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon2"></div><div class="text w300">Часто скидки<br>и акции</div></div>
-									<div class="back"><div class="text w300">Часто скидки<br>и акции</div></div>
-								</div>
-							</div>
-						</div>
-
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon3"></div><div class="text w300">Собственное<br>производство</div></div>
-									<div class="back"><div class="text w300">Собственное<br>производство</div></div>
-								</div>
-							</div>
-						</div>
-
-					
-				<!-- 	<div class="clearfix"></div> -->
-					<!-- <div class="table-parrent"> -->
-
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon4"></div><div class="text w300">Бесплатная доставка<br>по Москве</div></div>
-									<div class="back"><div class="text w300">Бесплатная доставка<br>по Москве</div></div>
-								</div>
-							</div>
-						</div>
-
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon5"></div><div class="text w300">Удобный<br>онлайн калькулятор</div></div>
-									<div class="back"><div class="text w300">Удобный<br>онлайн калькулятор</div></div>
-								</div>
-							</div>
-						</div>
-
-						<div class="table-child">
-							<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
-								<div class="flipper">
-									<div class="front"><div class="icon icon6"></div><div class="text w300">Оплата только<br>после получения</div></div>
-									<div class="back"><div class="text w300">Оплата только<br>после получения</div></div>
-								</div>
-							</div>
-						</div>
-						</div>
-
-					<!-- </div> -->
-				</div>
-			</div>
-			<!-- END OF block-7 -->
-
-			<div id="block-8">
-				<div class="top-border"></div>
-				<div class="middle">
+				<div id="block-4">
 					<div class="content-wrapper">
-						<span class="h2 w900">Доставка и самовывоз</span>
-						<div class="redborder"></div>
-						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое, морщинистое лицо, нависшие желтыеброви, беспокойные глаза, худые члены... Девочка улеглась на полу .</p>
-						<div class="parrent">
-							<div class="child ch1"><img src="img/71.png" alt="">
-								<p class="h4 red w700">Самовывоз из офиса</p>
-								<p class="h5 w300">Вы можете забрать заказ самостоятельно из нашей типографии по адресу:<br>
-								<a href="#block-footer">Варшавское шоссе, 11, офис 415</a></p>
-							</div>
-							<div class="child ch1"><img src="img/72.png" alt="">
-								<p class="h4 red w700">Доставка по России</p>
-								<p class="h5 w300">Отправим готовые материалы в любой город прямиком в Ваш офис<br>&nbsp;</p>
-							</div>
-							<div class="child ch1"><img src="img/73.png" alt=""><p class="h4 red w700">Доставка курьером</p>
-								<p class="h5 w300">Мы доставим Ваш заказ в течении 2-3 дней после готовности. Или день в день при <a href="" id="fast_zakaz_2">срочной заявке</a>.
-								</p>
+						<div class="table-parrent">
+							<div class="leftside"></div>
+							<div class="rightside">
+								<p class="h2 w900">Нашли <span class="red">типографию</span> дешевле?</p>
+								<p class="h2 w900 red">НЕ МОЖЕТ БЫТЬ!</p>
+								<p class="h2 w900">Сообщите нам и мы снизим цену!</p>
+								<p class="h2 w900 red">ДАЕМ ГАРАНТИЮ НИЗКОЙ ЦЕНЫ</p>
+								<p class="h4 w700">Если Вы нашли услуги типографии в Москве дешевле, то мы предложим такие же типографические услуги по самой низкой цене!
+									<br>Звоните! И мы предложим Вам индивидуальную
+								скидку.</p>
+								<div class="tel"><p class="h2 w900">+7 (495) 507-91-90</p></div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="bottom-border"></div>
-			</div>
-			<!-- END OF block-8 -->
-
-			<div id="block-9">
-				<div class="content-wrapper">
-
-					<div class="figure_wrapper">
-						<div class="figure figure_1">
-							<div class="figure_title">
-								Клиентов в месяц
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-							<div class="figure_counter">
-								<div class="counter_title">312</div>
-								<div class="counter_capture">Клиентов</div>
-							</div>
-						</div>
-
-						<div class="figure figure_2">
-							<div class="figure_title">
-								Доставка по Москве
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-							<div class="figure_counter">
-								<div class="counter_title">0</div>
-								<div class="counter_capture">Руб.</div>
-							</div>
-						</div>
-
-						<div class="figure figure_3">
-							<div class="figure_title">
-								Работаем
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-							<div class="figure_counter">
-								<div class="counter_title">24/7</div>
-								<div class="counter_capture">Дней</div>
-							</div>
-						</div>
-
-						<div class="figure figure_4">
-							<div class="figure_counter">
-								<div class="counter_title">3545</div>
-								<div class="counter_capture">Дней</div>
-							</div>
-							<div class="figure_title">
-								Мы существуем
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-						</div>
-
-						<div class="figure figure_5">
-							<div class="figure_counter">
-								<div class="counter_title">6</div>
-								<div class="counter_capture">Видов</div>
-							</div>
-							<div class="figure_title">
-								Услуг
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-						</div>
-
-						<div class="figure figure_6">
-							<div class="figure_title">
-								Минимальная стоимость услуг
-							</div>
-							<div class="figure_capture">
-								Далеко-далеко за словесными горами в стране, гласных и согласных
-								живут рыбные тексты. Если однажды большого подзаголовок! Своих.
-							</div>
-							<div class="figure_counter">
-								<div class="counter_title">190</div>
-								<div class="counter_capture">Руб.</div>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-			<!-- END OF block-9 -->
-
-			<div id="block-map">
-				<div class="bottom-border"></div>
-				<div class="content-wrapper">
-					<div class="send-form">
-						<div class="header"><p class="w900">Заказать<br> обратный звонок</p></div>
-						<div class="body">
-							<form action="/">
-								<div class="accept">
-									<input type="text" placeholder="Ваше имя" class="inputs">
-									<input type="text" placeholder="Ваш номер телефона" class="inputs">
-									<button class="input-button inputs redb" id="form2">Перезвоните мне</button>
-									<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Согласен с</span><a href="#"><span class="w700 accept-text red"> политикой конфеденциальности</span></a></div>
-								</form>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- END OF block-10 -->
-
-				<div id="block-footer">
+				<!-- END OF block-4 -->
+				<div id="block-5">
 					<div class="top-border"></div>
 					<div class="content-wrapper">
-						<div class="footer">
-							<div class="footer-left">
-								<p class="w300">Московская<br>
-								типография.рус</p>
-							</div>
-							<div class="footer-center">
-								<a href="#"><p class="w500">Политика конфедициальности</p></a>
-							</div>
-							<div class="footer-right">
-								<p class="telphone w700">+7 (495) 507-91-90</p>
-								<p class="e-mail w700">info@gold-print24.ru</p>
+						<div class="table-parrent">
+							<div class="table-child">
+								<div class="button-list">
+									<div class="but but1 active"><span class="w700">Визитки</span></div>
+									<div class="but but2 "><span class="w700">Календари</span></div>
+									<div class="but but3 "><span class="w700">Листовки</span></div>
+									<div class="but but4 "><span class="w700">Бланки</span></div>
+									<div class="but but5 "><span class="w700">Брощюры</span></div>
+									<div class="but but6 "><span class="w700">Флаеры</span></div>
+								</div>
+								<div class="banners banner1">
+									<div class="inners">
+										<div class="inner inner1"><img src="img/cards/1.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner2"><img src="img/cards/2.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner3"><img src="img/cards/3.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner4"><img src="img/cards/4.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner5"><img src="img/cards/5.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner6"><img src="img/cards/6.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner7"><img src="img/cards/7.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+										<div class="inner inner8"><img src="img/cards/8.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+					<div class="bottom-border"></div>
 				</div>
-				<!-- END OF block-footer -->
-			</div> 
-			<!-- END OF page -->
-		</div>
-		<!-- END OF page-wrapper -->
+				<!-- END OF block-5 -->
 
 
-		<div id="modal_form" class="modal_form">
-			<span id="modal_close" class="modal_close" class="w900">&times;</span>
-			<div class="title title--center w700"><span>Спасибо за заявку</span></div>
-			<div class="message h4 w300">Наш менеджер свяжется с вами в ближайшее время</div>
-		</div>
-
-		<div id="modal_form2" class="modal_form">
-			<span id="modal_close2"  class="modal_close" class="w900">&times;</span>
-			<div class="title title--center w700"><span>Спасибо за заявку</span></div>
-			<div class="message h4 w300">Наш менеджер свяжется с вами в ближайшее время</div>
-		</div>
-
-		<div id="modal_otziv" class="modal_form">
-			<span id="modal_close_otziv"  class="modal_close" class="w900">&times;</span>
-			<div class="title title--center w700"><span>Оставить отзыв</span></div>
-			<div class="message h4 w300">
-				<div class="input-left">
-					<input type="text" placeholder="Ваше имя" class="inputs">
-				</div>
-				<div class="input-right">
-					<input type="text" placeholder="E-mail" class="inputs">
-				</div>
-				<div class="clearfix"></div>
-				<textarea rows="4" placeholder="Отзыв" ></textarea>
-
-				<div class="accept"><input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span><a href="#" class="w700 accept-text red"> условия пользовательского соглашения</a></div>
-			</div>
-			<div class="lines"><div class="input-button inputs redb">Оставить отзыв →</div></div>
-		</div>
-
-		<div id="modal_zakaz" class="modal_form">
-			<span id="modal_close_zakaz"  class="modal_close" class="w900">&times;</span>
-			<div class="title title--center w700"><span>Заказать</span></div>
-			<div class="message h4 w300">
-				<div class="input-left">
-					<input type="text" placeholder="Ваше имя" class="inputs">
-				</div>
-				<div class="input-right">
-					<input type="text" placeholder="E-mail" class="inputs">
-				</div>
-				<div class="clearfix"></div>
-				<textarea rows="4" placeholder="Краткое техническое задание" ></textarea>
-
-				<div class="accept"><input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span><a href="#" class="w700 accept-text red"> условия пользовательского соглашения</a></div>
-			</div>
-			<div class="lines"><div class="input-button inputs redb">Заказать →</div></div>
-		</div>
-
-		<div id="overlay"></div>
+				<div id="block-6">
 
 
-	</body>
-	</html>
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/viewportChecker.js"></script>
-	
-	<script src="plugins/owl_carousel/dist/owl.carousel.min.js"></script>
-	<script src="js/script.js"></script>
+					<p class="header w900 h2">Отзывы наших <span class="red">клиентов</span> о типографии</p>
+					<div class="redborder"></div>
+					<div class="otziv-wrap"  id="viewport_2" >
+
+						<div class="button-to-left" id="nextslide2"></div>
+						<div class="owl-carousel owl-theme carousel_2">
+
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									
+									<img src="img/user/1.png" width="137px" height="137px" alt="">
+									
+									<p class="name w700">Сергей Иванов</p>
+									<p class="date w300">12.25.2017</p>
+									<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+									<!-- 	</div> -->
+								</div>
+							</div>
+
+							<div class="slide">
+								<div class="table-parrent">
+									<!-- 	<div class="table-child img"> -->
+										<img src="img/user/1.png" width="137px" height="137px" alt="">
+										<!-- </div> -->
+										<!-- <div class="table-child text"> -->
+											<p class="name w700">Сергей Иванов</p>
+											<p class="date w300">12.25.2017</p>
+											<p class="describe w300">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое.</p>
+											<!-- 	</div> -->
+										</div>
+									</div>
+
+								</div>
+								<div class="button-to-right" id="prevslide2"></div>
+							</div>
+							<div class="input-button inputs redb" id="formotziv">Оставить отзыв &rarr;</div>
+
+
+
+
+
+						</div>
+						<!-- END OF block-6 -->
+
+						<div id="block-7">
+							<div class="content-wrapper">
+
+								<p class="h2 w900">Нас выбирают <span class="red"><span id="counter1">312</span> клиентов</span> в месяц,<br>
+								потому что у нас:</p>
+								<div class="redborder"></div>
+								<div class="table-parrent">
+									<div class="table-child">
+										<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+											<div class="flipper">
+												<div class="front"><div class="icon icon1"></div><div class="text w300">Самые низкие<br>цены в Москве</div></div>
+												<div class="back"><div class="text w300">Самые низкие<br>цены в Москве</div></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="table-child">
+										<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+											<div class="flipper">
+												<div class="front"><div class="icon icon2"></div><div class="text w300">Часто скидки<br>и акции</div></div>
+												<div class="back"><div class="text w300">Часто скидки<br>и акции</div></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="table-child">
+										<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+											<div class="flipper">
+												<div class="front"><div class="icon icon3"></div><div class="text w300">Собственное<br>производство</div></div>
+												<div class="back"><div class="text w300">Собственное<br>производство</div></div>
+											</div>
+										</div>
+									</div>
+
+
+									<!-- 	<div class="clearfix"></div> -->
+									<!-- <div class="table-parrent"> -->
+
+										<div class="table-child">
+											<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+												<div class="flipper">
+													<div class="front"><div class="icon icon4"></div><div class="text w300">Бесплатная доставка<br>по Москве</div></div>
+													<div class="back"><div class="text w300">Бесплатная доставка<br>по Москве</div></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="table-child">
+											<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+												<div class="flipper">
+													<div class="front"><div class="icon icon5"></div><div class="text w300">Удобный<br>онлайн калькулятор</div></div>
+													<div class="back"><div class="text w300">Удобный<br>онлайн калькулятор</div></div>
+												</div>
+											</div>
+										</div>
+
+										<div class="table-child">
+											<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+												<div class="flipper">
+													<div class="front"><div class="icon icon6"></div><div class="text w300">Оплата только<br>после получения</div></div>
+													<div class="back"><div class="text w300">Оплата только<br>после получения</div></div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- </div> -->
+								</div>
+							</div>
+							<!-- END OF block-7 -->
+
+							<div id="block-8">
+								<div class="top-border"></div>
+								<div class="middle">
+									<div class="content-wrapper">
+										<span class="h2 w900">Доставка и самовывоз</span>
+										<div class="redborder"></div>
+										<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни стало освободить бедняка. Он сидел неподвижно на лавке. При светефонаря я мог разглядеть его испитое, морщинистое лицо, нависшие желтыеброви, беспокойные глаза, худые члены... Девочка улеглась на полу .</p>
+										<div class="parrent">
+											<div class="child ch1"><img src="img/71.png" alt="">
+												<p class="h4 red w700">Самовывоз из офиса</p>
+												<p class="h5 w300">Вы можете забрать заказ самостоятельно из нашей типографии по адресу:<br>
+													<a href="#block-footer">Варшавское шоссе, 11, офис 415</a></p>
+												</div>
+												<div class="child ch1"><img src="img/72.png" alt="">
+													<p class="h4 red w700">Доставка по России</p>
+													<p class="h5 w300">Отправим готовые материалы в любой город прямиком в Ваш офис<br>&nbsp;</p>
+												</div>
+												<div class="child ch1"><img src="img/73.png" alt=""><p class="h4 red w700">Доставка курьером</p>
+													<p class="h5 w300">Мы доставим Ваш заказ в течении 2-3 дней после готовности. Или день в день при <a href="" id="fast_zakaz_2">срочной заявке</a>.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="bottom-border"></div>
+								</div>
+								<!-- END OF block-8 -->
+
+								<div id="block-9">
+									<div class="content-wrapper">
+										<div id="items_figure">
+
+											<div class="item item_1 active">
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">312 <mark>Клиентов</mark></span>
+													</div>
+												</div>
+												<div class="shape"></div>
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box right_arr_2_rows"><span>Клиентов в месяц</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>																							
+											</div>
+
+											<div class="item item_2 active">
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box right_arr_2_rows"><span>Доставка по Москве</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>	
+												<div class="shape"></div>				
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">0<mark>Руб.</mark></span>
+													</div>
+												</div>
+
+											</div>
+
+											<div class="item item_3 active">
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box right_arr_1_rows"><span>Работаем</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>			
+												<div class="shape"></div>		
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">24/7<mark>Дней</mark></span>
+													</div>
+												</div>
+
+											</div>
+
+											<div class="item item_4 active">
+												<div class="shape"></div>
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">3545<mark>Дней</mark></span>
+													</div>
+												</div>
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box left_arr_1_rows"><span>Мы существуем</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>															
+											</div>
+
+											<div class="item item_5 active">
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">6 <mark>Видов</mark></span>
+													</div>
+												</div>
+
+												<div class="shape"></div>
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box left_arr_1_rows"><span>Услуг</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>																							
+											</div>
+
+											<div class="item item_6 active">
+												<div class="circle_outer">
+													<div class="circle_inner">
+														<span class="circle_num">190 <mark>руб.</mark></span>
+													</div>
+												</div>
+
+												<div class="shape"></div>
+												<div class="wrapper_capture">
+													<div class="wrapper_ar">
+														<div class="arrow_box left_arr_2_rows"><span>Минимальная стоимость</span></div>
+													</div>			
+													<div class="wrapper_text">
+														Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Если однажды большого подзаголовок! Своих.
+													</div>
+												</div>																							
+											</div>
+
+										</div>
+
+
+									</div>
+								</div>
+								<!-- END OF block-9 -->
+								
+
+								<div id="block-map">
+									<div class="bottom-border"></div>
+									<div class="content-wrapper">
+										<div class="send-form">
+											<div class="header"><p class="w900">Заказать<br> обратный звонок</p></div>
+											<div class="body">
+												<form action="/">
+													<div class="accept">
+														<input type="text" placeholder="Ваше имя" class="inputs">
+														<input type="text"  data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="inputs required">
+
+														<button class="input-button inputs redb" type="submit" id="form2">Перезвоните мне</button>
+														<label class="agree">
+															<input type="checkbox" class="checkbox">
+															<span class="w700 accept-text">Согласен с</span><a href="#"><span class="w700 accept-text red"> политикой конфеденциальности</span></a></div>
+														</label>
+													</form>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- END OF block-10 -->
+
+									<div id="block-footer">
+										<div class="top-border"></div>
+										<div class="content-wrapper">
+											<div class="footer">
+												<div class="footer-left">
+													<p class="w300">Московская<br>
+													типография.рус</p>
+												</div>
+												<div class="footer-center">
+													<a href="#"><p class="w500">Политика конфедициальности</p></a>
+												</div>
+												<div class="footer-right">
+													<p class="telphone w700">+7 (495) 507-91-90</p>
+													<p class="e-mail w700">info@gold-print24.ru</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- END OF block-footer -->
+								</div> 
+								<!-- END OF page -->
+							</div>
+							<!-- END OF page-wrapper -->
+
+
+							<div id="modal_form" class="modal_form">
+								<span id="modal_close" class="modal_close" class="w900">&times;</span>
+								<div class="title title--center w700"><span>Спасибо за заявку</span></div>
+								<div class="message h4 w300">Наш менеджер свяжется с вами в ближайшее время</div>
+							</div>
+
+							<div id="modal_form2" class="modal_form">
+								<span id="modal_close2"  class="modal_close" class="w900">&times;</span>
+								<div class="title title--center w700"><span>Спасибо за заявку</span></div>
+								<div class="message h4 w300">Наш менеджер свяжется с вами в ближайшее время</div>
+							</div>
+
+							<div id="modal_otziv" class="modal_form">
+								<span id="modal_close_otziv"  class="modal_close" class="w900">&times;</span>
+								<div class="title title--center w700"><span>Оставить отзыв</span></div>
+								<div class="message h4 w300">
+									<div class="input-left">
+										<input type="text" placeholder="Ваше имя" class="inputs">
+									</div>
+									<div class="input-right">
+										<input type="text" placeholder="E-mail" class="inputs">
+									</div>
+									<div class="clearfix"></div>
+									<textarea rows="4" placeholder="Отзыв" ></textarea>
+
+									<div class="accept"><input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span><a href="#" class="w700 accept-text red"> условия пользовательского соглашения</a></div>
+								</div>
+								<div class="lines"><div class="input-button inputs redb">Оставить отзыв →</div></div>
+							</div>
+
+							<div id="modal_zakaz" class="modal_form">
+								<span id="modal_close_zakaz"  class="modal_close" class="w900">&times;</span>
+								<div class="title title--center w700"><span>Заказать</span></div>
+								<div class="message h4 w300">
+									<div class="input-left">
+										<input type="text" placeholder="Ваше имя" class="inputs">
+									</div>
+									<div class="input-right">
+										<input type="text" placeholder="E-mail" class="inputs">
+									</div>
+									<div class="clearfix"></div>
+									<textarea rows="4" placeholder="Краткое техническое задание" ></textarea>
+
+									<div class="accept">
+										<label class="agree">
+											<input type="checkbox" class="checkbox"> 
+											<span class="w700 accept-text">Я принимаю </span>
+											<a href="#" class="w700 accept-text red">условия пользовательского соглашения</a>
+										</label>
+									</div>
+								</div>
+								<div class="lines"><div class="input-button inputs redb">Заказать →</div></div>
+							</div>
+
+							<div id="overlay"></div>
+
+
+						</body>
+						</html>
+						<script src="js/jquery-3.2.1.min.js"></script>
+						<script src="js/jquery.animateNumber.min.js"></script>
+						<script src="js/viewportChecker.js"></script>
+						<script src="plugins/jquery.validate.min.js"></script>
+						<script src="plugins/masked.min.js"></script>
+						<script src="plugins/mmenu/jquery.mmenu.all.js"></script>
+						<script src="plugins/owl_carousel/dist/owl.carousel.min.js"></script>
+						<script src="js/script.js"></script>

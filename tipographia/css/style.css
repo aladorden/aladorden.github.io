@@ -1,0 +1,56 @@
+.dropcontainer {
+	position:relative;
+	font-size: 14px;
+	color: #282828;
+	position:absolute;
+	z-index:100;
+} 
+.trigger, .activetrigger  {
+	display: table-cell;
+	vertical-align:middle;
+	color: #777;
+	padding: 0px;
+	font-size: 14px;
+	width: 220px;
+	height:35px;
+	background:#fff url(../img/select-arrow-open.png) center right no-repeat;
+	border-radius:5px;
+	text-decoration:none;
+	padding-left:10px;
+}
+.dropcontainer ul {
+	font-size: 14px;
+	border-top: none;
+	background: #fff;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	width: 220px;
+	z-index: 100;
+	background: #ffe9e9;
+}
+.dropcontainer ul li {
+	background: #ffe9e9;
+	padding: 7px;
+	outline: none; 
+	box-shadow: 0 0 3px #ffe9e9;
+	margin-bottom: 2px;
+	transition: all .25s ease;
+}
+.dropcontainer ul li a {
+	text-decoration:none;
+	color: #282828;
+}
+.dropcontainer ul li:hover {
+	background: #ffe9e9;
+	padding-left: 10px;
+	outline: none; 
+	box-shadow: 0 0 4px #fb6262;
+	margin-bottom: 2px;
+}
+.dropdownhidden {
+	display: none;
+}
+.dropdownvisible {
+	height: auto;
+}

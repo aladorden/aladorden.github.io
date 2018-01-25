@@ -180,9 +180,15 @@ $("#my-menu").mmenu({
 	},
 	navbar: {
 		title: '<img src="img/logo.png" alt="Waxom">',
-	}
+	},
+	classNames: {
+            fixedElements: {
+               fixed: "header_fixed",
+            }
+         }
 
 });
+
 
 var api = $('#my-menu').data('mmenu');
 

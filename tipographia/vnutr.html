@@ -24,13 +24,14 @@ $mesnum=(int)date("m");
 	<title>Типография</title>
 	<link rel="stylesheet" href="hamburgers.css">
 	<link rel="stylesheet" type="text/css" href="plugins/owl_carousel/dist/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="plugins/mmenu/jquery.mmenu.all.css">
 	<link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 <body>
 	<div id="page-wrapper">
 		<div id="page">
 
-		<div id="top-menu">
+			<div id="top-menu">
 				<div class="content-wrapper">
 					<div class="menu-but">
 						<a href="#my-menu" class="hamburger hamburger--slider">
@@ -41,27 +42,73 @@ $mesnum=(int)date("m");
 					<div class="tel-top w900"><div class="icon"></div><a href="tel:+74955079190">+7 (495) 507-91-90</a></div>
 					<div class="clearfix"></div>
 				</div>
-			</div>  <!-- END OF top-menu -->
+			</div> 
+			<!-- END OF top-menu -->
+		<nav id="my-menu">
+				<ul>
+					<li><a href="/">Главная</a></li>
+					<li><a href="/цены/">Цены</a></li>
+					<li><a href="/спецпредложения/">Спецпредложения</a></li>
+					<li class="r_click" data-link="/услуги/">
+						<span>Услуги</span>
+						<ul>
+							<li class="r_click" data-link="/цифровая-печать/"><span>Цифровая печать</span>
+								<ul>
+									<li><a href="">Цифровая печать А1</a></li>
+									<li><a href="">Цифровая печать А2</a></li>
+									<li><a href="">Цифровая печать А3</a></li>
+									<li><a href="">Цифровая печать А4</a></li>
+									<li><a href="">Цифровая печать А5</a></li>
+								</ul>
+							</li>
+							<li><a href="печать-календарей">Печать календарей домиков</a></li>
+							<li><a href="печать-календарей">Печать календарей</a></li>
+							<li><a href="печать-календарей">Печать карманных календарей</a></li>
+							<li><a href="печать-календарей">Печать квартальных календарей</a></li>
+							<li><a href="печать-календарей">Печать буклетов</a></li>
+							<li><a href="печать-календарей">Печать открыток</a></li>
+							<li><a href="печать-календарей">Печать визиток</a></li>
+							<li><a href="печать-календарей">Печать флаеров</a></li>
+							<li class="r_click" data-link="/печать-листовок/"><span>Печать листовок</span>
+								<ul>
+									<li><a href="">Печать листовок А3</a></li>
+									<li><a href="">Печать листовок А4</a></li>
+									<li><a href="">Печать листовок А5</a></li>
+									<li><a href="">Печать листовок А6</a></li>
+								</ul>
+							</li>
+							
+							<li><a href="печать-календарей">Печать брошюр</a></li>
+							<li><a href="печать-календарей">Печать бланков</a></li>
+							
+							<li><a href="печать-календарей">Широкоформатная печать</a></li>
+							<li><a href="интерьерная-календарей">Интерьерная печать</a></li>
+
+						</ul>
+					</li>
+					<li><a href="/о-компании/">Требования</a></li>
+					<li><a href="/спецпредложения/">Спецпредложения</a></li>
+				</ul>
+			</nav>
+						<!-- END OF mobile-menu -->
 
 			<div id="block-inner1">
 				<div class="content-wrapper">
 					<div class="send-form">
 						<div class="header"><p class="w900">Заказать печать визиток<br>быстро и недорого</p></div>
 						<div class="body">
-							<form action="/">
+							<form method="POST" name="form_header">
 								<div class="accept">
-
 									<div class="inputs_wrapp">
-										<input type="text" class="input-left" placeholder="Ваше имя" class="inputs">
-
-										<input type="text" class="input-right" placeholder="Ваш номер телефона" class="inputs">
+										<input type="text" class="input-left inputs" name="name" placeholder="Ваше имя" class="">
+										<input type="tel" data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="inputs required input-right" minlength="18">
 									</div>
 
 									<textarea rows="5" placeholder="Укажите дополнительные данные для
 									визитки, например: должность, e-mail,сайт" ></textarea>
 
 									<div class="center">
-										<button class="input-button inputs redb">Перезвоните мне<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+										<button type="submit" class="input-button inputs redb">Перезвоните мне<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 										<label>
 											<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю <a href="#" class="w700 accept-text red">условия пользовательского соглашения</a></span>
 										</label>
@@ -159,7 +206,9 @@ $mesnum=(int)date("m");
 							<p class="h2 w900">Получите <span class="red">скидку 7%</span> на первый заказ!</p>
 							<div class="redborder"></div>
 							<p class="h2 w900">Просто позвоните по телефону</p>
-							<p class="h2 w900"><span class="tel-icon"><span class="icon"></span></span>+7 (495) 507-91-90</p>
+							<p class="h2 w900">
+								<span class="icon"></span>+7 (495) 507-91-90
+							</p>
 						</div>
 					</div>
 				</div>
@@ -173,44 +222,42 @@ $mesnum=(int)date("m");
 
 						<div class="redborder"></div>
 
-						<div class="viewport" id="viewport">
-							<div data-current='0' class='slidewrapper'>
+						
+						<div class="owl-carousel gallery_card_carousel">
+							<div class="gallary-img">
+								<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
+								<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="clearfix"></div>
+							</div>
 
-								<div class="gallary-img">
-									<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
-									<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="clearfix"></div>
-								</div>
+							<div class="gallary-img">
+								<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
+								<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="clearfix"></div>
+							</div>
 
-								<div class="gallary-img">
-									<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
-									<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="clearfix"></div>
-								</div>
-
-								<div class="gallary-img">
-									<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
-									<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
-									<div class="clearfix"></div>
-								</div>
-
-							</div>   
+							<div class="gallary-img">
+								<div class="card card1"><div class="card-img"><img src="img/obraz/asb.png" alt=""></div><div class="card-text">Французская  поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card2"><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div><div class="card-img"><img src="img/obraz/sux.png" alt=""></div></div>
+								<div class="card card3"><div class="card-img"><img src="img/obraz/dell.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card4"><div class="card-img"><img src="img/obraz/med.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card5"><div class="card-img"><img src="img/obraz/shmel.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card6"><div class="card-img"><img src="img/obraz/yan.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="card card7"><div class="card-img"><img src="img/obraz/grib.png" alt=""></div><div class="card-text">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный"</div></div>
+								<div class="clearfix"></div>
+							</div>
 						</div>
+
 
 						<div class="doublbuttons">
 							<div class="input-button redb"  id="otvet">Еще работы</div>
@@ -236,11 +283,11 @@ $mesnum=(int)date("m");
 						</div>
 
 						<div class="rightside">
-									<video poster="img/poster.png" controls id="" src="https://s3.envato.com/h264-video-previews/7273f29e-70a2-4449-b882-37dbc8f4259f/10469940.mp4" >								
-									</div>
+							<video poster="img/poster.png" controls id="" src="https://s3.envato.com/h264-video-previews/7273f29e-70a2-4449-b882-37dbc8f4259f/10469940.mp4" >								
 							</div>
+						</div>
 
-							<div class="carousel_item">
+						<!-- 	<div class="carousel_item">
 								<div class="leftside">
 									<p class="w700">Сегодня <span class="h2 red w900"><?php echo date("j")." ".$mes[$mesnum]." ".date("Y")." года";  ?></span>, а это значит Вам повезло попасть на акцию <span class="h2 red w900">Бесплатного дизайна</span> ваших визиток от нашего мастера!</p>
 									<div class="input-button redb">Заказать <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
@@ -251,436 +298,451 @@ $mesnum=(int)date("m");
 									</div>
 
 
-								</div>
-								</div>
+								</div> -->
+							</div>
 
 
 
-								<div class="button-to-right"></div>
+							<div class="button-to-right"></div>
 
-								<div class="border-bottom"></div>
-							</div><!-- END OF block-inner6 -->
+							<div class="border-bottom"></div>
+						</div><!-- END OF block-inner6 -->
 
-							<div id="block-inner7">
-								<div class="content-wrapper">
-									<p class="h2 w900">Посмотрите что <span class="red"> вы получите</span> сотрудничая с нами</p>
-									<div class="redborder"></div>
-									<div class="arrow-wrap">
-										<div class="arposr">
-											<div class="pos pos1">
-												<div class="arrow-r"><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Только качественные<br>материалы</div><div class="arrow-num h2 w900">01</div></div>
+						<div id="block-inner7">
+							<div class="content-wrapper">
+								<p class="h2 w900">Посмотрите что <span class="red"> вы получите</span> сотрудничая с нами</p>
+								<div class="redborder"></div>
+								<div class="arrow-wrap">
+
+									<div class="arposr">
+										<div class="pos pos1">
+											<div class="arrow-r">
+												<div class="arrow-text-hover">
+													<div>
+														<span class="header w700">Только качественные<br> материалы</span>
+														<span class="text w300">Французская поговорка гласит: "Сухой рыбак и 
+															мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, 
+														я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span>
+													</div>
+												</div>
+												<div class="arrow-text h4 w700">Только качественные<br>материалы</div>
+												<div class="arrow-num h2 w900">01</div>
 											</div>
 										</div>
+									</div>
 
-										<div class="arposl">
-											<div class="pos pos2">
-												<div class="arrow-l"><div class="arrow-num h2 w900">02</div><div class="arrow-text-hover"><div><span class="header w700">Только качественныe<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Постоянным клиентам<br>особые условия</div></div></div></div>
+									<div class="arposl">
+										<div class="pos pos2">
+											<div class="arrow-l"><div class="arrow-num h2 w900">02</div><div class="arrow-text-hover"><div><span class="header w700">Только качественныe<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Постоянным клиентам<br>особые условия</div></div></div></div>
 
-												<div class="arposr">
-													<div class="pos pos3">
-														<div class="arrow-r"><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Удобный онлайн<br>калькулятор</div><div class="arrow-num h2 w900">03</div></div></div></div>
+											<div class="arposr">
+												<div class="pos pos3">
+													<div class="arrow-r"><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Удобный онлайн<br>калькулятор</div><div class="arrow-num h2 w900">03</div></div></div></div>
 
-														<div class="arposl">
-															<div class="pos pos4">
-																<div class="arrow-l"><div class="arrow-num h2 w900">04</div><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Собственное производство<br>и студия дизайна</div></div></div></div>
+													<div class="arposl">
+														<div class="pos pos4">
+															<div class="arrow-l"><div class="arrow-num h2 w900">04</div><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Собственное производство<br>и студия дизайна</div></div></div></div>
 
-																<div class="arposr last"><div class="pos pos5">
-																	<div class="arrow-r"><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Большой выбор лучших<br>жизайнерских бумаг</div><div class="arrow-num h2 w900">05</div></div></div></div>
+															<div class="arposr last"><div class="pos pos5">
+																<div class="arrow-r"><div class="arrow-text-hover"><div><span class="header w700">Только качественные<br> материалы</span><span class="text w300">Французская поговорка гласит: "Сухой рыбак и мокрый охотник являют видпечальный". Не имев никогда пристрастия к рыбной ловле, я не могу судить отом, что испытывает рыбак в хорошую, ясную погоду и насколько.</span></div></div><div class="arrow-text h4 w700">Большой выбор лучших<br>жизайнерских бумаг</div><div class="arrow-num h2 w900">05</div></div></div></div>
 
-																	<div class="clearfix"></div>
-																</div>
-																<div class="arrows-img"></div>
+																<div class="clearfix"></div>
 															</div>
-														</div><!-- END OF block-inner7 -->
+															<div class="arrows-img"></div>
+														</div>
+													</div>
+													<!-- END OF block-inner7 -->
 
-														<div id="block-inner8">
-															<div class="border-top"></div>
-															<div class="content-wrapper">
-																<p class="h2 w900">Рассчитайте стоимость в<span class="red"> калькуляторе</span> и оформите заказ</p>
-																<div class="redborder"></div>
-																<div class="sides-wrap">
-																	<div class="leftside">
+													<div id="block-inner8">
+														<div class="border-top"></div>
+														<div class="content-wrapper">
+															<p class="h2 w900">Рассчитайте стоимость в<span class="red"> калькуляторе</span> и оформите заказ</p>
+															<div class="redborder"></div>
+															<div class="sides-wrap">
+																<div class="leftside">
+																	<div class="select">
+
+																		<p>Макет</p>
+																		<select name="maket" class="turnintodropdown">
+																			<option selected value='50'>Есть готовый макет</option>
+																			<option value='200'>Нет</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Размер визитки</p>
+																		<select name="card" class="turnintodropdown">
+																			<option selected value='220'>85X55</option>
+																			<option value='150'>60X50</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Печать</p>
+																		<select name="printing" class="turnintodropdown">
+																			<option selected value='200'>Односторонная</option>
+																			<option value='300'>Двухсторонная</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Тип бумаги</p>
+																		<select name="type_paper" class="turnintodropdown">
+																			<option selected value='400'>Дизайнерская</option>
+																			<option value='400'>Простая</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Бумага</p>
+																		<select name="paper" class="turnintodropdown">
+																			<option selected value="70">Белая</option>
+																			<option value="95">Желтая</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Лакирование</p>
+																		<select name="lacquering" class="turnintodropdown">
+																			<option selected value="350">Да</option>
+																			<option value="0">Нет</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Скругление углов</p>
+																		<select name="fillet" class="turnintodropdown">
+																			<option selected value="100">Да</option>
+																			<option value="0">Нет</option>
+																		</select>
+																	</div>
+																	<div class="select">
+																		<p>Печать шелкографией</p>
+																		<select name="silkscreen" class="turnintodropdown">
+																			<option selected value="600">Да</option>
+																			<option value="0">Нет</option>
+																		</select>
+																	</div>
+																</div>
+
+																<div class="rightside">
+
+																	<div class="select_wrapp">
 																		<div class="select">
-
-																			<p>Макет</p>
+																			<p>Время изготовления</p>
 																			<select name="maket" class="turnintodropdown">
-																				<option selected value='50'>Есть готовый макет</option>
-																				<option value='200'>Нет</option>
+																				<option selected value="2000">1 день</option>
+																				<option value="1000">2 дня</option>
 																			</select>
 																		</div>
+
 																		<div class="select">
-																			<p>Размер визитки</p>
-																			<select name="card" class="turnintodropdown">
-																				<option selected value='220'>85X55</option>
-																				<option value='150'>60X50</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Печать</p>
-																			<select name="printing" class="turnintodropdown">
-																				<option selected value='200'>Односторонная</option>
-																				<option value='300'>Двухсторонная</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Тип бумаги</p>
-																			<select name="type_paper" class="turnintodropdown">
-																				<option selected value='400'>Дизайнерская</option>
-																				<option value='400'>Простая</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Бумага</p>
-																			<select name="paper" class="turnintodropdown">
-																				<option selected value="70">Белая</option>
-																				<option value="95">Желтая</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Лакирование</p>
-																			<select name="lacquering" class="turnintodropdown">
-																				<option selected value="350">Да</option>
-																				<option value="0">Нет</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Скругление углов</p>
-																			<select name="fillet" class="turnintodropdown">
-																				<option selected value="100">Да</option>
-																				<option value="0">Нет</option>
-																			</select>
-																		</div>
-																		<div class="select">
-																			<p>Печать шелкографией</p>
-																			<select name="silkscreen" class="turnintodropdown">
-																				<option selected value="600">Да</option>
-																				<option value="0">Нет</option>
+																			<p>Количество</p>
+																			<select name="maket" class="turnintodropdown">
+																				<option selected value="1000">100 штук</option>
+																				<option value="2000">200 штук</option>
 																			</select>
 																		</div>
 																	</div>
 
-																	<div class="rightside">
-
-																		<div class="select_wrapp">
-																			<div class="select">
-																				<p>Время изготовления</p>
-																				<select name="maket" class="turnintodropdown">
-																					<option selected value="2000">1 день</option>
-																					<option value="1000">2 дня</option>
-																				</select>
+																	<div class="textarea">
+																		<p>Комментарий</p>
+																		<textarea name="comment"></textarea>
+																		<div class="itogo">
+																			<p class="h4 w900">Итого:<span id="itogo" class="red">0 рублей</span>
 																			</div>
-
-																			<div class="select">
-																				<p>Количество</p>
-																				<select name="maket" class="turnintodropdown">
-																					<option selected value="1000">100 штук</option>
-																					<option value="2000">200 штук</option>
-																				</select>
-																			</div>
-																		</div>
-
-																		<div class="textarea">
-																			<p>Комментарий</p>
-																			<textarea name="comment"></textarea>
-																			<div class="itogo">
-																				<p class="h4 w900">Итого:<span id="itogo" class="red">0 рублей</span>
-																				</div>
-																				<div class="telnumber">
-																					<input name="tel" placeholder="Ваш номер телефона" class="telinput">
-																					<div class="input-button redb">Заказать визитку <i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																	<div class="acsiya">
-																		<div class="gruz"></div>
-																		<div class="galka"></div>
-																		<div class="galka_dark"></div>
-																		<p class="w700">Оформите заказ на сумму свыше 1500 рублей и получите бесплатную доставку по Москве</p>
-																	</div>
-																</div>
-
-																<div class="border-bottom"></div>
-
-															</div>
-															<!-- END OF block-inner8 -->
-
-															<div id="block-inner9">
-																<div class="button-to-left"></div>
-																<div class="content-wrapper">
-																	<p class="h2 w900">Посмотрите что говорят <span class="red">наши клиенты</span></p>
-																	<div class="redborder"></div>
-																	<div class="mos-wrapper">
-
-																		<div class="owl-carousel our_clients_carousel">
-																			<div class="mos mos1">
-																				<div class="mos-head">
-																					<span class="h4 w900">MOS DESIGN</span>
-																				</div>
-																				<div class="mos-img">
-																					<img src="img/mos.png" alt="">
-																				</div>
-																				<div class="mos-like">
-																					<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
-																					<div class="text">
-																						<p class="w300 text-l">11 отметок “нравится”</p>
-																						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
-																					</div>
-																				</div>
-																			</div>
-
-																			<div class="mos">
-																				<div class="mos-head">
-																					<span class="h4 w900">MOS DESIGN</span>
-																				</div>
-																				<div class="mos-img">
-																					<img src="img/mos.png" alt="">
-																				</div>
-																				<div class="mos-like">
-																					<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
-																					<div class="text">
-																						<p class="w300 text-l">11 отметок “нравится”</p>
-																						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
-																					</div>
-																				</div>
-																			</div>
-
-																			<div class="mos">
-																				<div class="mos-head">
-																					<span class="h4 w900">MOS DESIGN</span>
-																				</div>
-																				<div class="mos-img">
-																					<img src="img/mos.png" alt="">
-																				</div>
-																				<div class="mos-like">
-																					<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
-																					<div class="text">
-																						<p class="w300 text-l">11 отметок “нравится”</p>
-																						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
-																					</div>
-																				</div>
-																			</div>
-
-																			<div class="mos">
-																				<div class="mos-head">
-																					<span class="h4 w900">MOS DESIGN</span>
-																				</div>
-																				<div class="mos-img">
-																					<img src="img/mos.png" alt="">
-																				</div>
-																				<div class="mos-like">
-																					<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
-																					<div class="text">
-																						<p class="w300 text-l">11 отметок “нравится”</p>
-																						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
-																					</div>
-																				</div>
-																			</div>
-
-																			<div class="mos">
-																				<div class="mos-head">
-																					<span class="h4 w900">MOS DESIGN</span>
-																				</div>
-																				<div class="mos-img">
-																					<img src="img/mos.png" alt="">
-																				</div>
-																				<div class="mos-like">
-																					<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
-																					<div class="text">
-																						<p class="w300 text-l">11 отметок “нравится”</p>
-																						<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
-																					</div>
-																				</div>
-																			</div>
-
-																		</div>
-
-																	</div>
-																</div>
-																<div class="button-to-right"></div>
-															</div><!-- END OF block-inner9 -->
-
-															<div id="block-inner10">
-																<div class="content-wrapper">
-																	<div class="text">
-																		<p class="w900">Пусть каждый занимается<br>
-																			своим делом – доверьте дизайн<br>
-																			Ваших визиток <span class="red">Настоящим профессионалам!</span></p>
-																			<form>
-																				<div class="inputs">
-																					<div class="input input1">
-																						<p class="w300">Что бы сообщить о готовности</p>
-																						<input type="tel" placeholder="Ваш номер телефона">
-																					</div>
-																					<div class="input input2">
-																						<p class="w300">Что бы выслать вам готовый дизайн, оставьте:</p>
-																						<input type="tel" placeholder="Ваш email адрес">
-																					</div>
-																				</div>
-																				<div class="text-area">
-																					<p class="w300">Техническое задание в свободной форме</p>
-																					<textarea placeholder="Нужна стандартных размеров горизонтальная визитка. Матовая бумага. Буквы фольгированные под золото. Тематика: Ювелирные изделия"></textarea>
-																					<div class="accept-but">
-																						<div class="lb_agree">
-																							<label>
-																								<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span> <a href="#"><span class="w700 accept-text src red">условия пользовательского соглашения</span></a>
-																							</label>
-																						</div>
-																						<div class="right table-child">
-
-																							<button class="input-button inputs redb">Заказать дизайн <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
-																						</div>
-																					</div>
-																				</div>
+																			<form class="telnumber">
+																				<input type="tel" data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="inputs required telinput" minlength="18">
+																				<button type="submit" class="input-button redb">Заказать визитку <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 																			</form>
 																		</div>
 																	</div>
 																</div>
-																<!-- END OF block-inner10 -->
+																<div class="acsiya">
+																	<div class="gruz"></div>
+																	<div class="galka"></div>
+																	<div class="galka_dark"></div>
+																	<p class="w700">Оформите заказ на сумму свыше 1500 рублей и получите бесплатную доставку по Москве</p>
+																</div>
+															</div>
 
-																<div id="block-inner11">
-																	<div class="border-top"></div>
-																	<div class="content-wrapper">
-																		<div class="header">
-																			<p class="w900 h2"><span class="red">Цены</span> на печать визиток</p>
-																			<div class="redborder"></div>
-																		</div>
-																		<div class="banners banner1">
-																			<div class="inners owl-carousel">
-																				<div class="inner inner1"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner2"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner3"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner4"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner5"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner6"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner7"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner8"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner5"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner6"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner7"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner8"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+															<div class="border-bottom"></div>
 
-																				<div class="inner inner1"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner2"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner3"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner4"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner5"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner6"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner7"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner8"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner5"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner6"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner7"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
-																				<div class="inner inner8"><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+														</div>
+														<!-- END OF block-inner8 -->
 
+														<div id="block-inner9">
+															<div class="button-to-left"></div>
+															<div class="content-wrapper">
+																<p class="h2 w900">Посмотрите что говорят <span class="red">наши клиенты</span></p>
+																<div class="redborder"></div>
+																<div class="mos-wrapper">
+																	<div class="owl-carousel our_clients_carousel">
+																		<div class="mos mos1">
+																			<div class="mos-head">
+																				<span class="h4 w900">MOS DESIGN</span>
 																			</div>
-
-
+																			<div class="mos-img">
+																				<img src="img/mos.png" alt="">
+																			</div>
+																			<div class="mos-like">
+																				<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
+																				<div class="text">
+																					<p class="w300 text-l">11 отметок “нравится”</p>
+																					<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
+																				</div>
+																			</div>
 																		</div>
-																		<div class="menu-but"><div class="input-button redb">Показать еще</div></div>
+
+																		<div class="mos">
+																			<div class="mos-head">
+																				<span class="h4 w900">MOS DESIGN</span>
+																			</div>
+																			<div class="mos-img">
+																				<img src="img/mos.png" alt="">
+																			</div>
+																			<div class="mos-like">
+																				<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
+																				<div class="text">
+																					<p class="w300 text-l">11 отметок “нравится”</p>
+																					<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="mos">
+																			<div class="mos-head">
+																				<span class="h4 w900">MOS DESIGN</span>
+																			</div>
+																			<div class="mos-img">
+																				<img src="img/mos.png" alt="">
+																			</div>
+																			<div class="mos-like">
+																				<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
+																				<div class="text">
+																					<p class="w300 text-l">11 отметок “нравится”</p>
+																					<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="mos">
+																			<div class="mos-head">
+																				<span class="h4 w900">MOS DESIGN</span>
+																			</div>
+																			<div class="mos-img">
+																				<img src="img/mos.png" alt="">
+																			</div>
+																			<div class="mos-like">
+																				<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
+																				<div class="text">
+																					<p class="w300 text-l">11 отметок “нравится”</p>
+																					<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="mos">
+																			<div class="mos-head">
+																				<span class="h4 w900">MOS DESIGN</span>
+																			</div>
+																			<div class="mos-img">
+																				<img src="img/mos.png" alt="">
+																			</div>
+																			<div class="mos-like">
+																				<div class="icons"><div class="icons-h"></div><div class="icons-m"></div></div>
+																				<div class="text">
+																					<p class="w300 text-l">11 отметок “нравится”</p>
+																					<p class="w300 text">Мужик глянул на меня исподлобья. Я внутренне дал себе слово во что быто ни</p>
+																				</div>
+																			</div>
+																		</div>
+
 																	</div>
-																	<div class="border-bottom"></div>
-																</div><!-- END OF block-inner11 -->
+																	
 
-																<div id="block-inner12">
-																	<div class="border-top"></div>
-																	<div class="content-wrapper">
-																		<div class="header">
-																			<p class="w900 h2">Мы <span class="red">делаем визитки</span> для:</p>
-																			<div class="redborder"></div>
-																		</div>
-																		<div class="company-list">
-																			<div class="table-child"><img src="img/client/megafon.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/gazprom.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/rostelecom.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/garage.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/megafon.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/gazprom.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/rostelecom.png" alt=""></div>
-																			<div class="table-child"><img src="img/client/garage.png" alt=""></div>
-																		</div>
-																	</div><!-- END OF block-inner12 -->
+																</div>
+															</div>
+															<div class="button-to-right"></div>
+														</div><!-- END OF block-inner9 -->
 
-																	<div id="block-inner13">
-																		<div class="top-border"></div>
-																		<div class="middle">
-																			<div class="content-wrapper">
-																				<span class="h2 w900">С визитными карточками часто заказывают</span>
-																				<div class="redborder"></div>
-																				<div class="parrent">
-																					<div class="child ch1"><a href="#"><img src="img/74.png" alt=""></a>
-																						<p class="h4 red w700"><a href="#" class="red">Самовывоз из офиса</a></p>
-																						<p class="h5 w300">Вы можете забрать заказ самостоятельно из нашей типографии по адресу:<br>
-																						Варшавское шоссе, 11, офис 415</p>
+														<div id="block-inner10">
+															<div class="content-wrapper">
+																<div class="text">
+																	<p class="w900">Пусть каждый занимается<br>
+																		своим делом – доверьте дизайн<br>
+																		Ваших визиток <span class="red">Настоящим профессионалам!</span></p>
+																		<form>
+																			<div class="inputs">
+																				<div class="input input1">
+																					<p class="w300">Что бы сообщить о готовности</p>
+																					<input type="tel" data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="required" minlength="18">
+																				</div>
+																				<div class="input input2">
+																					<p class="w300">Что бы выслать вам готовый дизайн, оставьте:</p>
+																					<input type="tel" placeholder="Ваш email адрес">
+																				</div>
+																			</div>
+																			<div class="text-area">
+																				<p class="w300">Техническое задание в свободной форме</p>
+																				<textarea placeholder="Нужна стандартных размеров горизонтальная визитка. Матовая бумага. Буквы фольгированные под золото. Тематика: Ювелирные изделия"></textarea>
+																				<div class="accept-but">
+																					<div class="lb_agree">
+																						<label class="agree">
+																							<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Я принимаю</span> <a href="#"><span class="w700 accept-text src red">условия пользовательского соглашения</span></a>
+																						</label>
 																					</div>
-																					<div class="child ch1"><a href="#"><img src="img/75.png" alt=""></a>
-																						<p class="h4 red w700"><a href="#" class="red">Доставка по России</a></p>
-																						<p class="h5 w300">Отправим готовые материалы в любой город прямиком в Ваш офис<br>&nbsp;</p>
-																					</div>
-																					<div class="child ch1"><a href="#"><img src="img/76.png" alt=""></a><p class="h4 red w700"><a href="#" class="red">Доставка курьером</a></p>
-																						<p class="h5 w300">Мы доставим Ваш заказ в течении 2-3 дней после готовности. Или день в день при срочной заявке.
-																						</p>
+																					<div class="right table-child">
+
+																						<button class="input-button inputs redb">Заказать дизайн <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
 																					</div>
 																				</div>
 																			</div>
-																		</div>
-																		<div class="bottom-border"></div>
+																		</form>
 																	</div>
+																</div>
+															</div>
+															<!-- END OF block-inner10 -->
 
-																	<div id="block-map">
-																		<div class="bottom-border"></div>
+															<div id="block-inner11">
+																<div class="border-top"></div>
+																<div class="content-wrapper">
+																	<div class="header">
+																		<p class="w900 h2"><span class="red">Цены</span> на печать визиток</p>
+																		<div class="redborder"></div>
+																	</div>
+																	<div class="banners banner1">
+																		<div class="inners owl-carousel">
+																			<div class="inner inner1"><img src="img/cards/1.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner2"><img src="img/cards/2.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner3"><img src="img/cards/3.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner4"><img src="img/cards/4.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner5"><img src="img/cards/5.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner6"><img src="img/cards/6.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner7"><img src="img/cards/7.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner8"><img src="img/cards/8.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner5"><img src="img/cards/1.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner6"><img src="img/cards/2.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner7"><img src="img/cards/3.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner8"><img src="img/cards/4.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+
+																			<div class="inner inner1"><img src="img/cards/5.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner2"><img src="img/cards/6.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner3"><img src="img/cards/7.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner4"><img src="img/cards/8.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner5"><img src="img/cards/1.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner6"><img src="img/cards/2.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner7"><img src="img/cards/3.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner8"><img src="img/cards/4.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner5"><img src="img/cards/5.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner6"><img src="img/cards/6.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner7"><img src="img/cards/7.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+																			<div class="inner inner8"><img src="img/cards/8.png" alt=""><div class="inner-text"><span class="white w300">Дешевые</span><div class="inner-price"><div class="inner-arrow"></div><span class="red w900">от 900 руб.</span></div></div></div>
+
+																		</div>
+
+
+																	</div>
+																	<div class="menu-but"><div class="input-button redb">Показать еще</div></div>
+																</div>
+																<div class="border-bottom"></div>
+															</div><!-- END OF block-inner11 -->
+
+															<div id="block-inner12">
+																<div class="border-top"></div>
+																<div class="content-wrapper">
+																	<div class="header">
+																		<p class="w900 h2">Мы <span class="red">делаем визитки</span> для:</p>
+																		<div class="redborder"></div>
+																	</div>
+																	<div class="company-list">
+																		<div class="table-child"><img src="img/client/megafon.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/gazprom.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/rostelecom.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/garage.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/megafon.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/gazprom.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/rostelecom.png" alt=""></div>
+																		<div class="table-child"><img src="img/client/garage.png" alt=""></div>
+																	</div>
+																</div><!-- END OF block-inner12 -->
+
+																<div id="block-inner13">
+																	<div class="top-border"></div>
+																	<div class="middle">
 																		<div class="content-wrapper">
-																			<div class="send-form">
-																				<div class="header"><p class="w900">Заказать<br> обратный звонок</p></div>
-																				<div class="body">
-																					<form action="/">
-																						<div class="accept">
-																							<input type="text" placeholder="Ваше имя" class="inputs">
-																							<input type="text" placeholder="Ваш номер телефона" class="inputs">
-																							<button class="input-button inputs redb" id="form2">Перезвоните мне</button>
-
-																							<label>
-																								<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Согласен с</span><a href="#"><span class="w700 accept-text red"> политикой конфеденциальности</span></a>
-																							</label>
-
-																						</div>
-																					</form>
-
+																			<span class="h2 w900">С визитными карточками часто заказывают</span>
+																			<div class="redborder"></div>
+																			<div class="parrent">
+																				<div class="child ch1"><a href="#"><img src="img/74.png" alt=""></a>
+																					<p class="h4 red w700"><a href="#" class="red">Самовывоз из офиса</a></p>
+																					<p class="h5 w300">Вы можете забрать заказ самостоятельно из нашей типографии по адресу:<br>
+																					Варшавское шоссе, 11, офис 415</p>
+																				</div>
+																				<div class="child ch1"><a href="#"><img src="img/75.png" alt=""></a>
+																					<p class="h4 red w700"><a href="#" class="red">Доставка по России</a></p>
+																					<p class="h5 w300">Отправим готовые материалы в любой город прямиком в Ваш офис<br>&nbsp;</p>
+																				</div>
+																				<div class="child ch1"><a href="#"><img src="img/76.png" alt=""></a><p class="h4 red w700"><a href="#" class="red">Доставка курьером</a></p>
+																					<p class="h5 w300">Мы доставим Ваш заказ в течении 2-3 дней после готовности. Или день в день при срочной заявке.
+																					</p>
 																				</div>
 																			</div>
 																		</div>
-																	</div><!-- END OF block-10 -->
-																	<div id="block-footer">
-																		<div class="top-border"></div>
-																		<div class="content-wrapper">
-																			<div class="footer">
-																				<div class="footer-left">
-																					<p class="w300">Московская<br>
-																					типография.рус</p>
-																				</div>
-																				<div class="footer-center">
-																					<a href="#"><p class="w500">Политика конфедициальности</p></a>
-																				</div>
-																				<div class="footer-right">
-																					<p class="telphone w700">+7 (495) 507-91-90</p>
-																					<p class="e-mail w700">info@gold-print24.ru</p>
-																				</div>
+																	</div>
+																	<div class="bottom-border"></div>
+																</div>
+
+																<div id="block-map" class="block_map_vnutr">
+																	<div class="bottom-border"></div>
+																	<div class="content-wrapper">
+																		<div class="send-form">
+																			<div class="header"><p class="w900">Заказать<br> обратный звонок</p></div>
+																			<div class="body">
+																				<form action="/">
+																					<div class="accept">
+																						<input type="text" placeholder="Ваше имя" class="inputs">
+																						<input type="tel" data-msg-required="Поле обязательно для заполнения" aria-required="true" name="tel"  placeholder="Ваш номер телефона" class="inputs required" minlength="18">
+																						<button class="input-button inputs redb" id="form2">Перезвоните мне</button>
+
+																						<label class="agree">
+																							<input type="checkbox" class="checkbox"> <span class="w700 accept-text">Согласен с </span><a href="#"><span class="w700 accept-text red">политикой конфеденциальности</span></a>
+																						</label>
+
+																					</div>
+																				</form>
+
 																			</div>
 																		</div>
-																	</div><!-- END OF block-footer -->
-																</div> <!-- END OF page -->
-															</div> <!-- END OF page-wrapper -->
-														</body>
-														</html>
-														<script src="js/jquery-3.2.1.min.js"></script>
-														<script src="https://use.fontawesome.com/45d75ccb70.js"></script>
-														<script src="js/jquery.animateNumber.min.js"></script>
-														<script src="js/viewportChecker.js"></script>
-														<script src="js/jquery.color.js"></script>
-														<script src="plugins/owl_carousel/dist/owl.carousel.min.js"></script>
-														<script src="plugins/masonry.pkgd.min.js"></script>
-														<script src="js/script.js"></script>
+																	</div>
+																</div><!-- END OF block-10 -->
+																<div id="block-footer">
+																	<div class="top-border"></div>
+																	<div class="content-wrapper">
+																		<div class="footer">
+																			<div class="footer-left">
+																				<p class="w300">Московская<br>
+																				типография.рус</p>
+																			</div>
+																			<div class="footer-center">
+																				<a href="#"><p class="w500">Политика конфедициальности</p></a>
+																			</div>
+																			<div class="footer-right">
+																				<p class="telphone w700">+7 (495) 507-91-90</p>
+																				<p class="e-mail w700">info@gold-print24.ru</p>
+																			</div>
+																		</div>
+																	</div>
+																</div><!-- END OF block-footer -->
+															</div> <!-- END OF page -->
+														</div> <!-- END OF page-wrapper -->
+													</body>
+													</html>
+													<script src="js/jquery-3.2.1.min.js"></script>
+													<script src="https://use.fontawesome.com/45d75ccb70.js"></script>
+													<script src="js/jquery.animateNumber.min.js"></script>
+													<script src="js/viewportChecker.js"></script>
+													<script src="js/jquery.color.js"></script>
+													<script src="plugins/jquery.validate.min.js"></script>
+														<script src="plugins/mmenu/jquery.mmenu.all.js"></script>
+													<script src="plugins/masked.min.js"></script>
+													<script src="plugins/owl_carousel/dist/owl.carousel.min.js"></script>
+													<script src="plugins/masonry.pkgd.min.js"></script>
+													<script src="js/script.js"></script>
+													<script type='text/javascript' src='js/select.js'></script>
 
-														<script type='text/javascript' src='js/select.js'></script>
-
-														<link rel="stylesheet" type="text/css" href="css/style.css" />
+													<link rel="stylesheet" type="text/css" href="css/style.css" />
