@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<base href="/">
+
+	<title>OptimizedHTML 4</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#000">
+	<!-- Custom Browsers Color End -->
+
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<!-- Custom HTML -->
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-12">
+				
+				<div id="block-inner8">
+					<div class="border-top"></div>
+
+					<div class="content-wrapper">
+						<p class="h2 w900">Рассчитайте стоимость в<span class="red"> калькуляторе</span> и оформите заказ
+						</p>
+						<div class="redborder"></div>
+						<div class="sides-wrap">
+							<div class="leftside">
+								<div class="select">
+									<p>Размер визитки</p>
+									<select name="card" class="turnintodropdown">
+										<option selected value="0">90x50</option>
+										<option value='0'>85x55</option>
+										<option value='0'>84x56</option>
+										<option value='0'>86x54</option>
+										<option value='0'>90x60</option>
+									</select>
+								</div>
+
+								<div class="select">
+									<p>Печать</p>
+									<select name="printing" class="turnintodropdown">
+										<option data-name='monochrome' selected value="default">Односторонная</option>
+										<option data-name='color'>Двухсторонная</option>
+									</select>
+								</div>
+
+								<div class="select">
+									<p>Тип бумаги</p>
+									<select name="type_paper" class="turnintodropdown">
+										<option data-name="mat">матовая 300 г/м2</option>
+										<option data-name="kaland">каландрированная 300 г/м2</option>
+										<option data-name="lyon">лен 300 г/м2</option>
+										<option data-name="touch">TOUCH' COVER 301 г/м2</option>
+									</select>
+								</div>
+
+								<div class="select">
+									<p>Ламинация</p>
+									<select name="lacquering" class="turnintodropdown">
+										<option selected data-name="matovaya">глянцевая</option>
+										<option data-name="matovaya">матовая</option>
+										<option data-name="soft_touch">софт-тач</option>
+									</select>
+								</div>
+
+
+								<div class="select">
+									<p>Скругление углов</p>
+									<select name="fillet" class="turnintodropdown">
+										<option selected value="0">нет</option>
+										<option data-name="fillet">1 угол <span>(напишите в комментариях, какие именно углы скруглять)</span></option>
+										<option data-name="fillet">2 угла <span>(напишите в комментариях, какие именно углы скруглять)</span></option>
+										<option data-name="fillet">3 угла <span>(напишите в комментариях, какие именно углы скруглять)</span></option>
+										<option data-name="fillet">4 угла</option>
+									</select>
+								</div>
+
+								<div class="select">
+									<p>Макет</p>
+									<select name="maket" class="turnintodropdown">
+										<option selected value="0">Есть готовый макет</option>
+										<option value='0'>Нет</option>
+									</select>
+								</div>
+
+							</div>
+							<div class="rightside">
+
+								<div class="select_wrapp">
+									<div class="select">
+										<p>Время изготовления</p>
+										<select name="time" class="turnintodropdown">
+											<option selected value="0">не важно</option>
+											<option value="0">1 час</option>
+											<option value="0">1 день</option>
+											<option value="0">2 дня</option>
+										</select>
+									</div>
+
+									<div class="select">
+										<p>Количество</p>
+										<select name="amount" class="turnintodropdown amount">
+											<!-- Массив цен "data-...." - каждый индекс отвечает за стоимость конкретной услуги для конкр. типа бумаги:
+												data-melov = мелованная бумага 300 г/м2ж
+												data-kaland = мелованная бумага 300 г/м2ж
+												1-й индекс = черно-белая печать;
+												2-й индекс = цветная печать;
+												3-й индекс = ламинация мат/глянец;
+												4-й индекс = ламинация софт-тач;
+												5-й индекс = скругление углов;
+											-->
+											<option selected 
+											data-mat='["300", "400", "150", "250", "100"]'
+											data-kaland='["350", "450", "150", "250", "100"]'
+											data-lyon='["500", "700", "100"]'
+											data-touch='["900", "1200", "100"]'
+											>100 штук</option>
+											<option 
+											data-mat='["500", "600", "200", "425", "150"]'
+											data-kaland='["560", "700", "200", "425", "150"]'
+											data-lyon='["900", "1170", "150"]'
+											data-touch='["1700", "2100", "150"]'
+											>200 штук</option>
+											<option 
+											data-mat='["750", "900", "300", "630", "225"]'
+											data-kaland='["810", "1020", "300", "630", "225"]'
+											data-lyon='["1350", "1755", "225"]'
+											data-touch='["2550", "2820", "225"]'
+											>300 штук</option>
+											<option 
+											data-mat='["900", "1200", "400", "840", "300"]'
+											data-kaland='["1040", "1320", "400", "840", "300"]'
+											data-lyon='["1760", "2280", "300"]'
+											data-touch='["3360", "3760", "300"]'
+											>400 штук</option>
+											<option 
+											data-mat='["1100", "1400", "450", "1000", "350"]'
+											data-kaland='["1200", "1550", "450", "1000", "350"]'
+											data-lyon='["2150", "2600", "350"]'
+											data-touch='["4100", "4600", "350"]'
+											>500 штук</option>
+											<option 
+											data-mat='["1320", "1680", "540", "1200", "420"]'
+											data-kaland='["1410", "1770", "540", "1200", "420"]'
+											data-lyon='["2580", "3090", "420"]'
+											data-touch='["4920", "5460", "420"]'
+											>600 штук</option>
+											<option 
+											data-mat='["1540", "1960", "630", "1400", "490"]'
+											data-kaland='["1645", "2065", "630", "1400", "490"]'
+											data-lyon='["2940", "3570", "490"]'
+											data-touch='["5705", "6370", "490"]'
+											>700 штук</option>
+											<option 
+											data-mat='["1720", "2240", "720", "1560", "560"]'
+											data-kaland='["1880", "2320", "720", "1560", "560"]'
+											data-lyon='["3360", "4040", "560"]'
+											data-touch='["6520", "7240", "560"]'
+											>800 штук</option>
+											<option 
+											data-mat='["1890", "2340", "750", "1710", "630"]'
+											data-kaland='["2070", "2430", "750", "1710", "630"]'
+											data-lyon='["3780", "4500", "630"]'
+											data-touch='["7335", "8145", "630"]'
+											>900 штук</option>
+											<option 
+											data-mat='["2000", "2500", "800", "1800", "700"]'
+											data-kaland='["2150", "2700", "800", "1800", "700"]'
+											data-lyon='["4100", "4950", "700"]'
+											data-touch='["8000", "9000", "700"]'
+											>1000 штук</option>
+											<option 
+											data-mat='["3900", "4800", "1500", "3400", "1200"]'
+											data-kaland='["4100", "5200", "1500", "3400", "1200"]'
+											data-lyon='["7800", "9200", "150"]'
+											data-touch='["14500", "16000", "1200"]'
+											>2000 штук</option>
+										</select>
+									</div>
+								</div>
+								<form class="telnumber" method="POST">
+									<input type="hidden" name="subject" value="Заявка с калькулятора">
+									<input type="hidden" name="maket_calc">
+									<input type="hidden" name="pechat"_calc>
+									<input type="hidden" name="color_paper_calc">
+									<input type="hidden" name="srk_uglov_calc">
+									<input type="hidden" name="size_calc">
+									<input type="hidden" name="type_paper_calc">
+									<input type="hidden" name="lak_calc">
+									<input type="hidden" name="shelkografiya_calc">
+									<input type="hidden" name="time_calc">
+									<input type="hidden" name="sum_calc">
+									<input type="hidden" name="total_prc_calc">
+									<div class="textarea">
+										<p>Комментарий</p>
+										<textarea name="comment"></textarea>
+										<div class="itogo">
+											<p class="h4 w900">Итого:<span id="itogo" class="red">0 рублей</span>
+											</div>
+											<div class="inputs_wrapp">
+												<input type="tel" required="true" name="tel" placeholder="Ваш номер телефона"
+												class="inputs required telinput" minlength="18">
+												<button type="submit" class="input-button redb">Заказать визитку <i
+													class="fa fa-arrow-right" aria-hidden="true"></i></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="border-bottom"></div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			<script src="js/scripts.min.js"></script>
+
+		</body>
+		</html>
