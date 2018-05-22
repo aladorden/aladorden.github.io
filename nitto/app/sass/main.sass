@@ -3,41 +3,1169 @@
 @import "libs"
 
 ::placeholder
-	color: #666
+  color: #666
 
 ::selection
-	background-color: $accent
-	color: #fff
+  background-color: $accent
+  color: #fff
 
 body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: $default-font
-	overflow-x: hidden
-	color: $text
-	input, textarea
-		border: #666 1px solid
-		outline: none
-		&:focus:required:invalid
-			border-color: red
-		&:required:valid
-			border-color: green
-
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-	&.img-width
-		width: 100%
-
-.text-center
-	text-align: center
-
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.5
+  font-family: $default-font
+  overflow-x: hidden
+  color: $text
+  input, textarea
+    border: #666 1px solid
+    outline: none
+    &:focus:required:invalid
+      border-color: red
+    &:required:valid
+      border-color: green
+body *
+  box-sizing: border-box
 b, strong
-	font-weight: bold
+  font-weight: bold
+a
+  color: $text
+  text-decoration: none
+  &:hover
+    color: $accent
+    text-decoration: none
+mark
+  color: $accent_t
+  background-color: transparent
+li
+  list-style-type: none
+*
+  margin: 0
+  padding: 0
+
+.magnify
+  position: relative
+  width: 100%
+
+.large
+  width: 50%
+  height: 50%
+
+.cart_icon
+  position: fixed
+  bottom: 0
+  right: -1px
+  z-index: 10
+  background-color: $accent
+  width: 100px
+  height: 100px
+  border-radius: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  border-bottom-right-radius: 0
+  transition: all .25s ease
+  cursor: pointer
+  img
+    position: relative
+    right: 2px
+  .count
+    position: absolute
+    color: $accent_t
+    top: 34px
+    left: 46px
+  &:hover
+    border-bottom-right-radius: 100%
+section
+  height: 100vh
+  position: relative
+  overflow: hidden
+@keyframes move_wheel
+  0%
+    right: -66vw
+  20%
+    right: -66vw
+  100%
+    right: $x_cord
+
+@keyframes move_mask
+  0%
+    right: 66vw
+  20%
+    right: 66vw
+  100%
+    right: $x_cord * -1
+
+@keyframes rotate_wheel
+  0%
+    transform: rotate(-170deg)
+  20%
+    transform: rotate(-170deg)
+  100%
+    transform: rotate(-360deg)
+
+
+.rentgen_item
+  position: relative
+  display: block
+  box-sizing: border-box
+  overflow: hidden
+  width: 100vw
+  &::before
+    content: ''
+    background-color: #f5f5f5
+    opacity: .8
+    width: 100%
+    height: 100%
+    position: absolute
+  .rentgen_item_loupe
+    overflow: hidden
+    position: absolute
+    left: 0
+    margin-left: 0 !important
+    transform: scale(1)
+    border: none
+    border-radius: 100%
+    box-shadow: none
+    height: $wheel
+    width: $wheel
+    max-width: 1250px
+    max-height: 1250px
+    cursor: default
+    left: auto !important
+    right: $x_cord !important
+    top: $y_cord !important
+    display: block !important
+    opacity: 1
+    &::before
+      content: ''
+      background-image: url('../img/slider_top/wheel_1.png')
+      height: 100%
+      width: 100%
+      background-size: cover
+      position: absolute
+      z-index: 10
+    img
+      left: auto !important
+      right: -$x_cord !important
+      top: -$y_cord !important
+      position: absolute
+      width: 100vw
+  .rentgen_item_loupe.winter
+    &::before
+      background-image: url('../img/slider_top/wheel_2.png')
+  img.data-image.back
+    width: 100vw
 
 
 
+@keyframes move_wheel_a
+  0%
+    right: -11vw
+  100%
+    right: 100vw
+
+@keyframes move_mask_a
+  0%
+    right: 11vw
+  100%
+    right: -100vw
+
+@keyframes rotate_wheel_a
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(-270deg)
+
+
+@keyframes move_wheel_slider
+  0%
+    right: -66vw
+  100%
+    right: $x_cord
+
+@keyframes move_mask_slider
+  0%
+    right: 66vw
+  100%
+    right: $x_cord * -1
+
+@keyframes rotate_wheel_slider
+  0%
+    transform: rotate(-170deg)
+  100%
+    transform: rotate(-360deg)
+
+
+
+.wheel_load
+  .rentgen_item
+    .rentgen_item_loupe
+      animation: move_wheel $wheel_dur ease
+      &::before
+        animation: rotate_wheel $wheel_dur ease
+      img
+        animation: move_mask $wheel_dur ease
+
+.wheel
+  .rentgen_item
+    .rentgen_item_loupe
+      animation: move_wheel_a 2.5s ease-in
+      &::before
+        animation: rotate_wheel_a 2.5s ease-in
+      img
+        animation: move_mask_a 2.5s ease-in
+
+.wheel_slider
+  .rentgen_item
+    .rentgen_item_loupe
+      animation: move_wheel_slider 2.5s ease
+      &::before
+        animation: rotate_wheel_slider 2.5s ease
+      img
+        animation: move_mask_slider 2.5s ease
+
+section .container
+  padding-left: 0
+  padding-right: 0
+
+.section_header
+  .header_wrap
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10
+    transform: translateY(0)
+    transition: all .5s ease
+    opacity: 1
+    &.active
+      transform: translateY(-100%)
+      opacity: 0
+    &.active_hover
+      display: none
+    &::before
+      content: ''
+      height: 33vh
+      width: 100%
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      background: linear-gradient(to bottom, rgba(255,255,255,.6) 0%,rgba(255,255,255,.3) 30%, rgba(255,255,255,0) 100%)
+      z-index: 2
+.section_header
+  overflow: hidden
+  height: 100vh
+  .icons_wrap
+    display: flex
+    > *
+      cursor: pointer
+  header
+    position: relative
+    display: flex
+    justify-content: space-between
+    z-index: 1
+    margin-top: 25px
+    position: relative
+    z-index: 3
+    .menu
+      margin-left: 120px
+      .parent_ul
+        display: flex
+        justify-content: space-between
+        li
+          text-decoration: none
+          margin-right: 45px
+          a
+            font-size: 18px
+        li.parent_li
+          position: relative
+          display: flex
+          align-items: center
+          height: 100%
+          &::before
+            content: ''
+            display: -webkit-flex
+            display: -ms-flex
+            display: flex
+            align-items: center
+            position: absolute
+            border-top: solid 5px $text
+            border-left: solid 5px transparent
+            border-right: solid 5px transparent
+            right: -15px
+            top: 13px
+          &:hover
+            &::before
+              border-top-color: $accent_t
+            a
+              color: $accent_t
+          a
+            font-size: 18px
+        .child_ul
+          display: none
+  .icons_wrap
+    .place_icon
+      margin-right: 40px
+
+
+$transition: .5s
+$width: 20px
+$radius: 1rem
+$angle: 45deg
+$grey_arrow: #7a7b7c
+
+
+.slider_header
+  .swiper-pagination
+    right: 0
+    left: auto
+    top: 0
+    bottom: 0
+    margin: auto
+    width: auto
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: center
+    margin-top: -150px
+    .swiper-pagination-bullet
+      background-color: $text
+      opacity: 1
+      margin-top: 15px
+      border-radius: 0
+      width: 40px
+      height: 4px
+      transform: scaleX(.5)
+      transition: all 1s ease
+      transform-origin: right
+      outline: none
+      cursor: pointer
+      &:first-child
+        margin-top: 0
+    .swiper-pagination-bullet-active
+      background-color: $accent
+      transform: scaleX(1)
+
+.slider_header_nav
+  margin-top: 10px
+  top: 0
+  bottom: 0
+  margin: auto
+  > *
+      border-radius: 100%
+      background: transparent
+      cursor: pointer
+      transition: $transition/2
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 80px
+      width: 80px
+      box-shadow: 0 0 0 1px $grey_arrow
+      position: absolute
+      z-index: 2
+      top: calc(50% - 120px)
+      left: 120px
+      right: auto
+      &:active
+        background: $accent
+        transition: 0
+        box-shadow: 0 0 0 1px $text_w
+        .arrow
+          background-color: $text_w
+          &:before, &:after
+            background-color: $text_w
+  .arrow
+    position: relative
+    background: $grey_arrow
+    width: $width
+    height: $width/10
+    transition: $transition
+    border-radius: $radius
+    transform-origin: right center
+    &:before
+      transform: rotate(-$angle)
+    &:after
+      transform: rotate($angle)
+    &:before, &:after
+      display: block
+      content: ""
+      position: absolute
+      left: 0
+      background: $grey_arrow
+      width: $width - 5px
+      height: $width/10
+      transform-origin: $width/18 center
+      transition: $transition
+      border-radius: $radius
+  .next
+    right: 120px
+    left: auto
+    .arrow
+      transform: scale(-1)
+      right: 0
+      left: auto
+      transform-origin: center
+.slider_header_nav
+  >*
+    &:hover
+      background-color: $accent
+      box-shadow: 0 0 0 2px $text_w
+      .arrow
+        background-color: $text_w
+        &:before, &::after
+          background-color: $text_w
+
+.swiper-container
+  width: 100%
+
+@keyframes h1_show
+  0%
+    opacity: 0
+    transform: translateX(-30px)
+  60%
+    opacity: 0
+    transform: translateX(-30px)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes h1_hide
+  0%
+    opacity: 1
+    transform: translateX(0)
+  60%
+    opacity: 1
+    transform: translateX(0)
+  100%
+    opacity: 0
+    transform: translateX(-100px)
+
+
+.section_header
+  .swiper_active,.swiper-slide-duplicate-active
+    .h1_wrap
+      opacity: 1
+      animation: h1_show 3.5s ease
+      transition: all 1.5s ease
+.section_header
+  .wheel
+    .h1_wrap
+      opacity: 1
+      animation: h1_hide 3.5s ease
+      transition: all 1.5s ease
+
+
+.section_header
+  .slider_header
+    position: absolute
+    top: 2px
+    left: 0
+    right: 0
+    z-index: 0
+    margin-bottom: -2px
+    height: 100%
+    overflow: hidden
+  .h1_wrap
+    position: absolute
+    z-index: 1
+    margin-top: 266px
+    .h1
+      font-size: 52px
+      font-family: $black_font
+      text-transform: uppercase
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+      line-height: 1.2
+      margin-top: 0
+      span.line
+        width: 200px
+        height: 10px
+        margin-left: 10px
+        display: inline-block
+        background-color: $text
+      span.string
+        display: block
+      mark
+        color: $accent_t
+        background-color: transparent
+        display: block
+        width: 100%
+    p
+      font-size: 24px
+      margin-top: 37px
+  .picking_tires
+    position: relative
+    z-index: 1
+    width: 100%
+    margin-top: 655px
+    .form_picking_tires
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      width: 100%
+      height: auto
+      align-items: center
+      border-radius: 20px
+      background-color: rgba(255, 255, 255, 0.90)
+      box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.5)
+      padding: 32px 35px 40px
+      .button_wrap
+        display: flex
+        width: 100%
+        margin-top: 21px
+        >*
+          width: 100%
+          max-width: 200px
+          min-height: 60px
+          height: 100%
+          display: flex
+          justify-content: center
+        .select2
+          .selection
+            width: 100%
+        .select2-container .select2-selection--single
+          border-radius: 0
+          outline: none
+          height: 100%
+          border: none
+          box-shadow: inset 0 0 0 1px #eeeeee
+        .select2-container--default .select2-selection--single .select2-selection__rendered
+          height: 100%
+          display: flex
+          align-items: center
+          justify-content: flex-start
+          padding-left: 20px
+          padding-right: 33px
+          font-family: $light_font
+          font-weight: 900
+          color: #404041
+          font-size: 14px
+        .select2-container--default .select2-selection--single .select2-selection__arrow
+          height: 100%
+          width: 13px
+          margin-right: 19px
+        .select2-container--default .select2-selection--single .select2-selection__arrow b
+          border: solid #404041
+          border-width: 0 2px 2px 0
+          display: inline-block
+          padding: 3px
+          transform: rotate(45deg)
+          top: calc(50% - 5px)
+        .select2-container--open .select2-selection--single .select2-selection__arrow b
+          transform: rotate(-135deg)
+          top: calc(50% - 1px)
+        button
+          background-color: $accent
+          border: none
+          color: $text_w
+          font-size: 16px
+          cursor: pointer
+          position: relative
+          margin-right: 30px
+          box-shadow: 0 10px 60px 0 rgba(216, 14, 15, 0.5)
+          outline: none
+          &::before
+            content: ''
+            height: 100%
+            width: 60px
+            border-radius: 50%
+            position: absolute
+            right: -30px
+            top: 0
+            background-color: $accent
+            box-shadow: 0 10px 60px 0 rgba(216, 14, 15, 0.5)
+          span
+            position: relative
+            left: 15px
+        .toggle_button
+          max-width: 150px
+          border: 2px solid $accent
+          color: $accent_t
+          align-items: center
+          position: relative
+          cursor: pointer
+          &.active
+            background-color: $accent
+            color: $text_w
+            box-shadow: 0 10px 60px 0 rgba(216, 14, 15, 0.5)
+          &:first-child
+            margin-left: 30px
+            max-width: 120px
+            background-color: rgba(255,255,255,.9)
+            border-left-color: transparent
+            &::before
+              content: ''
+              height: 100%
+              box-sizing: content-box
+              width: 60px
+              border: 2px solid $accent
+              border-top-left-radius: 50%
+              border-bottom-left-radius: 50%
+              border-right: none
+              position: absolute
+              left: -30px
+              top: -2px
+              background-color: rgba(255,255,255,.9)
+            &.active:first-child
+              background-color: $accent
+              &::before
+                background-color: $accent
+            span
+              position: relative
+              right: 15px
+      .form_header
+        width: 100%
+        font-size: 18px
+      .select2-container
+        width: 100% !important
+
+.select2-dropdown
+  border-radius: 0
+  border: none
+  box-shadow: inset 0 0 0 1px #eeeeee
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+  background-color: $accent
+.select2-results__option
+  padding-left: 20px
+  font-family: $light_font
+  font-size: 14px
+
+
+.img-compare
+  width: 100%
+  position: relative
+  overflow: hidden
+  cursor: pointer
+  color: #f3f3f3
+  height: 100vh
+  .images-compare-label
+    position: absolute
+    background-color: $text_w
+    pointer-events: auto
+    opacity: 0.8
+    box-shadow: 0px 2px 60px 0px rgba(0, 0, 0, 0.5)
+    height: 120px
+    top: calc(50% - 60px)
+    display: flex
+    align-items: center
+    border-radius: 0
+    padding: 0
+    color: $text
+    text-transform: none
+    font-size: 24px
+    cursor: pointer
+    img
+      margin-right: 20px
+      margin-left: -3px
+.images-compare-before, .images-compare-after
+  pointer-events: none
+  position: absolute
+  height: 100%
+  display: inline-block
+  top: 0
+  overflow: hidden
+  width: 50%
+  max-width: none
+.images-compare-after
+  right: 0
+  background-position: right
+  .compr
+    right: 0
+.images-compare-before
+  left: 0
+  background-position: left
+.images-compare-before .compr, .images-compare-after .compr
+  position: absolute
+  margin-bottom: 0
+  max-height: none
+  max-width: none
+  max-height: initial
+  max-width: initial
+  width: 100vw
+  user-select: none
+  pointer-events: auto
+  &:hover
+    background-color: $accent
+.images-compare-after .images-compare-label
+  right: 200px
+  white-space: nowrap
+.images-compare-before .images-compare-label
+  left: 200px
+  white-space: nowrap
+.images-compare-after .images-compare-label, .images-compare-before .images-compare-label
+  z-index: 1
+  transition: all .25s ease
+  &:before, &:after
+    content: ''
+    width: 120px
+    height: 100%
+    background-color: $text_w
+    border-top-left-radius: 50%
+    border-bottom-left-radius: 50%
+    position: absolute
+    left: -60px
+    z-index: -1
+    transition: all .25s ease
+    top: 0
+  &:after
+    border-top-right-radius: 50%
+    border-bottom-right-radius: 0
+    right: -60px
+    left: auto
+.images-compare-label
+  &:hover
+    background-color: $accent
+    color: $text_w
+    &:before, &:after
+      border-color: $accent
+      background-color: $accent
+.images-compare-after .images-compare-label
+  min-width: 213.5px
+  &:before
+    border-top-left-radius: 50%
+    border-bottom-left-radius: 0
+  &:after
+    border-top-right-radius: 50%
+    border-bottom-right-radius: 50%
+.images-compare-handle
+  position: absolute
+  background-color: $text_w
+  width: 80px
+  height: 80px
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center center
+  padding: 0
+  margin-left: -38.8px
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 3
+  pointer-events: auto
+  top: calc(50% - 40px)
+  border-radius: 100%
+  left: 50%
+  border: 3px solid $text_w
+  &::before
+    content: ''
+    height: 30px
+    width: 60px
+    background: url('../img/double-arrow.png')
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    display: block
+    margin: auto
+  &:hover
+    background-color: $accent
+    display: flex
+    justify-content: center
+    align-items: center
+    &::before
+      height: 30px
+      width: 60px
+      background: url('../img/double-arrow-white.png')
+      background-repeat: no-repeat
+      background-position: center
+      background-size: contain
+      margin: auto
+    .images-compare-separator
+      background: $accent
+.images-compare-separator
+  width: 3px
+  left: 50%
+  z-index: 2
+  position: absolute
+  left: 50%
+  top: 0
+  bottom: 0
+  height: 100%
+  background-color: $text_w
+.images-compare-left-arrow, .images-compare-right-arrow
+  display: none
+
+
+section.gallery_img
+  .slide_wrap
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    height: 100vh
+  .g_item
+    width: 25%
+    height: 50%
+    position: relative
+    overflow: hidden
+    img
+      height: 100%
+      width: 100%
+      object-fit: cover
+      position: relative
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(#eeeeee, .1)
+      transition: all .25s ease
+      z-index: 2
+    &.col_25
+      height: 25%
+    &.col_75
+      height: 75%
+    &.col_100
+      height: 100%
+    .play_video_btn
+      position: absolute
+      z-index: 2
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      display: flex
+      align-self: center
+      justify-content: center
+      align-items: center
+      margin-top: 35px
+      cursor: pointer
+      transition: all .25s ease
+      img
+        max-width: max-content
+        height: auto
+    &.video:hover
+      .play_video_btn
+        transform: scale(1.05)
+    .text_hover
+      position: absolute
+      background-color: $text_w
+      z-index: 2
+      top: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-wrap: wrap
+      width: 100%
+      height: 100%
+      padding: 0 40px
+      transition: all .25s ease
+      transform: translateY(100%)
+      opacity: 0
+      .title
+        font-size: 24px
+        padding-bottom: 0
+      p
+        font-size: 18px
+        font-family: $light_font
+        font-weight: 900
+      &.defend
+        &:before
+          content: ''
+          background-image: url(../img/shield.png)
+          display: block
+          position: absolute
+          width: 150px
+          height: 160px
+          background-repeat: no-repeat
+          background-size: contain
+          z-index: -1
+          left: auto
+          right: 40px
+          top: 0
+          bottom: 0
+          margin: auto
+      &.like
+        &:before
+          content: ''
+          background-image: url(../img/like.png)
+          display: block
+          position: absolute
+          width: 150px
+          height: 160px
+          background-repeat: no-repeat
+          background-size: contain
+          z-index: -1
+          left: auto
+          right: 40px
+          top: 0
+          bottom: 0
+          margin: auto
+      &.trophy
+        &:before
+          content: ''
+          background-image: url(../img/trophy.png)
+          display: block
+          position: absolute
+          width: 370px
+          height: 380px
+          background-repeat: no-repeat
+          background-size: contain
+          z-index: -1
+          right: 0
+          top: 0
+          left: 0
+          bottom: 0
+          margin: auto
+    &:hover
+      &::before
+        background-color: rgba(#eeeeee, 0)
+      .text_hover
+        opacity: 1
+        transform: translateY(0)
+
+
+.modal
+  .modal-content
+    background-color: transparent
+    border: none
+  .modal-header
+    padding: 0
+    background-color: transparent
+    border: none
+  .close
+    color: $text_w
+    font-size: 40px
+    opacity: 1
+    text-shadow: 0 1px 0 #000
+    transition: all .25s ease
+    outline: none
+    &:hover
+      color: $accent
+  .modal-body
+    padding: 0
+    background-color: transparent
+  .modal-dialog
+    min-width: 900px
+    iframe
+      border: none
+      width: 100%
+
+.modal-backdrop.show
+  opacity: .8
+
+.slider_gallery
+  .swiper-pagination
+    max-width: 1170px
+    width: 100%
+    left: 0
+    right: 0
+    margin: auto
+    display: flex
+    justify-content: space-around
+    align-items: center
+    &::before
+      content: ''
+      width: 100%
+      height: 3px
+      background-color: $text_w
+      opacity: .5
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+  .swiper-pagination-bullet
+    outline: none
+    width: 20px
+    height: 20px
+    position: relative
+    z-index: 2
+    background-color: $text
+    opacity: 1
+    border: 2px solid $text_w
+    transition: all .25s ease
+  .swiper-pagination-bullet-active
+    background-color: $accent
+
+section.overview
+  .container-fluid
+    padding-right: 0
+    border-bottom: 1px solid #a3a3a3
+    .row
+      height: 100%
+    .no-gutters
+      margin-right: 0
+      margin-left: 0
+      .col,[class*="col-"]
+        padding-right: 0
+        padding-left: 0
+      .align-items-center
+        display: flex
+section.overview
+  .overview_slider
+    .swiper-container
+      height: 100%
+      max-height: 450px
+      .swiper-slide
+        justify-content: flex-start
+        align-items: center
+        display: flex
+        flex-wrap: wrap
+        cursor: pointer
+        .label
+          display: flex
+          flex-direction: column
+          opacity: .5
+          .title
+            font-size: 24px
+          .desc
+            font-size: 16px
+            width: 100%
+        .wheel_img
+          margin-right: 20px
+          margin-left: 10px
+      .swiper-slide.active
+        .label
+          opacity: 1
+        .wheel_img
+          position: relative
+          &::before
+            content: ''
+            width: 100%
+            height: 100%
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            margin: auto
+            background-color: $accent
+            box-shadow: 0 0 0 10px $accent
+            display: block
+            z-index: -1
+            border-radius: 100%
+      .swiper-scrollbar-drag
+        background-color: #5d5d5d
+
+section.overview
+  .overview_wrap
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-self: center
+    width: 100%
+  .video_wrap
+    height: 100%
+    width: 100%
+    iframe
+      position: absolute
+      top: 0
+      width: 100%
+      height: 100%
+      opacity: 0
+      transition: all .25s ease
+    .bg
+      object-fit: cover
+      width: 100%
+      z-index: 1
+      height: 700px
+      position: relative
+      transition: all .25s ease
+      opacity: 1
+    .play_video_btn
+      position: absolute
+      cursor: pointer
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 3
+      margin-left: auto
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: all .25s ease
+    .title
+      position: absolute
+      bottom: -21px
+      left: -2px
+      font-size: 54px
+      color: $text_w
+      text-transform: uppercase
+      z-index: 3
+      transition: all .25s ease
+      opacity: 1
+      font-family: $black_font
+    &:hover
+      .play_video_btn
+        transform: scale(1.05)
+    &.active
+      iframe
+        z-index: 1
+        opacity: 1
+      .bg
+        z-index: 0
+        opacity: 0
+      .play_video_btn
+        z-index: 0
+        opacity: 0
+      .title
+        z-index: 0
+        opacity: 0
+
+
+.footer
+  display: flex
+  align-items: center
+  padding-top: 25px
+  .title
+    margin-bottom: 30px
+    font-size: 14px
+  ul
+    li
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+      a
+      font-family: $light_font
+      font-size: 14px
+      font-weight: 900
+  .social_wrap
+    ul
+      display: flex
+      li
+        margin-right: 30px
+  .catalog_wrap
+    padding-left: 20px
+    .placemark
+      img
+        position: relative
+        bottom: 2px
+
+  .contacts_wrap
+    display: flex
+    flex-wrap: wrap
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    .logo
+      width: 100%
+      height: auto
+      max-width: max-content
+    .year
+      display: flex
+      align-items: center
+    .developer
+      display: flex
+      align-items: flex-start
+      height: auto
+      .developer_img
+        height: 100%
+        position: relative
+        top: 4px
+        margin-right: 10px
+      span
+        display: block
+        width: 100%
 @import "media" // Always at the end
