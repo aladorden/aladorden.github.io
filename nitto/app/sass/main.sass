@@ -80,29 +80,7 @@ section
   height: 100vh
   position: relative
   overflow: hidden
-@keyframes move_wheel
-  0%
-    right: -67vw
-  30%
-    right: -67vw
-  100%
-    right: $x_cord
 
-@keyframes move_mask
-  0%
-    right: 67vw
-  30%
-    right: 67vw
-  100%
-    right: $x_cord * -1
-
-@keyframes rotate_wheel
-  0%
-    transform: rotate(-170deg)
-  30%
-    transform: rotate(-170deg)
-  100%
-    transform: rotate(-360deg)
 
 
 .rentgen_item
@@ -155,6 +133,30 @@ section
       background-image: url('../img/slider_top/wheel_2.png')
   img.data-image.back
     width: 100vw
+
+@keyframes move_wheel
+  0%
+    right: -67vw
+  40%
+    right: -67vw
+  100%
+    right: $x_cord
+
+@keyframes move_mask
+  0%
+    right: 67vw
+  40%
+    right: 67vw
+  100%
+    right: $x_cord * -1
+
+@keyframes rotate_wheel
+  0%
+    transform: rotate(-170deg)
+  40%
+    transform: rotate(-170deg)
+  100%
+    transform: rotate(-360deg)
 
 
 
@@ -447,18 +449,24 @@ $grey_arrow: #7a7b7c
     opacity: 0
     transform: translateX(-100px)
 
-
 .section_header
-  .swiper_active,.swiper-slide-duplicate-active
+  .wheel_load
     .h1_wrap
       opacity: 1
       animation: h1_show $wheel_dur+2s ease
+      transition: all 1.5s ease
+
+.section_header
+  .wheel_slider
+    .h1_wrap
+      opacity: 1
+      animation: h1_show $wheel_dur ease
       transition: all 1.5s ease
 .section_header
   .wheel
     .h1_wrap
       opacity: 1
-      animation: h1_hide 3.5s ease
+      animation: h1_hide 3s ease
       transition: all 1.5s ease
 
 
