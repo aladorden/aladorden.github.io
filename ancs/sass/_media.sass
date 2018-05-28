@@ -1,0 +1,177 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+// ≥992px
+
++media-breakpoint-down(md)
+	ul.links_wrap
+		padding-left: 0
+	ul.links_wrap li
+		margin-right: 10px
+	section.header .right_menu ul.links_wrap li
+		margin-right: 10px
+	section.more
+		.more_bottom
+			.image_wrap
+				img
+					left: -30%
+			.btn_wrap
+				flex-direction: column
+				.blue_btn
+					max-width: 200px
+				.btn:not(.blue_btn)
+					max-width: 145px
+					margin-left: 0
+					margin-top: 20px
+// ≥768px
++media-breakpoint-down(sm)
+	section.reviews .slider-single
+		max-width: 100%
+	section.interface .form_wrap
+		margin-top: 120px
+	section, section.reviews, section.footer, section.more
+		padding-top: 60px
+		padding-bottom: 60px
+	section.more .more_bottom
+		margin-top: 60px
+		padding-top: 60px
+	section.footer .left_wrap .social
+		margin-bottom: 35px
+	section.header .h1_wrap p.h1_desc
+		font-size: 16px
+	body
+		font-size: 14px
+	section.reviews .slider-single p,
+	section.world_map p,
+	section.more .more_bottom p,
+	section.more p
+		font-size: 16px
+	h1
+		font-size: 50px
+	h2
+		font-size: 35px
+	section.header .video_btn
+		margin-top: 40px
+	section.header .h1_wrap
+		margin-top: 45px
+	section.header
+		.toggle_mnu_bottom
+			.row
+				display: block
+				> div
+					margin-bottom: 20px
+					display: flex
+					height: max-content
+					justify-content: center
+					flex-direction: column
+			.links_wrap
+				flex-direction: column
+				display: flex
+				align-items: center
+				li
+					width: max-content
+					margin-right: 0
+					margin-top: 20px
+					font-weight: 600
+					a
+						font-size: 18px
+			.header_links
+				justify-content: center
+				display: flex
+				flex-direction: column
+				align-items: center
+				.title
+					font-weight: 600
+					position: relative
+					width: max-content
+					text-transform: none
+					font-size: 18px
+					&::before
+						content: "\f107"
+						position: absolute
+						top: 5px
+						bottom: 0
+						right: -25px
+						margin: auto
+						font-size: 20px
+						font-family: "Font Awesome 5 Free"
+						display: block
+						color: $text
+						font-weight: 900
+						line-height: 100%
+					&.arrow
+						&::before
+							content: "\f106"
+				ul
+					margin-left: 10px
+					display: none
+					justify-content: center
+					li
+						margin-top: 10px
+						text-align: center
+	section.more
+		margin-bottom: 0
+		padding-bottom: 0
+		.more_bottom
+			.image_wrap
+				position: relative
+				margin-top: 60px
+				img
+					position: relative
+					left: 0
+					width: 100%
+
+	section.world_map
+		.image_wrap
+			margin-top: 60px
+			img
+				width: 100%
+	section.more .more_bottom p
+		margin-top: 30px
+	section.world_map h2
+		margin-bottom: 30px
+
+// ≥576px
++media-breakpoint-down(xs)
+	section.interface .slider .slick-slide
+		max-width: none
+		width: auto
+	section.interface .images_wrap .slider
+		width: 85%
+		margin: auto
+	section.interface .image_center_absolute img
+		left: 2px
+		position: relative
+	section.interface .images_wrap img
+		box-shadow: none
+	section.footer .left_wrap .social
+		margin-bottom: 0
+	section.footer .row > div
+		margin-bottom: 25px
+	section.reviews .slide_sync_wrap .slick-slide
+		max-width: calc(100% / 3)
+		box-sizing: content-box
+		padding: 15px 15px 20px
+		img
+			width: 100%
+			max-width: max-content
+	iframe
+		width: 95vw
+		height: calc(95vw/2)
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
