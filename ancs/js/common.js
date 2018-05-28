@@ -199,7 +199,7 @@ $(function() {
     slidesToShow: 5,
     centerMode: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     swipeToSlide: true,
     touchThreshold: 15,
