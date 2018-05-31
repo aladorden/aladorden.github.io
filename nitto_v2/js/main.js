@@ -365,25 +365,89 @@
       //Denys Vol - START
 
       $(document).ready(function() {
+
+
         var active_slide = $(".intro-slider__list .slick-active")
         var blur_src_first_slide = active_slide.find('img.back').data('blur');
         console.log(blur_src_first_slide);
         active_slide.find('.rentgen_item').prepend('<div class="blur_image"><img src="' + blur_src_first_slide + '"/></div>');
 
-        setTimeout(function() {
-          active_slide.find('.blur_image').addClass('show')
-        }, 1500)
 
-        setTimeout(function() {
-          $('.intro-slider__list .slick-active').addClass('wheel_load');
-          $('.intro-slider__list .slick-slide').addClass('wheel_interval');
-        }, 3500);
+        function slide_show_1(offset_right, rotate_deg_start, rotate_deg_end) {
+          var w_w = $(window).width();
+          rotate_deg_start = rotate_deg_start * 360;
+          rotate_deg_end = rotate_deg_end * 360;
+          var loupe_act = $('.intro-slider__list .slick-active .rentgen_item_loupe')
+          var loupe_act_front = $('.intro-slider__list .slick-active .rentgen_item_loupe img.front')
+          var wheel_act = $('.intro-slider__list .slick-active .rentgen_item_loupe img.image_wheel')
 
-        setTimeout(function() {
-          $('body').addClass('show');
-        }, 1500);
+          $('.intro-slider__list .slick-active').removeClass('wheel');
+          $('.intro-slider__list .slick-active').addClass('wheel_interval');
+
+          function p_w(offset_right) {
+            return w_w * offset_right / 100
+          }
+
+          loupe_act.css({
+            'transform': 'translateX(' + -w_w + 'px)',
+            'transition': 'all 0s ease'
+          });
+
+          loupe_act_front.css({
+            'transform': 'translateX(' + w_w + 'px)',
+            'transition': 'all 0s ease'
+          });
+          wheel_act.css({
+            'transform': 'rotate(' + rotate_deg_start + 'deg)',
+            'transition': 'all 0s ease'
+          });
 
 
+          setTimeout(function() {
+            loupe_act.css({
+              'transform': 'translateX(' + p_w(offset_right) + 'px)',
+              'transition': 'all 1s ease'
+            });
+
+            loupe_act_front.css({
+              'transform': 'translateX(' + p_w(-offset_right) + 'px)',
+              'transition': 'all 1s ease'
+            });
+            wheel_act.css({
+              'transform': 'rotate(' + rotate_deg_end + 'deg)',
+              'transition': 'all 1s ease'
+            });
+          }, 200)
+        }
+
+        function slide_show_2(offset_right, rotate_deg_end) {
+          var w_w = $(window).width();
+          rotate_deg_end = rotate_deg_end * 360;
+          var loupe_act = $('.intro-slider__list .slick-active .rentgen_item_loupe')
+          var loupe_act_front = $('.intro-slider__list .slick-active .rentgen_item_loupe img.front')
+          var wheel_act = $('.intro-slider__list .slick-active .rentgen_item_loupe  img.image_wheel')
+
+          $('.intro-slider__list .slick-active').removeClass('wheel_interval');
+          $('.intro-slider__list .slick-active').addClass('wheel');
+
+          function p_w(offset_right) {
+            return w_w * offset_right / 100
+          }
+
+          loupe_act.css({
+            'transform': 'translateX(' + p_w(offset_right) + 'px)',
+            'transition': 'all .5s ease'
+          });
+
+          loupe_act_front.css({
+            'transform': 'translateX(' + p_w(-offset_right) + 'px)',
+            'transition': 'all .5s ease'
+          });
+          wheel_act.css({
+            'transform': 'rotate(' + rotate_deg_end + 'deg)',
+            'transition': 'all .5s ease'
+          });
+        }
 
         var remove_first_blur_img = function() {
           setTimeout(function() {
@@ -394,28 +458,35 @@
 
 
 
+        setTimeout(function() {
+          $('body').addClass('show');
+        }, 1500);
+        setTimeout(function() {
+          slide_show_1(11, 0.5, 2);
+        }, 2000)
+        setTimeout(function() {
+          active_slide.find('.blur_image').addClass('show')
+        }, 1000)
+
+
+
+
         var clickNumber = 0;
         var lastClickTime = 0;
         var slick_Intro = $('.intro-slider__list');
 
-
-
-
         function slide_nav_next(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 1700);
+            var seconds = new Date().getTime() / (delay - 1200);
             if ((seconds - lastClickTime) > 2) {
-              $('.intro-slider__list .slick-slide').removeClass('wheel_load');
-              $('.intro-slider__list .slick-slide').removeClass('wheel');
-              $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
-              $('.intro-slider__list .slick-active').addClass('wheel');
+              slide_show_2(66, 2.5);
               setTimeout(function() {
                 slick_Intro.slick('slickNext');
-                remove_first_blur_img();
+                remove_first_blur_img()
                 setTimeout(function() {
-                  $('.intro-slider__list .slick-slide').addClass('wheel_interval');
-                }, 100)
+                  slide_show_1(11, 0.5, 2);
+                }, 0)
               }, delay - 1500)
               clickNumber++;
               lastClickTime = seconds;
@@ -426,18 +497,15 @@
         function slide_nav_prev(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 1700);
+            var seconds = new Date().getTime() / (delay - 1200);
             if ((seconds - lastClickTime) > 2) {
-              $('.intro-slider__list .slick-slide').removeClass('wheel_load');
-              $('.intro-slider__list .slick-slide').removeClass('wheel');
-              $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
-              $('.intro-slider__list .slick-active').addClass('wheel');
+              slide_show_2(66, 2.5);
               setTimeout(function() {
-                $('.intro-slider__list .slick-slide').addClass('wheel_slider');
                 slick_Intro.slick('slickPrev');
                 remove_first_blur_img()
-                $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
-                $('.intro-slider__list .slick-active').addClass('wheel_interval');
+                setTimeout(function() {
+                  slide_show_1(11, 0.5, 2);
+                }, 0)
               }, delay - 1500)
               clickNumber++;
               lastClickTime = seconds;
@@ -1486,7 +1554,7 @@
         data: {
           steps: data,
         },
-        mounted() {
+        "mounted": function() {
           var swiper = new Swiper('.swiper-container', {
             slidesPerView: 4,
             paginationClickable: true,
