@@ -398,24 +398,25 @@
         var lastClickTime = 0;
         var slick_Intro = $('.intro-slider__list');
 
-        function slide_nav_next(nav_cl, delay) {
 
+
+
+        function slide_nav_next(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 700);
+            var seconds = new Date().getTime() / (delay - 1700);
             if ((seconds - lastClickTime) > 2) {
               $('.intro-slider__list .slick-slide').removeClass('wheel_load');
               $('.intro-slider__list .slick-slide').removeClass('wheel');
+              $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
               $('.intro-slider__list .slick-active').addClass('wheel');
               setTimeout(function() {
-                $('.intro-slider__list .slick-slide').addClass('wheel_slider');
-                setTimeout(function() {
-                  $('.intro-slider__list .slick-slide').removeClass('wheel_slider');
-
-                }, delay)
                 slick_Intro.slick('slickNext');
                 remove_first_blur_img();
-              }, delay - 1650)
+                setTimeout(function() {
+                  $('.intro-slider__list .slick-slide').addClass('wheel_interval');
+                }, 100)
+              }, delay - 1500)
               clickNumber++;
               lastClickTime = seconds;
             }
@@ -425,21 +426,19 @@
         function slide_nav_prev(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 700);
+            var seconds = new Date().getTime() / (delay - 1700);
             if ((seconds - lastClickTime) > 2) {
               $('.intro-slider__list .slick-slide').removeClass('wheel_load');
               $('.intro-slider__list .slick-slide').removeClass('wheel');
+              $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
               $('.intro-slider__list .slick-active').addClass('wheel');
               setTimeout(function() {
                 $('.intro-slider__list .slick-slide').addClass('wheel_slider');
-                setTimeout(function() {
-                  $('.intro-slider__list .slick-slide').removeClass('wheel_slider');
-                  console.log('wow3')
-                }, delay)
                 slick_Intro.slick('slickPrev');
                 remove_first_blur_img()
-                console.log('wow2')
-              }, delay - 1650)
+                $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
+                $('.intro-slider__list .slick-active').addClass('wheel_interval');
+              }, delay - 1500)
               clickNumber++;
               lastClickTime = seconds;
             }
@@ -449,7 +448,7 @@
         setTimeout(function() {
           slide_nav_next('.intro-arrow__right', 2500)
           slide_nav_prev('.intro-arrow__left', 2500)
-        }, 4500)
+        }, 2500)
         //slider в шапке - END
 
 
