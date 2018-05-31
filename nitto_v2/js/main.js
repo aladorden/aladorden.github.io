@@ -1037,6 +1037,17 @@
         onLeave: function(index, nextIndex, direction) {
           var leavingSection = $(this);
           console.log(index);
+
+          setTimeout(function() {
+            var winow_sep = $(window).width() / 2;
+            var h = $(window).height();
+            $('.twentytwenty-handle').css('left', winow_sep)
+            $('#background_rain').css('clip', 'rect(0px, ' + winow_sep + 'px, ' + h + 'px, 0px)');
+            $('.winter-item_open, .winter-item_closed, .twentytwenty-after').css('clip', 'rect(0px, ' + winow_sep * 2 + 'px, ' + h + 'px, ' + winow_sep + 'px)');
+            $('.twentytwenty-wrapper').attr('data-status', '');
+          }, 500)
+
+
           if (index == 2 && direction == 'up') {
             $(".s-header").removeClass("s-header_down")
             $(".s-header").removeClass("s-header_up")
