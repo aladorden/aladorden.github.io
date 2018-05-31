@@ -1,0 +1,79 @@
+body.toolbar-fixed header {
+    margin-top: 40px;
+}
+
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open header {
+    margin-top: 78px;
+}
+
+#block-nitto-local-tasks {
+    margin-top: 80px;
+}
+
+#block-nitto-breadcrumbs {
+    height: 100%;
+}
+
+.content {
+    margin-top: 80px;
+}
+
+.catalog-filter-selects .custom-select-container {
+    width: 100%;
+}
+
+.js-facets-dropdown-links {
+    display: none;
+}
+
+.contact-form label {
+    display: none;
+}
+
+.contact-form label.option {
+    display: inline;
+}
+
+.contact-form .form-item-name {
+    margin-bottom: 40px;
+}
+
+.form-item-agreement {
+    position: relative;
+}
+
+.form-item-agreement input[type=checkbox].css-checkbox {
+    top: 15px;
+    position: absolute;
+    z-index: -1000;
+    left: 10px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.thanks-form .thanks-form__heading {
+    text-align: center;
+}
+
+#order-form .form-submit {
+    border: none;
+}
+
+.custom-select-option:first-of-type {
+    display: flex;
+}
+
+.hp-slick-slide {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

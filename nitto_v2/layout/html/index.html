@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Главная страница</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="stylesheet" href="../../css/main.css">
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="../../favicon/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+		<link rel="manifest" href="../../favicon/site.webmanifest">
+		<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#eb2d2e">
+		<meta name="msapplication-TileColor" content="#eb2d2e">
+		<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<header class="s-header js-header">
+			<div class="container">
+				<div class="row">
+					<div class="col col_3">
+						<div class="logo"><a href="index.html"><img src="../../img/logo.svg" alt="Nitto"></a></div>
+					</div>
+					<div class="col col_9">
+						<div class="nav_main">
+							<div class="nav__item"><a class="menu-summer nav__link" href="summer.html">Летние шины</a></div>
+							<div class="nav__item"><a class="menu-winter nav__link" href="winter.html">Зимние шины</a></div>
+							<div class="nav__item"><a class="menu-shop nav__link" href="#contacts-popup">Найти магазин</a></div>
+							<div class="nav__item parent dropdown"><a class="dropbtn nav__link" onclick="dropdown()">О компании</a>
+								<div class="nav-sub dropdown-content" id="myDropdown">
+									<div class="nav__item dropdown-item"><a class="nav__link" href="brand.html">О бренде</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="instructions.html">Инструкции</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="news.html">Новости</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="confidential.html">Политика конфиденциальности</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="contacts.html">Контакты</a></div>
+								</div>
+							</div>
+							<div class="nav__icon">
+								<div class="locate">
+									<div class="locate__content" id="locate-dropdown">
+										<div class="locate-info"><span class="locate__text">Ваш город:</span><span class="locate__city">Москва</span></div>
+										<div class="locate-buttons"><a class="locate-yes locate-yes_active">Да</a><a class="locate-no popup" href="#location-popup">Нет</a></div>
+									</div><span class="icon icon_locate"></span>
+								</div>
+							</div>
+							<div class="nav__icon">
+								<div class="search">
+									<div class="search__content" id="search-dropdown">
+										<div class="search__info">
+											<input class="search__bar" type="text" placeholder="Вы ищете">
+											<button class="search__picture">
+												<svg class="search__img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#search"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="search__underline"></div>
+									</div><span class="icon icon_search"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="s-main">
+				<nav class="fp-menu" id="menu">
+					<ul class="fp-menu__list">
+						<li class="fp-menu__item fp-menu__item_main active" data-menuanchor="section-main"><a class="fp-menu__link" href="#section-main"></a></li>
+						<li class="fp-menu__item fp-menu__item_season" data-menuanchor="section-season"><a class="fp-menu__link" href="#section-season"></a></li>
+						<li class="fp-menu__item fp-menu__item_gallery" data-menuanchor="section-gallery"><a class="fp-menu__link" href="#section-gallery"></a></li>
+						<li class="fp-menu__item fp-menu__item_reviews" data-menuanchor="section-reviews"><a class="fp-menu__link" href="#section-reviews"></a></li>
+					</ul>
+				</nav>
+				<div class="fullpage">
+					<section class="widget widget_fullheight b-intro is-play-section-main section">
+						<div class="intro-arrow__left"><i class="slick-arrow slick-prev trans">
+								<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18.031" viewBox="0 0 19 18.031">
+									<path d="M152 480h17a1 1 0 0 1 0 2h-17a1 1 0 0 1 0-2zm7.269 9.716l-7.952-7.953a1.022 1.022 0 1 1 1.446-1.446l7.952 7.953a1.022 1.022 0 1 1-1.446 1.446zm0-17.431l-7.952 7.953a1.022 1.022 0 0 0 1.446 1.446l7.952-7.953a1.022 1.022 0 0 0-1.446-1.446z" transform="translate(-151 -472)"></path>
+								</svg></i></div>
+						<div class="intro-slider__list">
+							<div class="intro-slider__item">
+								<div class="intro-slider_bg intro-slider_bg-right">
+									<div class="intro-slider_bg-wrap-right">
+										<div class="rentgen_item"><img class="data-image back" src="../../img/bg_main.jpg" data-blur="../../img/bg_main-2.jpg">
+											<div class="rentgen_item_loupe"><img class="image_wheel" src="../../img/bg_wheel.png"><img class="data-image front" src="../../img/bg_main.jpg"></div>
+										</div>
+									</div>
+								</div>
+								<div class="intro-slider">
+									<div class="container intro-slider__container"><a class="intro-slider__content">
+											<div class="intro-slider__header">
+												<h1>NITTO</h1>
+												<div class="intro-slider__dash"></div>
+												<h1>Шины, которые</h1>
+												<h1>меняют всё!</h1>
+												<p>Переворот в представлении об устойчивости при скоростном маневрировании</p>
+											</div></a></div>
+								</div>
+							</div>
+							<div class="intro-slider__item">
+								<div class="intro-slider_bg intro-slider_bg-right">
+									<div class="intro-slider_bg-wrap-right">
+										<div class="rentgen_item"><img class="data-image back" src="../../img/main_2_blur.jpg">
+											<div class="rentgen_item_loupe"><img class="image_wheel" src="../../img/wheel_2.png"><img class="data-image front" src="../../img/main_2.jpg"></div>
+										</div>
+									</div>
+								</div>
+								<div class="intro-slider">
+									<div class="container intro-slider__container"><a class="intro-slider__content">
+											<div class="intro-slider__header">
+												<h1>NITTO</h1>
+												<div class="intro-slider__dash"></div>
+												<h1>Шины, которые</h1>
+												<h1>меняют всё!</h1>
+												<p>Переворот в представлении об устойчивости при скоростном маневрировании</p>
+											</div></a></div>
+								</div>
+							</div>
+							<div class="intro-slider__item">
+								<div class="intro-slider_bg intro-slider_bg-right">
+									<div class="intro-slider_bg-wrap-right">
+										<div class="rentgen_item"><img class="data-image back" src="../../img/bg_main-2.jpg">
+											<div class="rentgen_item_loupe"><img class="image_wheel" src="../../img/bg_wheel.png"><img class="data-image front" src="../../img/bg_main.jpg"></div>
+										</div>
+									</div>
+								</div>
+								<div class="intro-slider">
+									<div class="container intro-slider__container"><a class="intro-slider__content">
+											<div class="intro-slider__header">
+												<h1>NITTO</h1>
+												<div class="intro-slider__dash"></div>
+												<h1>Шины, которые</h1>
+												<h1>меняют всё!</h1>
+												<p>Переворот в представлении об устойчивости при скоростном маневрировании </p>
+											</div></a></div>
+								</div>
+							</div>
+							<div class="intro-slider__item">
+								<div class="intro-slider_bg intro-slider_bg-right">
+									<div class="intro-slider_bg-wrap-right">
+										<div class="rentgen_item"><img class="data-image back" src="../../img/main_2_blur.jpg">
+											<div class="rentgen_item_loupe"><img class="image_wheel" src="../../img/wheel_2.png"><img class="data-image front" src="../../img/main_2.jpg"></div>
+										</div>
+									</div>
+								</div>
+								<div class="intro-slider">
+									<div class="container intro-slider__container"><a class="intro-slider__content">
+											<div class="intro-slider__header">
+												<h1>NITTO</h1>
+												<div class="intro-slider__dash"></div>
+												<h1>Шины, которые</h1>
+												<h1>меняют всё!</h1>
+												<p>Переворот в представлении об устойчивости при скоростном маневрировании </p>
+											</div></a></div>
+								</div>
+							</div>
+						</div>
+						<div class="intro-arrow__right"><i class="slick-arrow slick-next trans">
+								<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18.031" viewBox="0 0 19 18.031">
+									<path d="M1751 478h17a1 1 0 0 1 0 2h-17a1 1 0 0 1 0-2zm9.73-7.717l7.95 7.953a1.02 1.02 0 0 1-1.44 1.445l-7.96-7.952a1.04 1.04 0 0 1 0-1.446 1.026 1.026 0 0 1 1.45 0zm0 17.43l7.95-7.952a1.02 1.02 0 0 0-1.44-1.446l-7.96 7.952a1.04 1.04 0 0 0 0 1.446 1.026 1.026 0 0 0 1.45 0z" transform="translate(-1750 -470)"></path>
+								</svg></i></div>
+						<div class="b-intro-filter">
+							<div class="b-intro-filter__container container">
+								<form class="filter js-filter">
+									<div class="filter__caption">Подберите подходящие шины для вашего автомобиля:</div>
+									<div class="filter__fieldset">
+										<div class="filter__field filter__field_tglr filter__field_tglr_auto filter__field_tglr_active">
+											<div class="radio radio_filter"><span>По авто</span></div>
+										</div>
+										<div class="filter__field filter__field_tglr filter__field_tglr_size">
+											<div class="radio radio_filter"><span>По размеру</span></div>
+										</div>
+										<div class="filter__size">
+											<div class="filter__field">
+												<select class="field_select_filter">
+													<option value="">Ширина колес</option>
+													<option value="4">35</option>
+													<option value="3">31</option>
+													<option value="2">30</option>
+													<option value="1">20 </option>
+												</select>
+											</div>
+											<div class="filter__field">
+												<select class="field_select_filter">
+													<option value="">Высота профиля</option>
+													<option value="4">35</option>
+													<option value="3">31</option>
+													<option value="2">30</option>
+													<option value="1">20        </option>
+												</select>
+											</div>
+											<div class="filter__field">
+												<select class="field_select_filter">
+													<option value="">Диаметр</option>
+													<option value="6">20”</option>
+													<option value="5">19”</option>
+													<option value="4">18”</option>
+													<option value="3">17”</option>
+													<option value="2">16”</option>
+													<option value="1">15”</option>
+												</select>
+											</div>
+										</div>
+										<div class="filter__auto filter_active">
+											<div class="filter__field filter__field_mark">
+												<select class="field_select_filter">
+													<option value="">Марка</option>
+													<option value="4">Ford</option>
+													<option value="3">Hyndai</option>
+													<option value="2">Toyota</option>
+													<option value="1">Nissan </option>
+												</select>
+											</div>
+											<div class="filter__field filter__field_model filter__field_inactive">
+												<select class="field_select_filter">
+													<option value="">Модель</option>
+													<option value="4">Focus</option>
+													<option value="3">Solaris</option>
+													<option value="2">Corolla</option>
+													<option value="1">Skyline        </option>
+												</select>
+											</div>
+											<div class="filter__field filter__field_gen filter__field_inactive">
+												<select class="field_select_filter">
+													<option value="">Поколение</option>
+													<option value="3">Поколение 3</option>
+													<option value="2">Поколение 2</option>
+													<option value="1">Поколение 1</option>
+												</select>
+											</div>
+										</div>
+										<div class="filter__field"><a class="btn btn_main btn_block" href="pick.html" type="submit">Подобрать шины</a></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</section>
+					<section class="widget widget_fullheight section section-season" data-anchor="section-season">
+						<div class="js-twentytwenty twentytwenty-container trans_hb trans_ha">
+							<div class="d-bgi twentytwenty-container__item twentytwenty-container__item_right js-tw-img d-pos trans_hb" id="background_rain">
+								<div class="tyre-choice-item__img tyre-choice-item__img_facet tyre-choice-item__img_facet_summer"><img src="../../img/tire_summer_facet.png" alt="summer"></div><a class="tyre-choice-item__caption tyre-choice-item__caption_summer" href="summer.html">
+									<div class="tyre-choice-item__caption-picture">
+										<svg class="tyre-choice-item__caption-img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#sun"></use>
+										</svg>
+									</div>Летние шины</a>
+								<canvas id="rain"></canvas>
+							</div>
+							<div class="d-bgi twentytwenty-container__item twentytwenty-container__item_left js-tw-img d-pos trans_hb" style="background-image:url(../../img/tire-choice_bg_winter.jpg)">
+								<div class="tyre-choice-item__img tyre-choice-item__img_facet tyre-choice-item__img_facet_winter"><img src="../../img/tire_winter_facet.png" alt="winter"></div><a class="tyre-choice-item__caption tyre-choice-item__caption_winter" href="winter.html">
+									<div class="tyre-choice-item__caption-picture">
+										<svg class="tyre-choice-item__caption-img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#snowflake"></use>
+										</svg>
+									</div>Зимние шины</a>
+								<canvas id="canv"></canvas>
+							</div>
+						</div>
+						<div class="section-season__names">
+							<div class="section-season__item d-pos section-season__item_right d-table trans">
+								<div class="d-table__cell"> 
+									<div class="h2">Зима</div>
+								</div>
+							</div>
+							<div class="section-season__item d-pos section-season__item_left d-table trans">
+								<div class="d-table__cell">
+									<div class="h2">Лето</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<!--include parts/_footer-->
+			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+			<script src="../js/vendor/jquery-3.3.1.js"></script>
+			<script src="../js/drupal.behavior.js"></script>
+			<script src="../../js/vendor/ScrollMagic.js"></script>
+			<script src="../../js/vendor/TweenMax.min.js"></script>
+			<script src="../../js/vendor/animation.gsap.js"></script>
+			<script src="../../js/vendor/custom-select.min.js"></script>
+			<script src="../../js/vendor/dragdealer.js"></script>
+			<script src="../../js/vendor/jquery.custom-select.min.js"></script>
+			<script src="../../js/vendor/jquery.magnific-popup.min.js"></script>
+			<script src="../../js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+			<script src="../../js/vendor/jquery.scrollbar.min.js"></script>
+			<script src="../../js/vendor/owl.carousel.min.js"></script>
+			<script src="../../js/vendor/jquery.mousewheel.min.js"></script>
+			<script src="../../js/vendor/slick.min.js"></script>
+			<script src="../../js/vendor/fontawesome-all.js"></script>
+			<script src="../../js/vendor/dragscroll.js"></script>
+			<script src="../../js/vendor/jquery.fullPage.js"></script>
+			<script src="../../js/vendor/scrolloverflow.js"></script>
+			<script src="../../js/vendor/jquery.event.move.js"></script>
+			<script src="../../js/vendor/jquery.twentytwenty.js"></script>
+			<script src="../../js/vendor/rainyday.min.js"></script>
+			<script src="../../js/vendor/jquery.inputmask.bundle.js"></script>
+			<script src="../../js/vendor/phone.js"></script>
+			<script src="../../js/vendor/phone-be.js"></script>
+			<script src="../../js/vendor/phone-ru.js"></script>
+			<script src="../../js/vendor/jquery.gifplayer.js"></script>
+			<script src="../../js/vendor/jquery.star-rating-svg.js"></script>
+			<script src="../../js/vendor/trunk8.js"></script>
+			<script src="../../js/vendor/vue.js"></script>
+			<script src="../../js/vendor/swiper.js"></script>
+			<script src="../../js/main.js"></script>
+			<script src="../../js/youtube.js"></script>
+			<script src="../../js/index.js"></script>
+		</div>
+	</body>
+</html>

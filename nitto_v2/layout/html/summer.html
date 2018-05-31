@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Зимние шины</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="stylesheet" href="../../css/main.css">
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="../../favicon/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+		<link rel="manifest" href="../../favicon/site.webmanifest">
+		<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#eb2d2e">
+		<meta name="msapplication-TileColor" content="#eb2d2e">
+		<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body class="page-summer">
+		<header class="s-header js-header s-header_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col col_3">
+						<div class="logo"><a href="index.html"><img src="../../img/logo.svg" alt="Nitto"></a></div>
+					</div>
+					<div class="col col_9">
+						<div class="nav_main">
+							<div class="nav__item"><a class="menu-summer nav__link" href="summer.html">Летние шины</a></div>
+							<div class="nav__item"><a class="menu-winter nav__link" href="winter.html">Зимние шины</a></div>
+							<div class="nav__item"><a class="menu-shop nav__link" href="#contacts-popup">Найти магазин</a></div>
+							<div class="nav__item parent dropdown"><a class="dropbtn nav__link" onclick="dropdown()">О компании</a>
+								<div class="nav-sub dropdown-content" id="myDropdown">
+									<div class="nav__item dropdown-item"><a class="nav__link" href="brand.html">О бренде</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="instructions.html">Инструкции</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="news.html">Новости</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="confidential.html">Политика конфиденциальности</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="contacts.html">Контакты</a></div>
+								</div>
+							</div>
+							<div class="nav__icon">
+								<div class="locate">
+									<div class="locate__content" id="locate-dropdown">
+										<div class="locate-info"><span class="locate__text">Ваш город:</span><span class="locate__city">Москва</span></div>
+										<div class="locate-buttons"><a class="locate-yes locate-yes_active">Да</a><a class="locate-no popup" href="#location-popup">Нет</a></div>
+									</div><span class="icon icon_locate"></span>
+								</div>
+							</div>
+							<div class="nav__item">
+								<div class="search">
+									<div class="search__content" id="search-dropdown">
+										<div class="search__info">
+											<input class="search__bar" type="text" placeholder="Вы ищете">
+											<button class="search__picture">
+												<svg class="search__img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#search"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="search__underline"></div>
+									</div><span class="icon icon_search"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="breadcrumbs">
+				<div class="container breadcrumbs-container"><a class="breadcrumbs__link">Главная</a><a class="breadcrumbs__link breadcrumbs__link-active">Летние шины</a></div>
+			</div>
+			<div class="s-main">
+				<div class="hero">
+					<div class="hero-wrap hero-wrap_summer">
+						<div class="container">
+							<div class="hero-tire">
+								<div class="hero-tire__info">
+									<h1>Летние шины</h1>
+									<ul>
+										<li>Диаметр шин: Ø16 — Ø21</li>
+									</ul>
+									<p>Не важно, владеете вы мощным внедорожником, спорткаром или экономичным седаном, шины NITTO обеспечивают высокие характеристики на разных типах дорожного покрытия.</p>
+									<p>Функциональные и стильные рисунки протектора, инновационные технологии производства резиновой смеси и прочная конструкция обеспечат управляемость и эффективное торможение на сухой и мокрой дороге. Подберите шины для своего автомобиля.</p>
+								</div><img class="hero-tire__photo" src="../../img/tire_summer_profil.png">
+							</div>
+						</div>
+					</div>
+					<div class="catalog-filter catalog-filter_summer">
+						<div class="container">
+							<div class="catalog-filter-type">
+								<h2 class="catalog-filter-heading">Подобрать шины (по параметрам) :</h2>
+							</div>
+							<div class="catalog-filter-selects catalog-filter-selects_param">
+								<select class="catalog-filter-select">
+									<option class="catalog-filter-select__option" value="">Тип авто</option>
+									<option class="catalog-filter-select__option" value="1">Тип авто авто 1</option>
+									<option class="catalog-filter-select__option" value="2">Тип авто 2</option>
+									<option class="catalog-filter-select__option" value="3">Тип авто 3</option>
+									<option class="catalog-filter-select__option" value="4">Тип авто 4</option>
+								</select>
+								<select class="catalog-filter-select">
+									<option class="catalog-filter-select__option" value="">Диаметр</option>
+									<option class="catalog-filter-select__option" value="1">Диаметр Диаметр 1</option>
+									<option class="catalog-filter-select__option" value="2">Диаметр 2</option>
+								</select>
+								<select class="catalog-filter-select">
+									<option class="catalog-filter-select__option" value="">Высота колес</option>
+									<option class="catalog-filter-select__option" value="1">Высота колес 1</option>
+									<option class="catalog-filter-select__option" value="2">Высота колес Колес 2</option>
+								</select>
+								<select class="catalog-filter-select">
+									<option class="catalog-filter-select__option" value="">Ширина колес</option>
+									<option class="catalog-filter-select__option" value="1">Ширина колес 1</option>
+									<option class="catalog-filter-select__option" value="2">Ширина колес 2</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="preview">
+					<div class="container">
+						<ul class="preview__list">
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+											<li class="preview__item preview__item_season">
+												<div class="preview__wrapper">
+													<div class="preview-picture"><a class="preview__link" href="product.html"><img class="preview__image" src="../../img/DuraGrappler.png"></a></div>
+													<h3>NT830</h3>
+													<ul> 
+														<li>Диаметр шин: Ø15 — Ø20</li>
+													</ul>
+													<p>Шины NT830 — шины со сверхвысокими ходовыми качествами, разработанные для комфортного вождения на сухой и мокрой дороге. для комфортного вождения на сухой и мокрой дороге.</p>
+												</div><a class="preview-button" href="product.html">Подробнее</a>
+											</li>
+						</ul>
+					</div>
+				</div>
+				<footer class="s-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col col_4">
+								<div class="b-logo"><img src="../../img/logo_foot.svg" alt="Nitto"></div>
+								<div class="b-copy">Nitto Tires &copy; 2018</div>
+								<div class="redsoft"><a class="redsoft__img" target="_blank" href="http://redsoft.ru">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 44 44">
+											<path d="M21.164 6.424c-0.176-0.264-0.396-0.44-0.66-0.616s-0.66-0.22-1.056-0.22c-0.176 0-0.352 0-0.528 0s-0.308 0-0.396 0.044v5.368c0.044 0 0.088 0 0.176 0s0.132 0 0.22 0c0.088 0 0.176 0 0.22 0 0.088 0 0.132 0 0.176 0 0.44 0 0.792-0.088 1.1-0.22 0.308-0.176 0.528-0.352 0.704-0.616s0.308-0.572 0.352-0.88c0.088-0.352 0.088-0.704 0.088-1.056 0-0.308-0.044-0.616-0.088-0.924 0-0.308-0.132-0.616-0.308-0.88z"></path>
+											<path d="M7.436 7.656c0.264-0.176 0.396-0.528 0.396-0.968 0-0.352-0.088-0.616-0.308-0.792s-0.528-0.308-0.924-0.308c-0.176 0-0.308 0-0.484 0s-0.264 0.044-0.352 0.044v2.332h0.66c0.396 0 0.748-0.088 1.012-0.308z"></path>
+											<path d="M0 0v44h44v-44h-44zM11.044 4.312h4.752v1.408h-3.168v1.848h2.904v1.408h-2.904v1.936h3.212v1.408h-4.796v-8.008zM4.18 4.4c0.176-0.044 0.352-0.044 0.572-0.088s0.396-0.044 0.616-0.044c0.22 0 0.396-0.044 0.572-0.044s0.352 0 0.528 0 0.748 0.044 1.1 0.088c0.352 0.088 0.704 0.176 0.968 0.352s0.528 0.396 0.704 0.704c0.176 0.308 0.264 0.66 0.264 1.1 0 0.66-0.132 1.188-0.44 1.584s-0.704 0.704-1.232 0.836l0.528 0.352 1.804 3.036h-1.804l-1.804-3.124-0.836-0.132v3.256h-1.54v-7.876zM8.976 20.856c-0.132 0.308-0.352 0.572-0.572 0.748-0.264 0.22-0.572 0.352-0.924 0.44s-0.748 0.132-1.188 0.132c-0.572 0-1.056-0.044-1.496-0.176s-0.748-0.22-0.968-0.308l0.484-1.32c0.088 0.044 0.176 0.088 0.308 0.132s0.264 0.088 0.44 0.132c0.176 0.044 0.352 0.088 0.528 0.132s0.396 0.044 0.572 0.044c0.484 0 0.836-0.088 1.056-0.22 0.264-0.176 0.352-0.396 0.352-0.704 0-0.264-0.088-0.44-0.264-0.572s-0.396-0.308-0.66-0.396c-0.264-0.132-0.572-0.264-0.88-0.396s-0.616-0.308-0.88-0.484c-0.264-0.176-0.484-0.44-0.66-0.704-0.176-0.308-0.264-0.66-0.264-1.144 0-0.396 0.044-0.704 0.176-1.012 0.132-0.264 0.308-0.528 0.572-0.704 0.22-0.176 0.528-0.352 0.836-0.44s0.704-0.132 1.1-0.132c0.484 0 0.88 0.044 1.32 0.132s0.748 0.176 1.012 0.352l-0.484 1.32c-0.176-0.088-0.44-0.22-0.748-0.308-0.352-0.088-0.704-0.132-1.1-0.132-0.352 0-0.66 0.088-0.836 0.22s-0.308 0.352-0.308 0.572c0 0.22 0.088 0.44 0.264 0.572s0.396 0.308 0.66 0.44c0.264 0.132 0.572 0.264 0.88 0.396s0.616 0.308 0.88 0.484c0.264 0.176 0.484 0.44 0.66 0.704s0.264 0.66 0.264 1.056c0.088 0.484 0 0.836-0.132 1.144zM15.84 21.164c-0.572 0.704-1.408 1.056-2.508 1.056-0.572 0-1.1-0.088-1.496-0.308-0.44-0.176-0.792-0.484-1.056-0.836s-0.484-0.792-0.616-1.32c-0.132-0.528-0.22-1.056-0.22-1.716 0-1.32 0.308-2.376 0.88-3.080s1.408-1.056 2.508-1.056c0.572 0 1.056 0.088 1.496 0.308 0.44 0.176 0.792 0.484 1.056 0.836s0.484 0.792 0.616 1.32c0.132 0.528 0.22 1.056 0.22 1.716 0 1.32-0.264 2.332-0.88 3.080zM22.572 15.488h-3.168v1.98h2.904v1.408h-2.904v3.212h-1.584v-8.008h4.752v1.408zM22.352 11.132c-0.308 0.396-0.748 0.704-1.276 0.924s-1.144 0.352-1.936 0.352c-0.132 0-0.264 0-0.484 0s-0.396 0-0.616-0.044c-0.22 0-0.44-0.044-0.616-0.044s-0.352-0.044-0.44-0.044v-7.964c0.176-0.044 0.352-0.044 0.528-0.044 0.22 0 0.396-0.044 0.616-0.044s0.44 0 0.616 0c0.22 0 0.396 0 0.528 0 0.704 0 1.32 0.088 1.804 0.308 0.484 0.176 0.924 0.484 1.232 0.836s0.528 0.792 0.704 1.276c0.132 0.484 0.22 1.056 0.22 1.628 0 0.528-0.088 1.056-0.22 1.584-0.088 0.44-0.352 0.88-0.66 1.276zM29.304 15.488h-2.332v6.6h-1.584v-6.6h-2.332v-1.408h6.248v1.408z"></path>
+											<path d="M14.696 16.104c-0.132-0.264-0.308-0.44-0.528-0.572s-0.484-0.22-0.792-0.22c-0.572 0-0.968 0.22-1.276 0.66s-0.44 1.144-0.44 2.112c0 0.396 0.044 0.792 0.088 1.1 0.088 0.352 0.176 0.616 0.308 0.88s0.308 0.44 0.528 0.572 0.484 0.22 0.792 0.22c0.572 0 0.968-0.22 1.276-0.66s0.44-1.144 0.44-2.112c0-0.396-0.044-0.748-0.088-1.1-0.088-0.308-0.176-0.616-0.308-0.88z"></path>
+										</svg></a><span class="redsoft__caption"><a target="_blank" href="https://redsoft.ru">Разработка сайта</a> <br/> Redsoft</span></div>
+							</div>
+							<div class="col col_3">
+								<div class="nav_foot">
+									<div class="nav__caption nav__caption_catalog">Каталог</div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="winter.html">Зимние шины</a></div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="summer.html">Летние шины</a></div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="pick.html">Подбор шин</a></div>
+									<div class="nav__item nav__item_shop"><a class="menu-shop nav__link" href="#contacts-popup"><span class="icon icon_locate"></span>Найти магазин</a></div>
+								</div>
+							</div>
+							<div class="col col_3">
+								<div class="nav_foot">
+									<div class="nav__caption">Информация</div>
+									<div class="nav__item"><a class="nav__link" href="instructions.html">Инструкции</a></div>
+									<div class="nav__item"><a class="nav__link" href="brand.html">О бренде</a></div>
+									<div class="nav__item"><a class="nav__link" href="news.html">Новости</a></div>
+									<div class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></div>
+									<div class="nav__item"><a class="nav__link" href="confidential.html">Политика конфиденциальности</a></div>
+								</div>
+							</div>
+							<div class="col col_2">
+								<div class="nav_foot">
+									<div class="nav__caption">Мы в соцсетях:</div>
+									<div class="t_justify">
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_vk" href="https://vk.com/nittotirerus" target="_blank">
+												<svg class="fa-vk">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#vk1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_in" href="https://www.instagram.com/nitto_tire_russia/" target="_blank">
+												<svg class="fa-instagram">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#instagram1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_yt" href="https://www.youtube.com/channel/UCAn-j6V-dILvIhkdNcif1_g" target="_blank">
+												<svg class="fa-youtube">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#youtube1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_fb" href="https://www.facebook.com/NittoTireRussia/" target="_blank">
+												<svg class="fa-facebook-f">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#facebook1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_d2" href="https://www.drive2.ru/o/NittoTire" target="_blank">
+												<svg class="drive2_img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#drive2"></use>
+												</svg></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+				<div class="product-forms__feedback mfp-hide" id="feedback-popup">
+					<h2 class="product-forms__heading">Оставьте нам свой отзыв</h2>
+					<select class="product-forms__select">
+						<option class="product-forms__option">Выберете магазин</option>
+						<option class="product-forms__option">Шин Сервис</option>
+						<option class="product-forms__option">Emex - автозапчасти</option>
+					</select>
+					<div class="rating"> </div>
+					<h3 class="product-forms__heading3">Достоинства</h3>
+					<textarea class="product-forms__textarea"></textarea>
+					<h3 class="product-forms__heading3">Недостатки</h3>
+					<textarea class="product-forms__textarea"></textarea>
+					<h3 class="product-forms__heading3 product-forms__heading3_comments">Комментарий</h3>
+					<textarea class="product-forms__textarea product-forms__textarea_big"></textarea>
+					<div class="product-forms__button"><span class="product-forms__understar-text">поля обязательные для заполнения</span><a class="product-forms__link">Оставить отзыв</a></div>
+				</div>
+				<div class="product-forms__contacts mfp-hide" id="contacts-popup">
+					<div class="container product-container">
+						<div class="product-contacts-info">
+							<div class="product-forms__destination">
+								<select class="product-forms__select">
+									<option class="product-forms__option">Москва и область</option>
+									<option class="product-forms__option">Санкт-Петербург</option>
+									<option class="product-forms__option">Уфа</option>
+								</select>
+								<select class="product-forms__search">
+									<option class="product-forms__option">Emex - Автозапчасти</option>
+									<option class="product-forms__option">Шин сервис</option>
+								</select>
+							</div>
+							<div class="product-contacts-info__locations">
+								<ul class="product-contacts-info__location-list">
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#star-button-mini"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text product-contacts-info__location-button-text_active button">В магазин</a></div>
+										</div>
+									</li>
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#star-button-mini"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text button">В магазин</a></div>
+										</div>
+									</li>
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture product-contacts-info__location-picture_mappin">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text button">В магазин</a></div>
+										</div>
+									</li>
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture product-contacts-info__location-picture_mappin">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text button">В магазин</a></div>
+										</div>
+									</li>
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture product-contacts-info__location-picture_mappin">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text button">В магазин</a></div>
+										</div>
+									</li>
+									<li class="product-contacts-info__location">
+										<div class="product-contacts-info__location-header">
+											<div class="product-contacts-info__location-picture product-contacts-info__location-picture_mappin">
+												<svg class="product-contacts-info__location-img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+												</svg>
+											</div>
+											<h2 class="product-contacts-info__location-name">Шин сервис</h2>
+										</div>
+										<p class="product-contacts-info__location-address">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+										<div class="product-contacts-info__buy"><span class="product-contacts-info__location-amount">12 503 ₽</span>
+											<div class="product-contacts-info__location-button"><a class="product-contacts-info__location-button-text button">В магазин</a></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="product-contacts-map">
+							<ul class="product-contacts-map__legend">
+								<li class="product-contacts-map__legend-item">
+									<div class="product-contacts-map__picture">
+										<svg class="product-contacts-map__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin"></use>
+										</svg>
+									</div><span class="product-contacts-map__legend-text">— Официальный дилер</span>
+								</li>
+								<li class="product-contacts-map__legend-item">
+									<div class="product-contacts-map__picture">
+										<svg class="product-contacts-map__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+										</svg>
+									</div><span class="product-contacts-map__legend-text">— Дилер-партнер</span>
+								</li>
+							</ul>
+							<div class="yandex-map" id="yandex-map2"></div>
+						</div>
+					</div>
+				</div>
+				<div class="product-forms__wait mfp-hide" id="wait-popup">
+					<div class="product-forms__wait-picture"></div><span class="product-forms__wait-text">Чтобы завершить оформление заказа Вы будете перенаправлены на сайт магазина Шин Сервис</span>
+				</div>
+				<div class="product-forms__buy1 mfp-hide" id="buy1-popup">
+					<div class="store-header store-header_premium">
+						<div class="store-header__picture">
+							<svg class="store-header__img">
+								<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#star-button-mini"></use>
+							</svg>
+						</div>
+						<div class="store-header__text">
+							<h2 class="pop-up__heading">Emex-автозапчасти</h2><span class="store-header__lead">Nitto рекомендует</span>
+						</div>
+					</div>
+					<div class="store store_premium">
+						<div class="store-info">
+							<div class="store-picture">
+								<div class="store-arrow-left">
+									<svg class="store-arrow-left__img">
+										<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#intro-arrow-left"></use>
+									</svg>
+								</div>
+								<div class="store-picture__gallery"><img class="store-img" src="../../img/store.png"><img class="store-img" src="../../img/store.png"><img class="store-img" src="../../img/store.png"></div>
+								<div class="store-arrow-right">
+									<svg class="store-arrow-right__img">
+										<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#intro-arrow-right"></use>
+									</svg>
+								</div>
+							</div>
+							<div class="store-info__desc"><span class="store-info__phone">8 (800) 100–10–10</span><span class="store-info__schedule">Время работы</span><span class="store-info__schedule">Будни: 9:00 - 21:00</span><span class="store-info__schedule">Выходные: 10:00 - 18:00</span>
+								<p class="store-info__adress">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+								<div class="available">
+									<ul class="available__list">
+										<li class="available__item available__item-active"></li>
+										<li class="available__item available__item-active"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+									</ul><span class="available__text">9шт в наличии</span>
+								</div>
+							</div>
+						</div>
+						<div class="store-services">
+							<h2 class="store-services__heading">Услуги</h2>
+							<div class="store-service-wrap">
+								<div class="store-service">
+									<div class="store-service__pic">
+										<svg class="store-service__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#truck"></use>
+										</svg>
+									</div><span class="store-service__text">Доставка</span>
+								</div>
+								<div class="store-service">
+									<div class="store-service__pic">
+										<svg class="store-service__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#wheel"></use>
+										</svg>
+									</div><span class="store-service__text">Шиномонтаж бесплатно</span>
+								</div>
+								<div class="store-service">
+									<div class="store-service__pic">
+										<svg class="store-service__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#pin"></use>
+										</svg>
+									</div><span class="store-service__text">Самовывоз</span>
+								</div>
+								<div class="store-service">
+									<div class="store-service__pic">
+										<svg class="store-service__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#truck"></use>
+										</svg>
+									</div><span class="store-service__text">Хранение шин</span>
+								</div>
+							</div>
+						</div>
+						<div class="store-buy"><span class="store-buy__model">Шина NITTO NT420S 275/60 R17 110V</span>
+							<div class="store-buy__summary">
+								<div class="store-buy__cost">50 920 ₽</div><a class="store-buy__button" href="#wait-popup"><span class="store-buy__button-text">Оформить заказ</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-forms__buy2 mfp-hide" id="buy2-popup">
+					<div class="store-header">
+						<div class="store-header__picture store-header__picture_mini">
+							<svg class="store-header__img">
+								<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#mappin-whole"></use>
+							</svg>
+						</div>
+						<h2 class="pop-up__heading">Emex-автозапчасти</h2>
+					</div>
+					<div class="store">
+						<div class="store-info">
+							<div class="store-picture"><img class="store-img" src="../../img/store.png"></div>
+							<div class="store-info__desc"><span class="store-info__phone">8 (800) 100–10–10</span><span class="store-info__schedule">Время работы</span><span class="store-info__schedule">Будни: 9:00 - 21:00</span><span class="store-info__schedule">Выходные: 10:00 - 18:00</span>
+								<p class="store-info__adress">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+								<div class="available">
+									<ul class="available__list">
+										<li class="available__item available__item-active"></li>
+										<li class="available__item available__item-active"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+										<li class="available__item"></li>
+									</ul><span class="available__text">9шт в наличии</span>
+								</div>
+							</div>
+						</div>
+						<div class="store-services">
+							<h2 class="store-services__heading">Услуги</h2>
+							<div class="store-service-wrap">
+								<div class="store-service">
+									<div class="store-service__pic">
+										<svg class="store-service__img">
+											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#truck"></use>
+										</svg>
+									</div><span class="store-service__text">Доставка</span>
+								</div>
+							</div>
+						</div>
+						<div class="store-buy"><span class="store-buy__model">Шина NITTO NT420S 275/60 R17 110V</span>
+							<div class="store-buy__summary">
+								<div class="store-buy__cost">50 920 ₽</div><a class="store-buy__button" href="#wait-popup"><span class="store-buy__button-text">Оформить заказ</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-forms__buy3 mfp-hide" id="buy3-popup">
+					<div class="order__desc">
+						<div class="order__info">
+							<h2 class="order__info-heading">Emex-автозапчасти</h2>
+							<div class="order__info-rows">
+								<div class="order__info-row">
+									<div class="store-info__desc store-info__desc_order"><span class="store-info__phone">8 (800) 100–10–10</span><span class="store-info__schedule">Время работы</span><span class="store-info__schedule">Будни: 9:00 - 21:00</span><span class="store-info__schedule">Выходные: 10:00 - 18:00</span></div>
+								</div>
+								<div class="order__info-row">
+									<p class="store-info__adress">г.Москва, ул. Генерала Белобородова, вл.40 к.2</p>
+									<div class="available">
+										<ul class="available__list">
+											<li class="available__item available__item-active"></li>
+											<li class="available__item available__item-active"></li>
+											<li class="available__item"></li>
+											<li class="available__item"></li>
+											<li class="available__item"></li>
+											<li class="available__item"></li>
+										</ul><span class="available__text">9шт в наличии</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="order__hero"><img class="order__hero-picture" src="../../img/banner-tire.png"><span class="order__hero-heading">Шина NITTO NT420S 275/60 R17 110V</span></div>
+						<div class="order__overall">
+							<div class="order__overall-price"><span class="order__overall-price-text">Цена:</span><span class="order__overall-price-number">12 730 ₽</span></div>
+							<div class="order__overall-cost"><span class="order__overall-cost-text">Цена за 4шт:</span><span class="order__overall-cost-number">50 920 ₽</span></div>
+						</div>
+					</div>
+					<div class="order__completion">
+						<h2 class="order__completion-heading">Заполните форму для оформления заказа</h2>
+						<form class="order__form">
+							<input class="order__input" type="text" placeholder="Имя">
+							<input class="order__input order__input_phone" type="tel" placeholder="Телефон">
+							<div class="order__security">
+								<input class="order__checkbox product-contacts-info__checkbox css-checkbox" type="checkbox" id="order1">
+								<label class="order__label product-contacts-info__label css-label" for="order1">Я согласен на обработку и хранение персональных данных</label>
+							</div><a class="order__button" href="#wait-popup"><span class="order__link">Оформить заказ</span></a>
+						</form>
+					</div>
+				</div>
+				<div class="locate__choice mfp-hide" id="location-popup">
+					<div class="locate__container">
+						<div class="locate__picture"><img class="locate__img" src="../../img/map-popup.png"></div>
+						<div class="locate__desc">
+							<h2 class="locate__desc-heading">Ваш город</h2>
+							<select class="locate__desc-search">
+								<option class="product-forms__option">Введите название населенного пункта</option>
+								<option class="product-forms__option">Санкт-Петербург</option>
+								<option class="product-forms__option">Казань</option>
+								<option class="product-forms__option">Уфа</option>
+							</select>
+							<div class="locate__desc-wrap">
+								<div class="locate__desc-textwrap"><a class="locate__desc-lead">Например:</a></div>
+								<div class="locate__desc-textwrap"><a class="locate__desc-text">Москва</a></div>
+								<div class="locate__desc-textwrap"><a class="locate__desc-text">Санкт-Петербург</a></div>
+								<div class="locate__desc-textwrap"><a class="locate__desc-text">Екатеринбург</a></div>
+								<div class="locate__desc-textwrap"><a class="locate__desc-text">Новосибирск</a></div>
+								<div class="locate__desc-textwrap"><a class="locate__desc-text">Ростов-на-Дону</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="locate__psa">
+						<p class="locate__psa-text">Если Вашего населенного пункта нет в списке, выбирите близлежащий доступный город.</p>
+					</div>
+				</div>
+				<div class="locate__succes mfp-hide" id="location-succes-popup">
+					<div class="locate__container">
+						<div class="locate__picture"><img class="locate__img" src="../../img/map-popup.png"></div>
+						<div class="locate__desc_succes">
+							<h2 class="locate__desc-heading">Ваш город</h2>
+							<select class="locate__desc-search">
+								<option class="product-forms__option">Москва</option>
+								<option class="product-forms__option">Санкт-Петербург</option>
+								<option class="product-forms__option">Уфа</option>
+							</select>
+						</div>
+					</div>
+					<div class="locate__psa locate__psa_succes"><span class="locate__psa-heading">Спасибо, Ваш город учтён!</span></div>
+				</div>
+				<div class="youtube-video-background mfp-hide" id="youtube-popup">
+					<div id="youtube-video"></div>
+				</div>
+				<div class="product-forms__warning mfp-hide" id="warning-popup"><span class="product-forms__warning-text product-forms__warning-text_red">Пожалуйста,</span><span class="product-forms__warning-text">выберите сначала размер шины.</span></div>
+				<div class="thanks-form mfp-hide" id="thanks-popup">
+					<h2 class="thanks-form__heading">Спасибо!</h2>
+					<p class="thanks-form__text">Мы рассмотрим ваше сообщение в ближайшее время. </p>
+				</div>
+			</div>
+			<!--include parts/_footer-->
+			<script src="../js/vendor/jquery-3.3.1.js"></script>
+			<script src="../js/drupal.behavior.js"></script>
+			<script src="../../js/vendor/ScrollMagic.js"></script>
+			<script src="../../js/vendor/TweenMax.min.js"></script>
+			<script src="../../js/vendor/animation.gsap.js"></script>
+			<script src="../../js/vendor/custom-select.min.js"></script>
+			<script src="../../js/vendor/dragdealer.js"></script>
+			<script src="../../js/vendor/jquery.custom-select.min.js"></script>
+			<script src="../../js/vendor/jquery.magnific-popup.min.js"></script>
+			<script src="../../js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+			<script src="../../js/vendor/jquery.scrollbar.min.js"></script>
+			<script src="../../js/vendor/owl.carousel.min.js"></script>
+			<script src="../../js/vendor/jquery.mousewheel.min.js"></script>
+			<script src="../../js/vendor/slick.min.js"></script>
+			<script src="../../js/vendor/fontawesome-all.js"></script>
+			<script src="../../js/vendor/dragscroll.js"></script>
+			<script src="../../js/vendor/jquery.fullPage.js"></script>
+			<script src="../../js/vendor/scrolloverflow.js"></script>
+			<script src="../../js/vendor/jquery.event.move.js"></script>
+			<script src="../../js/vendor/jquery.twentytwenty.js"></script>
+			<script src="../../js/vendor/rainyday.min.js"></script>
+			<script src="../../js/vendor/jquery.inputmask.bundle.js"></script>
+			<script src="../../js/vendor/phone.js"></script>
+			<script src="../../js/vendor/phone-be.js"></script>
+			<script src="../../js/vendor/phone-ru.js"></script>
+			<script src="../../js/vendor/jquery.gifplayer.js"></script>
+			<script src="../../js/vendor/jquery.star-rating-svg.js"></script>
+			<script src="../../js/vendor/trunk8.js"></script>
+			<script src="../../js/vendor/vue.js"></script>
+			<script src="../../js/vendor/swiper.js"></script>
+			<script src="../../js/main.js"></script>
+		</div>
+	</body>
+</html>

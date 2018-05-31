@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Новости</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<link rel="icon" href="/favicon.ico">
+		<link rel="stylesheet" href="../../css/main.css">
+		<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+		<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="../../favicon/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+		<link rel="manifest" href="../../favicon/site.webmanifest">
+		<link rel="mask-icon" href="../../favicon/safari-pinned-tab.svg" color="#eb2d2e">
+		<meta name="msapplication-TileColor" content="#eb2d2e">
+		<meta name="msapplication-TileImage" content="../../favicon/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+		<header class="s-header js-header s-header_inner">
+			<div class="container">
+				<div class="row">
+					<div class="col col_3">
+						<div class="logo"><a href="index.html"><img src="../../img/logo.svg" alt="Nitto"></a></div>
+					</div>
+					<div class="col col_9">
+						<div class="nav_main">
+							<div class="nav__item"><a class="menu-summer nav__link" href="summer.html">Летние шины</a></div>
+							<div class="nav__item"><a class="menu-winter nav__link" href="winter.html">Зимние шины</a></div>
+							<div class="nav__item"><a class="menu-shop nav__link" href="#contacts-popup">Найти магазин</a></div>
+							<div class="nav__item parent dropdown"><a class="dropbtn nav__link" onclick="dropdown()">О компании</a>
+								<div class="nav-sub dropdown-content" id="myDropdown">
+									<div class="nav__item dropdown-item"><a class="nav__link" href="brand.html">О бренде</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="instructions.html">Инструкции</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="news.html">Новости</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="confidential.html">Политика конфиденциальности</a></div>
+									<div class="nav__item dropdown-item"><a class="nav__link" href="contacts.html">Контакты</a></div>
+								</div>
+							</div>
+							<div class="nav__icon">
+								<div class="locate">
+									<div class="locate__content" id="locate-dropdown">
+										<div class="locate-info"><span class="locate__text">Ваш город:</span><span class="locate__city">Москва</span></div>
+										<div class="locate-buttons"><a class="locate-yes locate-yes_active">Да</a><a class="locate-no popup" href="#location-popup">Нет</a></div>
+									</div><span class="icon icon_locate"></span>
+								</div>
+							</div>
+							<div class="nav__item">
+								<div class="search">
+									<div class="search__content" id="search-dropdown">
+										<div class="search__info">
+											<input class="search__bar" type="text" placeholder="Вы ищете">
+											<button class="search__picture">
+												<svg class="search__img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#search"></use>
+												</svg>
+											</button>
+										</div>
+										<div class="search__underline"></div>
+									</div><span class="icon icon_search"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="content">
+			<div class="s-main">
+				<div class="fullnews">
+					<div class="breadcrumbs">
+						<div class="container breadcrumbs-container"><a class="breadcrumbs__link">Главная</a><a class="breadcrumbs__link">Компания</a><a class="breadcrumbs__link">Новости</a><a class="breadcrumbs__link breadcrumbs__link-active">Новость</a></div>
+					</div>
+					<div class="container fullnews-container">
+						<div class="fullnews__wrap">
+							<div class="fullnews__navigation fullnews__navigation_top"><a class="fullnews__close" href="news.html"><span class="fullnews__close-text">Закрыть</span><img class="fullnews__close-img" src="../../img/close.svg"></a></div>
+							<div class="fullnews__navigation"><a class="fullnews__previous" href="single-news.html"><img class="fullnews__previous-img" src="../../img/back-news.svg"><span class="fullnews__previous-text">Предыдущая новость</span></a><a class="fullnews__next" href="single-news.html"><span class="fullnews__next-text">Следующая новость</span><img class="fullnews__next-img" src="../../img/forward-news.svg"></a></div>
+							<div class="fullnews__content">
+								<h1>Поддержка фанатов ХК «Спартак» может изменить ход игры!</h1>
+								<p>Поддержка фанатов может изменить ход игры. Кричалка – сломить боевой дух соперника. Победа достигается исключительно сообща. Об этом – новый ролик NITTO TIRE и ХК «СПАРТАК».</p>
+								<p>В масштабном клипе смешались ретро и футуризм, динамика и яркие образы. Здесь типичные болельщики бок-о-бок с гротескными персонажами участвуют в едином фанатском перформансе – под музыку, созданную из шин NITTO.</p>
+								<h3>О ХК «Спартак»:</h3>
+								<div class="fullnews__gallery-main">
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo.jpg"></div>
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo2.jpg"></div>
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo.jpg"></div>
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo2.jpg"></div>
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo.jpg"></div>
+									<div class="fullnews__gallery-item"><img src="../../img/news-photo2.jpg"></div>
+								</div>
+								<div class="fullnews__gallery_secondary">
+									<div class="nav-back"><img class="nav-back__img" src="../../img/back-news.svg"></div>
+									<div class="fullnews__gallery-nav">
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini.jpg"></div>
+										<div class="fullnews__gallery-item-nav"><img src="../../img/news-photo-mini2.jpg"></div>
+									</div>
+									<div class="nav-forward"><img class="nav-forward__img" src="../../img/forward-news.svg"></div>
+								</div>
+								<p>«Спартак» - легендарный хоккейный клуб, основанный в 1946 году. ХК «Спартак» - чемпион СССР (1962, 1967, 1969, 1976), обладатель Кубка СССР (1970, 1971), пятикратный обладатель «Кубка Шпенглера» (1980, 1981, 1985, 1989, 1990), трехкратный обладатель «Кубка Ахерна» (1971-1973), обладатель Кубка Харламова (2014), обладатель Кубка мира среди молодежных команд (2014). </p>
+								<h3>О чём-то ещё</h3>
+								<p>По сюжету, один из героев смотрит матч в мастерской и стучит по шине под ритм фанатской кричалки. Он задает темп для остальных болельщиков, которые находятся в разных частях города. С каждой секундой в кадре появляется всё больше людей. Ритм увеличивается, эмоциональный накал возрастает. На льду наступает решающий момент. Команде необходима поддержка – и герои направляются к стадиону, бросая свои повседневные дела.</p>
+								<div class="fullnews__picture"><img class="fullnews__image" src="../../img/news-photo.jpg"><span class="fullnews__caption">Спартак» - легендарный хоккейный клуб</span></div>
+								<p>По сюжету, один из героев смотрит матч в мастерской и стучит по шине под ритм фанатской кричалки. Он задает темп для остальных болельщиков, которые находятся в разных частях города. С каждой секундой в кадре появляется всё больше людей. Ритм увеличивается, эмоциональный накал возрастает. На льду наступает решающий момент. </p>
+								<div class="fullnews__navigation"><a class="fullnews__previous" href="single-news.html"><img class="fullnews__previous-img" src="../../img/back-news.svg"><span class="fullnews__previous-text">Предыдущая новость</span></a><a class="fullnews__next" href="single-news.html"><span class="fullnews__next-text">Следующая новость</span><img class="fullnews__next-img" src="../../img/forward-news.svg"></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer class="s-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col col_4">
+								<div class="b-logo"><img src="../../img/logo_foot.svg" alt="Nitto"></div>
+								<div class="b-copy">Nitto Tires &copy; 2018</div>
+								<div class="redsoft"><a class="redsoft__img" target="_blank" href="http://redsoft.ru">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52" height="52" viewBox="0 0 44 44">
+											<path d="M21.164 6.424c-0.176-0.264-0.396-0.44-0.66-0.616s-0.66-0.22-1.056-0.22c-0.176 0-0.352 0-0.528 0s-0.308 0-0.396 0.044v5.368c0.044 0 0.088 0 0.176 0s0.132 0 0.22 0c0.088 0 0.176 0 0.22 0 0.088 0 0.132 0 0.176 0 0.44 0 0.792-0.088 1.1-0.22 0.308-0.176 0.528-0.352 0.704-0.616s0.308-0.572 0.352-0.88c0.088-0.352 0.088-0.704 0.088-1.056 0-0.308-0.044-0.616-0.088-0.924 0-0.308-0.132-0.616-0.308-0.88z"></path>
+											<path d="M7.436 7.656c0.264-0.176 0.396-0.528 0.396-0.968 0-0.352-0.088-0.616-0.308-0.792s-0.528-0.308-0.924-0.308c-0.176 0-0.308 0-0.484 0s-0.264 0.044-0.352 0.044v2.332h0.66c0.396 0 0.748-0.088 1.012-0.308z"></path>
+											<path d="M0 0v44h44v-44h-44zM11.044 4.312h4.752v1.408h-3.168v1.848h2.904v1.408h-2.904v1.936h3.212v1.408h-4.796v-8.008zM4.18 4.4c0.176-0.044 0.352-0.044 0.572-0.088s0.396-0.044 0.616-0.044c0.22 0 0.396-0.044 0.572-0.044s0.352 0 0.528 0 0.748 0.044 1.1 0.088c0.352 0.088 0.704 0.176 0.968 0.352s0.528 0.396 0.704 0.704c0.176 0.308 0.264 0.66 0.264 1.1 0 0.66-0.132 1.188-0.44 1.584s-0.704 0.704-1.232 0.836l0.528 0.352 1.804 3.036h-1.804l-1.804-3.124-0.836-0.132v3.256h-1.54v-7.876zM8.976 20.856c-0.132 0.308-0.352 0.572-0.572 0.748-0.264 0.22-0.572 0.352-0.924 0.44s-0.748 0.132-1.188 0.132c-0.572 0-1.056-0.044-1.496-0.176s-0.748-0.22-0.968-0.308l0.484-1.32c0.088 0.044 0.176 0.088 0.308 0.132s0.264 0.088 0.44 0.132c0.176 0.044 0.352 0.088 0.528 0.132s0.396 0.044 0.572 0.044c0.484 0 0.836-0.088 1.056-0.22 0.264-0.176 0.352-0.396 0.352-0.704 0-0.264-0.088-0.44-0.264-0.572s-0.396-0.308-0.66-0.396c-0.264-0.132-0.572-0.264-0.88-0.396s-0.616-0.308-0.88-0.484c-0.264-0.176-0.484-0.44-0.66-0.704-0.176-0.308-0.264-0.66-0.264-1.144 0-0.396 0.044-0.704 0.176-1.012 0.132-0.264 0.308-0.528 0.572-0.704 0.22-0.176 0.528-0.352 0.836-0.44s0.704-0.132 1.1-0.132c0.484 0 0.88 0.044 1.32 0.132s0.748 0.176 1.012 0.352l-0.484 1.32c-0.176-0.088-0.44-0.22-0.748-0.308-0.352-0.088-0.704-0.132-1.1-0.132-0.352 0-0.66 0.088-0.836 0.22s-0.308 0.352-0.308 0.572c0 0.22 0.088 0.44 0.264 0.572s0.396 0.308 0.66 0.44c0.264 0.132 0.572 0.264 0.88 0.396s0.616 0.308 0.88 0.484c0.264 0.176 0.484 0.44 0.66 0.704s0.264 0.66 0.264 1.056c0.088 0.484 0 0.836-0.132 1.144zM15.84 21.164c-0.572 0.704-1.408 1.056-2.508 1.056-0.572 0-1.1-0.088-1.496-0.308-0.44-0.176-0.792-0.484-1.056-0.836s-0.484-0.792-0.616-1.32c-0.132-0.528-0.22-1.056-0.22-1.716 0-1.32 0.308-2.376 0.88-3.080s1.408-1.056 2.508-1.056c0.572 0 1.056 0.088 1.496 0.308 0.44 0.176 0.792 0.484 1.056 0.836s0.484 0.792 0.616 1.32c0.132 0.528 0.22 1.056 0.22 1.716 0 1.32-0.264 2.332-0.88 3.080zM22.572 15.488h-3.168v1.98h2.904v1.408h-2.904v3.212h-1.584v-8.008h4.752v1.408zM22.352 11.132c-0.308 0.396-0.748 0.704-1.276 0.924s-1.144 0.352-1.936 0.352c-0.132 0-0.264 0-0.484 0s-0.396 0-0.616-0.044c-0.22 0-0.44-0.044-0.616-0.044s-0.352-0.044-0.44-0.044v-7.964c0.176-0.044 0.352-0.044 0.528-0.044 0.22 0 0.396-0.044 0.616-0.044s0.44 0 0.616 0c0.22 0 0.396 0 0.528 0 0.704 0 1.32 0.088 1.804 0.308 0.484 0.176 0.924 0.484 1.232 0.836s0.528 0.792 0.704 1.276c0.132 0.484 0.22 1.056 0.22 1.628 0 0.528-0.088 1.056-0.22 1.584-0.088 0.44-0.352 0.88-0.66 1.276zM29.304 15.488h-2.332v6.6h-1.584v-6.6h-2.332v-1.408h6.248v1.408z"></path>
+											<path d="M14.696 16.104c-0.132-0.264-0.308-0.44-0.528-0.572s-0.484-0.22-0.792-0.22c-0.572 0-0.968 0.22-1.276 0.66s-0.44 1.144-0.44 2.112c0 0.396 0.044 0.792 0.088 1.1 0.088 0.352 0.176 0.616 0.308 0.88s0.308 0.44 0.528 0.572 0.484 0.22 0.792 0.22c0.572 0 0.968-0.22 1.276-0.66s0.44-1.144 0.44-2.112c0-0.396-0.044-0.748-0.088-1.1-0.088-0.308-0.176-0.616-0.308-0.88z"></path>
+										</svg></a><span class="redsoft__caption"><a target="_blank" href="https://redsoft.ru">Разработка сайта</a> <br/> Redsoft</span></div>
+							</div>
+							<div class="col col_3">
+								<div class="nav_foot">
+									<div class="nav__caption nav__caption_catalog">Каталог</div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="winter.html">Зимние шины</a></div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="summer.html">Летние шины</a></div>
+									<div class="nav__item nav__item_catalog"><a class="nav__link" href="pick.html">Подбор шин</a></div>
+									<div class="nav__item nav__item_shop"><a class="menu-shop nav__link" href="#contacts-popup"><span class="icon icon_locate"></span>Найти магазин</a></div>
+								</div>
+							</div>
+							<div class="col col_3">
+								<div class="nav_foot">
+									<div class="nav__caption">Информация</div>
+									<div class="nav__item"><a class="nav__link" href="instructions.html">Инструкции</a></div>
+									<div class="nav__item"><a class="nav__link" href="brand.html">О бренде</a></div>
+									<div class="nav__item"><a class="nav__link" href="news.html">Новости</a></div>
+									<div class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></div>
+									<div class="nav__item"><a class="nav__link" href="confidential.html">Политика конфиденциальности</a></div>
+								</div>
+							</div>
+							<div class="col col_2">
+								<div class="nav_foot">
+									<div class="nav__caption">Мы в соцсетях:</div>
+									<div class="t_justify">
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_vk" href="https://vk.com/nittotirerus" target="_blank">
+												<svg class="fa-vk">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#vk1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_in" href="https://www.instagram.com/nitto_tire_russia/" target="_blank">
+												<svg class="fa-instagram">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#instagram1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_yt" href="https://www.youtube.com/channel/UCAn-j6V-dILvIhkdNcif1_g" target="_blank">
+												<svg class="fa-youtube">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#youtube1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_fb" href="https://www.facebook.com/NittoTireRussia/" target="_blank">
+												<svg class="fa-facebook-f">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#facebook1"></use>
+												</svg></a></div>
+										<div class="nav__item nav__item_ib"><a class="nav__link nav__link_social nav__link_social_d2" href="https://www.drive2.ru/o/NittoTire" target="_blank">
+												<svg class="drive2_img">
+													<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#drive2"></use>
+												</svg></a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<!--include parts/_footer-->
+			<script src="../js/vendor/jquery-3.3.1.js"></script>
+			<script src="../js/drupal.behavior.js"></script>
+			<script src="../../js/vendor/ScrollMagic.js"></script>
+			<script src="../../js/vendor/TweenMax.min.js"></script>
+			<script src="../../js/vendor/animation.gsap.js"></script>
+			<script src="../../js/vendor/custom-select.min.js"></script>
+			<script src="../../js/vendor/dragdealer.js"></script>
+			<script src="../../js/vendor/jquery.custom-select.min.js"></script>
+			<script src="../../js/vendor/jquery.magnific-popup.min.js"></script>
+			<script src="../../js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+			<script src="../../js/vendor/jquery.scrollbar.min.js"></script>
+			<script src="../../js/vendor/owl.carousel.min.js"></script>
+			<script src="../../js/vendor/jquery.mousewheel.min.js"></script>
+			<script src="../../js/vendor/slick.min.js"></script>
+			<script src="../../js/vendor/fontawesome-all.js"></script>
+			<script src="../../js/vendor/dragscroll.js"></script>
+			<script src="../../js/vendor/jquery.fullPage.js"></script>
+			<script src="../../js/vendor/scrolloverflow.js"></script>
+			<script src="../../js/vendor/jquery.event.move.js"></script>
+			<script src="../../js/vendor/jquery.twentytwenty.js"></script>
+			<script src="../../js/vendor/rainyday.min.js"></script>
+			<script src="../../js/vendor/jquery.inputmask.bundle.js"></script>
+			<script src="../../js/vendor/phone.js"></script>
+			<script src="../../js/vendor/phone-be.js"></script>
+			<script src="../../js/vendor/phone-ru.js"></script>
+			<script src="../../js/vendor/jquery.gifplayer.js"></script>
+			<script src="../../js/vendor/jquery.star-rating-svg.js"></script>
+			<script src="../../js/vendor/trunk8.js"></script>
+			<script src="../../js/vendor/vue.js"></script>
+			<script src="../../js/vendor/swiper.js"></script>
+			<script src="../../js/main.js"></script>
+		</div>
+	</body>
+</html>
