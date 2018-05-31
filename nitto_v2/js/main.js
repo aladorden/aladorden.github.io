@@ -462,12 +462,15 @@
           $('body').addClass('show');
         }, 1500);
         setTimeout(function() {
-          slide_show_1(11, 0.5, 2);
+
         }, 2000)
         setTimeout(function() {
           active_slide.find('.blur_image').addClass('show')
         }, 1000)
 
+        // $(window).resize(function() {
+        //   slide_show_1(11, 0.5, 2);
+        // });
 
 
 
@@ -478,7 +481,7 @@
         function slide_nav_next(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 1200);
+            var seconds = new Date().getTime() / (delay - 1400);
             if ((seconds - lastClickTime) > 2) {
               slide_show_2(66, 2.5);
               setTimeout(function() {
@@ -497,7 +500,7 @@
         function slide_nav_prev(nav_cl, delay) {
           $(nav_cl).click(function() {
             $('.rentgen_item').addClass('blur')
-            var seconds = new Date().getTime() / (delay - 1200);
+            var seconds = new Date().getTime() / (delay - 1400);
             if ((seconds - lastClickTime) > 2) {
               slide_show_2(66, 2.5);
               setTimeout(function() {
