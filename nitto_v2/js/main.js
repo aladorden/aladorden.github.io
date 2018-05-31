@@ -460,9 +460,9 @@
 
         setTimeout(function() {
           $('body').addClass('show');
-        }, 1500);
+        }, 1000);
         setTimeout(function() {
-
+          slide_show_1(11, 0.5, 2);
         }, 2000)
         setTimeout(function() {
           active_slide.find('.blur_image').addClass('show')
