@@ -412,7 +412,7 @@
                 setTimeout(function() {
                   $('.intro-slider__list .slick-slide').removeClass('wheel_slider');
 
-                }, delay - 80)
+                }, delay)
                 slick_Intro.slick('slickNext');
                 remove_first_blur_img();
               }, delay - 1650)
@@ -435,7 +435,7 @@
                 setTimeout(function() {
                   $('.intro-slider__list .slick-slide').removeClass('wheel_slider');
                   console.log('wow3')
-                }, delay - 80)
+                }, delay)
                 slick_Intro.slick('slickPrev');
                 remove_first_blur_img()
                 console.log('wow2')
