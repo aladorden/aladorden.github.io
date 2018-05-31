@@ -381,7 +381,7 @@
           var loupe_act_front = $('.intro-slider__list .slick-active .rentgen_item_loupe img.front')
           var wheel_act = $('.intro-slider__list .slick-active .rentgen_item_loupe img.image_wheel')
 
-          $('.intro-slider__list .slick-active').removeClass('wheel');
+          $('.intro-slider__list .slick-slide').removeClass('wheel');
           $('.intro-slider__list .slick-active').addClass('wheel_interval');
 
           function p_w(offset_right) {
@@ -427,7 +427,7 @@
           var loupe_act_front = $('.intro-slider__list .slick-active .rentgen_item_loupe img.front')
           var wheel_act = $('.intro-slider__list .slick-active .rentgen_item_loupe  img.image_wheel')
 
-          $('.intro-slider__list .slick-active').removeClass('wheel_interval');
+          $('.intro-slider__list .slick-slide').removeClass('wheel_interval');
           $('.intro-slider__list .slick-active').addClass('wheel');
 
           function p_w(offset_right) {
@@ -490,7 +490,7 @@
                 setTimeout(function() {
                   slide_show_1(11, 0.5, 2);
                 }, 0)
-              }, delay - 1500)
+              }, delay - 1700)
               clickNumber++;
               lastClickTime = seconds;
             }
@@ -509,7 +509,7 @@
                 setTimeout(function() {
                   slide_show_1(11, 0.5, 2);
                 }, 0)
-              }, delay - 1500)
+              }, delay - 1700)
               clickNumber++;
               lastClickTime = seconds;
             }
