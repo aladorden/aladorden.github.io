@@ -997,12 +997,16 @@
           $('#handle').css('left', season_width)
           $('.images-compare-after').css('width', w_w - season_width)
           $('.images-compare-before').css('width', season_width)
+          console.log(season_width);
+          console.log(w_w - season_width);
         }
 
         function pos_more() {
           $('#handle').css('left', w_w - season_width)
           $('.images-compare-after').css('width', season_width)
           $('.images-compare-before').css('width', w_w - season_width)
+          console.log(season_width);
+          console.log(w_w - season_width);
         }
 
         function pos_drag() {
@@ -1069,11 +1073,29 @@
               $('.images-compare-after').removeClass('show_wheel');
               $('.images-compare-before').addClass('show_wheel');
             }
+          } else {
+            if ((val >= 10) && (val <= 50)) {
+              $('.images-compare-before').attr('data-catalog', 'true');
+              $('.images-compare-after').attr('data-catalog', 'false');
+              $('.images-compare-before .season_wrap').removeClass('show');
+              $('.images-compare-after .season_wrap').addClass('show');
+              $('.images-compare-before').scrollTop(0);
+              pos_more();
+              pos_transition(.5)
+            } else if ((val <= 90) && (val >= 50)) {
+              $('.images-compare-after').attr('data-catalog', 'true');
+              $('.images-compare-before').attr('data-catalog', 'false');
+              $('.images-compare-after .season_wrap').removeClass('show');
+              $('.images-compare-before .season_wrap').addClass('show');
+              $('.images-compare-after').scrollTop(0);
+              pos_less();
+              pos_transition(.5)
+            }
+
           }
         });
 
         container.on("move", function(e) {
-
           l = e.pageX;
           width = $('.compare').width()
           w_w = $(window).width();
@@ -1087,6 +1109,7 @@
 
           var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
           var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
+
           if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
             if (val <= 25) {
               $('.images-compare-before .season_wrap').addClass('show');
@@ -1115,9 +1138,41 @@
               pos_drag();
               pos_transition(0)
             }
-          }
+          } else {}
 
         });
+
+
+        $('.images-compare-after .season_wrap').click(function(e) {
+          var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
+          var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
+          if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
+
+          } else {
+            $('.images-compare-after').attr('data-catalog', 'true');
+            $('.images-compare-before').attr('data-catalog', 'false');
+            $('.images-compare-after .season_wrap').removeClass('show');
+            $('.images-compare-before .season_wrap').addClass('show');
+            $('.images-compare-after').scrollTop(0);
+            pos_less();
+            pos_transition(.5)
+          }
+        })
+        $('.images-compare-before .season_wrap').click(function(e) {
+          var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
+          var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
+          if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
+
+          } else {
+            $('.images-compare-before').attr('data-catalog', 'true');
+            $('.images-compare-after').attr('data-catalog', 'false');
+            $('.images-compare-before .season_wrap').removeClass('show');
+            $('.images-compare-after .season_wrap').addClass('show');
+            $('.images-compare-before').scrollTop(0);
+            pos_more();
+            pos_transition(.5)
+          }
+        })
 
         //Фото до/после - END
 
@@ -1185,9 +1240,12 @@
             width = 1160
           }
           var time = .35
-          var handle = $('#handle').offset().left + $('#handle').width() / 2
-          $('.images-compare-before').css('width', handle);
-          $('.images-compare-after').css('width', width - handle);
+          setTimeout(function() {
+            var handle = $('#handle').offset().left + $('#handle').width() / 2
+            // $('#handle').css('left', handle - 1);
+            $('.images-compare-before').css('width', handle);
+            $('.images-compare-after').css('width', width - handle - 3);
+          }, 300)
 
           $('#handle').css({
             'transition': 'all ' + time + 's ease'
@@ -1202,10 +1260,8 @@
 
 
         $(window).resize(function() {
-
           mask_wheel1('.images-compare-before');
           mask_wheel2('.images-compare-after');
-
           compareDocLoad();
         });
 
@@ -1218,14 +1274,13 @@
             parent_sect = $('.section-season');
 
           $('.catalog_modal' + period_class_div + '').remove().appendTo('.img-compare ' + period_class_div + '');
-
           $('section.compare ' + period_class_div + ' .images-compare-label').click(function() {
-
 
             $('body').addClass('catalog_modal');
             $('#menu').fadeOut();
 
             var dir = $('.img-compare').attr('data-direct');
+
             if (dir == "left") {
               console.log('left');
               $('section.compare ' + period_class_div + '').attr('data-catalog', 'true');
@@ -1234,8 +1289,31 @@
                 $.fn.fullpage.setMouseWheelScrolling(false);
                 $.fn.fullpage.setAllowScrolling(false);
               }, 50)
+
             } else if (dir == "center") {
-              console.log('center')
+              width = $('.compare').width();
+              w_w = $(window).width();
+              season_width = $('.img-compare .season_wrap').width();
+              $('section.compare ' + period_class_div + '').attr('data-catalog', 'true');
+              $('section.compare ' + period_class_div + ' .compare-wrapper').addClass('blur');
+              if (period_class_div == '.winter') {
+                pos_transition(.5)
+                pos_less();
+                console.log('winter');
+                $('.images-compare-before .season_wrap').addClass('show');
+                $('.images-compare-after .season_wrap').removeClass('show');
+              } else {
+                pos_transition(.5);
+                pos_more();
+                console.log('summer')
+                $('.images-compare-before .season_wrap').removeClass('show');
+                $('.images-compare-after .season_wrap').addClass('show');
+              }
+              setTimeout(function() {
+                $.fn.fullpage.setMouseWheelScrolling(false);
+                $.fn.fullpage.setAllowScrolling(false);
+              }, 50)
+
             } else if (dir == "right") {
               console.log('right');
               $('section.compare ' + period_class_div + '').attr('data-catalog', 'true');
@@ -1245,6 +1323,7 @@
                 $.fn.fullpage.setAllowScrolling(false);
               }, 50)
             }
+
           });
 
           $('section.compare .catalog-window__close-wrap').click(function() {
@@ -1253,6 +1332,8 @@
             $.fn.fullpage.setMouseWheelScrolling(true);
             $.fn.fullpage.setAllowScrolling(true);
             $('#menu').fadeIn();
+            $('.images-compare-before').attr('data-catalog', 'false');
+            $('.images-compare-after').attr('data-catalog', 'false');
 
           });
         }
