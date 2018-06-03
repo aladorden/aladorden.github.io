@@ -1332,8 +1332,6 @@
           });
 
           $('section.compare .catalog-window__close-wrap').click(function() {
-            // $('header').removeClass('s-header_down');
-            // $('header').addClass('s-header_up');
             $('section.compare ' + period_class_div + '').attr('data-catalog', 'false');
             $('section.compare ' + period_class_div + ' .compare-wrapper').removeClass('blur');
             $.fn.fullpage.setMouseWheelScrolling(true);
@@ -1345,7 +1343,7 @@
             function seasonCompareReset(time) {
               var width = $(window).width();
 
-              $('section.compare .img-compare').data('direct', 'center');
+              $('section.compare .img-compare').attr('data-direct', 'center');
               $('#handle').css('left', width / 2 + 'px');
               $('.images-compare-after').css('width', width / 2 + 'px');
               $('.images-compare-before').css('width', width / 2 + 'px');
@@ -1437,6 +1435,7 @@
           // console.log(index);
           function seasonCompareReset(time) {
             var width = $(window).width();
+            $('section.compare .img-compare').attr('data-direct', 'center');
             $('#handle').css('left', width / 2 + 'px');
             $('.images-compare-after').css('width', width / 2 + 'px');
             $('.images-compare-before').css('width', width / 2 + 'px');
