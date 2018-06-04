@@ -24,53 +24,60 @@
 					<ul class="fp-menu__list">
 						<li class="fp-menu__item fp-menu__item_main active fp-menu__item_rain_active"><a class="fp-menu__link" href="rain.html"></a></li>
 						<li class="fp-menu__item fp-menu__item_season fp-menu__item_rain_active"><a class="fp-menu__link" href="rain2.html"></a></li>
-						<li class="fp-menu__item fp-menu__item_gallery"><a class="fp-menu__link" href="rain3.html"></a></li>
+						<li class="fp-menu__item fp-menu__item_gallery fp-menu__item_rain_active"><a class="fp-menu__link" href="rain3.html"></a></li>
 						<li class="fp-menu__item fp-menu__item_reviews"><a class="fp-menu__link" href="rain4.html"></a></li>
 						<li class="fp-menu__item fp-menu__item_gallery"><a class="fp-menu__link" href="rain5.html"></a></li>
 						<li class="fp-menu__item fp-menu__item_reviews"><a class="fp-menu__link" href="rain6.html"></a></li>
 					</ul>
 				</nav>
 				<div class="fullpage">
-					<section class="widget widget_fullheight section section-season" data-anchor="section-season">
-						<div class="js-twentytwenty twentytwenty-container trans_hb trans_ha">
-							<div class="d-bgi twentytwenty-container__item twentytwenty-container__item_right js-tw-img d-pos trans_hb" id="background_rain">
-								<div class="tyre-choice-item__img tyre-choice-item__img_facet tyre-choice-item__img_facet_summer"><img src="../../img/tire_summer_facet.png" alt="summer"></div><a class="tyre-choice-item__caption tyre-choice-item__caption_summer" href="summer.html">
-									<div class="tyre-choice-item__caption-picture">
-										<svg class="tyre-choice-item__caption-img">
-											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#sun"></use>
-										</svg>
-									</div>Летние шины</a>
-								<canvas id="rain"></canvas>
-							</div>
-							<div class="d-bgi twentytwenty-container__item twentytwenty-container__item_left js-tw-img d-pos trans_hb" style="background-image:url(../../img/tire-choice_bg_winter.jpg)">
-								<div class="tyre-choice-item__img tyre-choice-item__img_facet tyre-choice-item__img_facet_winter"><img src="../../img/tire_winter_facet.png" alt="winter"></div><a class="tyre-choice-item__caption tyre-choice-item__caption_winter" href="winter.html">
-									<div class="tyre-choice-item__caption-picture">
-										<svg class="tyre-choice-item__caption-img">
-											<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#snowflake"></use>
-										</svg>
-									</div>Зимние шины</a>
-								<canvas id="canv"></canvas>
-							</div>
-						</div>
-						<div class="section-season__names">
-							<div class="section-season__item d-pos section-season__item_right d-table trans">
-								<div class="d-table__cell"> 
-									<div class="h2">Зима</div>
+					<section class="widget widget_fullheight section section-season compare" data-anchor="section-season">
+						<div class="img-compare" data-direct="center">
+							<div class="images-compare-before summer" data-catalog="false">
+								<div class="compare-wrapper">
+									<div class="images-compare-label">
+										<div class="tyre-choice-item__caption-picture">
+											<svg class="tyre-choice-item__caption-img">
+												<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#sun"></use>
+											</svg>
+										</div><span class="title">Летние шины  </span>
+									</div><img class="compr" src="../../img/tire-choice_bg_summer.jpg" alt="Летние шины"><img class="wheel" src="../../img/tire_summer_facet.png" alt="Летние шины">
+									<div class="wheel_bg">
+										<div class="rotate"><img src="../../img/bg_tw-z-wheel.png" alt="Зимние шины"></div>
+									</div>
+									<canvas id="rain_1"></canvas>
 								</div>
-							</div>
-							<div class="section-season__item d-pos section-season__item_left d-table trans">
-								<div class="d-table__cell">
+								<div class="season_wrap">
 									<div class="h2">Лето</div>
 								</div>
 							</div>
+							<div class="images-compare-after winter" data-catalog="false">
+								<div class="compare-wrapper">
+									<div class="images-compare-label">
+										<div class="tyre-choice-item__caption-picture">
+											<svg class="tyre-choice-item__caption-img">
+												<use xlink:href="../../img/svg-sprite/symbol/svg/sprite.symbol.svg#snowflake"></use>
+											</svg>
+										</div><span class="title">Зимние шины</span>
+									</div><img class="compr" src="../../img/tire-choice_bg_winter.jpg" alt="Зимние шины"><img class="wheel" src="../../img/tire_winter_facet.png" alt="Зимние шины">
+									<div class="wheel_bg">
+										<div class="rotate"><img src="../../img/bg_tw-l-wheel.png" alt="Зимние шины"></div>
+									</div>
+									<canvas id="canv"></canvas>
+								</div>
+								<div class="season_wrap">
+									<div class="h2">Зима</div>
+								</div>
+							</div>
+							<div class="images-compare-handle twentytwenty-handle" id="handle"></div>
 						</div>
 					</section>
 				</div>
 			</div>
 			<!--include parts/_footer-->
-			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js"></script>
-			<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+			<!--script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js")-->
+			<!--script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/CSSPlugin.min.js")-->
+			<!--script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js")-->
 			<script type="text/javascript" src="../js/vendor/jquery-3.3.1.js"></script>
 			<script type="text/javascript" src="../js/drupal.behavior.js"></script>
 			<script type="text/javascript" src="../../js/vendor/ScrollMagic.js"></script>
