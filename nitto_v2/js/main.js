@@ -1284,6 +1284,27 @@
           });
         }
 
+        function seasonCompareReset(time) {
+          var width = $(window).width();
+          $('section.compare .img-compare').attr('data-direct', 'center');
+          $('#handle').css('left', width / 2 + 'px');
+          $('.images-compare-after').css('width', width / 2 + 'px');
+          $('.images-compare-before').css('width', width / 2 + 'px');
+
+          $('#handle').css({
+            'transition': 'all ' + time + 's ease'
+          });
+          $('.images-compare-after').css({
+            'transition': 'all ' + time + 's ease',
+          });
+          $('.images-compare-before').css({
+            'transition': 'all ' + time + 's ease',
+          });
+          $('.images-compare-before .season_wrap').removeClass('show');
+          $('.images-compare-after .season_wrap').removeClass('show');
+        }
+        seasonCompareReset(0);
+
 
         $(window).resize(function() {
           mask_wheel1('.images-compare-before');
