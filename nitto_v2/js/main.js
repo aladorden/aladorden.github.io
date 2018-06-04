@@ -998,16 +998,14 @@
           $('#handle').css('left', season_width)
           $('.images-compare-after').css('width', w_w - season_width)
           $('.images-compare-before').css('width', season_width)
-          console.log(season_width);
-          console.log(w_w - season_width);
+
         }
 
         function pos_more() {
           $('#handle').css('left', w_w - season_width)
           $('.images-compare-after').css('width', season_width)
           $('.images-compare-before').css('width', w_w - season_width)
-          console.log(season_width);
-          console.log(w_w - season_width);
+
           $('.images-compare-before .catalog_modal ').mCustomScrollbar('scrollTo', 'top');
           $('.images-compare-after .catalog_modal ').mCustomScrollbar('scrollTo', 'top');
         }
@@ -1197,13 +1195,21 @@
 
           var pos_left = parent.find('.rotate img').offset().left - 20;
           var width_center_wheel = $('.img-compare .images-compare-before .wheel').width();
-          $('.img-compare .images-compare-before .wheel').css('left', w_w / 2 - width_center_wheel / 2 + 'px');
+          var width_wheel_bg = $('.img-compare .images-compare-before .wheel_bg').width();
+          // $('.img-compare .images-compare-before .wheel').css('left', w_w / 2 - width_center_wheel / 2 + 'px');
+          // $('.img-compare .images-compare-before .wheel_bg').css('left', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 + 'px');
           parent.find('.mask_wheel').remove();
           parent.find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
           parent.find('.mask_wheel').width(w + 40);
           parent.find('.mask_wheel').height(w_h);
+
+
+          //
           parent.find('.mask_wheel').css('left', pos_left_wheel_center - w + 'px');
           parent.find('.mask_wheel img').css('left', (pos_left_wheel_center - w) * -1 + 'px');
+
+          $('.img-compare .images-compare-before .wheel').css('left', w_w / 2 - width_center_wheel / 2 + 'px');
+          $('.img-compare .images-compare-before .wheel_bg').css('left', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 - 50 + 'px');
         }
 
         function mask_wheel2(parent_div) {
@@ -1221,16 +1227,25 @@
           var pos_left = w_w - parent.find('.rotate img').offset().left - 100 - w;
           var width_center_wheel = $('.img-compare .images-compare-after .wheel').width();
           var pos_right_wheel_center = $('.images-compare-after .wheel').offset().left + $('.images-compare-after .wheel').width() / 2
-          $('.img-compare .images-compare-after .wheel').css('right', w_w / 2 - width_center_wheel / 2 + 'px');
+          var width_wheel_bg = $('.img-compare .images-compare-after .wheel_bg').width();
 
-          parent.find('.mask_wheel').remove();
-          parent.find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
+          // $('.img-compare .images-compare-before .wheel_bg').css('left', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 - width_wheel_bg / 2 + 'px');
+
+          $('.img-compare .images-compare-after .wheel').css('right', w_w / 2 - width_center_wheel / 2 + 'px');
+          $('.img-compare .images-compare-after .wheel_bg').css('right', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 + 'px');
+
           parent.find('.mask_wheel').width(w + 40);
           parent.find('.mask_wheel').height(w_h);
 
           parent.find('.mask_wheel').css('right', pos_right_wheel_center - w + 'px');
           parent.find('.mask_wheel img').css('right', (pos_right_wheel_center - w) * -1 + 'px');
         }
+
+        var bg_img1 = $('.images-compare-before').find('img.compr').attr('src');
+        var bg_img2 = $('.images-compare-after').find('img.compr').attr('src');
+
+        $('.images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img1 + '"></div>');
+        $('.images-compare-after').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img2 + '"></div>');
         mask_wheel1('.images-compare-before');
         mask_wheel2('.images-compare-after');
         //Маска для колеса
@@ -2958,31 +2973,13 @@
 
     },
     "rainTyreAlter": function() {
-      function run() {
-        var image = document.getElementById('background-rain');
-        image.onload = function() {
-          var engine = new RainyDay({
-            image: this
-          });
-          engine.rain([
-            [1, 2, 8000]
-          ]);
-          engine.rain([
-            [3, 3, 0.88],
-            [5, 5, 0.9],
-            [6, 2, 1]
-          ], 100);
-        };
-        image.crossOrigin = 'anonymous';
-      }
       $(document).ready(function() {
-
-        run();
-
-      });
-
-      $(window).on('load', function() {
-        run();
+        new RainyDay({
+          image: image,
+          enableSizeChange: true,
+        });
+        var image = document.getElementById('background-rain');
+        image.crossOrigin = 'anonymous';
       })
     }
   };
