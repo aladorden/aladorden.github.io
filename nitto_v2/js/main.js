@@ -1052,11 +1052,13 @@
           var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
           if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
             if (val <= 25) {
+              pos_transition(.5)
               pos_less();
-              pos_transition(.25)
+
             } else if (val >= 75) {
+              pos_transition(.5)
               pos_more();
-              pos_transition(.25)
+
             }
 
             if (val <= 25) {
@@ -1066,15 +1068,19 @@
               $('.images-compare-before').removeClass('show_wheel');
               $('.images-compare-after').removeClass('show_wheel');
               $('.images-compare-after').addClass('show_wheel');
+              $('.img-compare').attr('data-direct', 'left');
+            } else {
+              $('.img-compare').attr('data-direct', 'center');
             }
             if (val >= 75) {
+
               $('.images-compare-after .season_wrap').addClass('show');
               $('.images-compare-before .season_wrap').removeClass('show');
-
 
               $('.images-compare-before').removeClass('show_wheel');
               $('.images-compare-after').removeClass('show_wheel');
               $('.images-compare-before').addClass('show_wheel');
+              $('.img-compare').attr('data-direct', 'right');
             }
           }
         });
@@ -1098,15 +1104,15 @@
             if (val <= 25) {
               $('.images-compare-before .season_wrap').addClass('show');
               $('.images-compare-after').addClass('show_wheel');
-              $('.img-compare').attr('data-direct', 'left');
+
             } else {
               $('.images-compare-before .season_wrap').removeClass('show');
               $('.images-compare-after').removeClass('show_wheel');
-              $('.img-compare').attr('data-direct', 'center');
+
             }
 
             if (val >= 75) {
-              $('.img-compare').attr('data-direct', 'right');
+
               $('.images-compare-after .season_wrap').addClass('show');
               $('.images-compare-before').addClass('show_wheel');
             } else {
@@ -1116,8 +1122,10 @@
 
             if (l <= season_width) {
               pos_less();
+              pos_transition(.5)
             } else if (l >= w_w - season_width) {
               pos_more();
+              pos_transition(.5)
             } else {
               pos_drag();
               pos_transition(0)
@@ -1200,7 +1208,7 @@
           // $('.img-compare .images-compare-before .wheel_bg').css('left', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 + 'px');
           parent.find('.mask_wheel').remove();
           parent.find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
-          parent.find('.mask_wheel').width(w + 40);
+          parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
 
 
@@ -1234,7 +1242,7 @@
           $('.img-compare .images-compare-after .wheel').css('right', w_w / 2 - width_center_wheel / 2 + 'px');
           $('.img-compare .images-compare-after .wheel_bg').css('right', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 + 'px');
 
-          parent.find('.mask_wheel').width(w + 40);
+          parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
 
           parent.find('.mask_wheel').css('right', pos_right_wheel_center - w + 'px');
@@ -1321,13 +1329,13 @@
               if (period_class_div == '.winter') {
                 $('.images-compare-before .season_wrap').addClass('show');
                 $('.images-compare-after .season_wrap').removeClass('show');
-                pos_transition(.35)
+                pos_transition(.5)
                 pos_less();
 
               } else {
                 $('.images-compare-before .season_wrap').removeClass('show');
                 $('.images-compare-after .season_wrap').addClass('show');
-                pos_transition(.35);
+                pos_transition(.5)
                 pos_more();
               }
               setTimeout(function() {
@@ -1377,8 +1385,7 @@
               $('.images-compare-after .season_wrap').removeClass('show');
             }
             setTimeout(function() {
-
-              seasonCompareReset(.35);
+              pos_transition(.5)
             }, 250)
 
 
