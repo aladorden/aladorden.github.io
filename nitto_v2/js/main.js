@@ -1241,7 +1241,7 @@
           var bg_img = parent.find('img.compr').attr('src');
           var w = parent.find('.rotate img').width();
           var h = parent.find('.rotate img').height();
-          var pos_left_wheel_center = $('.images-compare-before .wheel').offset().left + $('.images-compare-before .wheel').width() / 2
+          var pos_left_wheel_center = $('.images-compare-before .wheel').offset().left - 20 + $('.images-compare-before .wheel').width() / 2
 
           var pos_left = parent.find('.rotate img').offset().left - 20;
           var width_center_wheel = $('.img-compare .images-compare-before .wheel').width();
@@ -1250,8 +1250,8 @@
           parent.find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
           parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
-          parent.find('.mask_wheel').css('left', pos_left_wheel_center - w - 15 + 'px');
-          parent.find('.mask_wheel img').css('left', (pos_left_wheel_center - w) * -1 + 'px');
+          parent.find('.mask_wheel').css('left', pos_left_wheel_center - w - 20 + 'px');
+          parent.find('.mask_wheel img').css('left', (pos_left_wheel_center - w - 20) * -1 + 'px');
 
           $('.img-compare .images-compare-before .wheel').css('left', w_w / 2 - width_center_wheel / 2 + 'px');
           $('.img-compare .images-compare-before .wheel_bg').css('left', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 - 50 + 'px');
@@ -1271,7 +1271,7 @@
           var h = parent.find('.rotate img').height();
           var pos_left = w_w - parent.find('.rotate img').offset().left - 100 - w;
           var width_center_wheel = $('.img-compare .images-compare-after .wheel').width();
-          var pos_right_wheel_center = $('.images-compare-after .wheel').offset().left + $('.images-compare-after .wheel').width() / 2
+          var pos_right_wheel_center = $('.images-compare-after .wheel').offset().left - 20 + $('.images-compare-after .wheel').width() / 2
           var width_wheel_bg = $('.img-compare .images-compare-after .wheel_bg').width();
 
 
@@ -1279,8 +1279,8 @@
           $('.img-compare .images-compare-after .wheel_bg').css('right', w_w / 2 - width_center_wheel / 2 - width_wheel_bg / 2 + 'px');
           parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
-          parent.find('.mask_wheel').css('right', pos_right_wheel_center - w + 'px');
-          parent.find('.mask_wheel img').css('right', (pos_right_wheel_center - w) * -1 + 'px');
+          parent.find('.mask_wheel').css('right', pos_right_wheel_center - w -20 + 'px');
+          parent.find('.mask_wheel img').css('right', (pos_right_wheel_center - w - 20) * -1 + 'px');
         }
 
         var bg_img1 = $('.images-compare-before').find('img.compr').attr('src');
