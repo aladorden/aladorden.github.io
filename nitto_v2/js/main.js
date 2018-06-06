@@ -1425,7 +1425,7 @@
               setTimeout(function() {
                 $.fn.fullpage.setMouseWheelScrolling(false);
                 $.fn.fullpage.setAllowScrolling(false);
-              }, 100)
+              }, 300)
 
             } else if (dir == "center") {
               width = $('.compare').width();
@@ -1449,7 +1449,7 @@
               setTimeout(function() {
                 $.fn.fullpage.setMouseWheelScrolling(false);
                 $.fn.fullpage.setAllowScrolling(false);
-              }, 100)
+              }, 300)
 
             } else if (dir == "right") {
               console.log('right');
@@ -1459,7 +1459,7 @@
               setTimeout(function() {
                 $.fn.fullpage.setMouseWheelScrolling(false);
                 $.fn.fullpage.setAllowScrolling(false);
-              }, 100)
+              }, 300)
             }
 
           });
