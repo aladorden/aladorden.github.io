@@ -349,6 +349,9 @@
       //intro slider
       $(document).ready(function() {
 
+        // $('.intro-slider__list').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        //   remove_first_blur_img()
+        // });
         $('.intro-slider__list').slick({
           prevArrow: $(".intro-arrow__left"),
           nextArrow: $(".intro-arrow__right"),
@@ -359,7 +362,7 @@
       });
 
 
-      //Top_slider - START
+      //Denys Vol - START
 
       $(document).ready(function() {
 
@@ -403,34 +406,18 @@
           setTimeout(function() {
             loupe_act.css({
               'transform': 'translateX(' + p_w(offset_right) + 'px)',
-              'transition': 'all 1s ease-in-out'
+              'transition': 'all 1s ease'
             });
 
             loupe_act_front.css({
               'transform': 'translateX(' + p_w(-offset_right) + 'px)',
-              'transition': 'all 1s ease-in-out'
+              'transition': 'all 1s ease'
             });
             wheel_act.css({
               'transform': 'rotate(' + rotate_deg_end + 'deg)',
-              'transition': 'all 1s ease-in-out'
+              'transition': 'all 1s ease'
             });
           }, 200)
-
-          setTimeout(function() {
-            loupe_act.css({
-              'transform': 'translateX(' + p_w(offset_right - 1.2) + 'px)',
-              'transition': 'all .40s ease-out'
-            });
-
-            loupe_act_front.css({
-              'transform': 'translateX(' + p_w(-offset_right + 1.2) + 'px)',
-              'transition': 'all .40s ease-out'
-            });
-            wheel_act.css({
-              'transform': 'rotate(717deg)',
-              'transition': 'all .40s ease-out'
-            });
-          }, 1200)
         }
 
         function slide_show_2(offset_right, rotate_deg_end) {
@@ -460,22 +447,6 @@
             'transform': 'rotate(' + rotate_deg_end + 'deg)',
             'transition': 'all .5s ease'
           });
-
-          // setTimeout(function() {
-          //   loupe_act.css({
-          //     'transform': 'translateX(-100px)',
-          //     'transition': 'all 1s ease'
-          //   });
-          //
-          //   loupe_act_front.css({
-          //     'transform': 'translateX(100px)',
-          //     'transition': 'all 1s ease'
-          //   });
-          //   wheel_act.css({
-          //     'transform': 'rotate(20deg)',
-          //     'transition': 'all 1s ease'
-          //   });
-          // }, 4000)
         }
 
         var remove_first_blur_img = function() {
@@ -496,6 +467,10 @@
         setTimeout(function() {
           active_slide.find('.blur_image').addClass('show')
         }, 1000)
+
+        // $(window).resize(function() {
+        //   slide_show_1(11, 0.5, 2);
+        // });
 
 
 
@@ -545,10 +520,11 @@
           slide_nav_next('.intro-arrow__right', 2500)
           slide_nav_prev('.intro-arrow__left', 2500)
         }, 2500)
+        //slider в шапке - END
 
 
       });
-      ///Top_slider - END
+      //Denys Vol - END
 
       $(document).ready(function() {
         $('.review-card__wrap').slick({
@@ -1010,6 +986,7 @@
     },
     'jsTwentytwenty': function() {
 
+
       //Зимние/летние шины - START
       $(document).ready(function() {
         var l
@@ -1236,36 +1213,36 @@
         });
 
 
-        // $('.images-compare-after .season_wrap').click(function() {
-        //   var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
-        //   var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
-        //   if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
-        //
-        //   } else {
-        //     $('.images-compare-after').attr('data-catalog', 'true');
-        //     $('.images-compare-before').attr('data-catalog', 'false');
-        //     $('.images-compare-after .season_wrap').removeClass('show');
-        //     $('.images-compare-before .season_wrap').addClass('show');
-        //     $('.images-compare-after').scrollTop(0);
-        //     pos_less();
-        //     pos_transition(.5)
-        //   }
-        // });
-        // $('.images-compare-before .season_wrap').click(function() {
-        //   var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
-        //   var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
-        //   if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
-        //
-        //   } else {
-        //     $('.images-compare-before').attr('data-catalog', 'true');
-        //     $('.images-compare-after').attr('data-catalog', 'false');
-        //     $('.images-compare-before .season_wrap').removeClass('show');
-        //     $('.images-compare-after .season_wrap').addClass('show');
-        //     $('.images-compare-before').scrollTop(0);
-        //     pos_more();
-        //     pos_transition(.5)
-        //   }
-        // });
+        $('.images-compare-after .season_wrap').click(function() {
+          var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
+          var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
+          if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
+
+          } else {
+            $('.images-compare-after').attr('data-catalog', 'true');
+            $('.images-compare-before').attr('data-catalog', 'false');
+            $('.images-compare-after .season_wrap').removeClass('show');
+            $('.images-compare-before .season_wrap').addClass('show');
+            $('.images-compare-after').scrollTop(0);
+            pos_less();
+            pos_transition(.5)
+          }
+        });
+        $('.images-compare-before .season_wrap').click(function() {
+          var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
+          var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
+          if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
+
+          } else {
+            $('.images-compare-before').attr('data-catalog', 'true');
+            $('.images-compare-after').attr('data-catalog', 'false');
+            $('.images-compare-before .season_wrap').removeClass('show');
+            $('.images-compare-after .season_wrap').addClass('show');
+            $('.images-compare-before').scrollTop(0);
+            pos_more();
+            pos_transition(.5)
+          }
+        });
 
 
 
@@ -1549,12 +1526,14 @@
             var catalog_show_1 = $('.images-compare-before').attr('data-catalog');
             var catalog_show_2 = $('.images-compare-after').attr('data-catalog');
             var season_width = $('.img-compare .season_wrap').width();
-
             if ((catalog_show_1 !== 'true') && (catalog_show_2 !== 'true')) {
 
             } else {
+
               $('section.compare .img-compare').addClass('catalog_modal');
               if (val <= 20) {
+
+
                 if (direction == 'left') {
                   setTimeout(function() {
                     $('.images-compare-before').attr('data-catalog', 'false');
@@ -1606,9 +1585,6 @@
         }
         move_direction();
 
-
-
-
         function catalog_modal(period_class_div) {
 
           var w_h = $(window).height(),
@@ -1616,9 +1592,9 @@
 
           $('.catalog_modal' + period_class_div + '').remove().appendTo('.img-compare ' + period_class_div + '');
           $('section.compare ' + period_class_div + ' .images-compare-label').click(function() {
-
             $('.images-compare-before .season_wrap .h2').removeClass('move');
             $('.images-compare-after .season_wrap .h2').removeClass('move');
+            // $('section.compare .img-compare').attr('data-direct', 'center');
 
             setTimeout(function() {
               $('.images-compare-before .rotate img, .images-compare-after .rotate img, .images-compare-before .rotate .shadow, .images-compare-after .rotate .shadow').css('transition', 'all 0s ease 0s');
@@ -1629,9 +1605,7 @@
               $('.images-compare-after').addClass('show_wheel_catalog');
               $('.images-compare-before .wheel_bg *, imgages-compare-before .wheel_bg, .images-compare-after .wheel_bg *, imgages-compare-after .wheel_bg').css('transition', 'all 0s ease 0s');
             }, 1000)
-
             $('#menu').fadeOut();
-
             var dir = $('.img-compare').attr('data-direct');
 
             if (dir == 'left') {
@@ -3352,16 +3326,13 @@
 
 
       //rain_test_1_END
-
     },
     "rainTyreAlter": function() {
       $(document).ready(function() {
         new RainyDay({
-          image: image,
-          enableSizeChange: true,
+          image: 'background-rain',
+          enableSizeChange: true
         });
-        var image = document.getElementById('background-rain');
-        image.crossOrigin = 'anonymous';
       })
     }
   };
