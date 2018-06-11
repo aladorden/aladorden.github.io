@@ -3380,32 +3380,32 @@
         var image1 = document.getElementById('mask_before')
         new RainyDay({
           image: image1,
-          enableSizeChange: false,
+          enableSizeChange: true,
         });
 
-        setTimeout(function() {
-          var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
-          console.log(pos_left)
-          $('.images-compare-before.water_drop .mask_wheel canvas').css({
-            'left': -pos_left - 10,
-            'transition': 'all 0s ease'
-          });
-        }, 0)
-        $(window).resize(function() {
-          var image1 = document.getElementById('mask_before')
-          new RainyDay({
-            image: image1,
-            enableSizeChange: false,
-          });
-          setTimeout(function() {
-            var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
-            console.log(pos_left)
-            $('.images-compare-before.water_drop .mask_wheel canvas').css({
-              'left': -pos_left - 10,
-              'transition': 'all 0s ease'
-            });
-          }, 3000)
-        });
+        // setTimeout(function() {
+        //   var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
+        //   console.log(pos_left)
+        //   $('.images-compare-before.water_drop .mask_wheel canvas').css({
+        //     'left': -pos_left - 10,
+        //     'transition': 'all 0s ease'
+        //   });
+        // }, 0)
+        // $(window).resize(function() {
+        //   var image1 = document.getElementById('mask_before')
+        //   new RainyDay({
+        //     image: image1,
+        //     enableSizeChange: false,
+        //   });
+        //   setTimeout(function() {
+        //     var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
+        //     console.log(pos_left)
+        //     $('.images-compare-before.water_drop .mask_wheel canvas').css({
+        //       'left': -pos_left - 10,
+        //       'transition': 'all 0s ease'
+        //     });
+        //   }, 3000)
+        // });
       });
     }
   };
