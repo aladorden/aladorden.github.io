@@ -3367,7 +3367,7 @@
     },
     "rainTyreAlter": function() {
       $(document).ready(function() {
-        var image = document.getElementsByClassName('images-compare-before');
+        var image = document.getElementById('background-rain');
         new RainyDay({
           image: image,
           enableSizeChange: true,
