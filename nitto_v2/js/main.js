@@ -1291,7 +1291,8 @@
 
 
           parent.find('.mask_wheel').remove();
-          parent.find('.compare-wrapper').append('<div class="mask_wheel"><img id="mask_before" src="' + bg_img + '"></div>');
+          // parent.find('.compare-wrapper').append('<div class="mask_wheel"><img id="mask_before" src="' + bg_img + '"></div>');
+          parent.find('.compare-wrapper').append('<div class="mask_wheel"><div id="mask_before"></div>');
           parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
 
@@ -3376,12 +3377,14 @@
       });
 
       $(document).ready(function() {
-        var image = document.getElementById('mask_before')
-        new RainyDay({
-          image: image,
-          enableSizeChange: true,
-        });
-        image.crossOrigin = 'anonymous';
+        setTimeout(function() {
+          var image = document.getElementById('mask_before')
+          new RainyDay({
+            image: image,
+            enableSizeChange: true,
+          });
+          image.crossOrigin = 'anonymous';
+        }, 200)
       });
     }
   };
