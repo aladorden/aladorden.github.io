@@ -3394,9 +3394,8 @@
 
         // Initialize our canvas
         var stage = document.getElementById('rain_3')
-        stage.width = 500;
-        stage.height = 300;
-        document.body.appendChild(stage);
+        stage.width = $(window).width();
+        stage.height = $(window).height();
         var ctx = stage.getContext("2d");
 
         var lastTime = 0;
@@ -3471,7 +3470,7 @@
         };
 
         var render = function() {
-          ctx.fillStyle = "black";
+          ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
           ctx.fillRect(0, 0, stage.width, stage.height);
           renderDrops(ctx);
         }
