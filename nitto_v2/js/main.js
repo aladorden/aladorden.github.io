@@ -1291,8 +1291,11 @@
 
 
           parent.find('.mask_wheel').remove();
-          // parent.find('.compare-wrapper').append('<div class="mask_wheel"><img id="mask_before" src="' + bg_img + '"></div>');
-          parent.find('.compare-wrapper').append('<div class="mask_wheel"><div id="mask_before"></div>');
+          if (parent.hasClass('water_drop')) {
+            parent.find('.compare-wrapper').append('<div class="mask_wheel"><img id="mask_before" src="' + bg_img + '"></div>');
+          } else {
+            parent.find('.compare-wrapper').append('<div class="mask_wheel"><div id="mask_before"></div>');
+          }
           parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
 
