@@ -1270,6 +1270,13 @@
 
 
         //Маска для колеса
+        if ($('.img-compare .images-compare-before').hasClass('water_drop')) {
+          console.log('water')
+        } else {
+          console.log('no water')
+          $('.img-compare .images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
+        }
+
         function mask_wheel1(parent_div) {
           var w_w = $(window).width();
           if (w_w >= 1160) {
@@ -1290,14 +1297,8 @@
           var width_wheel_bg = $('.img-compare .images-compare-before .wheel_bg').width();
 
 
-          parent.find('.mask_wheel').remove();
-          if (parent.hasClass('water_drop')) {
-            parent.find('.compare-wrapper').append('<div class="mask_wheel"><div id="mask_before"></div>');
-            console.log('water')
-          } else {
-            console.log('no water')
-            parent.find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
-          }
+          // parent.find('.mask_wheel').remove();
+
           parent.find('.mask_wheel').width(w + 80);
           parent.find('.mask_wheel').height(w_h);
 
@@ -3372,6 +3373,7 @@
 
     },
     "rainTyreAlter": function() {
+
       $(document).ready(function() {
         var image = document.getElementById('background-rain1');
         new RainyDay({
@@ -3388,29 +3390,24 @@
           enableSizeChange: true,
         });
 
-        // setTimeout(function() {
-        //   var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
-        //   console.log(pos_left)
-        //   $('.images-compare-before.water_drop .mask_wheel canvas').css({
-        //     'left': -pos_left - 10,
-        //     'transition': 'all 0s ease'
-        //   });
-        // }, 0)
-        // $(window).resize(function() {
-        //   var image1 = document.getElementById('mask_before')
-        //   new RainyDay({
-        //     image: image1,
-        //     enableSizeChange: false,
-        //   });
-        //   setTimeout(function() {
-        //     var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
-        //     console.log(pos_left)
-        //     $('.images-compare-before.water_drop .mask_wheel canvas').css({
-        //       'left': -pos_left - 10,
-        //       'transition': 'all 0s ease'
-        //     });
-        //   }, 3000)
-        // });
+        setTimeout(function() {
+          var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
+          console.log(pos_left)
+          $('.images-compare-before.water_drop .mask_wheel canvas').css({
+            'left': -pos_left - 10,
+            'transition': 'all 0s ease'
+          });
+        }, 0)
+        $(window).resize(function() {
+          setTimeout(function() {
+            var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
+            console.log(pos_left)
+            $('.images-compare-before.water_drop .mask_wheel canvas').css({
+              'left': -pos_left - 10,
+              'transition': 'all 0s ease'
+            });
+          }, 3000)
+        });
       });
     }
   };
