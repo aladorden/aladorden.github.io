@@ -3633,10 +3633,10 @@
         console.log('3')
       }
 
-      // if ($('#rain_4').length !== 0) {
-      //   rain_4();
-      //   console.log('4')
-      // }
+      if ($('#rain_4').length !== 0) {
+        rain_4();
+        console.log('4')
+      }
 
 
 
