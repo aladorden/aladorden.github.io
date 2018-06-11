@@ -1507,7 +1507,6 @@
                 if (direction == "left") {
                   summer_wheel_hide_left(.7);
                 } else {
-                  $('.images-compare-before .catalog-window__close-text').addClass('hidden');
                   summer_wheel_move();
                   $('.images-compare-before .season_wrap .h2').removeClass('move');
                 }
@@ -1515,16 +1514,22 @@
               if (data_catalog_after != 'true') {
                 if (direction == "left") {
                   winter_wheel_hide_left(1.3);
+                  $('section.compare .img-compare').removeClass('simplified_version');
                   setTimeout(function() {
+
                     winter_wheel_hide_right(0);
                   }, 1000)
                 } else {
                   winter_wheel_move();
                 }
               }
+              $('.images-compare-before .catalog-window__close').removeClass('hidden');
+              $('.images-compare-after .catalog-window__close').removeClass('hidden');
             } else if (val >= 80) {
+
               if (data_catalog_before != 'true') {
                 summer_wheel_hide_right(1.3);
+                $('section.compare .img-compare').removeClass('simplified_version');
               }
               setTimeout(function() {
                 summer_wheel_hide_left(0);
@@ -1539,10 +1544,14 @@
                 winter_wheel_move(.4);
                 $('.images-compare-after .season_wrap .h2').removeClass('move');
               }
+              $('.images-compare-before .catalog-window__close').removeClass('hidden');
+              $('.images-compare-after .catalog-window__close').removeClass('hidden');
 
             } else {
               summer_wheel_move(.4);
               winter_wheel_move(.4);
+              $('.images-compare-before .catalog-window__close').addClass('hidden');
+              $('.images-compare-after .catalog-window__close').addClass('hidden');
             }
           }
 
@@ -1653,9 +1662,9 @@
               w_w = $(window).width();
               season_width = $('.img-compare .season_wrap').width();
               $('section.compare .img-compare').addClass('simplified_version');
-              setTimeout(function() {
-                $('section.compare .img-compare').removeClass('simplified_version');
-              }, 750);
+              // setTimeout(function() {
+              //   $('section.compare .img-compare').removeClass('simplified_version');
+              // }, 750);
               $('section.compare ' + period_class_div + '').attr('data-catalog', 'true');
               $('section.compare div:not(' + period_class_div + ')').attr('data-catalog', 'false');
               $('section.compare ' + period_class_div + ' .compare-wrapper').addClass('blur');
