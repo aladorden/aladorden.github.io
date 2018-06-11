@@ -1270,12 +1270,12 @@
 
 
         //Маска для колеса
-        var bg_img_src = $('.img-compare .images-compare-before').find('img.compr').attr('src');
+        var bg_img_src = $('.img-compare .images-compare-before:not(.water_drop)').find('img.compr').attr('src');
         if ($('.img-compare .images-compare-before').hasClass('water_drop')) {
           console.log('water')
         } else {
           console.log('no water')
-          $('.img-compare .images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img_src + '"></div>');
+          $('.img-compare .images-compare-before:not(.water_drop)').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img_src + '"></div>');
         }
 
         function mask_wheel1(parent_div) {
@@ -3407,7 +3407,7 @@
               'left': -pos_left - 10,
               'transition': 'all 0s ease'
             });
-          }, 3000)
+          }, 100)
         });
       });
     }
