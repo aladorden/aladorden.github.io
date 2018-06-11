@@ -1507,7 +1507,9 @@
                 if (direction == "left") {
                   summer_wheel_hide_left(.7);
                 } else {
+                  $('.images-compare-before .catalog-window__close-text').addClass('hidden');
                   summer_wheel_move();
+                  $('.images-compare-before .season_wrap .h2').removeClass('move');
                 }
               }
               if (data_catalog_after != 'true') {
@@ -1516,7 +1518,6 @@
                   setTimeout(function() {
                     winter_wheel_hide_right(0);
                   }, 1000)
-
                 } else {
                   winter_wheel_move();
                 }
@@ -1536,6 +1537,7 @@
               if (direction == "left") {
                 summer_wheel_hide_left(0);
                 winter_wheel_move(.4);
+                $('.images-compare-after .season_wrap .h2').removeClass('move');
               }
 
             } else {
@@ -1643,7 +1645,7 @@
               setTimeout(function() {
                 $.fn.fullpage.setMouseWheelScrolling(false);
                 $.fn.fullpage.setAllowScrolling(false);
-              }, 100)
+              }, 200)
 
             } else if (dir == 'center') {
               console.log('center');
