@@ -3380,7 +3380,7 @@
         var image = document.getElementById('mask_before')
         new RainyDay({
           image: image,
-          enableSizeChange: false,
+          enableSizeChange: true,
         });
 
         setTimeout(function() {
@@ -3392,11 +3392,6 @@
           });
         }, 0)
         $(window).resize(function() {
-          var image = document.getElementById('mask_before')
-          new RainyDay({
-            image: image,
-            enableSizeChange: false,
-          });
           setTimeout(function() {
             var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
             console.log(pos_left)
@@ -3404,7 +3399,7 @@
               'left': -pos_left - 10,
               'transition': 'all 0s ease'
             });
-          }, 1000)
+          }, 3000)
         });
       });
     }
