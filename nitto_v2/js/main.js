@@ -3051,10 +3051,10 @@
       });
     },
     "rainTyre": function() {
-      new RainyDay({
+      /* new RainyDay({
         image: 'background-rain',
-        enableSizeChange: true
-      });
+        enableSizeChange:	true
+      }); */
 
       function rain_0() {
         var canvas = document.getElementById('rain');
@@ -3365,16 +3365,16 @@
       //rain_test_1_END
 
     },
-    // "rainTyreAlter": function() {
-    //   $(document).ready(function() {
-    //     new RainyDay({
-    //       image: image,
-    //       enableSizeChange: true,
-    //     });
-    //     var image = document.getElementById('background-rain');
-    //     image.crossOrigin = 'anonymous';
-    //   })
-    // }
+    "rainTyreAlter": function() {
+      $(document).ready(function() {
+        var image = document.getElementById('background-rain');
+        new RainyDay({
+          image: image,
+          enableSizeChange: true,
+        });
+        image.crossOrigin = 'anonymous';
+      })
+    }
   };
 
   var app = {
