@@ -3377,14 +3377,27 @@
       });
 
       $(document).ready(function() {
+
+        var image = document.getElementById('mask_before')
+        new RainyDay({
+          image: image,
+          enableSizeChange: true,
+        });
+        image.crossOrigin = 'anonymous';
+
         setTimeout(function() {
-          var image = document.getElementById('mask_before')
-          new RainyDay({
-            image: image,
-            enableSizeChange: true,
-          });
-          image.crossOrigin = 'anonymous';
-        }, 200)
+          var pos_left = $('.images-compare-before.watter_drop').offset().left;
+          console.log(pos_left)
+          $('.images-compare-before.watter_drop').find('.mask_wheel .canvas').css('left', -pos_left);
+        }, 300)
+        $(window).resize(function() {
+          setTimeout(function() {
+            var pos_left = $('.images-compare-before.watter_drop').offset().left;
+            console.log(pos_left)
+            $('.images-compare-before.watter_drop').find('.mask_wheel .canvas').css('left', -pos_left);
+          }, 300)
+
+        })
       });
     }
   };
