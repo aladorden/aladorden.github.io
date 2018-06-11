@@ -3380,7 +3380,7 @@
         var image = document.getElementById('mask_before')
         new RainyDay({
           image: image,
-          enableSizeChange: true,
+          enableSizeChange: false,
         });
 
         setTimeout(function() {
@@ -3395,7 +3395,7 @@
           var image = document.getElementById('mask_before')
           new RainyDay({
             image: image,
-            enableSizeChange: true,
+            enableSizeChange: false,
           });
           setTimeout(function() {
             var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
@@ -3404,7 +3404,7 @@
               'left': -pos_left - 10,
               'transition': 'all 0s ease'
             });
-          }, 0)
+          }, 1000)
         });
       });
     }
