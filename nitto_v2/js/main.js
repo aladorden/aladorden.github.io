@@ -3386,7 +3386,10 @@
         setTimeout(function() {
           var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
           console.log(pos_left)
-          $('.images-compare-before.water_drop .mask_wheel canvas').css('left', -pos_left - 10);
+          $('.images-compare-before.water_drop .mask_wheel canvas').css({
+            'left': -pos_left - 10,
+            'transition': 'all 0s ease'
+          });
         }, 0)
         $(window).resize(function() {
           var image = document.getElementById('mask_before')
@@ -3397,8 +3400,11 @@
           setTimeout(function() {
             var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
             console.log(pos_left)
-            $('.images-compare-before.water_drop .mask_wheel canvas').css('left', -pos_left);
-          }, 100)
+            $('.images-compare-before.water_drop .mask_wheel canvas').css({
+              'left': -pos_left - 10,
+              'transition': 'all 0s ease'
+            });
+          }, 0)
         });
       });
     }
