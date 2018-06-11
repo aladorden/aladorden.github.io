@@ -3355,144 +3355,265 @@
       }
 
       function rain_3() {
-        const FIXED_STEP = 16;
+        var sketchProc = function(processingInstance) {
+          with(processingInstance) {
+            size(window.innerWidth, window.innerHeight);
+            //ellipseMode(RADIUS);
+            //textAlign(CENTER, CENTER);
+            frameRate(60);
+            smooth();
 
-        // Wind
-        const WIND_VELOCITY = -0.1; // Determines how slanted the rain drops fall, 0 = straight down
+            /*************
+             * VARIABLES
+             **************/
 
-        // Drop settings
-        const DROP_COUNT = 200; // Adjust for more/less rain drops
-        const DROP_WIDTH = 1; // Increase for thicker rain
-        const DROP_X_BUFFER = 50; // How far to the sides of the screen drops will spawn
-        const DROP_COLOR = "lightblue";
-        const DROP_MIN_VELOCITY = 0.3;
-        const DROP_MAX_VELOCITY = 0.6;
-        const DROP_MIN_LENGTH = 20;
-        const DROP_MAX_LENGTH = 40;
-        const DROP_MIN_ALPHA = 0.3;
-        const DROP_MAX_ALPHA = 1;
+            /*
 
-        // Math helpers
-        var math = {
-          // Random integer between min and max
-          randomInteger: function(min, max) {
-            return Math.round((Math.random() * (max - min)) + min);
-          },
-          // Linear Interpolation
-          lerp: function(a, b, n) {
-            return a + ((b - a) * n);
-          },
-          scaleVector: function(v, s) {
-            v.x *= s;
-            v.y *= s;
-          },
-          normalizeVector: function(v) {
-            var m = Math.sqrt(v.x * v.x + v.y * v.y);
-            math.scaleVector(v, 1 / m);
+            TODO:
+
+            */
+
+            var backgroundColor = color(0, 13, 43); // Canvas background color
+            var winWidth = window.innerWidth;
+            var winHeight = window.innerHeight;
+            var xCenter = winWidth / 2; // Canvas center
+            var yCenter = winHeight / 2; // Canvas center
+
+            /* START YOUR CODE BELOW */
+
+            var rainNum = 400; // How many Rain Drops
+            var xPositions = new Array(rainNum);
+            randomizeArray(xPositions, 0, winWidth);
+            var yPositions = new Array(rainNum);
+            randomizeArray(yPositions, 0, winHeight);
+            var rainSize = new Array(rainNum);
+            randomizeArray(rainSize, 0, 1);
+
+            var dropColor = [];
+
+            /*************
+             * HELPER FUNCTIONS
+             **************/
+
+            // Function: Take (array) length and randomize numbers based on lower range (low) and upper range (high)
+            function randomizeArray(array, low, high) {
+              for (var i = 0; i < array.length; i++) {
+                array[i] = random(low, high);
+              }
+            }
+
+
+
+            /* Draw Function */
+            draw = function() {
+              background(backgroundColor);
+
+              for (var i = 0; i < xPositions.length; i++) {
+                noStroke();
+                fill(219, 241, 255);
+                ellipse(xPositions[i], yPositions[i], rainSize[i], 13);
+                //image(b, xPositions[i]-50, yPositions[i]*1.5, 30, 50);
+                yPositions[i] += random(0, 30);
+                if (yPositions[i] > winHeight) {
+                  yPositions[i] = 0;
+                }
+              }
+
+              // if(mousePressed) {
+              // 		xPositions.push(mouseX);
+              // 		yPositions.push(mouseY);
+              // }
+            };
+
+            /* END YOUR CODE */
+
           }
-        };
+        }
 
-        // Initialize our canvas
-        var stage = document.getElementById('rain_3')
-        stage.width = $(window).width();
-        stage.height = $(window).height();
-        var ctx = stage.getContext("2d");
+        // Add Canvas to Page
+        var canvas = document.getElementById("rain_3");
+        var processingInstance = new Processing(canvas, sketchProc);
+
+      }
+
+
+      function rain_4() {
+        // Greet them warmly, and go get some pizza.
+
+        console.clear();
+
+        var randomBool = (function() {
+          var a = new Uint8Array(1);
+          return function() {
+            crypto.getRandomValues(a);
+            return a[0] < 127;
+          };
+        })();
 
         var lastTime = 0;
 
-        // Collection of rain drops
-        var drops = [];
+        var cvs = document.getElementById("rain_4");
+        var ctx = cvs.getContext("2d");
+        var body = document.body;
 
-        var initDrops = function() {
-          for (var i = 0; i < DROP_COUNT; i++) {
-            var drop = {};
-            resetDrop(drop);
-            drop.y = math.randomInteger(0, stage.height);
-            drops.push(drop);
+        var rainCloud = [];
+
+        var raindropHeight = 8 * (devicePixelRatio || 1);
+        var rainFlow = 0;
+        var rainSpeed = .75 * (devicePixelRatio || 1);
+        var totalDrops = 1000;
+
+        var fps = 60;
+        var now;
+        var then = 0;
+        var interval = 1000 / fps;
+        var delta;
+
+        function fillTheCloud() {
+          if (rainCloud.length) {
+            rainCloud = []
           }
-        };
-
-        // Reset a drop to the top of the canvas
-        var resetDrop = function(drop) {
-          var scale = Math.random();
-          drop.x = math.randomInteger(-DROP_X_BUFFER, stage.width + DROP_X_BUFFER);
-          drop.vx = WIND_VELOCITY;
-          drop.vy = math.lerp(DROP_MIN_VELOCITY, DROP_MAX_VELOCITY, scale);
-          drop.l = math.lerp(DROP_MIN_LENGTH, DROP_MAX_LENGTH, scale);
-          drop.a = math.lerp(DROP_MIN_ALPHA, DROP_MAX_ALPHA, scale);
-          drop.y = math.randomInteger(-drop.l, 0);
-        };
-
-        var updateDrops = function(dt) {
-          for (var i = drops.length - 1; i >= 0; --i) {
-            var drop = drops[i];
-            drop.x += drop.vx * dt;
-            drop.y += drop.vy * dt;
-
-            if (
-              drop.y > stage.height + drop.l
-            ) {
-              resetDrop(drop);
-            }
+          for (var i = 0; i < totalDrops; i++) {
+            var droplet = new Raindrop(ctx, randomX(), randomStartPosition());
+            rainCloud.push(droplet);
           }
-        };
-
-        var renderDrops = function(ctx) {
-          ctx.save();
-          ctx.strokeStyle = DROP_COLOR;
-          ctx.lineWidth = DROP_WIDTH;
-          ctx.compositeOperation = "lighter";
-
-          for (var i = 0; i < drops.length; ++i) {
-            var drop = drops[i];
-
-            var x1 = Math.round(drop.x);
-            var y1 = Math.round(drop.y);
-
-            var v = {
-              x: drop.vx,
-              y: drop.vy
-            };
-            math.normalizeVector(v);
-            math.scaleVector(v, -drop.l);
-
-            var x2 = Math.round(x1 + v.x);
-            var y2 = Math.round(y1 + v.y);
-
-            ctx.globalAlpha = drop.a;
-            ctx.beginPath();
-            ctx.moveTo(x1, y1);
-            ctx.lineTo(x2, y2);
-            ctx.stroke();
-            ctx.closePath();
-          }
-          ctx.restore();
-        };
-
-        var render = function() {
-          ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-          ctx.fillRect(0, 0, stage.width, stage.height);
-          renderDrops(ctx);
         }
 
-        var update = function(time) {
-          var dt = time - lastTime;
-          lastTime = time;
-          if (dt > 100) {
-            dt = FIXED_STEP;
+        function randomX() {
+          return Math.random() * body.clientWidth * (devicePixelRatio || 1);
+        }
+
+        function randomY() {
+          return Math.random() * body.clientHeight * (devicePixelRatio || 1);
+        }
+
+
+        function Raindrop(ctx, x, y, speed) {
+          this.x = x;
+          this.y = y;
+          this.draw = draw;
+          this.speed = (Math.random() * 0.5) + rainSpeed;
+          this.isBelowGround = isBelowGround;
+          this.brightness = (0.65 * Math.random())
+
+          function draw() {
+            ctx.beginPath();
+            ctx.strokeStyle = "rgba(255,255,255," + parseFloat(this.brightness) + ")";
+            ctx.lineWidth = 1;
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(this.x + rainFlow, this.y + (raindropHeight * Math.random()));
+            ctx.stroke();
           }
 
-          while (dt >= FIXED_STEP) {
-            updateDrops(FIXED_STEP);
-            dt -= FIXED_STEP;
+          function fall() {
+            this.x += this.horizontalMovement;
+            this.y += this.fallSpeed;
           }
 
-          render();
-          requestAnimationFrame(update);
-        };
+          function isBelowGround() {
+            return cvs.height <= this.y;
+          }
+        }
 
-        initDrops();
-        requestAnimationFrame(update);
+
+        function heartbeat(now) {
+          if (!then) {
+            then = now;
+          }
+          var delta = (now - then);
+          // console.log("D:",delta)
+          if (delta > interval) {
+            var adjustedGlasses = adjustGlassesIfNeeded();
+            if (adjustedGlasses) {
+              fillTheCloud();
+            }
+            blink();
+            lookAtTheWorld(delta);
+            alterTheFlow();
+            then = now - (delta % interval)
+          }
+          requestAnimationFrame(heartbeat);
+        }
+        requestAnimationFrame(heartbeat);
+
+        function adjustGlassesIfNeeded() {
+
+          var pixelNotion = window.devicePixelRatio || 1;
+
+          var targetWidth = body.clientWidth * pixelNotion;
+          var targetHeight = body.clientHeight * pixelNotion;
+
+          var somethingIsNotRight = (cvs.width !== targetWidth) || (cvs.height !== targetHeight);
+
+          if (somethingIsNotRight) {
+            cvs.width = targetWidth;
+            cvs.height = targetHeight;
+            return true;
+          } else {
+            return false;
+          }
+
+        }
+
+        function blink() {
+          ctx.clearRect(0, 0, cvs.width, cvs.height);
+        }
+
+        function lookAtTheWorld(delta) {
+          for (var i = 0; i < rainCloud.length; i++) {
+            rainCloud[i].draw();
+
+            if (rainCloud[i].isBelowGround()) {
+              rainCloud[i].x = randomX();
+              rainCloud[i].y = randomStartPosition();
+            } else {
+              rainCloud[i].x += rainFlow + (0.5 * Math.random());
+              rainCloud[i].y += rainCloud[i].speed * delta;
+            }
+
+          }
+        }
+
+        function randomStartPosition() {
+          return -raindropHeight * (randomY() / 20);
+        }
+
+
+        function getRainSpeed() {
+          return rainSpeed + (rainSpeed * Math.random())
+        }
+
+        function toggleFullScreen() {
+          var prefixes = ["moz", "webkit", "ms"]
+          if (!document.fullscreenElement) {
+            for (var i = 0; i < prefixes.length; i++) {
+              if ((prefixes[i] + "RequestFullscreen") in document.body) {
+                document.body[prefixes[i] + "RequestFullscreen"]()
+              }
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            }
+          }
+        }
+
+        function alterTheFlow() {
+          var variability = 0.009;
+          if (randomBool()) {
+            rainFlow = rainFlow + (variability * Math.random());
+          } else {
+            rainFlow = rainFlow - (variability * Math.random());
+          }
+        }
+
+        document.addEventListener("keydown", function(e) {
+          if (e.keyCode == 13) {
+            toggleFullScreen();
+          }
+        }, false);
+
+
       }
 
       if ($('#rain').length !== 0) {
@@ -3511,6 +3632,11 @@
         rain_3();
         console.log('3')
       }
+
+      // if ($('#rain_4').length !== 0) {
+      //   rain_4();
+      //   console.log('4')
+      // }
 
 
 
