@@ -1270,11 +1270,12 @@
 
 
         //Маска для колеса
+        var bg_img_src = $('.img-compare .images-compare-before').find('img.compr').attr('src');
         if ($('.img-compare .images-compare-before').hasClass('water_drop')) {
           console.log('water')
         } else {
           console.log('no water')
-          $('.img-compare .images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img + '"></div>');
+          $('.img-compare .images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img_src + '"></div>');
         }
 
         function mask_wheel1(parent_div) {
@@ -1348,7 +1349,7 @@
         var bg_img1 = $('.images-compare-before').find('img.compr').attr('src');
         var bg_img2 = $('.images-compare-after').find('img.compr').attr('src');
 
-        $('.images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img1 + '"></div>');
+        // $('.images-compare-before').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img1 + '"></div>');
         $('.images-compare-after').find('.compare-wrapper').append('<div class="mask_wheel"><img src="' + bg_img2 + '"></div>');
         mask_wheel1('.images-compare-before');
         mask_wheel2('.images-compare-after');
