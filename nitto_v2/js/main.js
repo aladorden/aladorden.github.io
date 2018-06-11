@@ -3386,15 +3386,15 @@
         image.crossOrigin = 'anonymous';
 
         setTimeout(function() {
-          var pos_left = $('.images-compare-before.watter_drop .mask_wheel').css('left');
+          var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
           console.log(pos_left)
-          $('.images-compare-before.watter_drop').find('.mask_wheel .canvas').css('left', -pos_left);
+          $('.images-compare-before.water_drop').find('.mask_wheel .canvas').css('left', -pos_left);
         }, 1000)
         $(window).resize(function() {
           setTimeout(function() {
-            var pos_left = $('.images-compare-before.watter_drop .mask_wheel').css('left');
+            var pos_left = $('.images-compare-before.water_drop .mask_wheel').offset().left
             console.log(pos_left)
-            $('.images-compare-before.watter_drop .mask_wheel canvas').css('left', -pos_left);
+            $('.images-compare-before.water_drop .mask_wheel canvas').css('left', -pos_left);
           }, 1000)
 
 
