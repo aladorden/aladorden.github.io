@@ -3389,6 +3389,10 @@
         new RainyDay({
           image: image1,
           enableSizeChange: true,
+          crop: true,
+          gravityThreshold: 9,
+          gravityAngleVariance 10,
+          fps: 50
         });
 
         setTimeout(function() {
