@@ -1453,13 +1453,14 @@
 
 
                 function catalog_modal(period_class_div) {
-                    $('#menu').fadeOut();
+                   
                     $('.catalog_modal' + period_class_div + '').remove().appendTo('.img-compare ' + period_class_div + '');
 
                     var w_h = $(window).height(),
                         parent_sect = $('.section-season');
 
                     $('section.compare ' + period_class_div + ' .images-compare-label').click(function() {
+                    	 $('#menu').fadeOut();
                         var dir = $('.img-compare').attr('data-direct');
                         setTimeout(function() {
                             $('.images-compare-before').removeClass('show_wheel');
