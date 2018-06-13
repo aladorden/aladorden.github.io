@@ -3129,35 +3129,58 @@
 
       function rain_3() {
 
-squareFall = [];
-function setup() {
-  createCanvas(2000, 500);
-  for (var j = 0; j < 2000; j++) {
-    squareFall[j] = new square();
-  }
-}
-function draw() {
-  background(0);
-  for (var i = 0; i < squareFall.length; i++) {
-    squareFall[i].fall();
-  }
-}
-function square() {
-  this.y = random(-500, -50);
-  this.x = random(width);
-  this.ySpeed = random(5, 15);
-  this.fall = function() {
-    this.y += this.ySpeed;
-    rect(this.x, this.y, 2, 10);
-    if (this.y > height) {
-      this.y = random(-500, -50);
-      this.x = random(width);
-      this.ySpeed = random(5, 20);
-    }
+//this creates a full canvas across the whole screen with 2d context
+var can = document.querySelector('rain_3');
+
+var widthNo = document.body.clientWidth;
+var heightNo = document.body.clientHeight;
+
+can.setAttribute('width', widthNo);
+
+var canvas = can.getContext('2d');
+
+var body = document.querySelector('body');
+
+canvas.width = body.offsetWidth;
+canvas.height = body.offsetHeight;
+
+var rainCount = 25000;
+var rain = [];
+for(var i = 0; i < rainCount; i++){
+  rain[i] = { x: randomRange(1, canvas.width),
+              ySpeed: randomRange(2,5),
+              size: randomRange(1,2.5),
+              y: randomRange(-400, 0)
   };
 }
+ 
 
+function draw(){
+  requestAnimationFrame(draw);
+  canvas.fillStyle = '#222';
+  canvas.fillRect(0,0, canvas.width, canvas.height);
+  
+  for(var i = 0; i <rainCount; i++){
+    
+    rain[i].y += rain[i].ySpeed;
+    canvas.fillStyle = '#aa16ad'; //creates the rectangles color
+    canvas.fillRect(rain[i].x, rain[i].y, rain[i].size, rain[i].size); //uses the object to create the rectangle it self.
+    if(rain[i].y > canvas.height){ 
+      rain[i].y = randomRange(-50, 0);
+      rain[i].ySpeed = randomRange(2,7.5); 
+      /* if the rain reaches the bottom then it starts again. reseting the Y and the speed*/
+    }
+  }
+}
 
+function randomRange(min, max){
+   return Math.round(min + Math.random() * (max-min));
+  /*Math.random creates random number between 0 - 1.
+    the max and min are the two numbers that random will be between
+    math.round, reounds the numebr up.*/
+}
+
+requestAnimationFrame(draw);
       }
 
 
