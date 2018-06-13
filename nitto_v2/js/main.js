@@ -1087,10 +1087,10 @@
               $('.img-compare').attr('data-direct', 'center');
             }
           } else {
-            if (val <= 20) {
+            if (val <= 16) {
               pos_transition(.5)
               pos_less();
-            } else if (val >= 80) {
+            } else if (val >= 84) {
               pos_transition(.5)
               pos_more();
             }
@@ -1160,15 +1160,15 @@
               pos_transition(0);
             }
           } else {
-            if ((val <= 80) && (direction == 'left')) {
+            if ((val <= 84) && (direction == 'left')) {
               $('.images-compare-before .season_wrap').addClass('show');
               $('.images-compare-after .season_wrap').removeClass('show');
-            } else if ((val >= 20) && (direction == 'right')) {
+            } else if ((val >= 16) && (direction == 'right')) {
               $('.images-compare-after .season_wrap').addClass('show');
               $('.images-compare-before .season_wrap').removeClass('show');
-            } else if ((val >= 80) && (direction == 'left')) {
+            } else if ((val >= 84) && (direction == 'left')) {
               $('.images-compare-after .season_wrap').addClass('show');
-            } else if ((val <= 20) && (direction == 'right')) {
+            } else if ((val <= 16) && (direction == 'right')) {
               $('.images-compare-before .season_wrap').addClass('show');
             } else {
               $('.images-compare-after .season_wrap').removeClass('show');
@@ -1384,23 +1384,23 @@
             //правое колесо
 
 
-            if ((val <= 80) && (direction == "left")) {
+            if ((val <= 84) && (direction == "left")) {
               if (data_catalog_after != 'true') {
                 winter_wheel_hide_left(1.5);
                 setTimeout(function() {
                   summer_wheel_hide_left(0);
-                }, 100)
+                }, 0)
                 $('section.compare .img-compare').removeClass('simplified_version');
                 $('.images-compare-before .catalog-window__close').removeClass('hidden');
                 $('.images-compare-after .catalog-window__close').removeClass('hidden');
               }
 
-            } else if ((val >= 20) && (direction == "right")) {
+            } else if ((val >= 16) && (direction == "right")) {
               if (data_catalog_before != 'true') {
                 winter_wheel_hide_right(0);
                 setTimeout(function() {
                   summer_wheel_hide_right(1.5);
-                }, 100)
+                }, 0)
                 $('section.compare .img-compare').removeClass('simplified_version');
                 $('.images-compare-before .catalog-window__close').removeClass('hidden');
                 $('.images-compare-after .catalog-window__close').removeClass('hidden');
@@ -1418,7 +1418,7 @@
 
             } else {
               $('section.compare .img-compare').addClass('catalog_modal');
-              if ((val <= 80) && (direction == 'left')) {
+              if ((val <= 84) && (direction == 'left')) {
                 if (direction == 'left') {
                   setTimeout(function() {
                     $('.images-compare-before').attr('data-catalog', 'false');
@@ -1428,7 +1428,7 @@
                   pos_transition(1);
                   pos_less();
                 }
-              } else if ((val >= 20) && (direction == 'right')) {
+              } else if ((val >= 16) && (direction == 'right')) {
                 if (direction == 'right') {
                   setTimeout(function() {
                     $('.images-compare-before').attr('data-catalog', 'true');
@@ -1438,8 +1438,10 @@
                   pos_transition(1);
                   pos_more();
                 }
-              } else {
-                $('section.compare .img-compare').attr('data-direct', 'center');
+              } else if (val <= 16) {
+                pos_transition(0);
+                pos_drag();
+              } else if (val >= 84) {
                 pos_transition(0);
                 pos_drag();
               }
@@ -3126,110 +3128,36 @@
       }
 
       function rain_3() {
-        var drops = 2500;
-        var myRain = [];
-        var opacity = 100;
 
-        function Rain() {
-          this.dX;
-          this.dY;
-          this.rX;
-          this.rY;
-          this.eol;
-          this.speed;
-          this.rMax;
-          this.cOffset;
-          this.drawDroplet = () => {
-            stroke(color(40 + this.cOffset, 60 + this.cOffset, 140 + this.cOffset));
-            if (this.dX >= width) {
-              this.dX = 0;
-            }
-
-            if (this.dY >= width) {
-              this.spawnRain();
-            }
-            this.dY += 6 * this.speed;
-            this.dX += 2 * this.speed;
-            point(this.dX, this.dY);
-            line(this.dX * this.speed, this.dY * this.speed, (this.dX - 2) * this.speed, (this.dY - 6) * this.speed);
-          };
-          this.drawRipple = () => {
-            stroke(color(20 + this.cOffset, 40 + this.cOffset, 120 + this.cOffset, 100));
-            this.rX += 1;
-            this.rY += .25;
-            ellipse(this.dX, this.dY, this.rX, this.rY)
-          };
-          this.spawnRain = () => {
-            this.dY = 0
-            this.dX = Math.floor(Math.random() * width);
-            this.eol = Math.floor(Math.random() * (height - height * .7) + height * .7);
-            this.rX = 0;
-            this.rY = 0;
-            this.rMax = Math.floor(30 * (this.eol - (height * .7)) / (height - height * .7) + 1);
-            this.cOffset = Math.floor(30 * (this.eol - (height * .7)) / (height - height * .7) * 4)
-            this.speed = Math.random() + 1
-          }
-        }
-
-        for (let x = 0; x < drops; x++) {
-          myRain.push(new Rain);
-        }
-
-        function setup() {
-          frameRate(30);
-          createCanvas(window.innerWidth, window.innerHeight);
-          stroke(color(255));
-          noFill();
-          background(color(255, 255, 255, 255));
+squareFall = [];
+function setup() {
+  createCanvas(2000, 500);
+  for (var j = 0; j < 2000; j++) {
+    squareFall[j] = new square();
+  }
+}
+function draw() {
+  background(0);
+  for (var i = 0; i < squareFall.length; i++) {
+    squareFall[i].fall();
+  }
+}
+function square() {
+  this.y = random(-500, -50);
+  this.x = random(width);
+  this.ySpeed = random(5, 15);
+  this.fall = function() {
+    this.y += this.ySpeed;
+    rect(this.x, this.y, 2, 10);
+    if (this.y > height) {
+      this.y = random(-500, -50);
+      this.x = random(width);
+      this.ySpeed = random(5, 20);
+    }
+  };
+}
 
 
-        }
-
-        function draw() {
-          //background
-          noStroke();
-          if (Math.random() > .99) {
-            fill("black");
-            beginShape();
-            vertex(width * .3, height * .7);
-            vertex(width * .3 + width * .15, height * .7);
-            vertex(width * .3, height);
-            vertex(0, height);
-            vertex(0, height * .8)
-            endShape();
-            fill(color(200, 200, 200, opacity));
-          } else {
-            fill(color(30, 42, 79, opacity));
-          }
-          rect(0, 0, width, height * .7);
-          fill(color(20, 32, 69, opacity));
-          rect(0, height * .7, width, height * .3);
-
-
-          // city
-          // fill("black")
-          rect(width * .3, height * .7, width * .15, -(height * .3))
-
-          // quad(width * .3, height * .7, width * .3 + width * .15, height * .7, width * .3, height, 0, height * .8)
-
-
-          //rain
-          for (let i in myRain) {
-            if (myRain[i].dY < myRain[i].eol && myRain[i].rX < myRain[i].rMax) {
-              myRain[i].drawDroplet();
-            } else if (myRain[i].dY >= myRain[i].eol && myRain[i].rX < myRain[i].rMax) {
-              myRain[i].drawRipple();
-            } else {
-              if (Math.random() > .99) { // broke it here
-                myRain[i].spawnRain();
-              }
-            }
-          }
-        }
-
-        window.onresize = function() {
-          setup();
-        }
       }
 
 
