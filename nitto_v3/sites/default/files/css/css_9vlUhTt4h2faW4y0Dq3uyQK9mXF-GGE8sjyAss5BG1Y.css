@@ -1920,6 +1920,18 @@ section.compare .images-compare-before .catalog_modal {
   section.compare .images-compare-before .catalog_modal .preview__item_season:hover .preview-button {
     height: 60px;
     visibility: visible; }
+
+   section.compare .images-compare-after .catalog_modal .preview__item_season:hover,
+  section.compare .images-compare-before .catalog_modal .preview__item_season:hover{
+    -webkit-box-shadow: 0 5px 12px 0 rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 5px 12px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 5px 12px 0 rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-bottom: 0;
+    background: white;
+  }
   section.compare .images-compare-after .catalog_modal .preview,
   section.compare .images-compare-before .catalog_modal .preview {
     background-color: #fff;
