@@ -1830,6 +1830,13 @@ canvas#rain_4 {
 section.compare .mCSB_inside > .mCSB_container {
   margin-right: 0; }
 
+.catalog_modal_wrap .catalog-window__close-wrap {
+    opacity: 0;
+}
+
+.img-compare .catalog_modal_wrap .catalog-window__close-wrap { 
+opacity: 1;
+}
 section.compare .catalog-window__close-wrap {
   right: 80px;
   left: auto; }
