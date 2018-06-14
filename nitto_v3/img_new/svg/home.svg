@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>4818F1CB-BF38-4CE3-987F-0D88778F4D0F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="6" y="13.9473684" width="4" height="1" rx="0.5"></rect>
+        <rect id="path-2" x="6" y="13.0175439" width="4" height="1" rx="0.5"></rect>
+        <rect id="path-3" x="6" y="12.0877193" width="4" height="1" rx="0.5"></rect>
+        <rect id="path-4" x="6" y="11.1578947" width="4" height="1" rx="0.5"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="popup3_1160px" transform="translate(-880.000000, -716.000000)">
+            <g id="Group-10" transform="translate(880.000000, 716.000000)">
+                <g id="Group-11" transform="translate(4.000000, 4.000000)">
+                    <g id="Rectangle-9">
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#EB373B" stroke-width="1" x="6.5" y="14.4473684" width="3" height="1" rx="0.5"></rect>
+                    </g>
+                    <g id="Rectangle-9-Copy">
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#EB373B" stroke-width="1" x="6.5" y="13.5175439" width="3" height="1" rx="0.5"></rect>
+                    </g>
+                    <g id="Rectangle-9-Copy-2">
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <rect stroke="#EB373B" stroke-width="1" x="6.5" y="12.5877193" width="3" height="1" rx="0.5"></rect>
+                    </g>
+                    <g id="Rectangle-9-Copy-3">
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#EB373B" stroke-width="1" x="6.5" y="11.6578947" width="3" height="1" rx="0.5"></rect>
+                    </g>
+                    <path d="M15.8382187,6.17440858 L8.30696875,0.1064577 C8.13075,-0.0354859 7.86921875,-0.0354859 7.69303125,0.1064577 L0.16178125,6.17440858 C0.05903125,6.25719206 0,6.377401 0,6.50379909 L0,14.4413375 C0,14.682046 0.209875,14.877193 0.46875,14.877193 L2.84375,14.877193 C2.84375,14.6719922 2.84375,8.75667793 2.84375,8.54546237 C2.84375,8.30475392 3.053625,8.10960689 3.3125,8.10960689 L12.6875,8.10960689 C12.946375,8.10960689 13.15625,8.30475392 13.15625,8.54546237 C13.15625,8.75667793 13.15625,14.6720213 13.15625,14.877193 L15.53125,14.877193 C15.790125,14.877193 16,14.682046 16,14.4413375 L16,6.50379909 C16,6.377401 15.9409687,6.25719206 15.8382187,6.17440858 Z M8.88178125,4.89363273 L7.11821875,4.89363273 C6.85934375,4.89363273 6.64946875,4.69848571 6.64946875,4.45777726 C6.64946875,4.21706881 6.85934375,4.02192178 7.11821875,4.02192178 L8.88178125,4.02192178 C9.14065625,4.02192178 9.35053125,4.21706881 9.35053125,4.45777726 C9.35053125,4.69848571 9.14065625,4.89363273 8.88178125,4.89363273 Z" id="Shape" fill="#EB373B" fill-rule="nonzero"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
