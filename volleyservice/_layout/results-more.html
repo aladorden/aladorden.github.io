@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- meta(name="viewport", content="width=device-width, minimal-ui")-->
+    <meta name="viewport" content="width=device-width">
+    <title>Результаты Подробнее</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="styles/vendor.css?v=1531215571858">
+    <link rel="stylesheet" href="styles/main.css?v=1531215571858">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"></svg>
+    <div class="page-widget">
+      <div class="page-widget__btn"><span>+</span></div>
+      <div class="page-widget__table">
+        <ul>
+          <li><a class="page-widget__link" href="./index.html">Главная</a></li>
+          <li><a class="page-widget__link" href="./shedule.html">Расписание</a></li>
+          <li><a class="page-widget__link" href="./results-tree.html">Результаты - Турнирное дерево</a></li>
+          <li><a class="page-widget__link" href="./results-group.html">Результаты - Групповой Этап</a></li>
+          <li><a class="page-widget__link" href="./results-more.html">Результаты - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic.html">Статистика</a></li>
+          <li><a class="page-widget__link" href="./statistic-more.html">Статистика - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic-result.html">Статистика - Вывод</a></li>
+          <li><a class="page-widget__link" href="./players.html">Игроки</a></li>
+          <li><a class="page-widget__link" href="./players-agency.html">Игроки - Агенства</a></li>
+          <li><a class="page-widget__link" href="./teams.html">Команды</a></li>
+          <li><a class="page-widget__link" href="./teams-more.html">Команды - Команда</a></li>
+          <li><a class="page-widget__link" href="./news.html">Новости</a></li>
+          <li><a class="page-widget__link" href="./news-open.html">Новости - Новость</a></li>
+          <li><a class="page-widget__link" href="./links.html">Ссылки</a></li>
+          <li><a class="page-widget__link" href="./about.html">Об агенстве</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var pageWidget = document.querySelector('.page-widget');
+      var btn = pageWidget.querySelector('.page-widget__btn');
+      btn.addEventListener('click', function() {
+      
+      	if (pageWidget.classList.contains('page-widget_show')) {
+      		pageWidget.classList.remove('page-widget_show');
+      	} else {
+      		pageWidget.classList.add('page-widget_show');
+      	}
+      });
+    </script>
+    <header class="header">
+      <div class="header__block header__block_main">
+        <div class="container header__container header__container_main">
+          <div class="header__item header__item_logo"><a class="header__logo" href=""><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_info">
+            <div class="header__info">
+              <div class="header__info-item header__info-item_contacts">
+                <p>тел:(495) 246-84-12</p>
+                <p>факс:(495) 785-07-69</p>
+                <p>
+                  e-mail:
+                  <a href="">volleyservice@mail.ru</a>
+                </p>
+              </div>
+              <div class="header__info-item header__info-item_adress">
+                <p>наш адрес:</p>
+                <p>Москва, Лужники 24, стр. 5</p>
+                <p>офисы 227, 227а</p>
+              </div>
+            </div><a class="btn-rect_l btn-rect_gray btn-rect tt-uppercase" href="">игроки агенства</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__block header__block_nav">
+        <div class="container header__container header__container_nav">
+          <ul class="header__nav">
+            <li class="header__nav-item"><a class="header__nav-link" href="">главная</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">расписание</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">результаты</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">статистика</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">игроки</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">команды</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">новости</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">ссылки</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="breadcrumbs">
+        <div class="container"><a class="breadcrumbs__link" href="">Главная</a><a class="breadcrumbs__link" href="">Расписание</a>
+        </div>
+      </div>
+      <div class="fs-xxl tt-uppercase fw-bold color-white ta-center pb2">чемпионат россии суперлига</div>
+      <div class="results-note">
+        <div class="results-note__head">
+          <div class="container">
+            <div class="results-note__container results-note__container_head">
+              <div class="results-note__head-title">Локомотив - зенит</div>
+              <div class="results-note__head-title">30 апреля 2014 г. екатеринбург</div>
+            </div>
+          </div>
+        </div>
+        <div class="results-note__body">
+          <div class="container pb30">
+            <div class="grid">
+              <div class="grid__col grid__col_6">
+                <div class="results-note__info">
+                  <div class="results-note__info-item results-note__info-item_img"><img class="results-note__info-icon" src="img/icon-team-bigger.png"></div>
+                  <div class="results-note__info-item results-note__info-item_score">
+                    <div class="results-note__info-score">3 : 0</div>
+                  </div>
+                  <div class="results-note__info-item results-note__info-item_img"><img class="results-note__info-icon" src="img/icon-team-bigger.png"></div>
+                  <div class="results-note__info-item">62</div>
+                  <div class="results-note__info-item">финал</div>
+                  <div class="results-note__info-item">75</div>
+                </div>
+              </div>
+              <div class="grid__col grid__col_6">
+                <div class="results-note__table">
+                  <div class="results-note__table-head">Финал, среда</div>
+                  <table class="results-note__grid">
+                    <tr class="results-note__row">
+                      <td class="results-note__col"></td>
+                      <td class="results-note__col">1
+                      </td>
+                      <td class="results-note__col">2
+                      </td>
+                      <td class="results-note__col">3
+                      </td>
+                      <td class="results-note__col">4
+                      </td>
+                      <td class="results-note__col">5
+                      </td>
+                      <td class="results-note__col">И
+                      </td>
+                    </tr>
+                    <tr class="results-note__row">
+                      <td class="results-note__col">Локомотив</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">22</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">62</td>
+                    </tr>
+                    <tr class="results-note__row">
+                      <td class="results-note__col">Локомотив</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">22</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">62</td>
+                    </tr>
+                    <tr class="results-note__row">
+                      <td class="results-note__col">Локомотив</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">20</td>
+                      <td class="results-note__col">22</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">-</td>
+                      <td class="results-note__col">62</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="results-tables pb40">
+        <div class="head-actions head-actions_pl-0">
+          <div class="container">
+            <div class="head-actions__container">
+              <div class="btn-group tt-uppercase js-btn-group-results"><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="preview">анонс</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="results">результаты</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="dynamic">динамика</a>
+              </div><a class="btn-rect_s btn-rect_blue btn-rect tt-uppercase btn-rect_print" href="">печать</a>
+            </div>
+          </div>
+        </div>
+        <div class="results-tables__item" data-page="preview">
+          <div class="title-block_dark-gray title-block fs-l ta-center tt-uppercase fw-bold">
+            <div class="container">сыгранные матчи данных команд
+            </div>
+          </div>
+          <div class="teams-win mb20">
+            <div class="container">
+              <div class="teams-win__items">
+                <div class="teams-win__item">
+                  <div class="teams-win__score">8</div><img class="teams-win__img" src="img/icon-team-bigger.png">
+                </div>
+                <div class="teams-win__item">общее число побед</div>
+                <div class="teams-win__item"><img class="teams-win__img" src="img/icon-team-bigger.png">
+                  <div class="teams-win__score">12</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="results-table">
+            <div class="container">
+              <table class="results-table__grid_preview results-table__grid">
+                <tr class="results-table__row">
+                  <td class="results-table__col">30.04.2014</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">0 - 3</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">ЧР' 14 PlayOff</td>
+                  <td class="results-table__col">Финал Шести подгруппа А</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col">30.04.2014</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">0 - 3</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">ЧР' 14 PlayOff</td>
+                  <td class="results-table__col">Финал Шести подгруппа А</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col">30.04.2014</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">0 - 3</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">ЧР' 14 PlayOff</td>
+                  <td class="results-table__col">Финал Шести подгруппа А</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col">30.04.2014</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">0 - 3</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">ЧР' 14 PlayOff</td>
+                  <td class="results-table__col">Финал Шести подгруппа А</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col">30.04.2014</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">0 - 3</td>
+                  <td class="results-table__col"><img class="results-table__icon" src="img/icon-team-bigger.png"></td>
+                  <td class="results-table__col">ЧР' 14 PlayOff</td>
+                  <td class="results-table__col">Финал Шести подгруппа А</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col"></td>
+                  <td class="results-table__col"></td>
+                  <td class="results-table__col"></td>
+                  <td class="results-table__col"></td>
+                  <td class="results-table__col"></td>
+                  <td class="results-table__col"></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="results-tables__item" data-page="results">
+          <div class="results-table mb30">
+            <div class="container">
+              <table class="results-table__grid_info results-table__grid">
+                <thead class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head" rowspan="2"></td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">
+                      <div class="fs-l fw-reg">Локомотив</div>
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="5">партия</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="2">очки</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="3">подача</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="4">прием</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="5">атака</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="2">блок</td>
+                    <td class="results-table__col results-table__col_head" rowspan="2"></td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head">1
+                    </td>
+                    <td class="results-table__col results-table__col_head">2
+                    </td>
+                    <td class="results-table__col results-table__col_head">3
+                    </td>
+                    <td class="results-table__col results-table__col_head">4
+                    </td>
+                    <td class="results-table__col results-table__col_head">5
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Раз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Поз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Отл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">%
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">5
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">7
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">9
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                  </tr>
+                </tbody>
+                <tfoot class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col" colspan="7">Итого по команде</td>
+                    <td class="results-table__col">39
+                    </td>
+                    <td class="results-table__col">+5
+                    </td>
+                    <td class="results-table__col">64
+                    </td>
+                    <td class="results-table__col">14
+                    </td>
+                    <td class="results-table__col">13
+                    </td>
+                    <td class="results-table__col">58
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">28
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <div class="results-table mb30">
+            <div class="container">
+              <table class="results-table__grid_game results-table__grid">
+                <thead class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head tt-uppercase">
+                      <div class="fs-l fw-reg">партия</div>
+                    </td>
+                    <td class="results-table__col results-table__col_head">Под
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош.С
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Поз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Отл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">%
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="results-table mb30">
+            <div class="container">
+              <table class="results-table__grid_info results-table__grid">
+                <thead class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head" rowspan="2"></td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">
+                      <div class="fs-l fw-reg">Локомотив</div>
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="5">партия</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="2">очки</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="3">подача</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="4">прием</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="5">атака</td>
+                    <td class="results-table__col results-table__col_head tt-uppercase" colspan="2">блок</td>
+                    <td class="results-table__col results-table__col_head" rowspan="2"></td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head">1
+                    </td>
+                    <td class="results-table__col results-table__col_head">2
+                    </td>
+                    <td class="results-table__col results-table__col_head">3
+                    </td>
+                    <td class="results-table__col results-table__col_head">4
+                    </td>
+                    <td class="results-table__col results-table__col_head">5
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Раз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Поз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Отл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">%
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">5
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">7
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">9
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col"><a class="link-black" href="">Зубков Андрей</a></td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">*
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">-
+                    </td>
+                    <td class="results-table__col">3
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">11
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">40%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">2
+                    </td>
+                    <td class="results-table__col">25%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                    <td class="results-table__col"></td>
+                  </tr>
+                </tbody>
+                <tfoot class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col" colspan="7">Итого по команде</td>
+                    <td class="results-table__col">39
+                    </td>
+                    <td class="results-table__col">+5
+                    </td>
+                    <td class="results-table__col">64
+                    </td>
+                    <td class="results-table__col">14
+                    </td>
+                    <td class="results-table__col">13
+                    </td>
+                    <td class="results-table__col">58
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">28
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          <div class="results-table mb30">
+            <div class="container">
+              <table class="results-table__grid_game results-table__grid">
+                <thead class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head tt-uppercase">
+                      <div class="fs-l fw-reg">партия</div>
+                    </td>
+                    <td class="results-table__col results-table__col_head">Под
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош.С
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Поз
+                    </td>
+                    <td class="results-table__col results-table__col_head">Отл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Общ
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">Бл
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ата
+                    </td>
+                    <td class="results-table__col results-table__col_head">%
+                    </td>
+                    <td class="results-table__col results-table__col_head">Оч
+                    </td>
+                    <td class="results-table__col results-table__col_head">Ош
+                    </td>
+                    <td class="results-table__col results-table__col_head">
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                  <tr class="results-table__row">
+                    <td class="results-table__col">Партия 1
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">8
+                    </td>
+                    <td class="results-table__col">21
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">18
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">50%
+                    </td>
+                    <td class="results-table__col">28%
+                    </td>
+                    <td class="results-table__col">23
+                    </td>
+                    <td class="results-table__col">6
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">10
+                    </td>
+                    <td class="results-table__col">43%
+                    </td>
+                    <td class="results-table__col">1
+                    </td>
+                    <td class="results-table__col">4
+                    </td>
+                    <td class="results-table__col">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="results-tables__item" data-page="dynamic">
+          <div class="results-table results-tables__dynamic">
+            <div class="container">
+              <table class="results-table__grid_dynamic results-table__grid">
+                <thead class="js-table-bg">
+                  <tr class="results-table__row">
+                    <td class="results-table__col results-table__col_head tt-uppercase">№
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">ИГРОК
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">действие
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">счет
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">действие
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">ИГРОК
+                    </td>
+                    <td class="results-table__col results-table__col_head tt-uppercase">№
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="collapse-block__container mb20 results-table__collapse-block js-collapse-block">
+              <div class="collapse-block">
+                <div class="results-table__collapse-block-head collapse-block__head">
+                  <div class="container"><span class="collapse-block__head-container"><span class="collapse-block__title">1 партия</span></span>
+                  </div>
+                </div>
+                <div class="collapse-block__body">
+                  <div class="collapse-block__content">
+                    <div class="container">
+                      <table class="results-table__grid_dynamic results-table__grid">
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="collapse-block__container mb20 results-table__collapse-block js-collapse-block">
+              <div class="collapse-block">
+                <div class="results-table__collapse-block-head collapse-block__head">
+                  <div class="container"><span class="collapse-block__head-container"><span class="collapse-block__title">1 партия</span></span>
+                  </div>
+                </div>
+                <div class="collapse-block__body">
+                  <div class="collapse-block__content">
+                    <div class="container">
+                      <table class="results-table__grid_dynamic results-table__grid">
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="collapse-block__container mb20 results-table__collapse-block js-collapse-block">
+              <div class="collapse-block">
+                <div class="results-table__collapse-block-head collapse-block__head">
+                  <div class="container"><span class="collapse-block__head-container"><span class="collapse-block__title">1 партия</span></span>
+                  </div>
+                </div>
+                <div class="collapse-block__body">
+                  <div class="collapse-block__content">
+                    <div class="container">
+                      <table class="results-table__grid_dynamic results-table__grid">
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                        <tr class="results-table__row">
+                          <td class="results-table__col">2
+                          </td>
+                          <td class="results-table__col">А. Вольвич
+                          </td>
+                          <td class="results-table__col">подача
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-false.png" alt="">
+                          </td>
+                          <td class="results-table__col">0 : 1
+                          </td>
+                          <td class="results-table__col"><img src="img/icon-true.png" alt="">
+                          </td>
+                          <td class="results-table__col">атака
+                          </td>
+                          <td class="results-table__col">Л.Дивиш
+                          </td>
+                          <td class="results-table__col">4
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__container footer__container_top">
+            <div class="footer__top-item">
+              <div class="footer__title">Мужские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Женские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Федерации
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">официальный волейбол
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ВФВ</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">FIVB</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">CEV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">сми
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__container footer__container_bottom">
+            <div class="footer__bottom-item footer__bottom-item_menu">
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Главная</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Об агенстве</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Новости</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Ссылки</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Расписание</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Результаты</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Положение</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Статистика</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Игроки</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Команды</a></li>
+              </ul>
+            </div>
+            <div class="footer__bottom-item footer__bottom-item_contacts">
+              г. Москва, Лужники 24, строение 5 УСЗ "Дружба"<br>
+              тел. +7 (499) 246-84-12, факс 8 (495) 785-07-69<br>
+              <a href="">info@volleyservice.ru</a><a class="link-arrow_right link-arrow" href="">Схема проезда</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-black">
+          <div class="container">
+            <div class="footer__container footer__container_bottom-black">
+              <div><span>&#169; </span>
+                Спортивное агенство "ВолейСервис".
+              </div>
+              <div><a href="">Дизайн сайта - Webformula.pro</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__container footer__container_bottom">
+              <div class="footer__copy"><a href="./">VolleyService.ru</a>
+                -
+                
+                Официальный сайт спортивного агенства "Волей Сервис". Использование любых материалов с сайта допускается только при наличии прямой ссылки на сайт VolleyService.ru
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/vendor.js?v=1531215571870"></script>
+    <script src="scripts/app.js?v=1531215571870"></script>
+  </body>
+</html>

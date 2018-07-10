@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- meta(name="viewport", content="width=device-width, minimal-ui")-->
+    <meta name="viewport" content="width=device-width">
+    <title>Main</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="styles/vendor.css?v=1531215568785">
+    <link rel="stylesheet" href="styles/main.css?v=1531215568785">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"></svg>
+    <div class="page-widget">
+      <div class="page-widget__btn"><span>+</span></div>
+      <div class="page-widget__table">
+        <ul>
+          <li><a class="page-widget__link" href="./index.html">Главная</a></li>
+          <li><a class="page-widget__link" href="./shedule.html">Расписание</a></li>
+          <li><a class="page-widget__link" href="./results-tree.html">Результаты - Турнирное дерево</a></li>
+          <li><a class="page-widget__link" href="./results-group.html">Результаты - Групповой Этап</a></li>
+          <li><a class="page-widget__link" href="./results-more.html">Результаты - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic.html">Статистика</a></li>
+          <li><a class="page-widget__link" href="./statistic-more.html">Статистика - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic-result.html">Статистика - Вывод</a></li>
+          <li><a class="page-widget__link" href="./players.html">Игроки</a></li>
+          <li><a class="page-widget__link" href="./players-agency.html">Игроки - Агенства</a></li>
+          <li><a class="page-widget__link" href="./teams.html">Команды</a></li>
+          <li><a class="page-widget__link" href="./teams-more.html">Команды - Команда</a></li>
+          <li><a class="page-widget__link" href="./news.html">Новости</a></li>
+          <li><a class="page-widget__link" href="./news-open.html">Новости - Новость</a></li>
+          <li><a class="page-widget__link" href="./links.html">Ссылки</a></li>
+          <li><a class="page-widget__link" href="./about.html">Об агенстве</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var pageWidget = document.querySelector('.page-widget');
+      var btn = pageWidget.querySelector('.page-widget__btn');
+      btn.addEventListener('click', function() {
+      
+      	if (pageWidget.classList.contains('page-widget_show')) {
+      		pageWidget.classList.remove('page-widget_show');
+      	} else {
+      		pageWidget.classList.add('page-widget_show');
+      	}
+      });
+    </script>
+    <header class="header">
+      <div class="header__block header__block_main">
+        <div class="container header__container header__container_main">
+          <div class="header__item header__item_logo"><a class="header__logo" href=""><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_info">
+            <div class="header__info">
+              <div class="header__info-item header__info-item_contacts">
+                <p>тел:(495) 246-84-12</p>
+                <p>факс:(495) 785-07-69</p>
+                <p>
+                  e-mail:
+                  <a href="">volleyservice@mail.ru</a>
+                </p>
+              </div>
+              <div class="header__info-item header__info-item_adress">
+                <p>наш адрес:</p>
+                <p>Москва, Лужники 24, стр. 5</p>
+                <p>офисы 227, 227а</p>
+              </div>
+            </div><a class="btn-rect_l btn-rect_gray btn-rect tt-uppercase" href="">игроки агенства</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__block header__block_nav">
+        <div class="container header__container header__container_nav">
+          <ul class="header__nav">
+            <li class="header__nav-item"><a class="header__nav-link" href="">главная</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">расписание</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">результаты</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">статистика</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">игроки</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">команды</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">новости</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">ссылки</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="container pt14 pb20">
+        <div class="grid">
+          <div class="grid__col grid__col_7">
+            <div class="js-height-doc">
+              <div class="info-card_gray info-card">
+                <div class="top-note_gray top-note">
+                  <div class="top-note__title">В центре внимания
+                  </div>
+                </div>
+                <div class="intro-slider js-intro-slider">
+                  <div class="intro-slider__container swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="intro-slider__slide_m swiper-slide intro-slider__slide" style="background-image:url(img/index-news-img.jpg)">
+                        <div class="intro-slider__descr_m intro-slider__descr">
+                          <div class="intro-slider__title_m intro-slider__title">мужчины. польша: курек не сыграет на чемпионате мира
+                          </div>
+                          <div class="intro-slider__info_m intro-slider__info">
+                            <div class="intro-slider__date">18.08.2014
+                            </div>
+                            <div class="intro-slider__text">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas egestas arcu et scelerisque. Nullam tempus, justo vitae dapibus commodo.
+                              </p>
+                            </div><a class="intro-slider__btn" href="">Подробнее</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="intro-slider__slide_m swiper-slide intro-slider__slide" style="background-image:url(img/index-news-img.jpg)">
+                        <div class="intro-slider__descr_m intro-slider__descr">
+                          <div class="intro-slider__title_m intro-slider__title">мужчины. польша: курек не сыграет на чемпионате мира
+                          </div>
+                          <div class="intro-slider__info_m intro-slider__info">
+                            <div class="intro-slider__date">18.08.2014
+                            </div>
+                            <div class="intro-slider__text">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas egestas arcu et scelerisque. Nullam tempus, justo vitae dapibus commodo.
+                              </p>
+                            </div><a class="intro-slider__btn" href="">Подробнее</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="intro-slider__pagination"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="info-card_light-gray info-card">
+                <div class="top-note_blue top-note">
+                  <div class="top-note__title">ONLINE
+                  </div>Обновление данных через 00:23
+                </div>
+                <div class="info-card__body">
+                  <div class="online-table">
+                    <table class="online-table__grid">
+                      <tr class="online-table__grid-row">
+                        <td class="online-table__grid-col">Счет</td>
+                        <td class="online-table__grid-col">Партии</td>
+                      </tr>
+                      <tr class="online-table__grid-row">
+                        <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">22</span>:<span class="online-table__result-number">25</span></span>
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                        </td>
+                        <td class="online-table__grid-col">-
+                        </td>
+                        <td class="online-table__grid-col">-
+                        </td>
+                      </tr>
+                      <tr class="online-table__grid-row">
+                        <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">22</span>:<span class="online-table__result-number">25</span></span>
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">25</span>:<span class="online-table__result-number">18</span></span>
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">25</span>:<span class="online-table__result-number">18</span></span>
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">9</span>:<span class="online-table__result-number">11</span></span>
+                        </td>
+                      </tr>
+                      <tr class="online-table__grid-row">
+                        <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">22</span>:<span class="online-table__result-number">25</span></span>
+                        </td>
+                        <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                        </td>
+                        <td class="online-table__grid-col">-
+                        </td>
+                        <td class="online-table__grid-col">-
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="info-card_light-gray info-card">
+                <div class="top-note_gray top-note top-note_group">
+                  <div class="top-note__title">Лучшие по статистике
+                  </div>
+                  <div class="btn-group tt-uppercase js-btn-group-favorites"><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="bomb">бомбардиры</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="supply">подающие</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="block">блокирующие</a>
+                  </div>
+                </div>
+                <div class="info-card__body">
+                  <div class="favorites-table" data-spec="bomb">
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Дмитрий щербинин</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Дмитрий щербинин</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Дмитрий щербинин</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="favorites-table" data-spec="supply">
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Маркус Нильсон</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Маркус Нильсон</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Маркус Нильсон</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="favorites-table" data-spec="block">
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Константин Бакун</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Константин Бакун</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="favorites-table__item">
+                      <!--div.favorites-table__item-container--><a class="favorites-table__name link-h-bold" href="">Константин Бакун</a>
+                      <div class="favorites-table__body">
+                        <div class="favorites-table__photo" style="background-image:url(img/icon-player.png)">
+                          <div class="team-tooltip_arrow-left team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">ДИНАМО Москва</span></a>
+                          </div>
+                        </div>
+                        <div class="favorites-table__info">
+                          <div class="favorites-table__info-item favorites-table__info-item_points">
+                            Очки:
+                            <span>64</span>
+                          </div>
+                          <div class="favorites-table__info-item favorites-table__info-item_diff">
+                            +/-:
+                            <span>+169</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="championship-russia js-championship-russia">
+                <div class="info-card_gray info-card">
+                  <div class="top-note_gray top-note top-note_group championship-russia__note">
+                    <div class="top-note__title">Чемпионат России
+                    </div>
+                    <div class="btn-group tt-uppercase js-btn-group-championship"><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="g-men">мужчины</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="g-women">Женщины</a>
+                    </div>
+                  </div>
+                  <div class="championship-russia__item" data-gender="g-men">
+                    <div class="switch-container js-switch-container-championship-g-men switch-container_elem-offset switch-container_align-rigth">
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="advance">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">предварительный
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="1-4">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">плей офф 1/4
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="1-8">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">плей офф 1/8
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="final">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">финал
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="championship-russia__table" data-play="advance">
+                      <div class="championship-russia__table-grid">
+                        <div class="championship-russia__table-col">
+                          <div class="championship-russia__table-cell"></div>
+                          <div class="championship-russia__table-cell"><span>О</span></div>
+                          <div class="championship-russia__table-cell"><span>В</span></div>
+                          <div class="championship-russia__table-cell"><span>П</span></div>
+                          <div class="championship-russia__table-cell"><span>И</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="1-4">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="1-8">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="final">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="championship-russia__item" data-gender="g-women">
+                    <div class="switch-container js-switch-container-championship-g-women switch-container_elem-offset switch-container_align-rigth">
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="advance">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">предварительный
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="1-4">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">плей офф 1/4
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="1-8">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">плей офф 1/8
+                          </div>
+                        </div>
+                      </div>
+                      <div class="switch-container__btn_gray switch-container__btn" data-btn="final">
+                        <div class="switch-container__btn-title">
+                          <div class="switch-container__btn-title-text">финал
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="championship-russia__table" data-play="advance">
+                      <div class="championship-russia__table-grid">
+                        <div class="championship-russia__table-col">
+                          <div class="championship-russia__table-cell"></div>
+                          <div class="championship-russia__table-cell"><span>О</span></div>
+                          <div class="championship-russia__table-cell"><span>В</span></div>
+                          <div class="championship-russia__table-cell"><span>П</span></div>
+                          <div class="championship-russia__table-cell"><span>И</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                        <div class="championship-russia__table-col">
+                          <div class="team-tooltip_arrow-bottom team-tooltip"><a class="team-tooltip__container link-h-bold" href=""><span class="team-tooltip__img"><img class="team-tooltip__img-icon" src="img/icon-team.png" alt=""></span><span class="team-tooltip__link">Искра Одинцово</span></a>
+                          </div>
+                          <div class="championship-russia__table-cell"><img class="championship-russia__table-img" src="img/icon-team.png" alt=""></div>
+                          <div class="championship-russia__table-cell"><span>54</span></div>
+                          <div class="championship-russia__table-cell"><span>19</span></div>
+                          <div class="championship-russia__table-cell"><span>3</span></div>
+                          <div class="championship-russia__table-cell"><span>22</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="1-4">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="1-8">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="online-table championship-russia__table championship-russia__table_playoff" data-play="final">
+                      <table class="online-table__grid">
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col">Счет серий</td>
+                          <td class="online-table__grid-col" colspan="5">Счет</td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">4</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">5</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                        <tr class="online-table__grid-row online-table__grid-row_decor">
+                          <td class="online-table__grid-col"><img class="online-table__icon" src="img/icon-shield.png" alt=""><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span><img class="online-table__icon" src="img/icon-shield.png" alt="">
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">0</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">1</span>:<span class="online-table__result-number">3</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">2</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">3</span>:<span class="online-table__result-number">0</span></span>
+                          </td>
+                          <td class="online-table__grid-col"><span class="online-table__result"><span class="online-table__result-number">2</span>:<span class="online-table__result-number">1</span></span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="calendar">
+                <div class="info-card_light-gray info-card calendar__info-card">
+                  <div class="top-note_gray top-note">
+                    <div class="top-note__title">календарь соревнований
+                    </div>
+                  </div>
+                  <div class="calendar__wrap">
+                    <div class="calendar-widget">
+                      <div class="calendar-widget__head">
+                        <div class="calendar-widget__month">Январь
+                        </div>
+                      </div>
+                      <div class="calendar-widget__body">
+                        <div class="calendar-widget__weekdays">
+                          <div class="calendar-widget__day">Пн
+                          </div>
+                          <div class="calendar-widget__day">Вт
+                          </div>
+                          <div class="calendar-widget__day">Ср
+                          </div>
+                          <div class="calendar-widget__day">Чт
+                          </div>
+                          <div class="calendar-widget__day">Пт
+                          </div>
+                          <div class="calendar-widget__day">Сб
+                          </div>
+                          <div class="calendar-widget__day">Вс
+                          </div>
+                        </div>
+                        <div class="calendar-widget__days">
+                          <div class="calendar-widget__day">1
+                          </div>
+                          <div class="calendar-widget__day">2
+                          </div>
+                          <div class="calendar-widget__day">3
+                          </div>
+                          <div class="calendar-widget__day">4
+                          </div>
+                          <div class="calendar-widget__day">5
+                          </div>
+                          <div class="calendar-widget__day">6
+                          </div>
+                          <div class="calendar-widget__day">7
+                          </div>
+                          <div class="calendar-widget__day">8
+                          </div>
+                          <div class="calendar-widget__day_active calendar-widget__day">9
+                          </div>
+                          <div class="calendar-widget__day">10
+                          </div>
+                          <div class="calendar-widget__day">11
+                          </div>
+                          <div class="calendar-widget__day">12
+                          </div>
+                          <div class="calendar-widget__day">13
+                          </div>
+                          <div class="calendar-widget__day">14
+                          </div>
+                          <div class="calendar-widget__day">15
+                          </div>
+                          <div class="calendar-widget__day">16
+                          </div>
+                          <div class="calendar-widget__day">17
+                          </div>
+                          <div class="calendar-widget__day">18
+                          </div>
+                          <div class="calendar-widget__day">19
+                          </div>
+                          <div class="calendar-widget__day">20
+                          </div>
+                          <div class="calendar-widget__day">21
+                          </div>
+                          <div class="calendar-widget__day">22
+                          </div>
+                          <div class="calendar-widget__day">23
+                          </div>
+                          <div class="calendar-widget__day">24
+                          </div>
+                          <div class="calendar-widget__day">25
+                          </div>
+                          <div class="calendar-widget__day">26
+                          </div>
+                          <div class="calendar-widget__day">27
+                          </div>
+                          <div class="calendar-widget__day">28
+                          </div>
+                          <div class="calendar-widget__day">29
+                          </div>
+                          <div class="calendar-widget__day">30
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">1
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">2
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">3
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">4
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">5
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">6
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">7
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">8
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">9
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">10
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">11
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">12
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar-widget">
+                      <div class="calendar-widget__head">
+                        <div class="calendar-widget__month">Февраль
+                        </div>
+                      </div>
+                      <div class="calendar-widget__body">
+                        <div class="calendar-widget__weekdays">
+                          <div class="calendar-widget__day">Пн
+                          </div>
+                          <div class="calendar-widget__day">Вт
+                          </div>
+                          <div class="calendar-widget__day">Ср
+                          </div>
+                          <div class="calendar-widget__day">Чт
+                          </div>
+                          <div class="calendar-widget__day">Пт
+                          </div>
+                          <div class="calendar-widget__day">Сб
+                          </div>
+                          <div class="calendar-widget__day">Вс
+                          </div>
+                        </div>
+                        <div class="calendar-widget__days">
+                          <div class="calendar-widget__day">1
+                          </div>
+                          <div class="calendar-widget__day">2
+                          </div>
+                          <div class="calendar-widget__day">3
+                          </div>
+                          <div class="calendar-widget__day">4
+                          </div>
+                          <div class="calendar-widget__day">5
+                          </div>
+                          <div class="calendar-widget__day">6
+                          </div>
+                          <div class="calendar-widget__day">7
+                          </div>
+                          <div class="calendar-widget__day">8
+                          </div>
+                          <div class="calendar-widget__day_active calendar-widget__day">9
+                          </div>
+                          <div class="calendar-widget__day">10
+                          </div>
+                          <div class="calendar-widget__day">11
+                          </div>
+                          <div class="calendar-widget__day">12
+                          </div>
+                          <div class="calendar-widget__day">13
+                          </div>
+                          <div class="calendar-widget__day">14
+                          </div>
+                          <div class="calendar-widget__day">15
+                          </div>
+                          <div class="calendar-widget__day">16
+                          </div>
+                          <div class="calendar-widget__day">17
+                          </div>
+                          <div class="calendar-widget__day">18
+                          </div>
+                          <div class="calendar-widget__day">19
+                          </div>
+                          <div class="calendar-widget__day">20
+                          </div>
+                          <div class="calendar-widget__day">21
+                          </div>
+                          <div class="calendar-widget__day">22
+                          </div>
+                          <div class="calendar-widget__day">23
+                          </div>
+                          <div class="calendar-widget__day">24
+                          </div>
+                          <div class="calendar-widget__day">25
+                          </div>
+                          <div class="calendar-widget__day">26
+                          </div>
+                          <div class="calendar-widget__day">27
+                          </div>
+                          <div class="calendar-widget__day">28
+                          </div>
+                          <div class="calendar-widget__day">29
+                          </div>
+                          <div class="calendar-widget__day">30
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">1
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">2
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">3
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">4
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">5
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">6
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">7
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">8
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">9
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">10
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">11
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">12
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="calendar-widget">
+                      <div class="calendar-widget__head">
+                        <div class="calendar-widget__month">Март
+                        </div>
+                      </div>
+                      <div class="calendar-widget__body">
+                        <div class="calendar-widget__weekdays">
+                          <div class="calendar-widget__day">Пн
+                          </div>
+                          <div class="calendar-widget__day">Вт
+                          </div>
+                          <div class="calendar-widget__day">Ср
+                          </div>
+                          <div class="calendar-widget__day">Чт
+                          </div>
+                          <div class="calendar-widget__day">Пт
+                          </div>
+                          <div class="calendar-widget__day">Сб
+                          </div>
+                          <div class="calendar-widget__day">Вс
+                          </div>
+                        </div>
+                        <div class="calendar-widget__days">
+                          <div class="calendar-widget__day">1
+                          </div>
+                          <div class="calendar-widget__day">2
+                          </div>
+                          <div class="calendar-widget__day">3
+                          </div>
+                          <div class="calendar-widget__day">4
+                          </div>
+                          <div class="calendar-widget__day">5
+                          </div>
+                          <div class="calendar-widget__day">6
+                          </div>
+                          <div class="calendar-widget__day">7
+                          </div>
+                          <div class="calendar-widget__day">8
+                          </div>
+                          <div class="calendar-widget__day_active calendar-widget__day">9
+                          </div>
+                          <div class="calendar-widget__day">10
+                          </div>
+                          <div class="calendar-widget__day">11
+                          </div>
+                          <div class="calendar-widget__day">12
+                          </div>
+                          <div class="calendar-widget__day">13
+                          </div>
+                          <div class="calendar-widget__day">14
+                          </div>
+                          <div class="calendar-widget__day">15
+                          </div>
+                          <div class="calendar-widget__day">16
+                          </div>
+                          <div class="calendar-widget__day">17
+                          </div>
+                          <div class="calendar-widget__day">18
+                          </div>
+                          <div class="calendar-widget__day">19
+                          </div>
+                          <div class="calendar-widget__day">20
+                          </div>
+                          <div class="calendar-widget__day">21
+                          </div>
+                          <div class="calendar-widget__day">22
+                          </div>
+                          <div class="calendar-widget__day">23
+                          </div>
+                          <div class="calendar-widget__day">24
+                          </div>
+                          <div class="calendar-widget__day">25
+                          </div>
+                          <div class="calendar-widget__day">26
+                          </div>
+                          <div class="calendar-widget__day">27
+                          </div>
+                          <div class="calendar-widget__day">28
+                          </div>
+                          <div class="calendar-widget__day">29
+                          </div>
+                          <div class="calendar-widget__day">30
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">1
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">2
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">3
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">4
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">5
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">6
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">7
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">8
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">9
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">10
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">11
+                          </div>
+                          <div class="calendar-widget__day calendar-widget__day_other">12
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid__col grid__col_5">
+            <div class="news-table_full news-table js-news-table">
+              <div class="switch-container js-switch-news switch-container_top-offset">
+                <div class="switch-container__btn_blue switch-container__btn" data-btn="news">
+                  <div class="switch-container__btn-title">
+                    <div class="switch-container__btn-title-text">новости
+                    </div>
+                  </div>
+                </div>
+                <div class="switch-container__btn_blue switch-container__btn" data-btn="press">
+                  <div class="switch-container__btn-title">
+                    <div class="switch-container__btn-title-text">пресса
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news-table__wrap" data-table="news">
+                <div class="news-table__container"><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a>
+                </div>
+              </div>
+              <div class="news-table__wrap" data-table="press">
+                <div class="news-table__container"><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a><a class="news-table__item" href=""><span class="news-table__head"><span class="news-table__date">18.08.2014</span><span class="news-table__link news-table__link_title">Мужчины. Контрольные матчи.</span><span class="news-table__link news-table__link_subtitle">италия-германия-0:3</span></span><span class="news-table__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus nunc vitae dolor efficitur ultricies. Curabitur mauris turpis, posuere et rhoncus et, porttitor nec orci. Suspendisse scelerisque egestas tortor, non laoreet lectus dignissim finibus. Nullam dignissim, leo vitae lobortis fringilla, mi turpis tempus mauris, non rutrum lorem sem sit amet ipsum.</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__container footer__container_top">
+            <div class="footer__top-item">
+              <div class="footer__title">Мужские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Женские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Федерации
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">официальный волейбол
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ВФВ</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">FIVB</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">CEV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">сми
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__container footer__container_bottom">
+            <div class="footer__bottom-item footer__bottom-item_menu">
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Главная</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Об агенстве</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Новости</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Ссылки</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Расписание</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Результаты</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Положение</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Статистика</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Игроки</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Команды</a></li>
+              </ul>
+            </div>
+            <div class="footer__bottom-item footer__bottom-item_contacts">
+              г. Москва, Лужники 24, строение 5 УСЗ "Дружба"<br>
+              тел. +7 (499) 246-84-12, факс 8 (495) 785-07-69<br>
+              <a href="">info@volleyservice.ru</a><a class="link-arrow_right link-arrow" href="">Схема проезда</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-black">
+          <div class="container">
+            <div class="footer__container footer__container_bottom-black">
+              <div><span>&#169; </span>
+                Спортивное агенство "ВолейСервис".
+              </div>
+              <div><a href="">Дизайн сайта - Webformula.pro</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__container footer__container_bottom">
+              <div class="footer__copy"><a href="./">VolleyService.ru</a>
+                -
+                
+                Официальный сайт спортивного агенства "Волей Сервис". Использование любых материалов с сайта допускается только при наличии прямой ссылки на сайт VolleyService.ru
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/vendor.js?v=1531215568800"></script>
+    <script src="scripts/app.js?v=1531215568800"></script>
+  </body>
+</html>

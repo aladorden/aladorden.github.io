@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- meta(name="viewport", content="width=device-width, minimal-ui")-->
+    <meta name="viewport" content="width=device-width">
+    <title>Статистика Подробнее</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="styles/vendor.css?v=1531215572745">
+    <link rel="stylesheet" href="styles/main.css?v=1531215572745">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"></svg>
+    <div class="page-widget">
+      <div class="page-widget__btn"><span>+</span></div>
+      <div class="page-widget__table">
+        <ul>
+          <li><a class="page-widget__link" href="./index.html">Главная</a></li>
+          <li><a class="page-widget__link" href="./shedule.html">Расписание</a></li>
+          <li><a class="page-widget__link" href="./results-tree.html">Результаты - Турнирное дерево</a></li>
+          <li><a class="page-widget__link" href="./results-group.html">Результаты - Групповой Этап</a></li>
+          <li><a class="page-widget__link" href="./results-more.html">Результаты - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic.html">Статистика</a></li>
+          <li><a class="page-widget__link" href="./statistic-more.html">Статистика - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic-result.html">Статистика - Вывод</a></li>
+          <li><a class="page-widget__link" href="./players.html">Игроки</a></li>
+          <li><a class="page-widget__link" href="./players-agency.html">Игроки - Агенства</a></li>
+          <li><a class="page-widget__link" href="./teams.html">Команды</a></li>
+          <li><a class="page-widget__link" href="./teams-more.html">Команды - Команда</a></li>
+          <li><a class="page-widget__link" href="./news.html">Новости</a></li>
+          <li><a class="page-widget__link" href="./news-open.html">Новости - Новость</a></li>
+          <li><a class="page-widget__link" href="./links.html">Ссылки</a></li>
+          <li><a class="page-widget__link" href="./about.html">Об агенстве</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var pageWidget = document.querySelector('.page-widget');
+      var btn = pageWidget.querySelector('.page-widget__btn');
+      btn.addEventListener('click', function() {
+      
+      	if (pageWidget.classList.contains('page-widget_show')) {
+      		pageWidget.classList.remove('page-widget_show');
+      	} else {
+      		pageWidget.classList.add('page-widget_show');
+      	}
+      });
+    </script>
+    <header class="header">
+      <div class="header__block header__block_main">
+        <div class="container header__container header__container_main">
+          <div class="header__item header__item_logo"><a class="header__logo" href=""><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_info">
+            <div class="header__info">
+              <div class="header__info-item header__info-item_contacts">
+                <p>тел:(495) 246-84-12</p>
+                <p>факс:(495) 785-07-69</p>
+                <p>
+                  e-mail:
+                  <a href="">volleyservice@mail.ru</a>
+                </p>
+              </div>
+              <div class="header__info-item header__info-item_adress">
+                <p>наш адрес:</p>
+                <p>Москва, Лужники 24, стр. 5</p>
+                <p>офисы 227, 227а</p>
+              </div>
+            </div><a class="btn-rect_l btn-rect_gray btn-rect tt-uppercase" href="">игроки агенства</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__block header__block_nav">
+        <div class="container header__container header__container_nav">
+          <ul class="header__nav">
+            <li class="header__nav-item"><a class="header__nav-link" href="">главная</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">расписание</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">результаты</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">статистика</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">игроки</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">команды</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">новости</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">ссылки</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="breadcrumbs">
+        <div class="container"><a class="breadcrumbs__link" href="">Главная</a><a class="breadcrumbs__link" href="">Расписание</a>
+        </div>
+      </div>
+      <div class="statistic-options">
+        <div class="head-actions statistic-options__head">
+          <div class="container">
+            <div class="statistic-options__head-container head-actions__container">
+              <div>
+                <div class="radio-btn pr10">
+                  <input class="radio-btn__input" type="radio" id="men" name="gender" checked>
+                  <label class="radio-btn__block" for="men"><span class="radio-btn__action"></span><span class="radio-btn__title">Мужчины</span>
+                  </label>
+                </div>
+                <div class="radio-btn pr30">
+                  <input class="radio-btn__input" type="radio" id="women" name="gender">
+                  <label class="radio-btn__block" for="women"><span class="radio-btn__action"></span><span class="radio-btn__title">Женщины</span>
+                  </label>
+                </div>
+                <div class="select-block">
+                  <div class="select-block__title">с:
+                  </div>
+                  <div class="select">
+                    <select class="select__field" name="from">
+                      <option>2013
+                      </option>
+                      <option>2014
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="select-block">
+                  <div class="select-block__title">по
+                  </div>
+                  <div class="select">
+                    <select class="select__field" name="to">
+                      <option>2014
+                      </option>
+                      <option>2015
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="btn-group tt-uppercase mr20"><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="men">мужчины</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="women">женщины</a>
+                </div><a class="btn-rect_s btn-rect_blue btn-rect tt-uppercase" href="">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="head-actions statistic-options__head">
+          <div class="container">
+            <div class="statistic-options__head-container head-actions__container">
+              <div class="statistic-options__checkboxes">
+                <div class="statistic-options__item statistic-options__item_games">
+                  <p class="fw-bold fs-sm pl16">Соревнования</p>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game1" name="game" checked>
+                    <label class="checkbox__block" for="game1"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game2" name="game">
+                    <label class="checkbox__block" for="game2"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game3" name="game">
+                    <label class="checkbox__block" for="game3"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game4" name="game">
+                    <label class="checkbox__block" for="game4"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game5" name="game">
+                    <label class="checkbox__block" for="game5"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game6" name="game">
+                    <label class="checkbox__block" for="game6"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game7" name="game">
+                    <label class="checkbox__block" for="game7"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game8" name="game">
+                    <label class="checkbox__block" for="game8"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game9" name="game">
+                    <label class="checkbox__block" for="game9"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game10" name="game">
+                    <label class="checkbox__block" for="game10"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game11" name="game">
+                    <label class="checkbox__block" for="game11"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                  <div class="checkbox pr10">
+                    <input class="checkbox__input" type="checkbox" id="game12" name="game">
+                    <label class="checkbox__block" for="game12"><span class="checkbox__action"></span><span class="checkbox__title">Чемпионат России 2014. PlayOff.</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="statistic-options__item statistic-options__item_teams">
+                  <p class="fw-bold fs-sm pl16">Команды</p>
+                  <div class="checkbox statistic-options__select-all">
+                    <input class="checkbox__input" type="checkbox" id="selectall">
+                    <label class="checkbox__block" for="selectall"><span class="checkbox__action"></span><span class="checkbox__title">Выбрать все</span>
+                    </label>
+                  </div>
+                  <div class="statistic-options__teams">
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team1" name="team" checked>
+                      <label class="checkbox__block" for="team1"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team2" name="team">
+                      <label class="checkbox__block" for="team2"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team3" name="team">
+                      <label class="checkbox__block" for="team3"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team4" name="team">
+                      <label class="checkbox__block" for="team4"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team5" name="team">
+                      <label class="checkbox__block" for="team5"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team6" name="team">
+                      <label class="checkbox__block" for="team6"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team7" name="team">
+                      <label class="checkbox__block" for="team7"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team8" name="team">
+                      <label class="checkbox__block" for="team8"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team9" name="team">
+                      <label class="checkbox__block" for="team9"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team10" name="team">
+                      <label class="checkbox__block" for="team10"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team11" name="team">
+                      <label class="checkbox__block" for="team11"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team12" name="team">
+                      <label class="checkbox__block" for="team12"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team13" name="team">
+                      <label class="checkbox__block" for="team13"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team14" name="team">
+                      <label class="checkbox__block" for="team14"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team15" name="team">
+                      <label class="checkbox__block" for="team15"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team16" name="team">
+                      <label class="checkbox__block" for="team16"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team17" name="team">
+                      <label class="checkbox__block" for="team17"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team18" name="team">
+                      <label class="checkbox__block" for="team18"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team19" name="team">
+                      <label class="checkbox__block" for="team19"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team20" name="team">
+                      <label class="checkbox__block" for="team20"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team21" name="team">
+                      <label class="checkbox__block" for="team21"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team22" name="team">
+                      <label class="checkbox__block" for="team22"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team23" name="team">
+                      <label class="checkbox__block" for="team23"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team24" name="team">
+                      <label class="checkbox__block" for="team24"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team25" name="team">
+                      <label class="checkbox__block" for="team25"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team26" name="team">
+                      <label class="checkbox__block" for="team26"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                    <div class="checkbox pr10">
+                      <input class="checkbox__input" type="checkbox" id="team27" name="team">
+                      <label class="checkbox__block" for="team27"><span class="checkbox__action"></span><span class="checkbox__title">&quot;Газпром-Югра&quot; Сургутский район</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--div.grid
+              div.grid__col.grid__col_4
+              	
+              	
+              div.grid__col.grid__col_8
+              	p.fw-bold.fs-sm.pl40.
+              		Команды
+              	div.grid.pl25
+              		- var teamNumber = 1;
+              		+checkbox({title: "Выбрать все", name: "selectall"}).fw-bold
+              		div.grid__col.grid__col_6
+              			- for (var k = 1; k < 14; k++) {
+              				+checkbox({title: "Чемпионат России 2014. PlayOff.", name: "team" + k, group: "team", checked: (k === 1 ? true : false)}).pr10
+              				- teamNumber++
+              			- }
+              		div.grid__col.grid__col_6
+              			- for (var m = teamNumber; m < 25; m++) {
+              				+checkbox({title: "Чемпионат России 2014. PlayOff.", name: "team" + m, group: "team"}).pr10
+              				- teamNumber++
+              			- }
+              
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table_more-team table table_more js-statistic-table-more mb30">
+        <div class="table__content">
+          <div class="table__head">
+            <div class="container table__container">
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="selectallrowundefinedmore-team" name="more-team">
+                      <label class="checkbox__block" for="selectallrowundefinedmore-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">хозяин
+                  </div>
+                  <div class="table__col">счет
+                  </div>
+                  <div class="table__col">гость
+                  </div>
+                  <div class="table__col">дата
+                  </div>
+                  <div class="table__col">тур
+                  </div>
+                  <div class="table__col">соревнование
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table__body">
+            <div class="container table__container table__container_body">
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one0more-team" name="more-team">
+                      <label class="checkbox__block" for="one0more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one1more-team" name="more-team">
+                      <label class="checkbox__block" for="one1more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one2more-team" name="more-team">
+                      <label class="checkbox__block" for="one2more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one3more-team" name="more-team">
+                      <label class="checkbox__block" for="one3more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one4more-team" name="more-team">
+                      <label class="checkbox__block" for="one4more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one5more-team" name="more-team">
+                      <label class="checkbox__block" for="one5more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one6more-team" name="more-team">
+                      <label class="checkbox__block" for="one6more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one7more-team" name="more-team">
+                      <label class="checkbox__block" for="one7more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one8more-team" name="more-team">
+                      <label class="checkbox__block" for="one8more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one9more-team" name="more-team">
+                      <label class="checkbox__block" for="one9more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one10more-team" name="more-team">
+                      <label class="checkbox__block" for="one10more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one11more-team" name="more-team">
+                      <label class="checkbox__block" for="one11more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one12more-team" name="more-team">
+                      <label class="checkbox__block" for="one12more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one13more-team" name="more-team">
+                      <label class="checkbox__block" for="one13more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one14more-team" name="more-team">
+                      <label class="checkbox__block" for="one14more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one15more-team" name="more-team">
+                      <label class="checkbox__block" for="one15more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one16more-team" name="more-team">
+                      <label class="checkbox__block" for="one16more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one17more-team" name="more-team">
+                      <label class="checkbox__block" for="one17more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one18more-team" name="more-team">
+                      <label class="checkbox__block" for="one18more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one19more-team" name="more-team">
+                      <label class="checkbox__block" for="one19more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one20more-team" name="more-team">
+                      <label class="checkbox__block" for="one20more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one21more-team" name="more-team">
+                      <label class="checkbox__block" for="one21more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one22more-team" name="more-team">
+                      <label class="checkbox__block" for="one22more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one23more-team" name="more-team">
+                      <label class="checkbox__block" for="one23more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one24more-team" name="more-team">
+                      <label class="checkbox__block" for="one24more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one25more-team" name="more-team">
+                      <label class="checkbox__block" for="one25more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one26more-team" name="more-team">
+                      <label class="checkbox__block" for="one26more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one27more-team" name="more-team">
+                      <label class="checkbox__block" for="one27more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one28more-team" name="more-team">
+                      <label class="checkbox__block" for="one28more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one29more-team" name="more-team">
+                      <label class="checkbox__block" for="one29more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one30more-team" name="more-team">
+                      <label class="checkbox__block" for="one30more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one31more-team" name="more-team">
+                      <label class="checkbox__block" for="one31more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one32more-team" name="more-team">
+                      <label class="checkbox__block" for="one32more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one33more-team" name="more-team">
+                      <label class="checkbox__block" for="one33more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one34more-team" name="more-team">
+                      <label class="checkbox__block" for="one34more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one35more-team" name="more-team">
+                      <label class="checkbox__block" for="one35more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one36more-team" name="more-team">
+                      <label class="checkbox__block" for="one36more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one37more-team" name="more-team">
+                      <label class="checkbox__block" for="one37more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one38more-team" name="more-team">
+                      <label class="checkbox__block" for="one38more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one39more-team" name="more-team">
+                      <label class="checkbox__block" for="one39more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one40more-team" name="more-team">
+                      <label class="checkbox__block" for="one40more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one41more-team" name="more-team">
+                      <label class="checkbox__block" for="one41more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one42more-team" name="more-team">
+                      <label class="checkbox__block" for="one42more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one43more-team" name="more-team">
+                      <label class="checkbox__block" for="one43more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one44more-team" name="more-team">
+                      <label class="checkbox__block" for="one44more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one45more-team" name="more-team">
+                      <label class="checkbox__block" for="one45more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one46more-team" name="more-team">
+                      <label class="checkbox__block" for="one46more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one47more-team" name="more-team">
+                      <label class="checkbox__block" for="one47more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one48more-team" name="more-team">
+                      <label class="checkbox__block" for="one48more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one49more-team" name="more-team">
+                      <label class="checkbox__block" for="one49more-team"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">&quot;Газпром-Югра&quot; Сургутский район
+                  </div>
+                  <div class="table__col">3:2
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                  <div class="table__col">29.09.2012
+                  </div>
+                  <div class="table__col">1 Тур
+                  </div>
+                  <div class="table__col">Чемпионат России 2013
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="head-actions">
+        <div class="container">
+          <div class="head-actions__container">
+            <div>
+              <div class="select-block">
+                <div class="select-block__title">Амплуа
+                </div>
+                <div class="select">
+                  <select class="select__field" name="role">
+                    <option>Все
+                    </option>
+                    <option>Не все
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table_more-player table table_more js-statistic-table-more mb10">
+        <div class="table__content">
+          <div class="table__head">
+            <div class="container table__container">
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="selectallrowundefinedmore-player" name="more-player">
+                      <label class="checkbox__block" for="selectallrowundefinedmore-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">игрок
+                  </div>
+                  <div class="table__col">амплуа
+                  </div>
+                  <div class="table__col">в настоящее время
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="table__body">
+            <div class="container table__container table__container_body">
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one0more-player" name="more-player">
+                      <label class="checkbox__block" for="one0more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one1more-player" name="more-player">
+                      <label class="checkbox__block" for="one1more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one2more-player" name="more-player">
+                      <label class="checkbox__block" for="one2more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one3more-player" name="more-player">
+                      <label class="checkbox__block" for="one3more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one4more-player" name="more-player">
+                      <label class="checkbox__block" for="one4more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one5more-player" name="more-player">
+                      <label class="checkbox__block" for="one5more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one6more-player" name="more-player">
+                      <label class="checkbox__block" for="one6more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one7more-player" name="more-player">
+                      <label class="checkbox__block" for="one7more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one8more-player" name="more-player">
+                      <label class="checkbox__block" for="one8more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one9more-player" name="more-player">
+                      <label class="checkbox__block" for="one9more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one10more-player" name="more-player">
+                      <label class="checkbox__block" for="one10more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one11more-player" name="more-player">
+                      <label class="checkbox__block" for="one11more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one12more-player" name="more-player">
+                      <label class="checkbox__block" for="one12more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one13more-player" name="more-player">
+                      <label class="checkbox__block" for="one13more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one14more-player" name="more-player">
+                      <label class="checkbox__block" for="one14more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one15more-player" name="more-player">
+                      <label class="checkbox__block" for="one15more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one16more-player" name="more-player">
+                      <label class="checkbox__block" for="one16more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one17more-player" name="more-player">
+                      <label class="checkbox__block" for="one17more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one18more-player" name="more-player">
+                      <label class="checkbox__block" for="one18more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one19more-player" name="more-player">
+                      <label class="checkbox__block" for="one19more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one20more-player" name="more-player">
+                      <label class="checkbox__block" for="one20more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one21more-player" name="more-player">
+                      <label class="checkbox__block" for="one21more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one22more-player" name="more-player">
+                      <label class="checkbox__block" for="one22more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one23more-player" name="more-player">
+                      <label class="checkbox__block" for="one23more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one24more-player" name="more-player">
+                      <label class="checkbox__block" for="one24more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one25more-player" name="more-player">
+                      <label class="checkbox__block" for="one25more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one26more-player" name="more-player">
+                      <label class="checkbox__block" for="one26more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one27more-player" name="more-player">
+                      <label class="checkbox__block" for="one27more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one28more-player" name="more-player">
+                      <label class="checkbox__block" for="one28more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one29more-player" name="more-player">
+                      <label class="checkbox__block" for="one29more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one30more-player" name="more-player">
+                      <label class="checkbox__block" for="one30more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one31more-player" name="more-player">
+                      <label class="checkbox__block" for="one31more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one32more-player" name="more-player">
+                      <label class="checkbox__block" for="one32more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one33more-player" name="more-player">
+                      <label class="checkbox__block" for="one33more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one34more-player" name="more-player">
+                      <label class="checkbox__block" for="one34more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one35more-player" name="more-player">
+                      <label class="checkbox__block" for="one35more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one36more-player" name="more-player">
+                      <label class="checkbox__block" for="one36more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one37more-player" name="more-player">
+                      <label class="checkbox__block" for="one37more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one38more-player" name="more-player">
+                      <label class="checkbox__block" for="one38more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one39more-player" name="more-player">
+                      <label class="checkbox__block" for="one39more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one40more-player" name="more-player">
+                      <label class="checkbox__block" for="one40more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one41more-player" name="more-player">
+                      <label class="checkbox__block" for="one41more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one42more-player" name="more-player">
+                      <label class="checkbox__block" for="one42more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one43more-player" name="more-player">
+                      <label class="checkbox__block" for="one43more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one44more-player" name="more-player">
+                      <label class="checkbox__block" for="one44more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one45more-player" name="more-player">
+                      <label class="checkbox__block" for="one45more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one46more-player" name="more-player">
+                      <label class="checkbox__block" for="one46more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one47more-player" name="more-player">
+                      <label class="checkbox__block" for="one47more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one48more-player" name="more-player">
+                      <label class="checkbox__block" for="one48more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+              <div class="table__row-wrap">
+                <div class="table__row">
+                  <div class="table__col">
+                    <div class="checkbox">
+                      <input class="checkbox__input" type="checkbox" id="one49more-player" name="more-player">
+                      <label class="checkbox__block" for="one49more-player"><span class="checkbox__action"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="table__col">Шкулявичус Роман
+                  </div>
+                  <div class="table__col">Центральный блокирующий
+                  </div>
+                  <div class="table__col">&quot;Локомотив Новосибирск&quot;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ta-center pb40"><a class="btn-rect_m btn-rect_blue btn-rect" href="">Сформировать отчет</a>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__container footer__container_top">
+            <div class="footer__top-item">
+              <div class="footer__title">Мужские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Женские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Федерации
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">официальный волейбол
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ВФВ</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">FIVB</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">CEV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">сми
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__container footer__container_bottom">
+            <div class="footer__bottom-item footer__bottom-item_menu">
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Главная</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Об агенстве</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Новости</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Ссылки</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Расписание</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Результаты</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Положение</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Статистика</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Игроки</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Команды</a></li>
+              </ul>
+            </div>
+            <div class="footer__bottom-item footer__bottom-item_contacts">
+              г. Москва, Лужники 24, строение 5 УСЗ "Дружба"<br>
+              тел. +7 (499) 246-84-12, факс 8 (495) 785-07-69<br>
+              <a href="">info@volleyservice.ru</a><a class="link-arrow_right link-arrow" href="">Схема проезда</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-black">
+          <div class="container">
+            <div class="footer__container footer__container_bottom-black">
+              <div><span>&#169; </span>
+                Спортивное агенство "ВолейСервис".
+              </div>
+              <div><a href="">Дизайн сайта - Webformula.pro</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__container footer__container_bottom">
+              <div class="footer__copy"><a href="./">VolleyService.ru</a>
+                -
+                
+                Официальный сайт спортивного агенства "Волей Сервис". Использование любых материалов с сайта допускается только при наличии прямой ссылки на сайт VolleyService.ru
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/vendor.js?v=1531215572754"></script>
+    <script src="scripts/app.js?v=1531215572754"></script>
+  </body>
+</html>

@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- meta(name="viewport", content="width=device-width, minimal-ui")-->
+    <meta name="viewport" content="width=device-width">
+    <title>Результаты - Групповой Этап</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="styles/vendor.css?v=1531215570894">
+    <link rel="stylesheet" href="styles/main.css?v=1531215570894">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"></svg>
+    <div class="page-widget">
+      <div class="page-widget__btn"><span>+</span></div>
+      <div class="page-widget__table">
+        <ul>
+          <li><a class="page-widget__link" href="./index.html">Главная</a></li>
+          <li><a class="page-widget__link" href="./shedule.html">Расписание</a></li>
+          <li><a class="page-widget__link" href="./results-tree.html">Результаты - Турнирное дерево</a></li>
+          <li><a class="page-widget__link" href="./results-group.html">Результаты - Групповой Этап</a></li>
+          <li><a class="page-widget__link" href="./results-more.html">Результаты - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic.html">Статистика</a></li>
+          <li><a class="page-widget__link" href="./statistic-more.html">Статистика - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic-result.html">Статистика - Вывод</a></li>
+          <li><a class="page-widget__link" href="./players.html">Игроки</a></li>
+          <li><a class="page-widget__link" href="./players-agency.html">Игроки - Агенства</a></li>
+          <li><a class="page-widget__link" href="./teams.html">Команды</a></li>
+          <li><a class="page-widget__link" href="./teams-more.html">Команды - Команда</a></li>
+          <li><a class="page-widget__link" href="./news.html">Новости</a></li>
+          <li><a class="page-widget__link" href="./news-open.html">Новости - Новость</a></li>
+          <li><a class="page-widget__link" href="./links.html">Ссылки</a></li>
+          <li><a class="page-widget__link" href="./about.html">Об агенстве</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var pageWidget = document.querySelector('.page-widget');
+      var btn = pageWidget.querySelector('.page-widget__btn');
+      btn.addEventListener('click', function() {
+      
+      	if (pageWidget.classList.contains('page-widget_show')) {
+      		pageWidget.classList.remove('page-widget_show');
+      	} else {
+      		pageWidget.classList.add('page-widget_show');
+      	}
+      });
+    </script>
+    <header class="header">
+      <div class="header__block header__block_main">
+        <div class="container header__container header__container_main">
+          <div class="header__item header__item_logo"><a class="header__logo" href=""><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_info">
+            <div class="header__info">
+              <div class="header__info-item header__info-item_contacts">
+                <p>тел:(495) 246-84-12</p>
+                <p>факс:(495) 785-07-69</p>
+                <p>
+                  e-mail:
+                  <a href="">volleyservice@mail.ru</a>
+                </p>
+              </div>
+              <div class="header__info-item header__info-item_adress">
+                <p>наш адрес:</p>
+                <p>Москва, Лужники 24, стр. 5</p>
+                <p>офисы 227, 227а</p>
+              </div>
+            </div><a class="btn-rect_l btn-rect_gray btn-rect tt-uppercase" href="">игроки агенства</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__block header__block_nav">
+        <div class="container header__container header__container_nav">
+          <ul class="header__nav">
+            <li class="header__nav-item"><a class="header__nav-link" href="">главная</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">расписание</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">результаты</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">статистика</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">игроки</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">команды</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">новости</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">ссылки</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="breadcrumbs">
+        <div class="container"><a class="breadcrumbs__link" href="">Главная</a><a class="breadcrumbs__link" href="">Расписание</a>
+        </div>
+      </div>
+      <div class="head-actions mb20">
+        <div class="container">
+          <div class="head-actions__container">
+            <div class="select-block">
+              <div class="select-block__title">Год
+              </div>
+              <div class="select">
+                <select class="select__field" name="year">
+                  <option>2013-2014
+                  </option>
+                  <option>2014-2015
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="select-block">
+              <div class="select-block__title">Этап
+              </div>
+              <div class="select">
+                <select class="select__field" name="stage">
+                  <option>Групповой этап
+                  </option>
+                  <option>Play Out
+                  </option>
+                  <option>Play Off
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="select-block">
+              <div class="select-block__title">Тур
+              </div>
+              <div class="select">
+                <select class="select__field" name="tour">
+                  <option>22-й Тур, 12.04.2014
+                  </option>
+                  <option>22-й Тур, 12.04.2014
+                  </option>
+                  <option>22-й Тур, 12.04.2014
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="select-block">
+              <div class="select-block__title">Подгруппа
+              </div>
+              <div class="select">
+                <select class="select__field" name="undergroup">
+                  <option>Все
+                  </option>
+                  <option>Все
+                  </option>
+                  <option>Все
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="btn-group tt-uppercase"><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="men">мужчины</a><a class="btn-rect_s btn-rect_blue btn-rect" href="" data-btn="women">женщины</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="grid mb30">
+          <div class="grid__col grid__col_5">
+            <div class="results-table">
+              <div class="results-table__head">Результаты</div>
+              <table class="results-table__grid_score results-table__grid">
+                <tr class="results-table__row">
+                  <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">Команды</td>
+                  <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">Счет</td>
+                  <td class="results-table__col results-table__col_head tt-uppercase" colspan="5">Партии</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col results-table__col_head">1
+                  </td>
+                  <td class="results-table__col results-table__col_head">2
+                  </td>
+                  <td class="results-table__col results-table__col_head">3
+                  </td>
+                  <td class="results-table__col results-table__col_head">4
+                  </td>
+                  <td class="results-table__col results-table__col_head">5
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Харьков</td>
+                  <td class="results-table__col" rowspan="2">0 : 3</td>
+                  <td class="results-table__col">0
+                  </td>
+                  <td class="results-table__col">1
+                  </td>
+                  <td class="results-table__col">2
+                  </td>
+                  <td class="results-table__col">3
+                  </td>
+                  <td class="results-table__col">4
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Локомотив</td>
+                  <td class="results-table__col">25
+                  </td>
+                  <td class="results-table__col">26
+                  </td>
+                  <td class="results-table__col">27
+                  </td>
+                  <td class="results-table__col">28
+                  </td>
+                  <td class="results-table__col">29
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Харьков</td>
+                  <td class="results-table__col" rowspan="2">0 : 3</td>
+                  <td class="results-table__col">0
+                  </td>
+                  <td class="results-table__col">1
+                  </td>
+                  <td class="results-table__col">2
+                  </td>
+                  <td class="results-table__col">3
+                  </td>
+                  <td class="results-table__col">4
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Локомотив</td>
+                  <td class="results-table__col">25
+                  </td>
+                  <td class="results-table__col">26
+                  </td>
+                  <td class="results-table__col">27
+                  </td>
+                  <td class="results-table__col">28
+                  </td>
+                  <td class="results-table__col">29
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Харьков</td>
+                  <td class="results-table__col" rowspan="2">0 : 3</td>
+                  <td class="results-table__col">0
+                  </td>
+                  <td class="results-table__col">1
+                  </td>
+                  <td class="results-table__col">2
+                  </td>
+                  <td class="results-table__col">3
+                  </td>
+                  <td class="results-table__col">4
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Локомотив</td>
+                  <td class="results-table__col">25
+                  </td>
+                  <td class="results-table__col">26
+                  </td>
+                  <td class="results-table__col">27
+                  </td>
+                  <td class="results-table__col">28
+                  </td>
+                  <td class="results-table__col">29
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Харьков</td>
+                  <td class="results-table__col" rowspan="2">0 : 3</td>
+                  <td class="results-table__col">0
+                  </td>
+                  <td class="results-table__col">1
+                  </td>
+                  <td class="results-table__col">2
+                  </td>
+                  <td class="results-table__col">3
+                  </td>
+                  <td class="results-table__col">4
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Локомотив</td>
+                  <td class="results-table__col">25
+                  </td>
+                  <td class="results-table__col">26
+                  </td>
+                  <td class="results-table__col">27
+                  </td>
+                  <td class="results-table__col">28
+                  </td>
+                  <td class="results-table__col">29
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Харьков</td>
+                  <td class="results-table__col" rowspan="2">0 : 3</td>
+                  <td class="results-table__col">0
+                  </td>
+                  <td class="results-table__col">1
+                  </td>
+                  <td class="results-table__col">2
+                  </td>
+                  <td class="results-table__col">3
+                  </td>
+                  <td class="results-table__col">4
+                  </td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Локомотив</td>
+                  <td class="results-table__col">25
+                  </td>
+                  <td class="results-table__col">26
+                  </td>
+                  <td class="results-table__col">27
+                  </td>
+                  <td class="results-table__col">28
+                  </td>
+                  <td class="results-table__col">29
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="grid__col grid__col_7">
+            <div class="results-table">
+              <div class="results-table__head">Положение команд</div>
+              <table class="results-table__grid_team results-table__grid">
+                <tr class="results-table__row">
+                  <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">Команда</td>
+                  <td class="results-table__col results-table__col_head tt-uppercase" rowspan="2">очки</td>
+                  <td class="results-table__col results-table__col_head tt-uppercase" colspan="9">результаты игр</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">3 : 0</td>
+                  <td class="results-table__col results-table__col_head">В</td>
+                  <td class="results-table__col results-table__col_head">П</td>
+                  <td class="results-table__col results-table__col_head">И</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_blue results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+                <tr class="results-table__row">
+                  <td class="results-table__col_red results-table__col">Динамо Кр</td>
+                  <td class="results-table__col">63</td>
+                  <td class="results-table__col">14</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">6</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">21</td>
+                  <td class="results-table__col">1</td>
+                  <td class="results-table__col">22</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="results-team pb30">
+          <table class="results-team__grid">
+            <tr class="results-team__row">
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+            </tr>
+            <tr class="results-team__row">
+              <td class="results-team__col results-team__col_content results-team__col_head">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block"><a class="results-team__link" href="">3 : 2</a></div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col results-team__col_content">
+                <div class="results-team__col-block">25.10</div>
+              </td>
+              <td class="results-team__col">
+                <div class="results-team__col-block"><img class="results-team__icon" src="img/icon-team-big.png"></div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="collapse-block__container pb30 js-collapse-block">
+          <div class="collapse-block">
+            <div class="collapse-block__head">
+              <div class="container"><span class="collapse-block__head-container"><span class="collapse-block__title">описание &quot;результаты игр&quot;</span></span>
+              </div>
+            </div>
+            <div class="collapse-block__body">
+              <div class="collapse-block__content">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__container footer__container_top">
+            <div class="footer__top-item">
+              <div class="footer__title">Мужские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Женские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Федерации
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">официальный волейбол
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ВФВ</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">FIVB</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">CEV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">сми
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__container footer__container_bottom">
+            <div class="footer__bottom-item footer__bottom-item_menu">
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Главная</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Об агенстве</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Новости</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Ссылки</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Расписание</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Результаты</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Положение</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Статистика</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Игроки</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Команды</a></li>
+              </ul>
+            </div>
+            <div class="footer__bottom-item footer__bottom-item_contacts">
+              г. Москва, Лужники 24, строение 5 УСЗ "Дружба"<br>
+              тел. +7 (499) 246-84-12, факс 8 (495) 785-07-69<br>
+              <a href="">info@volleyservice.ru</a><a class="link-arrow_right link-arrow" href="">Схема проезда</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-black">
+          <div class="container">
+            <div class="footer__container footer__container_bottom-black">
+              <div><span>&#169; </span>
+                Спортивное агенство "ВолейСервис".
+              </div>
+              <div><a href="">Дизайн сайта - Webformula.pro</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__container footer__container_bottom">
+              <div class="footer__copy"><a href="./">VolleyService.ru</a>
+                -
+                
+                Официальный сайт спортивного агенства "Волей Сервис". Использование любых материалов с сайта допускается только при наличии прямой ссылки на сайт VolleyService.ru
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/vendor.js?v=1531215570903"></script>
+    <script src="scripts/app.js?v=1531215570903"></script>
+  </body>
+</html>

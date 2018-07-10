@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<!-- - var options = {title: "", size: "", name: "", group: "", checked: true}-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <!-- meta(name="viewport", content="width=device-width, minimal-ui")-->
+    <meta name="viewport" content="width=device-width">
+    <title>Project title</title>
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="stylesheet" href="styles/vendor.css?v=1531215569436">
+    <link rel="stylesheet" href="styles/main.css?v=1531215569436">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  </head>
+  <body>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"></svg>
+    <div class="page-widget">
+      <div class="page-widget__btn"><span>+</span></div>
+      <div class="page-widget__table">
+        <ul>
+          <li><a class="page-widget__link" href="./index.html">Главная</a></li>
+          <li><a class="page-widget__link" href="./shedule.html">Расписание</a></li>
+          <li><a class="page-widget__link" href="./results-tree.html">Результаты - Турнирное дерево</a></li>
+          <li><a class="page-widget__link" href="./results-group.html">Результаты - Групповой Этап</a></li>
+          <li><a class="page-widget__link" href="./results-more.html">Результаты - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic.html">Статистика</a></li>
+          <li><a class="page-widget__link" href="./statistic-more.html">Статистика - Подробнее</a></li>
+          <li><a class="page-widget__link" href="./statistic-result.html">Статистика - Вывод</a></li>
+          <li><a class="page-widget__link" href="./players.html">Игроки</a></li>
+          <li><a class="page-widget__link" href="./players-agency.html">Игроки - Агенства</a></li>
+          <li><a class="page-widget__link" href="./teams.html">Команды</a></li>
+          <li><a class="page-widget__link" href="./teams-more.html">Команды - Команда</a></li>
+          <li><a class="page-widget__link" href="./news.html">Новости</a></li>
+          <li><a class="page-widget__link" href="./news-open.html">Новости - Новость</a></li>
+          <li><a class="page-widget__link" href="./links.html">Ссылки</a></li>
+          <li><a class="page-widget__link" href="./about.html">Об агенстве</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var pageWidget = document.querySelector('.page-widget');
+      var btn = pageWidget.querySelector('.page-widget__btn');
+      btn.addEventListener('click', function() {
+      
+      	if (pageWidget.classList.contains('page-widget_show')) {
+      		pageWidget.classList.remove('page-widget_show');
+      	} else {
+      		pageWidget.classList.add('page-widget_show');
+      	}
+      });
+    </script>
+    <header class="header">
+      <div class="header__block header__block_main">
+        <div class="container header__container header__container_main">
+          <div class="header__item header__item_logo"><a class="header__logo" href=""><img class="header__logo-img" src="img/header-logo.png" alt=""></a></div>
+          <div class="header__item header__item_info">
+            <div class="header__info">
+              <div class="header__info-item header__info-item_contacts">
+                <p>тел:(495) 246-84-12</p>
+                <p>факс:(495) 785-07-69</p>
+                <p>
+                  e-mail:
+                  <a href="">volleyservice@mail.ru</a>
+                </p>
+              </div>
+              <div class="header__info-item header__info-item_adress">
+                <p>наш адрес:</p>
+                <p>Москва, Лужники 24, стр. 5</p>
+                <p>офисы 227, 227а</p>
+              </div>
+            </div><a class="btn-rect_l btn-rect_gray btn-rect tt-uppercase" href="">игроки агенства</a>
+          </div>
+        </div>
+      </div>
+      <div class="header__block header__block_nav">
+        <div class="container header__container header__container_nav">
+          <ul class="header__nav">
+            <li class="header__nav-item"><a class="header__nav-link" href="">главная</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">расписание</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">результаты</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">статистика</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">игроки</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">команды</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">новости</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="">ссылки</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <div class="breadcrumbs">
+        <div class="container"><a class="breadcrumbs__link" href="">Главная</a><a class="breadcrumbs__link" href="">Расписание</a>
+        </div>
+      </div>
+      <div class="container pb40">
+        <div class="news-full mb5">
+          <div class="news-full__bg"><img class="news-full__img" src="img/index-news-img.jpg"></div>
+          <div class="news-full__content">
+            <div class="news-full__head">Мужчины. Азия/ азиатские игры: завершен предварительный этап</div>
+            <div class="news-full__body">
+              <div class="news-full__date">18.08.2014</div>
+              <div class="news-full__intro">
+                <p>На Азиатских играх, consectetur adipiscing elit. Cras egestas egestas arcu et scelerisque. Nullam tempus, justo vitae dapibus commodo. На Азиатских играх, consectetur adipiscing elit. Cras egestas egestas arcu et scelerisque. Nullam tempus, justo vitae dapibus commodo. Cras egestas egestas arcu et scelerisque. Nullam tempus, justo vitae dapibus.</p>
+              </div>
+              <div class="news-full__results">
+                <p class="news-full__title">предварительный этап</p>
+                <p class="news-full__title news-full__results-title">Результаты</p>
+                <p class="mb40">(*)новая информация</p>
+                <div class="news-full__results-blocks mb10">
+                  <div class="news-full__results-block">
+                    <p class="news-full__title">группа "А"</p>
+                    <div class="news-full__results-common">
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                    </div>
+                    <div class="news-full__results-total">
+                      <div>Итоговое положение:</div>
+                      <div>КОРЕЯ - 9 (2-0)</div>
+                      <div>КАТАР - 9 (2-0)</div>
+                      <div>Тайвань - 2 (1-2)</div>
+                      <div>Казахстан - 1 (0-3)</div>
+                    </div>
+                  </div>
+                  <div class="news-full__results-block">
+                    <p class="news-full__title">группа "А"</p>
+                    <div class="news-full__results-common">
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                    </div>
+                    <div class="news-full__results-total">
+                      <div>Итоговое положение:</div>
+                      <div>КОРЕЯ - 9 (2-0)</div>
+                      <div>КАТАР - 9 (2-0)</div>
+                      <div>Тайвань - 2 (1-2)</div>
+                      <div>Казахстан - 1 (0-3)</div>
+                    </div>
+                  </div>
+                  <div class="news-full__results-block">
+                    <p class="news-full__title">группа "А"</p>
+                    <div class="news-full__results-common">
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                    </div>
+                    <div class="news-full__results-total">
+                      <div>Итоговое положение:</div>
+                      <div>КОРЕЯ - 9 (2-0)</div>
+                      <div>КАТАР - 9 (2-0)</div>
+                      <div>Тайвань - 2 (1-2)</div>
+                      <div>Казахстан - 1 (0-3)</div>
+                    </div>
+                  </div>
+                  <div class="news-full__results-block">
+                    <p class="news-full__title">группа "А"</p>
+                    <div class="news-full__results-common">
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                      <div>Корея - Казахстан - 3:0 (25:16, 25:21, 25:23)</div>
+                    </div>
+                    <div class="news-full__results-total">
+                      <div>Итоговое положение:</div>
+                      <div>КОРЕЯ - 9 (2-0)</div>
+                      <div>КАТАР - 9 (2-0)</div>
+                      <div>Тайвань - 2 (1-2)</div>
+                      <div>Казахстан - 1 (0-3)</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="gallery">
+                <div class="swiper-container js-gallery">
+                  <div class="swiper-wrapper"><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/gallery-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a><a class="swiper-slide gallery__slide" href="" style="background-image:url(img/gallery-img.jpg)" data-big-img="img/index-news-img.jpg"></a>
+                  </div>
+                </div>
+                <div class="gallery__arrow gallery__arrow_left"></div>
+                <div class="gallery__arrow gallery__arrow_right"></div>
+                <div class="gallery__modal">
+                  <div class="gallery__modal-container"><a class="gallery__modal-close" href=""></a>
+                    <div class="gallery__modal-photo"><img class="gallery__modal-img" src="img/index-news-img.jpg" alt=""></div>
+                    <p>Волейбол. Отбор ЧМ-2014. Мужчины.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><a class="link-arrow_left link-arrow fs-l" href="">Все новости</a>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__top">
+        <div class="container">
+          <div class="footer__container footer__container_top">
+            <div class="footer__top-item">
+              <div class="footer__title">Мужские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">БЕЛОГОРЬЕ-МЕТАЛЛОИНВЕСТ</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Женские клубы
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ЛЕНИНГРАДКА Санкт-петербург</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">Федерации
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Азербайджана</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Швейцарии</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">официальный волейбол
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">ВФВ</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">FIVB</a></li>
+                </ul>
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">CEV</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__top-item">
+              <div class="footer__title">сми
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Советский Спорт</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">Наталья и Валерия Гончаровы</a></li>
+                </ul>
+              </div>
+              <div class="footer__title">сайты игроков
+              </div>
+              <div class="footer__top-block">
+                <ul class="footer__top-list">
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                  <li class="footer__top-list-item"><a class="footer__top-list-link" href="">АСН Тюменская арена</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+          <div class="footer__container footer__container_bottom">
+            <div class="footer__bottom-item footer__bottom-item_menu">
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Главная</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Об агенстве</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Новости</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Ссылки</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Расписание</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Результаты</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Положение</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Статистика</a></li>
+              </ul>
+              <ul class="footer__bottom-list">
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Игроки</a></li>
+                <li class="footer__bottom-list-item"><a class="footer__bottom-list-link" href="">Команды</a></li>
+              </ul>
+            </div>
+            <div class="footer__bottom-item footer__bottom-item_contacts">
+              г. Москва, Лужники 24, строение 5 УСЗ "Дружба"<br>
+              тел. +7 (499) 246-84-12, факс 8 (495) 785-07-69<br>
+              <a href="">info@volleyservice.ru</a><a class="link-arrow_right link-arrow" href="">Схема проезда</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-black">
+          <div class="container">
+            <div class="footer__container footer__container_bottom-black">
+              <div><span>&#169; </span>
+                Спортивное агенство "ВолейСервис".
+              </div>
+              <div><a href="">Дизайн сайта - Webformula.pro</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="container">
+            <div class="footer__container footer__container_bottom">
+              <div class="footer__copy"><a href="./">VolleyService.ru</a>
+                -
+                
+                Официальный сайт спортивного агенства "Волей Сервис". Использование любых материалов с сайта допускается только при наличии прямой ссылки на сайт VolleyService.ru
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/vendor.js?v=1531215569441"></script>
+    <script src="scripts/app.js?v=1531215569441"></script>
+  </body>
+</html>
