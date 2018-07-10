@@ -51919,4 +51919,5 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     /* function fpPagination() {
         if()
       } */
-})(jQuery, Drupal);;
+
+})(jQuery, Drupal);
