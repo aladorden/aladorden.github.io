@@ -2631,7 +2631,7 @@ input[type='submit'].styler[disabled] {
     position: relative; }
   .championship-russia__table_subgroup {
     position: absolute;
-    top: -25px;
+    top: -26px;
     left: 0px;
     padding-bottom: 2px;
     padding-right: 4px;
@@ -2641,26 +2641,23 @@ input[type='submit'].styler[disabled] {
       position: relative;
       top: 2px;
       left: 10px; }
-    .championship-russia__table_subgroup .select {
-      position: relative;
-      bottom: 1px; }
-      .championship-russia__table_subgroup .select .jq-selectbox__select {
-        width: 105px;
-        text-transform: capitalize;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
-        height: 22px;
-        font-size: 12px;
-        padding-right: 25px; }
-      .championship-russia__table_subgroup .select .jq-selectbox__trigger-arrow {
-        width: 8px;
-        height: 8px; }
-      .championship-russia__table_subgroup .select .jq-selectbox__dropdown {
-        top: 22px !important; }
+    .championship-russia__table_subgroup .select .jq-selectbox__select {
+      width: 105px;
+      text-transform: capitalize;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 22px;
+      font-size: 12px;
+      padding-right: 25px; }
+    .championship-russia__table_subgroup .select .jq-selectbox__trigger-arrow {
+      width: 8px;
+      height: 8px; }
+    .championship-russia__table_subgroup .select .jq-selectbox__dropdown {
+      top: 22px !important; }
     .championship-russia__table_subgroup .jq-selectbox__select-text {
       position: relative;
       top: 1px;
