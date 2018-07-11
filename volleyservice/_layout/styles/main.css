@@ -4281,6 +4281,8 @@ input[type='submit'].styler[disabled] {
       right: calc(100% - 1px); }
     .results-tree__col_left .results-tree__items-wrap {
       margin-left: -30px; }
+    .results-tree__col .results-tree__head > div {
+      margin-left: -30px; }
   .results-tree__block {
     text-align: center; }
   .results-tree__head {
