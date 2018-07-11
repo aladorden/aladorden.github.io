@@ -4279,6 +4279,8 @@ input[type='submit'].styler[disabled] {
     .results-tree__col_right .results-tree__score-table {
       left: auto;
       right: calc(100% - 1px); }
+    .results-tree__col_left .results-tree__items-wrap {
+      margin-left: -30px; }
   .results-tree__block {
     text-align: center; }
   .results-tree__head {
@@ -4321,7 +4323,9 @@ input[type='submit'].styler[disabled] {
     position: absolute;
     top: 50%;
     left: calc(100% + 22px);
-    z-index: 3; }
+    z-index: 3;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
     .results-tree__score:before {
       content: "";
       -webkit-transition: all 0.3s ease;
@@ -4353,7 +4357,8 @@ input[type='submit'].styler[disabled] {
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    margin-top: 3px; }
   .results-tree__score-item {
     background-color: #cd7979;
     color: white;
