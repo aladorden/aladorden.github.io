@@ -3624,7 +3624,8 @@ input[type='submit'].styler[disabled] {
   left: 0;
   height: calc(100% - 200px);
   width: 300px;
-  z-index: 100; }
+  z-index: 100;
+  min-height: 480px; }
   .page-widget_show {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
